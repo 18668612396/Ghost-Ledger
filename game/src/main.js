@@ -2,8 +2,10 @@ import { CARD_DEFS, ENEMY_DEFS, CONTENT, getActivePowers, transition, getEnemyIn
 import { MODES, getMode, createModeRun } from './modes.js';
 import { decorateSkins } from './skins.js';
 import { updateCardDrag, resolveCardDrag } from './card-gesture.js';
-import { getCardVisual, getCardFamily } from './card-visuals.js';
+import { getCardVisual, getCardFamily, COMMON_CARD_ART_IDS } from './card-visuals.js';
+import { cardArtStyle } from './card-art-layout.js';
 import { pickEnemyTarget } from './combat-targeting.js';
+import { getCardEnemyTargets } from './engine.js';
 import { renderBattlefield } from './battlefield-view.js';
 import { renderCollectionGrid, cardCollectionKey } from './collection-view.js';
 import { createEffectsPresenter } from './presentation/effects.js';
@@ -11,7 +13,7 @@ import { RELICS, MILESTONES, createProfile, isValidProfile, getRank, getMileston
 
 const app = document.querySelector('#app');
 const SAVE_KEY = 'ghost-ledger.run.v4', PROFILE_KEY = 'ghost-ledger.profile.v2', SOUND_KEY = 'ghost-ledger.sound.v1';
-const cardArtIds = new Set(['brush', 'talisman', 'chain', 'step', 'fire', 'bell', 'seal', 'coin', 'lotus', 'mirror', 'ledger']);
+const cardArtIds = new Set(COMMON_CARD_ART_IDS);
 const cardTypeLabels = { attack: '攻击', skill: '术法', power: '能力', status: '状态', curse: '诅咒' };
 function cardDisplayType(card) { return `${getCardFamily(card).label} · ${cardTypeLabels[card.type]}`; }
 const iconNames = ['flame', 'heart', 'shield', 'book', 'sound', 'muted', 'gear', 'arrow', 'close', 'skull', 'lotus', 'cards', 'lantern', 'check', 'debt', 'seal'];
@@ -42,7 +44,7 @@ function brushLabel(text, color = 'teal', extra = '') {
   return `<span class="brush-label ${extra}"><img src="${asset(`ref-brush-${color}`)}" alt=""/><span>${text}</span></span>`;
 }
 function healthMarkup(hp, maxHp, extra = '') {
-  return `<div class="brush-health ${extra}" aria-label="${extra ? '敌方' : '玩家'}生命 ${hp}/${maxHp}"><span class="hp-clip" style="width:${Math.max(0, hp / maxHp * 100)}%"><img src="${asset('ref-brush-red')}" alt=""/></span><strong>${hp}<small>/${maxHp}</small></strong></div>`;
+  return `<div class="brush-health ${extra}" aria-label="${extra ? '敌方' : '玩家'}生命 ${hp}/${maxHp}"><img class="hp-track" src="${asset('ref-brush-red')}" alt="" aria-hidden="true" draggable="false"/><span class="hp-clip" style="width:${Math.max(0, hp / maxHp * 100)}%"><img src="${asset('ref-brush-red')}" alt=""/></span><strong>${hp}<small>/${maxHp}</small></strong></div>`;
 }
 function relicSymbol(relic) { return relic.id === 'bell' ? navObject('bell', 'relic-symbol') : icon('lantern', 'relic-symbol'); }
 function readStored(key) { try { return localStorage.getItem(key); } catch { return null; } }
@@ -114,7 +116,7 @@ function homeMarkup() {
     <header class="home-header"><button class="profile-entry" data-action="training">${avatarMarkup()}<span>${brushLabel(rank.name)}<small>阅历 ${profile.experience} · ${rank.needed ? `距下阶 ${rank.needed - rank.current}` : '修行圆满'}</small></span></button><div class="home-tools">${iconButton('compendium', 'book', '阴司图鉴')}${iconButton('menu', 'gear', '设置')}</div></header>
     <div class="home-title"><p>阴 司 · 鬼 差 府</p><img src="${asset('ui-logo')}" alt="夜渡 · 阴债录"/><span>灯火可借，归处常在。</span></div>
     <div class="home-bottom"><div class="home-status"><button class="home-relic" data-action="training">${relicSymbol(relic)}<span>今夜法器 · ${relic.name}</span></button><button class="home-milestone" data-action="training">${claims ? `${claims} 项修行可领取` : milestone ? `修行 · ${milestone.title}` : '修行圆满'} ${icon('arrow')}</button></div>
-      ${activeRun() ? `<button class="primary-button" data-action="continue">${icon('lantern')} 继续夜巡 <small>${run.route.completedIds.length}/${routeLength()} 层 · ${run.hp} 命</small>${icon('arrow')}</button><button class="text-button home-new" data-action="modes">另选冒险模式</button>` : `<button class="primary-button" data-action="modes">${icon('lantern')} 出门闯塔 ${icon('arrow')}</button><p class="home-caption">第一幕 · 奈何之前 / 约 25–40 分钟</p>`}
+      ${activeRun() ? `<button class="primary-button home-adventure" data-action="continue">${icon('lantern')}<span class="home-adventure-label"><span class="home-adventure-title">继续夜巡</span><small>${run.route.completedIds.length}/${routeLength()} 层 · ${run.hp} 命</small></span>${icon('arrow')}</button><button class="text-button home-new" data-action="modes">另选冒险模式</button>` : `<button class="primary-button home-adventure" data-action="modes">${icon('lantern')}<span class="home-adventure-label"><span class="home-adventure-title">出门闯塔</span></span>${icon('arrow')}</button><p class="home-caption">第一幕 · 奈何之前 / 约 25–40 分钟</p>`}
       <nav class="home-nav" aria-label="府邸功能"><button data-action="training">${navObject('shrine')}<span>修行</span><small>${claims ? '有新解锁' : '解锁 · 法器'}</small></button><button data-action="compendium">${navObject('bag')}<span>图鉴</span><small>符箓 · 百鬼</small></button><button data-action="records">${navObject('records')}<span>夜巡档案</span><small>战绩 · 行迹</small></button></nav><p class="home-footer">第 ${profile.totalRuns + 1} 夜，等你提灯。</p></div></section>`;
 }
 function modesMarkup() {
@@ -149,12 +151,13 @@ function playerStatusMarkup() {
   return `<button class="player-status-row" data-action="inventory" aria-label="查看当前状态与行囊">${states.length ? states.map(([key, label]) => `<span>${label} ${run[key]}</span>`).join('') : `<span>冥钱 ${run.gold} · 药物 ${run.potions?.length || 0}/3</span>`}</button>`;
 }
 function arenaMarkup() {
-  return renderBattlefield(run, { busy, pendingTarget, asset, icon, healthMarkup, animationTime: performance.now() });
+  const enemyTargets = pendingTarget?.kind === 'card' ? getCardEnemyTargets(run, pendingTarget.uid) : null;
+  return renderBattlefield(run, { busy, pendingTarget, enemyTargets, asset, icon, healthMarkup, animationTime: performance.now() });
 }
 function cardLayersMarkup(card) {
-  const visual = getCardVisual(card);
+  const visual = getCardVisual(card, { latestArtwork: true });
   const frame = `<img src="${asset(visual.frame)}" alt="" draggable="false"/>`;
-  return `<span class="card-picture" aria-hidden="true"><img class="card-background" data-card-layer="background" src="${asset(visual.background)}" alt="" draggable="false"/><img class="card-art" data-card-layer="icon" src="${asset(visual.icon)}" alt="" draggable="false"/></span><span class="card-frame" data-card-layer="frame" aria-hidden="true">${frame.repeat(3)}</span><span class="card-cost" data-card-layer="cost"><img class="card-cost-art" src="${asset(visual.cost)}" alt="" aria-hidden="true" draggable="false"/><span class="card-cost-number">${card.cost ?? '—'}</span></span>`;
+  return `<span class="card-picture" aria-hidden="true"><img class="card-background" data-card-layer="background" src="${asset(visual.background)}" alt="" draggable="false"/><img class="card-art" data-card-layer="icon" style="${cardArtStyle(visual)}" src="${asset(visual.icon)}" alt="" draggable="false"/></span><span class="card-frame" data-card-layer="frame" aria-hidden="true">${frame.repeat(3)}</span><span class="card-cost" data-card-layer="cost"><img class="card-cost-art" src="${asset(visual.cost)}" alt="" aria-hidden="true" draggable="false"/><span class="card-cost-number">${card.cost ?? '—'}</span></span>`;
 }
 function cardMarkup(cardId, options = {}) {
   const card = viewCard(options.uid ? { ...options, cardId } : cardId), selected = options.uid === selectedUid && Boolean(options.uid);
@@ -206,7 +209,7 @@ function trainingContent() {
 function currentModalKind(value = modal) { return typeof value === 'string' ? value : value?.kind; }
 function cardCollectionEntry(instance, { key, count, base = false } = {}) {
   const card = viewCard(instance, base ? null : run);
-  const visual = getCardVisual(card);
+  const visual = getCardVisual(card, { latestArtwork: true });
   return {
     key: key ?? cardCollectionKey(card), name: card.name,
     icon: visual.icon, background: visual.background, family: getCardFamily(card).id,
@@ -438,6 +441,9 @@ function requestPlay(uid, targetUid = null, fromDrag = false) {
   if (!instance || busy) return;
   const card = viewCard(instance), enemies = liveEnemies();
   if (!card.playable) { toast(card.reason || '这张牌现在无法打出。'); return; }
+  const targets = getCardEnemyTargets(run, instance);
+  if (card.target !== 'self' && !targets.some(target => target.eligible)) { toast(targets[0]?.reason || '当前没有可作用的鬼怪。'); return; }
+  if (card.target === 'enemy' && targetUid && !targets.some(target => target.uid === targetUid && target.eligible)) { toast(targets.find(target => target.uid === targetUid)?.reason || '这张牌当前无法作用于该鬼怪。'); return; }
   if (card.target === 'enemy' && (enemies.length > 1 || fromDrag) && !targetUid) {
     selectedUid = null;
     if (fromDrag) { pendingTarget = null; render(); toast('请把单体牌拖到一个鬼怪身上再松手。'); return; }
@@ -459,26 +465,53 @@ function chooseEnemy(uid) {
   if (intent.kind === 'potion') perform({ type: 'usePotion', potionId: intent.potionUid, targetUid: uid });
   else requestPlay(intent.uid, uid);
 }
-function enemyAtPointer(x, y) {
-  return pickEnemyTarget([...app.querySelectorAll('.enemy-slot')].map(element => {
+function enemyTargetBounds() {
+  return [...app.querySelectorAll('.enemy-slot')].map(element => {
     const rect = element.getBoundingClientRect();
-    return { uid: element.dataset.enemyUid, left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom };
-  }), x, y);
+    return { uid: element.dataset.enemyUid, active: element.dataset.cardTargetEligible !== 'false', left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom };
+  });
+}
+function enemyAtPointer(x, y) {
+  const targets = dragStart?.enemyTargets;
+  const bounds = dragStart?.enemyBounds || enemyTargetBounds();
+  return pickEnemyTarget(bounds.map(target => ({ ...target, active: targets ? targets.some(option => option.uid === target.uid && option.eligible) : target.active })), x, y);
 }
 function showDragTargets(card, x, y) {
   const handTop = app.querySelector('.hand')?.getBoundingClientRect().top ?? Infinity;
   const selfTop = (app.querySelector('.command-bar')?.getBoundingClientRect().top ?? Infinity) - 18;
+  const enemyCard = card.target !== 'self';
+  const targets = new Map((dragStart.enemyTargets ??= getCardEnemyTargets(run, dragStart.uid)).map(target => [target.uid, target]));
+  app.querySelector('.arena')?.classList.add('showing-card-targets');
+  app.querySelectorAll('.enemy-slot').forEach(element => {
+    const target = targets.get(element.dataset.enemyUid), eligible = Boolean(target?.eligible);
+    element.classList.toggle('target-ready', eligible);
+    element.classList.toggle('target-unavailable', !eligible);
+    element.dataset.cardTargetEligible = String(eligible);
+    const button = element.querySelector('.enemy-target');
+    if (!eligible) button?.setAttribute('aria-disabled', 'true');
+    else button?.removeAttribute('aria-disabled');
+  });
   effectsPresenter.setSelfGuide({ visible: card.target === 'self', active: card.target === 'self' && y >= selfTop && y - dragStart.y > 36, label: y >= selfTop ? '松手 · 对自身施放' : '向下拖回灯前 · 对自身施放' });
   const hint = app.querySelector('.hand-hint > span:first-child');
-  if (hint) hint.textContent = card.target === 'self' ? (y >= selfTop && y - dragStart.y > 36 ? '松手 · 对自身施放' : '向下拖回灯前 · 对自身施放') : card.target === 'all' ? '拖向战场 · 对全体施放' : '拖到鬼怪身上 · 松手施放';
-  const targetUid = card.target === 'enemy' && y < handTop ? enemyAtPointer(x, y) : null;
-  app.querySelectorAll('.enemy-slot').forEach(element => element.classList.toggle('drag-aim', y < handTop && (card.target === 'all' || element.dataset.enemyUid === targetUid)));
+  const unavailable = enemyCard && ![...targets.values()].some(target => target.eligible);
+  if (hint) hint.textContent = unavailable ? targets.values().next().value?.reason || '当前没有可作用的鬼怪' : card.target === 'self' ? (y >= selfTop && y - dragStart.y > 36 ? '松手 · 对自身施放' : '向下拖回灯前 · 对自身施放') : card.target === 'all' ? '头顶箭头为可作用目标 · 拖向战场施放' : '拖到箭头下的鬼怪身上 · 松手施放';
+  const targetUid = enemyCard && y < handTop ? enemyAtPointer(x, y) : null;
+  app.querySelectorAll('.enemy-slot').forEach(element => element.classList.toggle('drag-aim', Boolean(targetUid) && targets.get(element.dataset.enemyUid)?.eligible && (card.target === 'all' || element.dataset.enemyUid === targetUid)));
+}
+function clearEnemyTargetFeedback() {
+  app.querySelector('.arena')?.classList.remove('showing-card-targets', 'choosing-target');
+  app.querySelectorAll('.enemy-slot').forEach(slot => {
+    slot.classList.remove('target-ready', 'target-unavailable', 'drag-aim');
+    delete slot.dataset.cardTargetEligible;
+    const button = slot.querySelector('.enemy-target');
+    button?.removeAttribute('aria-disabled');
+    if (button) button.setAttribute('aria-label', button.getAttribute('aria-label').replace(/^(选择目标|当前不可作用)：/, '查看：'));
+  });
 }
 function cancelTargetForDrag() {
   if (!pendingTarget) return;
   pendingTarget = null;
-  app.querySelector('.arena')?.classList.remove('choosing-target');
-  app.querySelectorAll('.enemy-slot').forEach(slot => slot.classList.remove('target-ready'));
+  clearEnemyTargetFeedback();
   const hint = app.querySelector('.hand-hint > span:first-child'); if (hint) hint.textContent = handInstruction();
 }
 function floatEffect(message, type, enemyUid) {
@@ -579,7 +612,6 @@ app.addEventListener('click', event => {
   else if (action === 'deselect') closeInspection();
   else if (action === 'play') { if (selectedUid) requestPlay(selectedUid); }
   else if (action === 'enemy') chooseEnemy(button.dataset.enemyUid);
-  else if (action === 'enemy-info') { if (pendingTarget) chooseEnemy(button.dataset.enemyUid); else showModal({ kind: 'enemy', enemyUid: button.dataset.enemyUid }); }
   else if (action === 'borrow') perform({ type: 'borrow' });
   else if (action === 'repay') perform({ type: 'repay' });
   else if (action === 'end-turn') endTurn();
@@ -592,7 +624,7 @@ app.addEventListener('pointerdown', event => {
   ignorePointerClick = false;
   const card = event.target.closest('.hand .card'); if (!card || busy || run?.pendingChoice || modal || dragStart || event.isPrimary === false || event.button !== 0) return;
   cancelTargetForDrag();
-  dragStart = { uid: card.dataset.uid, x: event.clientX, y: event.clientY, pointerId: event.pointerId, card, dragged: false }; card.setPointerCapture(event.pointerId);
+  dragStart = { uid: card.dataset.uid, x: event.clientX, y: event.clientY, pointerId: event.pointerId, card, dragged: false, enemyBounds: enemyTargetBounds() }; card.setPointerCapture(event.pointerId);
 });
 app.addEventListener('pointermove', event => {
   if (!dragStart || dragStart.pointerId !== event.pointerId) return;
@@ -603,7 +635,7 @@ function clearCardDrag() {
   const drag = dragStart; dragStart = null;
   if (!drag) return null;
   drag.card.classList.remove('dragging'); drag.card.style.removeProperty('--drag-y'); drag.card.style.removeProperty('--drag-x');
-  app.querySelectorAll('.enemy-slot').forEach(slot => slot.classList.remove('drag-aim'));
+  clearEnemyTargetFeedback();
   effectsPresenter.setSelfGuide({ visible: false });
   const hint = app.querySelector('.hand-hint > span:first-child'); if (hint) hint.textContent = handInstruction();
   if (drag.card.hasPointerCapture(drag.pointerId)) drag.card.releasePointerCapture(drag.pointerId);
@@ -619,11 +651,12 @@ app.addEventListener('pointerup', event => {
   const card = viewCard(run.hand.find(card => card.uid === dragStart.uid));
   const selfTop = (app.querySelector('.command-bar')?.getBoundingClientRect().top ?? Infinity) - 18;
   const outcome = resolveCardDrag(dragStart, event.clientX, event.clientY, handTop, { target: card.target, selfTop });
+  const targetUid = outcome === 'play' && card.target === 'enemy' ? enemyAtPointer(event.clientX, event.clientY) : null;
   if (outcome === 'play') pendingDragSnapshot = effectsPresenter.capture();
   const drag = clearCardDrag();
   if (outcome === 'tap') return;
   event.preventDefault(); ignorePointerClick = true;
-  if (outcome === 'play') requestPlay(drag.uid, enemyAtPointer(event.clientX, event.clientY), true);
+  if (outcome === 'play') requestPlay(drag.uid, targetUid, true);
   if (!busy) pendingDragSnapshot = null;
 });
 app.addEventListener('pointercancel', event => { if (dragStart?.pointerId === event.pointerId) cancelCardDrag(); });
@@ -670,5 +703,5 @@ document.addEventListener('keydown', event => {
   else if (event.key === 'Escape') { selectedUid = null; render(); }
 });
 let resizeTimer;
-window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { if (!dragStart) render(); }, 120); });
+window.addEventListener('resize', () => { if (dragStart) cancelCardDrag(); clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { if (!dragStart) render(); }, 120); });
 render();

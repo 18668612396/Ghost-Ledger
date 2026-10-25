@@ -1,0 +1,946 @@
+{
+  "generator": "image_gen built-in",
+  "date": "2026-10-25",
+  "purpose": "逐牌专属透明主体",
+  "assets": [
+    {
+      "filename": "card-art-unique-ic_strike.png",
+      "cardId": "ic_strike",
+      "name": "斩魂",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated transparent foreground illustration for the Chinese underworld card game Ghost Ledger. Card: 斩魂 / soul-cleaving judgment brush, a basic single-target strike. Subject: a dark polished wooden judge's calligraphy brush with brass fittings, a small jade bead and a vermilion tassel, transformed into a sharp brush-blade making ONE clear diagonal slash through a small pale teal soul-wisp. The cut soul-wisp and a restrained cinnabar stroke are part of the same compact icon, not a scene. Style: charming solemn Chinese ghost-folklore watercolor and gouache, fine lively dark ink contours, tactile hand-painted pigment, cream brush hairs, warm muted gold, cinnabar red, jade and pale cyan soul light; matching a paper-and-ink Chinese card game, not glossy 3D or realistic horror. Composition: square canvas, optical center of the whole silhouette exactly around 50% x 50%; complete subject occupying about 72–78% of the canvas, generous balanced transparent margin of at least 12% on all sides, readable at small card size. Keep the brush and wisp visually balanced, not pushed into a corner. Genuine transparent alpha background including empty spaces between tassel strands; no background color, backdrop, smoke ground plate, cast shadow, scenery, card border, paper rectangle, UI, text, lettering, digits, logo or watermark. No person, no gore. Return one square PNG with original transparent alpha.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-c368c5e7-d255-4a77-96bd-924fa3a6f206.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "e5d5ee24c29f9e16fb3b0e1dea54b02eadd6aa326b7c59197fca5aa9dbb4b21d",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          81,
+          63,
+          1213,
+          1193
+        ],
+        "transparentRatio": 0.6764458994375891,
+        "corners": [
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_bash.png",
+      "cardId": "ic_bash",
+      "name": "破煞",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 破煞; 造成8点伤害，施加2回合易伤。\nSubject: A short bronze exorcist hammer crushes a small cracked ghost-mask ward, with a clear radial fracture and pale teal light leaking through the weakened shield.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-73c4a4f0-8025-4a5c-b115-83eb906f63ee.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "7ee19fcf868ee0425fab2e704ef71396506410e1ddd4d2e2d124d3d711260efa",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          14,
+          29,
+          1244,
+          1212
+        ],
+        "transparentRatio": 0.4481684129128098,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_anger.png",
+      "cardId": "ic_anger",
+      "name": "嗔火",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 嗔火; 造成6点伤害，将此牌的复制加入弃牌堆。\nSubject: One expressive vermilion demon-flame bud splits off a second smaller matching ember, connected by a curling flame stroke; an angry yet charming mask-like flame silhouette, no person.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-74e9845b-f033-4933-9953-364a11241cbf.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "ed521914613344c9ec1717b00b6b4e5222dffee10f537ffbe41b9595d23b486b",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          57,
+          11,
+          1217,
+          1242
+        ],
+        "transparentRatio": 0.4586039188154524,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_body_slam.png",
+      "cardId": "ic_body_slam",
+      "name": "镇山印",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 镇山印; 造成{damage}点攻击伤害，基础伤害等于当前护甲。\nSubject: A heavy mountain-shaped jade judgment seal descends with layered translucent teal armor plates stacked behind it, converting the weight of protection into a compact crushing shockwave.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-c005efa3-5efe-4b86-b0aa-d2f58d084cb1.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "0df049896add05dd8fa57071e2cb213e1c39ded64c1bf31b760b21aa1827712b",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          48,
+          55,
+          1225,
+          1225
+        ],
+        "transparentRatio": 0.4119487496470624,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_clash.png",
+      "cardId": "ic_clash",
+      "name": "断魂",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 断魂; 其他手牌全为攻击牌时才能使用。造成14点伤害。\nSubject: Two short ritual ghost-catching blades cross in a decisive sharp X-shaped strike and cut one pale soul tether cleanly, a compact pure-offense silhouette with no shield.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-2a17880d-b5a7-44c7-b72a-327a8e2ab110.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "b9522655ec1fb31ce9b4ff97123dcd7032b959441a51b33ecc670d28e6fbd479",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          64,
+          69,
+          1202,
+          1220
+        ],
+        "transparentRatio": 0.5178783554507553,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_cleave.png",
+      "cardId": "ic_cleave",
+      "name": "横扫阴风",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 横扫阴风; 对所有敌人造成8点伤害。\nSubject: One broad crescent-shaped jade wind blade sweeps horizontally through three tiny pale ghost wisps; the wide single sweep is the main subject and the wisps remain subordinate.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-21d2c933-10b5-4c08-a663-85f8fd80cb47.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "a4fb1195c368f26a8bee24985dadf4d26ba1b47e03dd5b4e6f012feef63602af",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          20,
+          91,
+          1248,
+          1195
+        ],
+        "transparentRatio": 0.3904780619084321,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_clothesline.png",
+      "cardId": "ic_clothesline",
+      "name": "锁喉索",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 锁喉索; 造成12点伤害，施加2回合虚弱。\nSubject: A red-and-black braided soul-catching lasso with a bronze weight tightens around the neck-like base of a small drooping pale ghost-mask wisp, conveying restrained strength and weakness without gore.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-212c944f-96fa-487d-bf01-2cf1fba7cd11.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "e48e8d6420e82e01d99243b4fd709fb2dce6e04a9fc6776f3ae2791215e6896a",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          35,
+          27,
+          1239,
+          1236
+        ],
+        "transparentRatio": 0.4451000816525873,
+        "corners": [
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_headbutt.png",
+      "cardId": "ic_headbutt",
+      "name": "回魂击",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 回魂击; 造成9点伤害，将弃牌堆中1张牌放到抽牌堆顶。\nSubject: A compact bronze spirit-return mallet strikes a small teal soul mark while a curved return ribbon pulls one small blank paper talisman backward toward the mallet.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-bbff1a84-641c-436c-aac0-fce59cc7f2e4.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "a86612dfaa82187326ba3d19c96753e63f2cfd3dfbab11dae0146c9f0f03fdef",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          40,
+          81,
+          1231,
+          1204
+        ],
+        "transparentRatio": 0.5041195129334137,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_heavy_blade.png",
+      "cardId": "ic_heavy_blade",
+      "name": "千钧斩",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 千钧斩; 造成14点伤害。本次攻击获得3倍力量加成。\nSubject: An exceptionally heavy broad bronze ritual greatsword with a jade grip and three thick brass counterweight rings falls in one powerful downward slash; the massive blade clearly dominates.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-635301e3-fa68-438d-addf-656621381c26.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "5c3eff2f0bc4d5a7e5be994d095511f5b0fb7040fef42fa643692a0abd0f788b",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          12,
+          12,
+          1243,
+          1243
+        ],
+        "transparentRatio": 0.35102727094668673,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_iron_wave.png",
+      "cardId": "ic_iron_wave",
+      "name": "铁衣震",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 铁衣震; 获得5点护甲，造成5点伤害。\nSubject: An empty Chinese lamellar spirit-armor cuirass radiates one sharp circular iron shockwave, combining a readable protective breastplate with an outward attack pulse.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-0f9e1b61-070a-4b66-8b30-5cbaef1e4ee0.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "d209ba5e92b03200ecf5981c4d690bf9cfaa80e5cfdb6b056987e3072f9529b6",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          5,
+          72,
+          1252,
+          1236
+        ],
+        "transparentRatio": 0.3661419025307215,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_perfected_strike.png",
+      "cardId": "ic_perfected_strike",
+      "name": "万刃归魂",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 万刃归魂; 造成{damage}点伤害：基础6点，每有1张未消耗的「斩击」牌额外2点。\nSubject: A fan of many small ghost-hunting blades converges into one central jade-edged judgment sword, several clean blade silhouettes gathering into a single stronger attack.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-48aac4dd-974b-4f10-8eff-eba175b9a008.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "d74e05e6d711682723f25acab5c71ec4c34a61936deaa042cfbce1a49fbb3866",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          86,
+          59,
+          1214,
+          1156
+        ],
+        "transparentRatio": 0.48699027545665674,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_pommel_strike.png",
+      "cardId": "ic_pommel_strike",
+      "name": "引魂斩",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 引魂斩; 造成9点伤害，抽1张牌。\nSubject: A compact bronze hooked soul saber draws ONE small luminous blank paper talisman along a short curved teal tether while completing a clean forward cut. The entire teal trail curls inward and must stop well before every canvas edge. Keep saber, talisman, and all mist within the central 72% square of the canvas; surround the complete group with generous transparent margins.\nHighest priority: zoom out to a COMPLETE standalone object emblem with broad TRANSPARENT margins. It must not be cropped. Do not enlarge it to fill the canvas.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-73061043-3766-4583-9b38-a7c3f18ae35f.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "b0108691336374dd7d86782e606eb0ac028be7419cc7a92512538f17d6be6633",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          111,
+          226,
+          1147,
+          1005
+        ],
+        "transparentRatio": 0.7318144934614338,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "previousVariants": [
+        {
+          "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-c31476f4-0aca-4143-b4b5-2f93663350e2.png",
+          "sha256": "c4dea933ce679f77e84039c6e208b21417884c4d80295107def7ddf9f9012c64",
+          "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 引魂斩; 造成9点伤害，抽1张牌。\nSubject: A bronze hooked soul saber draws one small luminous blank paper talisman along a curved teal tether while completing a clean forward cut."
+        }
+      ]
+    },
+    {
+      "filename": "card-art-unique-ic_sword_boomerang.png",
+      "cardId": "ic_sword_boomerang",
+      "name": "飞钱斩",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 飞钱斩; 随机对敌人造成3点伤害，共3次。每次重新选择目标。\nSubject: Three sharp-edged square-holed bronze coins ricochet along a compact boomerang-like arc, with restrained golden motion strokes emphasizing repeated unpredictable strikes.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-258657b7-2652-4562-9704-aef4c12b5d07.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "9520f14cd92cabf724b72a44d9c572fc14de619522c8c73d300ed2dd7812b141",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          90,
+          81,
+          1208,
+          1187
+        ],
+        "transparentRatio": 0.5613882466060759,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_thunderclap.png",
+      "cardId": "ic_thunderclap",
+      "name": "惊雷咒",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 惊雷咒; 对所有敌人造成4点伤害，然后施加1回合易伤。\nSubject: A small jade-and-vermilion thunder talisman releases three branching cyan lightning forks toward three tiny cracked ghost sigils; only nonlinguistic decorative marks, no readable writing.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-7ad319d0-5d14-4816-83e5-919fe017c9a7.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "906e529927bee9972095b282cc310df3f1a45e4ff79e58a71f5a83f886b5e0eb",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          66,
+          36,
+          1211,
+          1241
+        ],
+        "transparentRatio": 0.4739093274726616,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_twin_strike.png",
+      "cardId": "ic_twin_strike",
+      "name": "双生斩",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 双生斩; 造成5点伤害，攻击2次。\nSubject: A matched pair of curved ghost-officer sabers makes two parallel crescent slash strokes, a clearly paired balanced composition, no chains.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-d49e84e9-5ada-42af-844a-696301634b64.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "8151f50e2d68db259512da7b65500ab9e13a7b1ae037927e8338f1fb0ac67df4",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          45,
+          60,
+          1238,
+          1221
+        ],
+        "transparentRatio": 0.37609474243823277,
+        "corners": [
+          0,
+          0,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_wild_strike.png",
+      "cardId": "ic_wild_strike",
+      "name": "裂骨斩",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 裂骨斩; 造成12点伤害，将1张伤口随机放入抽牌堆。\nSubject: A jagged bone-white ritual cleaver breaks a small dry bone charm into porcelain-like chips; a restrained cinnabar crack marks the cost of the reckless cut, no flesh or gore.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-a3cbd3b4-a566-4639-94ab-414954537a3b.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "97a3f8f26ece452f3ce869ac71fc2cc290d97697a5cbc927cd66ee618266d73e",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          22,
+          34,
+          1239,
+          1217
+        ],
+        "transparentRatio": 0.5258045069175766,
+        "corners": [
+          0,
+          0,
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_blood_for_blood.png",
+      "cardId": "ic_blood_for_blood",
+      "name": "以血偿血",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 以血偿血; 造成18点伤害。本场每次失去生命，此牌费用降低1。\nSubject: A small ornate underworld balance scale holds a symbolic cinnabar-red life droplet in one pan and a sharpened ritual blade in the other, the blade glowing stronger as the droplet is spent.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-2e903881-c58e-4f41-8acd-91f557a88a46.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "8d71987440f87c0635cfe1451d67aebaee92c90c1104c1a0f398dfcf8079538d",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          33,
+          19,
+          1227,
+          1231
+        ],
+        "transparentRatio": 0.5260239005517273,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_carnage.png",
+      "cardId": "ic_carnage",
+      "name": "屠魂",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 屠魂; 虚无。造成20点伤害。\nSubject: A broad spectral execution axe cleaves a small pale teal soul wisp; its outer blade edge dissolves into a few transparent watercolor wisps, conveying a fleeting heavy attack.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-e9a08642-d308-4492-8cb4-bdf2849b42f7.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "bcca9c0bf1dc58a02d63225bb2ba4443e4b9626f6c5dd849064e1d3534698276",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          43,
+          27,
+          1229,
+          1219
+        ],
+        "transparentRatio": 0.4871746932940587,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_dropkick.png",
+      "cardId": "ic_dropkick",
+      "name": "踏煞",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 踏煞; 造成5点伤害。若目标易伤，获得1香火并抽1张牌。\nSubject: A black cloud-pattern embroidered ghost-officer boot stomps a cracked jade ward, releasing one tiny incense flame and one small blank paper token as clear subordinate rewards.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-8bd8cd8e-a8e9-41ff-b6f2-4e675d4e543a.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "0eb358d04a4c865323965521ef8bad44a98632a007e4ce1c2cbe0810d3607f45",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          84,
+          43,
+          1189,
+          1221
+        ],
+        "transparentRatio": 0.48462972713791147,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_hemokinesis.png",
+      "cardId": "ic_hemokinesis",
+      "name": "血书判",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 血书判; 失去2点生命，造成15点伤害。\nSubject: A cinnabar-dipped judgment brush over a compact partly rolled blank parchment is linked to a small red life bead; one forceful red ink stroke erupts forward as a verdict, no lettering or gore.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-9a624692-e90a-4a8c-9a12-834dddf4f425.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "f60d3e0089c62ca028b3c771e49f8ab9cb9379ad94ef28e681623a69cc2ab7c4",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          23,
+          21,
+          1225,
+          1214
+        ],
+        "transparentRatio": 0.5421591894772454,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_pummel.png",
+      "cardId": "ic_pummel",
+      "name": "连环索",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 连环索; 造成2点伤害，攻击4次。消耗。\nSubject: Four small weighted iron-chain loops form a compact circular flurry around one central teal soul mark, each weight clearly following the next in repeated strikes.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-29a1b912-05ee-43cf-9978-5b2d1ae5d326.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "bf96cd1dd6c75a06d7b269c09a2883d1f438ac2832708d17e2d21ada850eae04",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          35,
+          35,
+          1229,
+          1211
+        ],
+        "transparentRatio": 0.3547334335548891,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_rampage.png",
+      "cardId": "ic_rampage",
+      "name": "百战煞",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 百战煞; 造成{damage}点伤害。每次打出后，此副本本场伤害增加5。\nSubject: ONE short, compact weathered demon-mask battle pennant on a SHORT bronze staff, fully visible including its upper finial and lower staff cap. Layered cinnabar slash scars on the cloth and a restrained jade aura convey increasing strength after repeated battles. Make a diagonal, almost square-shaped emblem, not a tall vertical banner. Place every tip, streamer and wisp inside the central 72% square of the canvas; a broad transparent border must remain around the ENTIRE emblem. No part may touch or cross an edge.\nHighest priority: zoom out to a COMPLETE standalone object emblem with broad TRANSPARENT margins. It must not be cropped. Do not enlarge it to fill the canvas.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-f596fbb2-816f-484e-ad68-c29c44947f98.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "55f6ee6b61f58da46b849508e627cc769ef45d5eebe1fa8150dc9eec27c757c4",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          148,
+          119,
+          1158,
+          1149
+        ],
+        "transparentRatio": 0.6391101902937713,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "previousVariants": [
+        {
+          "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-7f7abd58-a526-46f1-94b4-d8ab7cfbfadc.png",
+          "sha256": "16e723ccb3a8894eaf9bffc41350ec2cb5d413ffedd848c1473d99e205b20350",
+          "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 百战煞; 造成{damage}点伤害。每次打出后，此副本本场伤害增加5。\nSubject: A weathered demon-mask battle pennant with layered cinnabar slash scars rises in a growing red-and-jade aura; the worn standard and accumulating marks convey repeated battle growth."
+        }
+      ]
+    },
+    {
+      "filename": "card-art-unique-ic_reckless_charge.png",
+      "cardId": "ic_reckless_charge",
+      "name": "无常突",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 无常突; 造成7点伤害，将1张眩晕随机放入抽牌堆。\nSubject: ONE detached black-and-white ghost-officer SPEARHEAD with two SHORT funeral ribbon streamers, thrusting diagonally through a small torn pale spirit veil. Add three tiny star-like daze motes behind it. Object icon only: absolutely NO people, NO faces, NO human figures, NO bodies, NO arms, NO portraits. Short spearhead with compact socket only, no long spear shaft. Keep the compact complete group inside the central 72% square, with transparent margins all around.\nHighest priority: zoom out to a COMPLETE standalone object emblem with broad TRANSPARENT margins. It must not be cropped. Do not enlarge it to fill the canvas.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-42ad481c-762b-4324-9553-e163dfb92344.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "0f70e61696323e92598d3d23ba56c31f61fe7cd2012b68f85646cd8842decf90",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          158,
+          171,
+          1199,
+          1094
+        ],
+        "transparentRatio": 0.654493817550982,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "previousVariants": [
+        {
+          "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-dcfa2eda-ffac-443f-a0a9-6c10d76771da.png",
+          "sha256": "2c62e35c4d87f147cd9e20b05976a7a4bc9ea4831bcc7bc0885b68366075b6ca",
+          "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 无常突; 造成7点伤害，将1张眩晕随机放入抽牌堆。\nSubject: A black-and-white ghost-officer spearhead with short funeral streamers rushes through a torn pale spirit veil; a few small star-like daze motes trail behind, all inside one compact silhouette."
+        }
+      ]
+    },
+    {
+      "filename": "card-art-unique-ic_searing_blow.png",
+      "cardId": "ic_searing_blow",
+      "name": "炼狱烙",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 炼狱烙; 造成{damage}点伤害。可反复升级，每次增伤依次为4、5、6……。\nSubject: An incandescent bronze branding iron with an abstract flame-shaped head floats among compact tongues of infernal fire and two reforging heat rings, visibly heated and hammered many times.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-2473f69e-a7fb-4c00-8c3c-592d6b03beba.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "693c02a17c350506f0ebb5bcb338f9a8cea9639588085b184fdd78463b539051",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          28,
+          19,
+          1242,
+          1239
+        ],
+        "transparentRatio": 0.44042922297769943,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_sever_soul.png",
+      "cardId": "ic_sever_soul",
+      "name": "斩断尘缘",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 斩断尘缘; 消耗其他所有非攻击手牌，造成16点伤害。\nSubject: A pair of elegant ritual shears cuts red fate threads linking three small fading blank talismans; severed thread ends curl away and the shears stay the clear central subject.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-30f43160-28b4-4076-9f17-2f7f8bd034f5.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "e640d19df2f82b8588b8e2b355928f1591853493fefada2d94140eeaa4acaeda",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          67,
+          19,
+          1215,
+          1234
+        ],
+        "transparentRatio": 0.5166898142848785,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_uppercut.png",
+      "cardId": "ic_uppercut",
+      "name": "撼魂",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 撼魂; 造成13点伤害，施加1回合虚弱和1回合易伤。\nSubject: A jade-and-brass ghost-officer gauntlet delivers a rising uppercut that lifts one small pale ghost mask through two compact shock rings, a crisp upward attack silhouette.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-5b58c60b-ebcd-413e-b0c3-fafc6ee085db.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "4a7b35e53221faca7bcd1224269e80202c83dca6d69b07627ee7d09319277d80",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          11,
+          35,
+          1245,
+          1217
+        ],
+        "transparentRatio": 0.5072037422830674,
+        "corners": [
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_whirlwind.png",
+      "cardId": "ic_whirlwind",
+      "name": "万魂风",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 万魂风; 消耗全部剩余香火。对所有敌人造成5点伤害，重复X次。\nSubject: A compact vortex of pale soul wisps and red-edged ritual blade ribbons circles a small raised incense flame at its center, communicating repeated all-around attacks without scenery.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-870be03a-ed74-40f0-9398-2ea68d22e9ce.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "7a2c9913fab2ed112d571b3e9d1b83cc59885cb26051dbc3060c1153d7c1ec6d",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          32,
+          40,
+          1237,
+          1219
+        ],
+        "transparentRatio": 0.2670510188767555,
+        "corners": [
+          0,
+          0,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_bludgeon.png",
+      "cardId": "ic_bludgeon",
+      "name": "断狱",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 断狱; 造成32点伤害。\nSubject: An oversized iron judgment maul with warm bronze bands smashes two small rusted prison bars into a bent shape, emphasizing a single devastating weighty blow; no dungeon scene.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-de419e2a-96ae-45db-8a2c-c6ee9a0fb8ab.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "f0db9b4bf6929bc333562b739ee413ccde257257544b925d272518223a916c4b",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          37,
+          23,
+          1244,
+          1228
+        ],
+        "transparentRatio": 0.3925937796499368,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_feed.png",
+      "cardId": "ic_feed",
+      "name": "噬魂",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 噬魂; 造成10点伤害。由此击杀非召唤仆从时，永久增加3点最大生命。消耗。\nSubject: A small charming bronze-and-jade ghost-beast reliquary opens ceremonial jaws to absorb one bright teal soul pearl, revealing a glowing jade heart gem inside its rounded body.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-20eca319-2a9f-4c43-9c0b-2751561f6fc0.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "d41760ac72523af1186450098922787dcbe0fae1c536fadb2d97e163359d15d5",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          40,
+          57,
+          1225,
+          1214
+        ],
+        "transparentRatio": 0.4288458750181238,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_fiend_fire.png",
+      "cardId": "ic_fiend_fire",
+      "name": "万符俱焚",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 万符俱焚; 消耗其他所有手牌。每实际消耗1张，对目标造成7点伤害。消耗。\nSubject: A fan of several blank yellow funeral talismans burns from its edges and merges into one pointed blue-and-vermilion ghost-fire burst; distinct paper silhouettes remain readable.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-9d15eca6-42fe-435b-9d67-9715fff01ee1.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "3b5ea0fef6ca04c9d6112d79f6c25ab3a06a6327d61c7f071eb106475c832560",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          69,
+          34,
+          1194,
+          1222
+        ],
+        "transparentRatio": 0.54639634827245,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_immolate.png",
+      "cardId": "ic_immolate",
+      "name": "焚纸送魂",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 焚纸送魂; 对所有敌人造成21点伤害，将1张灼伤加入弃牌堆。\nSubject: A small folded paper offering boat carrying a blue soul flame is surrounded by several burning blank paper offerings flaring outward in red arcs, a compact ritual cremation symbol, no landscape.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-15cf69d2-ab5b-4c9d-9e7e-2911431276b5.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "da8a1202bbdd5f9b2ad711fbea742ca32e0e157c0304f719fec259e937c12046",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          56,
+          47,
+          1222,
+          1199
+        ],
+        "transparentRatio": 0.43339845190764353,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_reaper.png",
+      "cardId": "ic_reaper",
+      "name": "渡尽黄泉",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 渡尽黄泉; 对所有敌人造成4点伤害，恢复等同实际扣除敌人生命的生命。消耗。\nSubject: A crescent ferryman’s soul scythe is threaded with a turquoise river-like ribbon guiding three small spirit pearls into one jade heart gem, a compact harvesting-and-healing symbol with no river scenery.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-bf667ca6-3f52-47ad-97e8-3aa35cfc33c9.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "3835ae17714dee8cd71eee402169b0b6515dca13cf30eba0c72c1e0a17b84208",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          41,
+          30,
+          1237,
+          1231
+        ],
+        "transparentRatio": 0.49284077236734,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_defend.png",
+      "cardId": "ic_defend",
+      "name": "守灯",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 守灯; 获得5点护甲。\nSubject: A small bronze underworld lantern protects a steady pale-teal flame inside a translucent jade shield shell; the lamp is the clear centered subject and the shield gently encloses it.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-4b05691a-fc0b-43e3-a51a-cb2b2af05fbf.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "e2992f961e576c7fca114629c8ab3347e3bb08ac6f474a32e4a19d4504b0d76a",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          41,
+          22,
+          1222,
+          1231
+        ],
+        "transparentRatio": 0.4061408596160548,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "filename": "card-art-unique-ic_armaments.png",
+      "cardId": "ic_armaments",
+      "name": "敕符",
+      "prompt": "Use case: stylized-concept. Asset type: ONE unique transparent foreground icon for a Chinese underworld folklore card game. Style: hand-painted watercolor and gouache with fine lively dark ink contours, tactile pigment, charming and solemn rather than horror; warm cream, cinnabar red, muted brass gold, jade and pale cyan spirit light. Keep a simple readable subject silhouette at small card size. Composition: square canvas, the optical mass of the COMPLETE object group centered around 50% x 50%; occupy about 78–84% of the canvas, balanced clear transparent space on every side, no cropped extremities. Only the main subject and its necessary action accents. Genuine transparent alpha background, including gaps inside the objects; no flat background, backdrop, scenery, ground plate, cast shadow, frame, card, UI, title, text, numbers, logo or watermark. No gore. Return ONE square transparent PNG.\nCard identity and rule (do not render text): 敕符; 获得5点护甲，本场升级1张手牌。\nSubject: A jade-edged imperial talisman empowers one smaller plain blank paper charm into a bright gold-reinforced charm, surrounded by a compact protective jade halo; no text or written symbols.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-4f66-7083-8709-655110738dde\\exec-7ca58268-d473-414e-95f2-514d265a69d3.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "df57cfed33105018dcc663a15513bc8caa7798c9bf3979e0ba6a0f78fd882280",
+      "operation": "generate",
+      "alphaAudit": {
+        "bboxThreshold16": [
+          35,
+          56,
+          1227,
+          1222
+        ],
+        "transparentRatio": 0.3850777988904405,
+        "corners": [
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    }
+  ]
+}

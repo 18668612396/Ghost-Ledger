@@ -1,0 +1,2316 @@
+{
+  "version": 1,
+  "method": "alpha>=32 bounding-box centering; frame transparent-window center; source PNG bytes unchanged",
+  "frames": {
+    "strike": {
+      "filename": "card-frame-vivid-strike.png",
+      "sha256": "0fcf09558b4effefef2fc4092220c439edef82e74a8afc9ea861a08da4207371",
+      "x": 50.1199,
+      "y": 44.6454,
+      "windowBbox32": [
+        67,
+        182,
+        883,
+        1143
+      ]
+    },
+    "ward": {
+      "filename": "card-frame-vivid-ward.png",
+      "sha256": "f0e89c6514b7de0e9f2f2b2424771f15562273cee2742c582a9f9428a1091c13",
+      "x": 50.0599,
+      "y": 44.6454,
+      "windowBbox32": [
+        68,
+        182,
+        881,
+        1143
+      ]
+    },
+    "spirit": {
+      "filename": "card-frame-vivid-spirit.png",
+      "sha256": "cfe643e43ef683f294aa5ce8cd556dde23bf5caa994bc992b4fc6767891af9e2",
+      "x": 50.1798,
+      "y": 44.5555,
+      "windowBbox32": [
+        70,
+        187,
+        881,
+        1136
+      ]
+    },
+    "oath": {
+      "filename": "card-frame-vivid-oath.png",
+      "sha256": "4b6bfad12edaa56f138a094d26e1eeab0d36196561a955e72c9d7bafd8c73e33",
+      "x": 50.1798,
+      "y": 44.4656,
+      "windowBbox32": [
+        67,
+        180,
+        884,
+        1141
+      ]
+    }
+  },
+  "assets": {
+    "card-art-bell": {
+      "sha256": "2daa6b2d193e7d7752e0d439765968563b141aab885bcefd163ca476a3227858",
+      "offsetX": -2.153,
+      "offsetY": 0.0,
+      "scale": 1,
+      "bbox32": [
+        41,
+        4,
+        395,
+        414
+      ],
+      "size": [
+        418,
+        418
+      ],
+      "alphaCenter": [
+        0.5128841187922123,
+        0.4991858707356644
+      ]
+    },
+    "card-art-brush": {
+      "sha256": "7f4e0ae07db6c90bb6195809f3a8547583b89e1311d30ac177be986fdab28a43",
+      "offsetX": -5.742,
+      "offsetY": -0.359,
+      "scale": 1,
+      "bbox32": [
+        63,
+        18,
+        403,
+        403
+      ],
+      "size": [
+        418,
+        418
+      ],
+      "alphaCenter": [
+        0.5588452515778564,
+        0.5128223953902239
+      ]
+    },
+    "card-art-chain": {
+      "sha256": "59637005ff9d59ad3094f0bdb3b74f488efe7bd05d70fe5276ebd4330cf38225",
+      "offsetX": 0.837,
+      "offsetY": -2.99,
+      "scale": 1,
+      "bbox32": [
+        23,
+        33,
+        388,
+        410
+      ],
+      "size": [
+        418,
+        418
+      ],
+      "alphaCenter": [
+        0.5255112424047306,
+        0.5524913314236185
+      ]
+    },
+    "card-art-coin": {
+      "sha256": "0ca5675fcc205eebd32ac9373b115cc3839061d9093fe18ef7b0041815d95e01",
+      "offsetX": 4.426,
+      "offsetY": 3.708,
+      "scale": 1,
+      "bbox32": [
+        0,
+        0,
+        381,
+        387
+      ],
+      "size": [
+        418,
+        418
+      ],
+      "alphaCenter": [
+        0.5086838416953827,
+        0.4549622030956823
+      ]
+    },
+    "card-art-fire": {
+      "sha256": "7babcce267c24529c6ec1584b37d886935bcb355880383bdb166e6ce25f0ae4a",
+      "offsetX": -0.239,
+      "offsetY": -2.273,
+      "scale": 1,
+      "bbox32": [
+        62,
+        19,
+        358,
+        418
+      ],
+      "size": [
+        418,
+        418
+      ],
+      "alphaCenter": [
+        0.5054482911876244,
+        0.5694998794168297
+      ]
+    },
+    "card-art-ledger": {
+      "sha256": "d92b0f0013215a5aa1f2f91500830dc2b79bbe8ee2dc4a3addf8c94aca14d7f3",
+      "offsetX": -1.156,
+      "offsetY": -1.396,
+      "scale": 1,
+      "bbox32": [
+        44,
+        173,
+        1239,
+        1116
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.510128426067246,
+        0.5087218565564962
+      ]
+    },
+    "card-art-lotus": {
+      "sha256": "38e9e4849ec63c16c11c926d4ab7ea6bb1c11463e0ec7007fd6d8ab8eec6a4e0",
+      "offsetX": -0.957,
+      "offsetY": 4.545,
+      "scale": 1,
+      "bbox32": [
+        49,
+        6,
+        377,
+        374
+      ],
+      "size": [
+        418,
+        418
+      ],
+      "alphaCenter": [
+        0.4807541175572407,
+        0.3792413082856731
+      ]
+    },
+    "card-art-mirror": {
+      "sha256": "7883554bc90fa1b5dc1911d11fc6a804ea27ccd53c35624c1a4a5b310dc3f6f7",
+      "offsetX": -0.319,
+      "offsetY": -2.911,
+      "scale": 1,
+      "bbox32": [
+        147,
+        83,
+        1115,
+        1244
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.4988849352669112,
+        0.4271430173473226
+      ]
+    },
+    "card-art-seal": {
+      "sha256": "2507aec3bd20556a9c91cd76c6a3a85717c35f06a52bdb7494b4bc894fd8c0ae",
+      "offsetX": -11.005,
+      "offsetY": 8.852,
+      "scale": 1,
+      "bbox32": [
+        92,
+        0,
+        418,
+        344
+      ],
+      "size": [
+        418,
+        418
+      ],
+      "alphaCenter": [
+        0.5814537444159752,
+        0.4485391168409972
+      ]
+    },
+    "card-art-step": {
+      "sha256": "8031fd37e8124fefa441d89a1ffa41199055fa1bbc045f59330d23bd3c1627e9",
+      "offsetX": -2.153,
+      "offsetY": -2.273,
+      "scale": 1,
+      "bbox32": [
+        20,
+        86,
+        416,
+        351
+      ],
+      "size": [
+        418,
+        418
+      ],
+      "alphaCenter": [
+        0.5188329653500107,
+        0.5623002116997085
+      ]
+    },
+    "card-art-talisman": {
+      "sha256": "1b8df308627714be990c9dd6eb762812908118ce09f9ebf4ce65bc17519a72af",
+      "offsetX": 5.742,
+      "offsetY": -5.742,
+      "scale": 1,
+      "bbox32": [
+        4,
+        50,
+        366,
+        416
+      ],
+      "size": [
+        418,
+        418
+      ],
+      "alphaCenter": [
+        0.5022479071149014,
+        0.5764543031258121
+      ]
+    },
+    "card-art-unique-curse_clumsy": {
+      "sha256": "42158dba0a64fd0e6755636496ededd3619970aed30bfcc19c588c31efb4274a",
+      "offsetX": 0.239,
+      "offsetY": -0.199,
+      "scale": 1,
+      "bbox32": [
+        72,
+        96,
+        1176,
+        1163
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.523633699051563,
+        0.4991808705902985
+      ]
+    },
+    "card-art-unique-curse_decay": {
+      "sha256": "42c3804feb6eae7787573f56d29644d240675ea249f050054b99d77b9294c346",
+      "offsetX": -0.199,
+      "offsetY": 0.199,
+      "scale": 1,
+      "bbox32": [
+        90,
+        58,
+        1169,
+        1191
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5255384108927242,
+        0.5075700662306882
+      ]
+    },
+    "card-art-unique-curse_doubt": {
+      "sha256": "d02368edd54306cc36e24d283046e267b3029e4d61586eda39ed4f0ae8a30f27",
+      "offsetX": -2.632,
+      "offsetY": -0.199,
+      "scale": 1,
+      "bbox32": [
+        156,
+        84,
+        1164,
+        1175
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.481968748159928,
+        0.557568066078041
+      ]
+    },
+    "card-art-unique-curse_injury": {
+      "sha256": "573cf6034ef9d4a1175613279b1e89f695fa11cc0a5c98bd4508b5b2fe5ae0c3",
+      "offsetX": -1.316,
+      "offsetY": -0.877,
+      "scale": 1,
+      "bbox32": [
+        90,
+        67,
+        1197,
+        1209
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5386870438165122,
+        0.4779257473021577
+      ]
+    },
+    "card-art-unique-curse_pain": {
+      "sha256": "bb331b1ec8ec3003536a325ad1c907ea53b75ae574130b65491e6b6301b178ea",
+      "offsetX": -2.233,
+      "offsetY": -0.518,
+      "scale": 1,
+      "bbox32": [
+        167,
+        84,
+        1143,
+        1183
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5311416620527668,
+        0.5114736365675506
+      ]
+    },
+    "card-art-unique-curse_regret": {
+      "sha256": "312eb4cce00713011e44638e20edee574352d35cf2df0fb9034364254e87d14c",
+      "offsetX": -3.589,
+      "offsetY": -0.558,
+      "scale": 1,
+      "bbox32": [
+        116,
+        32,
+        1228,
+        1236
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5576111169583337,
+        0.46085432493242706
+      ]
+    },
+    "card-art-unique-curse_shame": {
+      "sha256": "9528ec14cafc099edf4ce6a5f285a6f5f8a960a0402bfff1c96c371d36aa6234",
+      "offsetX": -1.834,
+      "offsetY": -0.478,
+      "scale": 1,
+      "bbox32": [
+        87,
+        44,
+        1213,
+        1222
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5274389323054628,
+        0.49554889430625604
+      ]
+    },
+    "card-art-unique-curse_writhe": {
+      "sha256": "f950dbf66987565a2b8c7cb62cc03e73f88330b9add4f8038d1e3c5d285ca3c3",
+      "offsetX": -1.156,
+      "offsetY": -0.199,
+      "scale": 1,
+      "bbox32": [
+        81,
+        46,
+        1202,
+        1213
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5128642306196988,
+        0.5065864803047667
+      ]
+    },
+    "card-art-unique-debt_blood": {
+      "sha256": "4ab3fcadbbddb02cffd138b999104ae6cba9221598540d8d674a31d4dd165886",
+      "offsetX": -0.12,
+      "offsetY": -0.12,
+      "scale": 1,
+      "bbox32": [
+        21,
+        36,
+        1236,
+        1221
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5595230415677205,
+        0.5504025079407255
+      ]
+    },
+    "card-art-unique-debt_chain": {
+      "sha256": "a2bbe0c1dbfd9471a9adc864973d717925592eabe8b84e65d992054c426a4dc4",
+      "offsetX": -3.668,
+      "offsetY": -0.917,
+      "scale": 1,
+      "bbox32": [
+        119,
+        61,
+        1227,
+        1216
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5319438345804258,
+        0.521809708307765
+      ]
+    },
+    "card-art-unique-debt_delay": {
+      "sha256": "05f4b05210febbeccb63c3e0eab9834e41a6673f2bcfa292f8e44a2585fd2675",
+      "offsetX": -1.475,
+      "offsetY": -0.319,
+      "scale": 1,
+      "bbox32": [
+        142,
+        32,
+        1149,
+        1230
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5311312139769636,
+        0.4864352921438994
+      ]
+    },
+    "card-art-unique-debt_ferry": {
+      "sha256": "46b2f7d8194778abc94a2f06d68795f7ca8bba32d233c61c18f3d965f0eb0f7b",
+      "offsetX": -0.638,
+      "offsetY": -0.518,
+      "scale": 1,
+      "bbox32": [
+        72,
+        75,
+        1198,
+        1192
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5066666203870381,
+        0.5518890202722941
+      ]
+    },
+    "card-art-unique-debt_ledger": {
+      "sha256": "e9163bc87236b02073e8b9d33c1b67cd55a2b76fe0118196be1f710ee8a89b48",
+      "offsetX": 0.08,
+      "offsetY": 0.718,
+      "scale": 1,
+      "bbox32": [
+        32,
+        28,
+        1220,
+        1208
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5143834294330074,
+        0.50164722471688
+      ]
+    },
+    "card-art-unique-debt_loan": {
+      "sha256": "f1f6fd8274d24fff9c221b72dc02a8c1fac00e156cec3730a93f5c83f4850f7f",
+      "offsetX": -2.352,
+      "offsetY": 0.0,
+      "scale": 1,
+      "bbox32": [
+        113,
+        28,
+        1200,
+        1226
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5327565850248509,
+        0.5041950357496466
+      ]
+    },
+    "card-art-unique-debt_lotus": {
+      "sha256": "f75125015d431615fe31f227918629a17ffba699425a68b13c969a134854bd0d",
+      "offsetX": -0.877,
+      "offsetY": -0.718,
+      "scale": 1,
+      "bbox32": [
+        41,
+        163,
+        1235,
+        1109
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.514942068413728,
+        0.5574854307947829
+      ]
+    },
+    "card-art-unique-debt_mirror": {
+      "sha256": "24449a180b565f14fbbac94760f4b8a0e8d8f504164ed2415d72d2fa1270ee7b",
+      "offsetX": -0.877,
+      "offsetY": -0.518,
+      "scale": 1,
+      "bbox32": [
+        76,
+        56,
+        1200,
+        1211
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5617373285932006,
+        0.4796558798600252
+      ]
+    },
+    "card-art-unique-debt_register": {
+      "sha256": "705f9b81dc940a0bd1f99ea71a9b29015ea5bae4639344a5893aa5e619cbce5c",
+      "offsetX": -1.794,
+      "offsetY": -1.276,
+      "scale": 1,
+      "bbox32": [
+        132,
+        68,
+        1167,
+        1218
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5175146118996842,
+        0.48528277314109086
+      ]
+    },
+    "card-art-unique-debt_seal": {
+      "sha256": "e3d1474b5fe71a1adeef1068dca81dfad91db8d7adc7a5a9cd271204228eaaef",
+      "offsetX": -2.153,
+      "offsetY": -0.598,
+      "scale": 1,
+      "bbox32": [
+        154,
+        79,
+        1154,
+        1190
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5093938900930358,
+        0.5142343333869118
+      ]
+    },
+    "card-art-unique-debt_verdict": {
+      "sha256": "51b4dfefb41d80ea4df536814b043065e328632b5eaec1a10bc1b22f08af62ef",
+      "offsetX": -0.758,
+      "offsetY": -0.319,
+      "scale": 1,
+      "bbox32": [
+        71,
+        52,
+        1202,
+        1210
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.49663509981369397,
+        0.504008127819653
+      ]
+    },
+    "card-art-unique-debt_vow": {
+      "sha256": "edc7c156627e162f91d4ab7768511acc0cab11abf05fc1138bc730fb71b1eb54",
+      "offsetX": -1.794,
+      "offsetY": -0.12,
+      "scale": 1,
+      "bbox32": [
+        138,
+        43,
+        1161,
+        1214
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5188697927635353,
+        0.4620263293405176
+      ]
+    },
+    "card-art-unique-ic_anger": {
+      "sha256": "ed521914613344c9ec1717b00b6b4e5222dffee10f537ffbe41b9595d23b486b",
+      "offsetX": -0.797,
+      "offsetY": 0.04,
+      "scale": 1,
+      "bbox32": [
+        57,
+        11,
+        1217,
+        1242
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5067025484319871,
+        0.5104200960411566
+      ]
+    },
+    "card-art-unique-ic_armaments": {
+      "sha256": "df57cfed33105018dcc663a15513bc8caa7798c9bf3979e0ba6a0f78fd882280",
+      "offsetX": -0.319,
+      "offsetY": -0.957,
+      "scale": 1,
+      "bbox32": [
+        35,
+        56,
+        1227,
+        1222
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5290683961560955,
+        0.5003113808335163
+      ]
+    },
+    "card-art-unique-ic_barricade": {
+      "sha256": "9264a61917076a83213e516c486e766b0b917052d698f4672243208e28d886fc",
+      "offsetX": -0.04,
+      "offsetY": 1.754,
+      "scale": 1,
+      "bbox32": [
+        49,
+        74,
+        1206,
+        1136
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.49962047103797197,
+        0.509767397227744
+      ]
+    },
+    "card-art-unique-ic_bash": {
+      "sha256": "7ee19fcf868ee0425fab2e704ef71396506410e1ddd4d2e2d124d3d711260efa",
+      "offsetX": -0.199,
+      "offsetY": 0.478,
+      "scale": 1,
+      "bbox32": [
+        15,
+        30,
+        1244,
+        1212
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5136850096187628,
+        0.5156861100576574
+      ]
+    },
+    "card-art-unique-ic_battle_trance": {
+      "sha256": "32b6c48b50fdd07015ae047111d991ee69b437915a752b879677e66710d4895d",
+      "offsetX": 0.0,
+      "offsetY": -0.558,
+      "scale": 1,
+      "bbox32": [
+        103,
+        66,
+        1151,
+        1202
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5077174065851888,
+        0.5727904058807958
+      ]
+    },
+    "card-art-unique-ic_berserk": {
+      "sha256": "e587dc9495e6590e0331b28145ff841250a711363441e53348eff4481608570a",
+      "offsetX": -2.871,
+      "offsetY": 0.518,
+      "scale": 1,
+      "bbox32": [
+        121,
+        17,
+        1205,
+        1224
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5036471697246646,
+        0.5373510802870455
+      ]
+    },
+    "card-art-unique-ic_blood_for_blood": {
+      "sha256": "8d71987440f87c0635cfe1451d67aebaee92c90c1104c1a0f398dfcf8079538d",
+      "offsetX": -0.239,
+      "offsetY": 0.199,
+      "scale": 1,
+      "bbox32": [
+        33,
+        19,
+        1227,
+        1230
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5171744789783844,
+        0.5401022047655409
+      ]
+    },
+    "card-art-unique-ic_bloodletting": {
+      "sha256": "7ed877200132b5b995bf068d68978dd5208bc717d22a1efaa3ac2477aef545e7",
+      "offsetX": -0.399,
+      "offsetY": 0.877,
+      "scale": 1,
+      "bbox32": [
+        62,
+        42,
+        1202,
+        1190
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.521513876277297,
+        0.5923041760350057
+      ]
+    },
+    "card-art-unique-ic_bludgeon": {
+      "sha256": "f0db9b4bf6929bc333562b739ee413ccde257257544b925d272518223a916c4b",
+      "offsetX": -1.077,
+      "offsetY": 0.08,
+      "scale": 1,
+      "bbox32": [
+        37,
+        24,
+        1244,
+        1228
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5290711642122122,
+        0.5379126783264259
+      ]
+    },
+    "card-art-unique-ic_body_slam": {
+      "sha256": "0df049896add05dd8fa57071e2cb213e1c39ded64c1bf31b760b21aa1827712b",
+      "offsetX": -0.758,
+      "offsetY": -0.997,
+      "scale": 1,
+      "bbox32": [
+        48,
+        55,
+        1225,
+        1224
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5065488778162631,
+        0.5599737956767241
+      ]
+    },
+    "card-art-unique-ic_brutality": {
+      "sha256": "d6e3f5a1bf4c2c72726bc07694bbf773f3ecfe1756b2f03f431afe91a64b9ca6",
+      "offsetX": -0.04,
+      "offsetY": -0.199,
+      "scale": 1,
+      "bbox32": [
+        59,
+        26,
+        1196,
+        1233
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5660251548180301,
+        0.476142656672482
+      ]
+    },
+    "card-art-unique-ic_burning_pact": {
+      "sha256": "8cbe357a06c5bcecd482519e2b2c88cf4b61c18ce0d1b47b24d6f301e0f3b568",
+      "offsetX": -0.598,
+      "offsetY": -0.638,
+      "scale": 1,
+      "bbox32": [
+        142,
+        32,
+        1127,
+        1238
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5326218832542026,
+        0.47695453041060404
+      ]
+    },
+    "card-art-unique-ic_carnage": {
+      "sha256": "bcca9c0bf1dc58a02d63225bb2ba4443e4b9626f6c5dd849064e1d3534698276",
+      "offsetX": -0.718,
+      "offsetY": 0.319,
+      "scale": 1,
+      "bbox32": [
+        43,
+        27,
+        1229,
+        1219
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5273422902424642,
+        0.49861145759934106
+      ]
+    },
+    "card-art-unique-ic_clash": {
+      "sha256": "b9522655ec1fb31ce9b4ff97123dcd7032b959441a51b33ecc670d28e6fbd479",
+      "offsetX": -0.439,
+      "offsetY": -1.396,
+      "scale": 1,
+      "bbox32": [
+        64,
+        69,
+        1201,
+        1220
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.531224773520299,
+        0.49717301298795485
+      ]
+    },
+    "card-art-unique-ic_cleave": {
+      "sha256": "a4fb1195c368f26a8bee24985dadf4d26ba1b47e03dd5b4e6f012feef63602af",
+      "offsetX": -0.558,
+      "offsetY": -1.276,
+      "scale": 1,
+      "bbox32": [
+        20,
+        91,
+        1248,
+        1195
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5209746277072651,
+        0.537032229763806
+      ]
+    },
+    "card-art-unique-ic_clothesline": {
+      "sha256": "e48e8d6420e82e01d99243b4fd709fb2dce6e04a9fc6776f3ae2791215e6896a",
+      "offsetX": -0.797,
+      "offsetY": -0.399,
+      "scale": 1,
+      "bbox32": [
+        35,
+        28,
+        1239,
+        1236
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5418219350314517,
+        0.5024981362872782
+      ]
+    },
+    "card-art-unique-ic_combust": {
+      "sha256": "b17c3f0c2d53a35202852f785cb4e5e4ec6d217d95d7428a9237bbdad6a92d25",
+      "offsetX": -1.356,
+      "offsetY": 0.08,
+      "scale": 1,
+      "bbox32": [
+        163,
+        40,
+        1125,
+        1212
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5145825109748674,
+        0.5197268776954755
+      ]
+    },
+    "card-art-unique-ic_corruption": {
+      "sha256": "3078c5e9e2d305b88030c8f1d50deeb528d57fd87bbc6ca3a81fd546ed252742",
+      "offsetX": -0.678,
+      "offsetY": 0.159,
+      "scale": 1,
+      "bbox32": [
+        49,
+        45,
+        1222,
+        1205
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5148920658391973,
+        0.4692760894971609
+      ]
+    },
+    "card-art-unique-ic_dark_embrace": {
+      "sha256": "323d3a7f1edf79721cd3ba2cbef5b5aaae0ea014d176e9410386bade29db5f4b",
+      "offsetX": 0.0,
+      "offsetY": 0.239,
+      "scale": 1,
+      "bbox32": [
+        77,
+        23,
+        1177,
+        1225
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5201635363670448,
+        0.5389274506163511
+      ]
+    },
+    "card-art-unique-ic_defend": {
+      "sha256": "e2992f961e576c7fca114629c8ab3347e3bb08ac6f474a32e4a19d4504b0d76a",
+      "offsetX": -0.399,
+      "offsetY": 0.0,
+      "scale": 1,
+      "bbox32": [
+        42,
+        23,
+        1222,
+        1231
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5114437622227241,
+        0.5305476555593013
+      ]
+    },
+    "card-art-unique-ic_demon_form": {
+      "sha256": "6c7c346544bb1859a537b7fe17575f9f62b813dbcca4098033b96cd9cecbc8a2",
+      "offsetX": -0.08,
+      "offsetY": 0.239,
+      "scale": 1,
+      "bbox32": [
+        70,
+        29,
+        1186,
+        1219
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.508815890340711,
+        0.5276008163493413
+      ]
+    },
+    "card-art-unique-ic_disarm": {
+      "sha256": "c440b8dd4556b493a7c72f328f86a64cb9f252f56960a25355c7c8134dee24a5",
+      "offsetX": -4.785,
+      "offsetY": -0.598,
+      "scale": 1,
+      "bbox32": [
+        149,
+        59,
+        1225,
+        1210
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.47492148949437163,
+        0.5278489099179552
+      ]
+    },
+    "card-art-unique-ic_double_tap": {
+      "sha256": "feb0cb2ff1168a1dcf6e1ca818e9fc1f1c3036a505e32fe284e09ef89b3137c6",
+      "offsetX": -0.598,
+      "offsetY": -1.555,
+      "scale": 1,
+      "bbox32": [
+        78,
+        82,
+        1191,
+        1211
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5452554053697958,
+        0.5110548352453673
+      ]
+    },
+    "card-art-unique-ic_dropkick": {
+      "sha256": "0eb358d04a4c865323965521ef8bad44a98632a007e4ce1c2cbe0810d3607f45",
+      "offsetX": -0.758,
+      "offsetY": -0.359,
+      "scale": 1,
+      "bbox32": [
+        84,
+        43,
+        1189,
+        1220
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5034341743352652,
+        0.5124737606753921
+      ]
+    },
+    "card-art-unique-ic_dual_wield": {
+      "sha256": "822fc3e432d4729bbb71440ede7dd0112396954475828e108e5e3babec4f12b8",
+      "offsetX": -1.555,
+      "offsetY": 0.12,
+      "scale": 1,
+      "bbox32": [
+        89,
+        68,
+        1204,
+        1183
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5247381360934288,
+        0.45246916238529367
+      ]
+    },
+    "card-art-unique-ic_entrench": {
+      "sha256": "49377e4b1dd76d76fe49036f18d7cc09e2dcd8498f1d074f1a805a5826e1065f",
+      "offsetX": -0.399,
+      "offsetY": -0.957,
+      "scale": 1,
+      "bbox32": [
+        29,
+        81,
+        1235,
+        1197
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5463177205128095,
+        0.4985928979117989
+      ]
+    },
+    "card-art-unique-ic_evolve": {
+      "sha256": "0ae296f59a687492884f27aed91b329642320ad2139d52a4e14dc4c764ff2130",
+      "offsetX": -2.632,
+      "offsetY": -0.598,
+      "scale": 1,
+      "bbox32": [
+        118,
+        61,
+        1202,
+        1208
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.488385374451912,
+        0.4924887443125079
+      ]
+    },
+    "card-art-unique-ic_exhume": {
+      "sha256": "87c7add26b32924e4f9689f6c77dc97ab7a4497ac2c2ce921bb3b681b896a121",
+      "offsetX": -2.193,
+      "offsetY": -0.638,
+      "scale": 1,
+      "bbox32": [
+        182,
+        33,
+        1127,
+        1237
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5188863225732842,
+        0.566960227227953
+      ]
+    },
+    "card-art-unique-ic_feed": {
+      "sha256": "d41760ac72523af1186450098922787dcbe0fae1c536fadb2d97e163359d15d5",
+      "offsetX": -0.399,
+      "offsetY": -0.678,
+      "scale": 1,
+      "bbox32": [
+        40,
+        57,
+        1224,
+        1214
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5369281137091916,
+        0.532616751390079
+      ]
+    },
+    "card-art-unique-ic_feel_no_pain": {
+      "sha256": "bbcb57d65362ddb6af114f37cd46f7af65f7eea22e0a89fac8817f4523ce169b",
+      "offsetX": 0.319,
+      "offsetY": 0.159,
+      "scale": 1,
+      "bbox32": [
+        55,
+        39,
+        1191,
+        1211
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5280995662686429,
+        0.5067456351915638
+      ]
+    },
+    "card-art-unique-ic_fiend_fire": {
+      "sha256": "3b5ea0fef6ca04c9d6112d79f6c25ab3a06a6327d61c7f071eb106475c832560",
+      "offsetX": -0.359,
+      "offsetY": -0.04,
+      "scale": 1,
+      "bbox32": [
+        69,
+        34,
+        1194,
+        1221
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5425336092892193,
+        0.47500076078377407
+      ]
+    },
+    "card-art-unique-ic_fire_breathing": {
+      "sha256": "771c52099cb351784ecc1f876a4e830fcb806e9367cffe541c895ff53c1b9176",
+      "offsetX": -0.159,
+      "offsetY": 0.399,
+      "scale": 1,
+      "bbox32": [
+        42,
+        39,
+        1216,
+        1205
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.4728205146543982,
+        0.5287631834488508
+      ]
+    },
+    "card-art-unique-ic_flame_barrier": {
+      "sha256": "3659a56297bbe4e06249914b7e614bab63d7e158f7604111d9c3893413ceed6a",
+      "offsetX": -0.439,
+      "offsetY": 0.12,
+      "scale": 1,
+      "bbox32": [
+        34,
+        65,
+        1231,
+        1186
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.4635187904663726,
+        0.5491200891137877
+      ]
+    },
+    "card-art-unique-ic_flex": {
+      "sha256": "051f12d4460182ff3da6c8d51981554b34e96e1cf749cbaa1850ba6357539ad0",
+      "offsetX": -0.638,
+      "offsetY": -0.399,
+      "scale": 1,
+      "bbox32": [
+        54,
+        57,
+        1216,
+        1207
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.512442787783341,
+        0.49285994499024316
+      ]
+    },
+    "card-art-unique-ic_ghostly_armor": {
+      "sha256": "3ed85803a62c2fdbd117a4ea88d5af199b11f5d2864b45197a12d03c28caedbd",
+      "offsetX": -0.917,
+      "offsetY": -0.837,
+      "scale": 1,
+      "bbox32": [
+        85,
+        42,
+        1192,
+        1233
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5123295360656606,
+        0.479810014186123
+      ]
+    },
+    "card-art-unique-ic_havoc": {
+      "sha256": "b8538348427eae050ab9bb5ea88a5eebe1eced5ea8471d4aa656bb01666abddc",
+      "offsetX": -3.429,
+      "offsetY": -0.08,
+      "scale": 1,
+      "bbox32": [
+        169,
+        10,
+        1171,
+        1246
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.525983366448539,
+        0.5379218681530411
+      ]
+    },
+    "card-art-unique-ic_headbutt": {
+      "sha256": "a86612dfaa82187326ba3d19c96753e63f2cfd3dfbab11dae0146c9f0f03fdef",
+      "offsetX": -0.678,
+      "offsetY": -1.236,
+      "scale": 1,
+      "bbox32": [
+        40,
+        81,
+        1231,
+        1204
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5115722838373428,
+        0.5515368521681882
+      ]
+    },
+    "card-art-unique-ic_heavy_blade": {
+      "sha256": "5c3eff2f0bc4d5a7e5be994d095511f5b0fb7040fef42fa643692a0abd0f788b",
+      "offsetX": -0.04,
+      "offsetY": -0.08,
+      "scale": 1,
+      "bbox32": [
+        12,
+        13,
+        1243,
+        1243
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5221421075003386,
+        0.5732276276824028
+      ]
+    },
+    "card-art-unique-ic_hemokinesis": {
+      "sha256": "f60d3e0089c62ca028b3c771e49f8ab9cb9379ad94ef28e681623a69cc2ab7c4",
+      "offsetX": 0.239,
+      "offsetY": 0.758,
+      "scale": 1,
+      "bbox32": [
+        23,
+        21,
+        1225,
+        1214
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5657575389080031,
+        0.563784198173668
+      ]
+    },
+    "card-art-unique-ic_immolate": {
+      "sha256": "da8a1202bbdd5f9b2ad711fbea742ca32e0e157c0304f719fec259e937c12046",
+      "offsetX": -0.997,
+      "offsetY": 0.319,
+      "scale": 1,
+      "bbox32": [
+        57,
+        47,
+        1222,
+        1199
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5027400381761417,
+        0.5226757644645119
+      ]
+    },
+    "card-art-unique-ic_impervious": {
+      "sha256": "78b06855b497ad68979aaef2bcf826f4c8a6f1fadd08424a34a61c7e16f22117",
+      "offsetX": -0.598,
+      "offsetY": -0.439,
+      "scale": 1,
+      "bbox32": [
+        59,
+        70,
+        1210,
+        1195
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5126921243251413,
+        0.5322008864720159
+      ]
+    },
+    "card-art-unique-ic_infernal_blade": {
+      "sha256": "f9bc53275f256bdbed758ad605b7fc54ccd27a6e3d0b503c30420e65b3c1f89b",
+      "offsetX": -1.276,
+      "offsetY": -0.399,
+      "scale": 1,
+      "bbox32": [
+        51,
+        90,
+        1235,
+        1174
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5949897548651327,
+        0.506812411538209
+      ]
+    },
+    "card-art-unique-ic_inflame": {
+      "sha256": "6ffbafbf2df72622f6402e8f660d983e7ed7011abf609fea6831214d45a805c9",
+      "offsetX": -1.356,
+      "offsetY": 1.196,
+      "scale": 1,
+      "bbox32": [
+        80,
+        22,
+        1208,
+        1202
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5090769729932759,
+        0.5378914428893099
+      ]
+    },
+    "card-art-unique-ic_intimidate": {
+      "sha256": "bf230c526b5e0932a35480b09f928804b60bebb2d380018f0f7b93e3e0fa9825",
+      "offsetX": -0.239,
+      "offsetY": -0.399,
+      "scale": 1,
+      "bbox32": [
+        48,
+        69,
+        1212,
+        1195
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.4815579690745994,
+        0.5232473783380432
+      ]
+    },
+    "card-art-unique-ic_iron_wave": {
+      "sha256": "d209ba5e92b03200ecf5981c4d690bf9cfaa80e5cfdb6b056987e3072f9529b6",
+      "offsetX": -0.12,
+      "offsetY": -2.113,
+      "scale": 1,
+      "bbox32": [
+        5,
+        72,
+        1252,
+        1235
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.4928382809705338,
+        0.5082408880938252
+      ]
+    },
+    "card-art-unique-ic_juggernaut": {
+      "sha256": "9c6184e5b814d096c6973ac7be11374ebd7ad7a81e38d37fa15cdb0655cbffcf",
+      "offsetX": -0.957,
+      "offsetY": -0.439,
+      "scale": 1,
+      "bbox32": [
+        51,
+        44,
+        1227,
+        1221
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5136521327541638,
+        0.48933397806070295
+      ]
+    },
+    "card-art-unique-ic_limit_break": {
+      "sha256": "91402707c3733bc9ce92b591f16b4035c0c225ca4a922a16ed73b97477588f55",
+      "offsetX": -0.558,
+      "offsetY": 0.638,
+      "scale": 1,
+      "bbox32": [
+        68,
+        31,
+        1200,
+        1207
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5152747401112375,
+        0.4988379959582925
+      ]
+    },
+    "card-art-unique-ic_metallicize": {
+      "sha256": "ea57762581e178a8b0bd0a19d775af64c8cddcc62739c9fd09dcf1176ca1a359",
+      "offsetX": -0.319,
+      "offsetY": 0.04,
+      "scale": 1,
+      "bbox32": [
+        38,
+        34,
+        1224,
+        1219
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5140582221081451,
+        0.5500863296050308
+      ]
+    },
+    "card-art-unique-ic_offering": {
+      "sha256": "b3445e10942ee41cfedb75287c9e456259c76ab2b8aa9a69ee5916a89d7885c3",
+      "offsetX": -0.279,
+      "offsetY": -0.558,
+      "scale": 1,
+      "bbox32": [
+        35,
+        28,
+        1226,
+        1240
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5169519583330877,
+        0.5337179618336864
+      ]
+    },
+    "card-art-unique-ic_perfected_strike": {
+      "sha256": "d74e05e6d711682723f25acab5c71ec4c34a61936deaa042cfbce1a49fbb3866",
+      "offsetX": -1.834,
+      "offsetY": 1.515,
+      "scale": 1,
+      "bbox32": [
+        86,
+        60,
+        1214,
+        1156
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5314383467298366,
+        0.48870156424854555
+      ]
+    },
+    "card-art-unique-ic_pommel_strike": {
+      "sha256": "b0108691336374dd7d86782e606eb0ac028be7419cc7a92512538f17d6be6633",
+      "offsetX": -0.159,
+      "offsetY": 0.917,
+      "scale": 1,
+      "bbox32": [
+        111,
+        226,
+        1147,
+        1005
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5301038123543201,
+        0.5256312180304644
+      ]
+    },
+    "card-art-unique-ic_power_through": {
+      "sha256": "393d63bddc3d21ada11e9ad9cc836c48232e0ee296b6b2510d8f5fc7f80d452d",
+      "offsetX": -0.439,
+      "offsetY": -0.359,
+      "scale": 1,
+      "bbox32": [
+        47,
+        46,
+        1218,
+        1217
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5480733375832992,
+        0.49083659993170586
+      ]
+    },
+    "card-art-unique-ic_pummel": {
+      "sha256": "bf96cd1dd6c75a06d7b269c09a2883d1f438ac2832708d17e2d21ada850eae04",
+      "offsetX": -0.359,
+      "offsetY": 0.319,
+      "scale": 1,
+      "bbox32": [
+        35,
+        36,
+        1228,
+        1210
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5206127473540224,
+        0.511271742923327
+      ]
+    },
+    "card-art-unique-ic_rage": {
+      "sha256": "5cdbf9712aaace68e043369f46223b7620c79f9ef686b07c3fe229b2100e6265",
+      "offsetX": -1.156,
+      "offsetY": -0.359,
+      "scale": 1,
+      "bbox32": [
+        82,
+        49,
+        1201,
+        1214
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5389559045961342,
+        0.4999559353016018
+      ]
+    },
+    "card-art-unique-ic_rampage": {
+      "sha256": "55f6ee6b61f58da46b849508e627cc769ef45d5eebe1fa8150dc9eec27c757c4",
+      "offsetX": -2.113,
+      "offsetY": -0.518,
+      "scale": 1,
+      "bbox32": [
+        149,
+        119,
+        1158,
+        1148
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5120989285065812,
+        0.524133718988584
+      ]
+    },
+    "card-art-unique-ic_reaper": {
+      "sha256": "3835ae17714dee8cd71eee402169b0b6515dca13cf30eba0c72c1e0a17b84208",
+      "offsetX": -0.997,
+      "offsetY": -0.279,
+      "scale": 1,
+      "bbox32": [
+        42,
+        30,
+        1237,
+        1231
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5229612470623491,
+        0.46511179731751845
+      ]
+    },
+    "card-art-unique-ic_reckless_charge": {
+      "sha256": "0f70e61696323e92598d3d23ba56c31f61fe7cd2012b68f85646cd8842decf90",
+      "offsetX": -4.187,
+      "offsetY": -0.518,
+      "scale": 1,
+      "bbox32": [
+        160,
+        173,
+        1199,
+        1094
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5304104364465556,
+        0.5276367964172946
+      ]
+    },
+    "card-art-unique-ic_rupture": {
+      "sha256": "bbcde17656dcb947c91b2bf3da69a71070c76c20859d72632ed2b267e777a711",
+      "offsetX": -0.08,
+      "offsetY": -0.319,
+      "scale": 1,
+      "bbox32": [
+        85,
+        53,
+        1171,
+        1209
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5287952677413617,
+        0.5185996549120442
+      ]
+    },
+    "card-art-unique-ic_searing_blow": {
+      "sha256": "693c02a17c350506f0ebb5bcb338f9a8cea9639588085b184fdd78463b539051",
+      "offsetX": -0.678,
+      "offsetY": -0.159,
+      "scale": 1,
+      "bbox32": [
+        29,
+        19,
+        1242,
+        1239
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.4912846763041436,
+        0.4670110760757494
+      ]
+    },
+    "card-art-unique-ic_second_wind": {
+      "sha256": "fe20ea25fbb98d4339925d83729c5f81fba180bf5fd753776219aab29dbeac0f",
+      "offsetX": -0.159,
+      "offsetY": -0.478,
+      "scale": 1,
+      "bbox32": [
+        96,
+        101,
+        1162,
+        1165
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.52382436788622,
+        0.5218351962051487
+      ]
+    },
+    "card-art-unique-ic_seeing_red": {
+      "sha256": "b46bd9077547226c67df389bfd8b03736eae85d8ad411310f7bd60d15f84feba",
+      "offsetX": -1.515,
+      "offsetY": 0.997,
+      "scale": 1,
+      "bbox32": [
+        234,
+        47,
+        1058,
+        1182
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5219630891342935,
+        0.6038723311721085
+      ]
+    },
+    "card-art-unique-ic_sentinel": {
+      "sha256": "1e7f5702b634ebca15ee42d8fb576972e5afdb73e5b27db3b6b5e405d7710992",
+      "offsetX": 0.12,
+      "offsetY": 0.997,
+      "scale": 1,
+      "bbox32": [
+        46,
+        17,
+        1205,
+        1212
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5124020777336141,
+        0.5604630563081293
+      ]
+    },
+    "card-art-unique-ic_sever_soul": {
+      "sha256": "e640d19df2f82b8588b8e2b355928f1591853493fefada2d94140eeaa4acaeda",
+      "offsetX": -1.116,
+      "offsetY": 0.0,
+      "scale": 1,
+      "bbox32": [
+        67,
+        20,
+        1215,
+        1234
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5358398972948206,
+        0.5003823502950994
+      ]
+    },
+    "card-art-unique-ic_shockwave": {
+      "sha256": "ac40f972ceb590f4e8d3f8ecf462c37547835ed1684e11ca1f394728700c46fd",
+      "offsetX": -2.432,
+      "offsetY": -0.199,
+      "scale": 1,
+      "bbox32": [
+        144,
+        40,
+        1171,
+        1219
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5394699108841494,
+        0.5197492928306798
+      ]
+    },
+    "card-art-unique-ic_shrug_it_off": {
+      "sha256": "738e1336a8701e565eabf726f6f055413172b210bc6697beaaa4a4489ffffea0",
+      "offsetX": -1.555,
+      "offsetY": 0.0,
+      "scale": 1,
+      "bbox32": [
+        86,
+        74,
+        1207,
+        1180
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5763387328597949,
+        0.53997446004916
+      ]
+    },
+    "card-art-unique-ic_spot_weakness": {
+      "sha256": "84c3ac032841c3acb28a364f7d6216aff241149a009197ecc832bb1f394075da",
+      "offsetX": -1.595,
+      "offsetY": -0.558,
+      "scale": 1,
+      "bbox32": [
+        114,
+        81,
+        1180,
+        1187
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.4966907292249105,
+        0.43615887758224653
+      ]
+    },
+    "card-art-unique-ic_strike": {
+      "sha256": "e5d5ee24c29f9e16fb3b0e1dea54b02eadd6aa326b7c59197fca5aa9dbb4b21d",
+      "offsetX": -1.635,
+      "offsetY": -0.04,
+      "scale": 1,
+      "bbox32": [
+        82,
+        63,
+        1213,
+        1192
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5484991238670497,
+        0.5161268309430079
+      ]
+    },
+    "card-art-unique-ic_sword_boomerang": {
+      "sha256": "9520f14cd92cabf724b72a44d9c572fc14de619522c8c73d300ed2dd7812b141",
+      "offsetX": -1.715,
+      "offsetY": -0.518,
+      "scale": 1,
+      "bbox32": [
+        90,
+        81,
+        1207,
+        1186
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.516586321613676,
+        0.5197630835000553
+      ]
+    },
+    "card-art-unique-ic_thunderclap": {
+      "sha256": "906e529927bee9972095b282cc310df3f1a45e4ff79e58a71f5a83f886b5e0eb",
+      "offsetX": -0.917,
+      "offsetY": -0.917,
+      "scale": 1,
+      "bbox32": [
+        66,
+        36,
+        1211,
+        1241
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5408707247953448,
+        0.4935165533098716
+      ]
+    },
+    "card-art-unique-ic_true_grit": {
+      "sha256": "bf31912c098e42cd73cc926dd564d2836b3bcd756d41ae06b58dbd822cb96907",
+      "offsetX": -1.116,
+      "offsetY": -0.837,
+      "scale": 1,
+      "bbox32": [
+        42,
+        93,
+        1240,
+        1182
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.46818366774057546,
+        0.48262208972159293
+      ]
+    },
+    "card-art-unique-ic_twin_strike": {
+      "sha256": "8151f50e2d68db259512da7b65500ab9e13a7b1ae037927e8338f1fb0ac67df4",
+      "offsetX": -1.116,
+      "offsetY": -1.077,
+      "scale": 1,
+      "bbox32": [
+        45,
+        60,
+        1237,
+        1221
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5204155816336654,
+        0.5305687460525661
+      ]
+    },
+    "card-art-unique-ic_uppercut": {
+      "sha256": "4a7b35e53221faca7bcd1224269e80202c83dca6d69b07627ee7d09319277d80",
+      "offsetX": -0.12,
+      "offsetY": 0.08,
+      "scale": 1,
+      "bbox32": [
+        12,
+        35,
+        1245,
+        1217
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5395983323307626,
+        0.5419946896598865
+      ]
+    },
+    "card-art-unique-ic_warcry": {
+      "sha256": "f17128f53d58ca20314eddae590f5d4821890ff880c662ed7589bd43f9866848",
+      "offsetX": -4.107,
+      "offsetY": 0.279,
+      "scale": 1,
+      "bbox32": [
+        177,
+        28,
+        1180,
+        1219
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5585331123761853,
+        0.48749844963677336
+      ]
+    },
+    "card-art-unique-ic_whirlwind": {
+      "sha256": "7a2c9913fab2ed112d571b3e9d1b83cc59885cb26051dbc3060c1153d7c1ec6d",
+      "offsetX": -0.598,
+      "offsetY": -0.159,
+      "scale": 1,
+      "bbox32": [
+        32,
+        40,
+        1237,
+        1218
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.505516383109561,
+        0.5138037638211538
+      ]
+    },
+    "card-art-unique-ic_wild_strike": {
+      "sha256": "97a3f8f26ece452f3ce869ac71fc2cc290d97697a5cbc927cd66ee618266d73e",
+      "offsetX": -0.279,
+      "offsetY": 0.12,
+      "scale": 1,
+      "bbox32": [
+        22,
+        34,
+        1239,
+        1217
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5582534293927488,
+        0.5414270394811718
+      ]
+    },
+    "card-art-unique-status_burn": {
+      "sha256": "bcdb7d8fcdf62b7672748e8f080e91bafb99dfd622586a6682161f51f163437b",
+      "offsetX": -0.239,
+      "offsetY": -0.478,
+      "scale": 1,
+      "bbox32": [
+        122,
+        110,
+        1138,
+        1156
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5174983707003459,
+        0.44943065318843417
+      ]
+    },
+    "card-art-unique-status_burn_plus": {
+      "sha256": "3ebe829f26aa89c39367e1b3b5bd21712febbea20fbd9617d53ae1cbc450f572",
+      "offsetX": -1.555,
+      "offsetY": 0.08,
+      "scale": 1,
+      "bbox32": [
+        99,
+        34,
+        1194,
+        1218
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5236223307316061,
+        0.49679724445293666
+      ]
+    },
+    "card-art-unique-status_dazed": {
+      "sha256": "09c3a1cfff3702b38789e9ce5793375e6a451ae040bbd4683c5e215b821f2cb2",
+      "offsetX": -1.595,
+      "offsetY": -0.399,
+      "scale": 1,
+      "bbox32": [
+        148,
+        68,
+        1146,
+        1196
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5204326349092646,
+        0.47805320903316484
+      ]
+    },
+    "card-art-unique-status_slimed": {
+      "sha256": "346bb3e64eed19902f71511e176c6aae28282bb2a1044cbb125b43c5505fd429",
+      "offsetX": -3.03,
+      "offsetY": 0.279,
+      "scale": 1,
+      "bbox32": [
+        151,
+        84,
+        1179,
+        1163
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5140187964096157,
+        0.4788227889385528
+      ]
+    },
+    "card-art-unique-status_void": {
+      "sha256": "fae7f79bbbae3ef80f42f4064a97dec22363ae20680755833afdf4b9848d6b52",
+      "offsetX": -0.598,
+      "offsetY": -0.518,
+      "scale": 1,
+      "bbox32": [
+        67,
+        29,
+        1202,
+        1238
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.507735573292307,
+        0.5637839071988174
+      ]
+    },
+    "card-art-unique-status_wound": {
+      "sha256": "54d4791dbd72c28f75ffa2a3b4f08f2cb7ac664f85d5443dacc97434e59c4a14",
+      "offsetX": -0.399,
+      "offsetY": -0.159,
+      "scale": 1,
+      "bbox32": [
+        59,
+        65,
+        1205,
+        1193
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.539600156648558,
+        0.455340360971727
+      ]
+    },
+    "enemy-acid": {
+      "sha256": "27f4ec0f798cd907ecc03f20799b6cbbaafb7882aad8e1e5c2c3d8688d2ace0d",
+      "offsetX": -0.877,
+      "offsetY": -0.08,
+      "scale": 1,
+      "bbox32": [
+        67,
+        41,
+        1209,
+        1215
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaCenter": [
+        0.5236479939558351,
+        0.5670136895865509
+      ]
+    }
+  }
+}

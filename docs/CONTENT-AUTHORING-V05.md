@@ -6,6 +6,8 @@
 
 ## 源表与工作流程
 
+可以运行根目录命令 `npm run editor`，使用独立的 [可视化配置工坊](../tools/content-editor/README.md)。表单、效果列表和预览编辑草稿；保存前检查全部源表、关联引用和本地素材，并备份旧文件。复杂 JSON 修改必须先应用到草稿。它复用本指南描述的同一套配置与规则，不引入另一套执行器。
+
 | 文件 | 每行定义 | 使用入口 |
 | --- | --- | --- |
 | `game/content/cards.json` | 卡牌基础、升级、触发与四层表现 | 起始牌组、奖励、生成、事件 |
@@ -79,6 +81,8 @@
 | `source` | 可选调研索引或原创设计说明；不参与运行规则 |
 
 `visual.family` 有 `strike/ward/spirit/oath` 四种，分别对应红、绿、蓝、紫框；它与机械类型、稀有度分别配置。图片引用填写 `game/public/assets/` 下的 PNG 名称，不带路径或扩展名。新增图先完成 [美术来源与分层要求](ART-STANDARDS-V05.md)。
+
+上例的通用符箓用于演示可运行字段。正式新增卡牌还需制作与牌名及效果相符的独立透明主体，登记来源与 `card-art-layouts.json` 的定位后运行 `npm run art:check`，再替换 `visual.icon`；不要继续把同一物件分配给不同卡牌。主体定位属于素材元数据，不改变卡牌规则。
 
 特殊入口为 `onDraw`、`onExhaust`、`onHandEnd` 与 `triggers`；它们仍执行相同效果列表。`costModifier` 调整实例费用，`playCondition` 与 `playConditionText` 定义可打出条件及原因。`generation.combat:false` 可从战内随机生成池排除牌。
 

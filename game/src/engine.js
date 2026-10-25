@@ -1,7 +1,7 @@
 // Public game API. All content and runs use the single configured runtime.
 import { CONTENT } from './generated/content-data.js';
 import { evaluate } from './runtime/expressions.js';
-import { createConfiguredAdventure, transitionConfigured, getConfiguredCardView, getConfiguredEnemyIntent, getConfiguredEventView, getConfiguredEnemies, isValidConfiguredSave, restoreConfiguredRun, contentFor } from './runtime/game.js';
+import { createConfiguredAdventure, transitionConfigured, getConfiguredCardView, getConfiguredCardEnemyTargets, getConfiguredEnemyIntent, getConfiguredEventView, getConfiguredEnemies, isValidConfiguredSave, restoreConfiguredRun, contentFor } from './runtime/game.js';
 export { RELIC_DEFS, POTION_DEFS } from './runtime/items.js';
 export { CONTENT, CONTENT_REVISION } from './generated/content-data.js';
 export { contentFor } from './runtime/game.js';
@@ -11,6 +11,7 @@ export const ENEMY_DEFS = CONTENT.enemies;
 export const createAdventure = createConfiguredAdventure;
 export const transition = transitionConfigured;
 export const getCardView = getConfiguredCardView;
+export const getCardEnemyTargets = getConfiguredCardEnemyTargets;
 export const getEnemyIntent = getConfiguredEnemyIntent;
 export const getEnemies = getConfiguredEnemies;
 export const getEventView = getConfiguredEventView;

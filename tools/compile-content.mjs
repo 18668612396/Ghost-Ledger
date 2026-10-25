@@ -7,12 +7,10 @@ import { GAME_ROOT } from './paths.mjs';
 
 const projectRoot = GAME_ROOT;
 export const TABLE_FILES = { cards: 'cards.json', powers: 'powers.json', enemies: 'enemies.json', encounters: 'encounters.json', acts: 'acts.json', events: 'events.json', visuals: 'visual-effects.json' };
-export async function readContent(root = projectRoot) {
+export function indexContentTables(tables) {
   const content = {};
   for (const [table, file] of Object.entries(TABLE_FILES)) {
-    let rows;
-    try { rows = JSON.parse(await readFile(resolve(root, 'content', file), 'utf8')); }
-    catch (error) { throw new Error(`content/${file}：${error.message}`); }
+    const rows = tables?.[table];
     if (!Array.isArray(rows)) throw new Error(`content/${file} 顶层必须是数组。`);
     content[table] = {};
     for (const row of rows) {
@@ -21,10 +19,21 @@ export async function readContent(root = projectRoot) {
       content[table][row.id] = row;
     }
   }
+  for (const table of Object.keys(tables)) if (!Object.hasOwn(TABLE_FILES, table)) throw new Error(`未知配置表：${table}`);
   return content;
 }
-export async function compileContent(root = projectRoot, { assets = true, quiet = false } = {}) {
-  const content = await readContent(root);
+export async function readContentTables(root = projectRoot) {
+  const tables = {};
+  for (const [table, file] of Object.entries(TABLE_FILES)) {
+    try { tables[table] = JSON.parse(await readFile(resolve(root, 'content', file), 'utf8')); }
+    catch (error) { throw new Error(`content/${file}：${error.message}`); }
+  }
+  return tables;
+}
+export async function readContent(root = projectRoot) {
+  return indexContentTables(await readContentTables(root));
+}
+export async function contentProblems(content, root = projectRoot, { assets = true } = {}) {
   const problems = validateContent(content);
   if (assets) {
     const files = new Set();
@@ -36,6 +45,11 @@ export async function compileContent(root = projectRoot, { assets = true, quiet 
       catch { problems.push(`素材 ${file}.png 缺失或不是有效PNG`); }
     }
   }
+  return problems;
+}
+export async function compileContent(root = projectRoot, { assets = true, quiet = false } = {}) {
+  const content = await readContent(root);
+  const problems = await contentProblems(content, root, { assets });
   if (problems.length) throw new Error(`配置校验失败：\n${problems.map(problem => `- ${problem}`).join('\n')}`);
   const json = JSON.stringify(content);
   const revision = createHash('sha256').update(json).digest('hex').slice(0, 20);

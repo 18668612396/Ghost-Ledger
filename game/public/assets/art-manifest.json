@@ -1006,6 +1006,612 @@
       "purpose": "自身目标底部蓝色渐变引导透明位图",
       "source": "image_gen",
       "promptSet": "fx-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_strike.png",
+      "purpose": "卡牌专属透明主体：斩魂（ic_strike）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_bash.png",
+      "purpose": "卡牌专属透明主体：破煞（ic_bash）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_anger.png",
+      "purpose": "卡牌专属透明主体：嗔火（ic_anger）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_body_slam.png",
+      "purpose": "卡牌专属透明主体：镇山印（ic_body_slam）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_clash.png",
+      "purpose": "卡牌专属透明主体：断魂（ic_clash）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_cleave.png",
+      "purpose": "卡牌专属透明主体：横扫阴风（ic_cleave）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_clothesline.png",
+      "purpose": "卡牌专属透明主体：锁喉索（ic_clothesline）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_headbutt.png",
+      "purpose": "卡牌专属透明主体：回魂击（ic_headbutt）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_heavy_blade.png",
+      "purpose": "卡牌专属透明主体：千钧斩（ic_heavy_blade）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_iron_wave.png",
+      "purpose": "卡牌专属透明主体：铁衣震（ic_iron_wave）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_perfected_strike.png",
+      "purpose": "卡牌专属透明主体：万刃归魂（ic_perfected_strike）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_pommel_strike.png",
+      "purpose": "卡牌专属透明主体：引魂斩（ic_pommel_strike）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_sword_boomerang.png",
+      "purpose": "卡牌专属透明主体：飞钱斩（ic_sword_boomerang）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_thunderclap.png",
+      "purpose": "卡牌专属透明主体：惊雷咒（ic_thunderclap）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_twin_strike.png",
+      "purpose": "卡牌专属透明主体：双生斩（ic_twin_strike）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_wild_strike.png",
+      "purpose": "卡牌专属透明主体：裂骨斩（ic_wild_strike）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_blood_for_blood.png",
+      "purpose": "卡牌专属透明主体：以血偿血（ic_blood_for_blood）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_carnage.png",
+      "purpose": "卡牌专属透明主体：屠魂（ic_carnage）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_dropkick.png",
+      "purpose": "卡牌专属透明主体：踏煞（ic_dropkick）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_hemokinesis.png",
+      "purpose": "卡牌专属透明主体：血书判（ic_hemokinesis）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_pummel.png",
+      "purpose": "卡牌专属透明主体：连环索（ic_pummel）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_rampage.png",
+      "purpose": "卡牌专属透明主体：百战煞（ic_rampage）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_reckless_charge.png",
+      "purpose": "卡牌专属透明主体：无常突（ic_reckless_charge）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_searing_blow.png",
+      "purpose": "卡牌专属透明主体：炼狱烙（ic_searing_blow）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_sever_soul.png",
+      "purpose": "卡牌专属透明主体：斩断尘缘（ic_sever_soul）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_uppercut.png",
+      "purpose": "卡牌专属透明主体：撼魂（ic_uppercut）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_whirlwind.png",
+      "purpose": "卡牌专属透明主体：万魂风（ic_whirlwind）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_bludgeon.png",
+      "purpose": "卡牌专属透明主体：断狱（ic_bludgeon）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_feed.png",
+      "purpose": "卡牌专属透明主体：噬魂（ic_feed）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_fiend_fire.png",
+      "purpose": "卡牌专属透明主体：万符俱焚（ic_fiend_fire）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_immolate.png",
+      "purpose": "卡牌专属透明主体：焚纸送魂（ic_immolate）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_reaper.png",
+      "purpose": "卡牌专属透明主体：渡尽黄泉（ic_reaper）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_defend.png",
+      "purpose": "卡牌专属透明主体：守灯（ic_defend）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_armaments.png",
+      "purpose": "卡牌专属透明主体：敕符（ic_armaments）",
+      "source": "image_gen",
+      "promptSet": "card-unique-a-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_flex.png",
+      "purpose": "卡牌专属透明主体：借神力（ic_flex）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_havoc.png",
+      "purpose": "卡牌专属透明主体：听天命（ic_havoc）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_shrug_it_off.png",
+      "purpose": "卡牌专属透明主体：幽冥步（ic_shrug_it_off）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_true_grit.png",
+      "purpose": "卡牌专属透明主体：净魂（ic_true_grit）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_warcry.png",
+      "purpose": "卡牌专属透明主体：唤魂（ic_warcry）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_battle_trance.png",
+      "purpose": "卡牌专属透明主体：入定（ic_battle_trance）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_bloodletting.png",
+      "purpose": "卡牌专属透明主体：血祭香（ic_bloodletting）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_burning_pact.png",
+      "purpose": "卡牌专属透明主体：焚契（ic_burning_pact）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_disarm.png",
+      "purpose": "卡牌专属透明主体：缴械符（ic_disarm）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_dual_wield.png",
+      "purpose": "卡牌专属透明主体：影双生（ic_dual_wield）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_entrench.png",
+      "purpose": "卡牌专属透明主体：固魂阵（ic_entrench）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_flame_barrier.png",
+      "purpose": "卡牌专属透明主体：冥火壁（ic_flame_barrier）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_ghostly_armor.png",
+      "purpose": "卡牌专属透明主体：阴兵甲（ic_ghostly_armor）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_infernal_blade.png",
+      "purpose": "卡牌专属透明主体：阴府赐刃（ic_infernal_blade）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_intimidate.png",
+      "purpose": "卡牌专属透明主体：喝煞（ic_intimidate）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_power_through.png",
+      "purpose": "卡牌专属透明主体：带伤守夜（ic_power_through）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_rage.png",
+      "purpose": "卡牌专属透明主体：战意护身（ic_rage）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_second_wind.png",
+      "purpose": "卡牌专属透明主体：弃尘护命（ic_second_wind）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_seeing_red.png",
+      "purpose": "卡牌专属透明主体：燃香（ic_seeing_red）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_sentinel.png",
+      "purpose": "卡牌专属透明主体：守夜傀（ic_sentinel）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_shockwave.png",
+      "purpose": "卡牌专属透明主体：荡魂钟（ic_shockwave）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_spot_weakness.png",
+      "purpose": "卡牌专属透明主体：照破虚实（ic_spot_weakness）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_double_tap.png",
+      "purpose": "卡牌专属透明主体：叠符（ic_double_tap）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_exhume.png",
+      "purpose": "卡牌专属透明主体：返魂（ic_exhume）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_impervious.png",
+      "purpose": "卡牌专属透明主体：金身护命（ic_impervious）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_limit_break.png",
+      "purpose": "卡牌专属透明主体：破极（ic_limit_break）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_offering.png",
+      "purpose": "卡牌专属透明主体：献灯（ic_offering）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_combust.png",
+      "purpose": "卡牌专属透明主体：魂火不熄（ic_combust）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_dark_embrace.png",
+      "purpose": "卡牌专属透明主体：幽冥相拥（ic_dark_embrace）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_evolve.png",
+      "purpose": "卡牌专属透明主体：化厄（ic_evolve）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_feel_no_pain.png",
+      "purpose": "卡牌专属透明主体：无惧阴伤（ic_feel_no_pain）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_fire_breathing.png",
+      "purpose": "卡牌专属透明主体：吐幽焰（ic_fire_breathing）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_inflame.png",
+      "purpose": "卡牌专属透明主体：神威附体（ic_inflame）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_metallicize.png",
+      "purpose": "卡牌专属透明主体：铜身（ic_metallicize）",
+      "source": "image_gen",
+      "promptSet": "card-unique-b-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_rupture.png",
+      "purpose": "卡牌专属透明主体：血契神力（ic_rupture）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_barricade.png",
+      "purpose": "卡牌专属透明主体：不破法坛（ic_barricade）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_berserk.png",
+      "purpose": "卡牌专属透明主体：孤注燃命（ic_berserk）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_brutality.png",
+      "purpose": "卡牌专属透明主体：血引灯（ic_brutality）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_corruption.png",
+      "purpose": "卡牌专属透明主体：堕入幽冥（ic_corruption）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_demon_form.png",
+      "purpose": "卡牌专属透明主体：夜叉化身（ic_demon_form）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-ic_juggernaut.png",
+      "purpose": "卡牌专属透明主体：镇狱威仪（ic_juggernaut）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-debt_chain.png",
+      "purpose": "卡牌专属透明主体：勾魂索（debt_chain）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-debt_vow.png",
+      "purpose": "卡牌专属透明主体：还愿符（debt_vow）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-debt_seal.png",
+      "purpose": "卡牌专属透明主体：生死签（debt_seal）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-debt_lotus.png",
+      "purpose": "卡牌专属透明主体：莲灯渡（debt_lotus）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-debt_blood.png",
+      "purpose": "卡牌专属透明主体：借命斩（debt_blood）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-debt_ledger.png",
+      "purpose": "卡牌专属透明主体：销账书（debt_ledger）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-debt_mirror.png",
+      "purpose": "卡牌专属透明主体：照骨镜（debt_mirror）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-debt_ferry.png",
+      "purpose": "卡牌专属透明主体：摆渡钱（debt_ferry）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-debt_verdict.png",
+      "purpose": "卡牌专属透明主体：阎罗敕令（debt_verdict）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-debt_loan.png",
+      "purpose": "卡牌专属透明主体：借火契（debt_loan）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-debt_delay.png",
+      "purpose": "卡牌专属透明主体：延灯符（debt_delay）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-debt_register.png",
+      "purpose": "卡牌专属透明主体：司债录（debt_register）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-status_slimed.png",
+      "purpose": "卡牌专属透明主体：黏液（status_slimed）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-status_dazed.png",
+      "purpose": "卡牌专属透明主体：眩晕（status_dazed）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-status_burn.png",
+      "purpose": "卡牌专属透明主体：灼伤（status_burn）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-status_burn_plus.png",
+      "purpose": "卡牌专属透明主体：灼伤·烈（status_burn_plus）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-status_wound.png",
+      "purpose": "卡牌专属透明主体：伤口（status_wound）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-status_void.png",
+      "purpose": "卡牌专属透明主体：空虚（status_void）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-curse_injury.png",
+      "purpose": "卡牌专属透明主体：业障（curse_injury）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-curse_regret.png",
+      "purpose": "卡牌专属透明主体：悔念（curse_regret）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-curse_doubt.png",
+      "purpose": "卡牌专属透明主体：疑惧（curse_doubt）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-curse_shame.png",
+      "purpose": "卡牌专属透明主体：蒙羞（curse_shame）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-curse_decay.png",
+      "purpose": "卡牌专属透明主体：腐咒（curse_decay）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-curse_clumsy.png",
+      "purpose": "卡牌专属透明主体：踉跄（curse_clumsy）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-curse_writhe.png",
+      "purpose": "卡牌专属透明主体：缠身（curse_writhe）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
+    },
+    {
+      "filename": "card-art-unique-curse_pain.png",
+      "purpose": "卡牌专属透明主体：苦痛（curse_pain）",
+      "source": "image_gen",
+      "promptSet": "card-unique-c-prompts.json"
     }
   ]
 }

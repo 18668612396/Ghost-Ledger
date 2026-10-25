@@ -3,6 +3,7 @@ import { access, readFile, stat } from 'node:fs/promises';
 import { resolve, extname, sep } from 'node:path';
 import { watch } from 'node:fs';
 import { compileContent } from './compile-content.mjs';
+import { compileCardArtLayouts } from './compile-card-art-layout.mjs';
 import { GAME_ROOT, DIST_ROOT, EVIDENCE_ROOT } from './paths.mjs';
 
 const argumentsList = process.argv.slice(2);
@@ -20,6 +21,7 @@ catch (error) {
 let contentErrors = [];
 let contentWatcher, contentTimer;
 if (!built) {
+  await compileCardArtLayouts(root);
   await compileContent(root);
   contentWatcher = watch(resolve(root, 'content'), () => {
     clearTimeout(contentTimer);

@@ -8,9 +8,11 @@
 
 代码负责文字、数值、规则、状态、交互和排版，以及已有图片的切片、图集裁剪、缩放、位移、透明度和血条纹理裁剪；不通过 CSS、SVG 或 Canvas 绘制美术。游戏和本地服务使用浏览器与 Node.js 标准能力，没有第三方运行依赖或外部 CDN。字体调用设备已有楷体及系统回退字体，项目不分发字体文件。
 
+战斗背景顶部与底部按用户要求叠加 CSS 渐暗，仅作用于背景层，作为 UI 可读性的明暗处理；场景原图、怪物、卡牌及其他界面素材保持原样，不新增或替代美术资源。
+
 ## 当前资源清单
 
-当前 `game/public/assets/` 有 **116 张 PNG**：按来源形式分为 **61 张生成源图、40 张原像素矩形裁片、15 张调色派生图**；按用途分为 **95 张运行资源、21 张必要来源依赖**。两种分类统计同一批文件，不能相加。
+当前 `game/public/assets/` 有 **217 张 PNG**：按来源形式分为 **162 张生成源图、40 张原像素矩形裁片、15 张调色派生图**；按用途分为 **196 张运行资源、21 张必要来源依赖**。两种分类统计同一批文件，不能相加。
 
 完整登记以 [art-manifest.json](game/public/assets/art-manifest.json) 为准。记录包括文件名、用途、提示词文件及派生来源；裁片另有矩形坐标。早期文档中的 148／153 张等数字属于资源归档前的历史快照，不代表当前活动目录。
 
@@ -19,6 +21,7 @@
 | 地府场景与沿用角色 | 浅青水彩街巷；纸童、蓝面缚魂役、铁面判官等沿用立绘 | [初始来源](game/public/assets/prompts.json)、[参考风格来源](game/public/assets/reference-prompts.json) |
 | 主页、路线与界面图集 | 地图背景、路线笔触、头像、图标、导航物件、按钮与卷轴源图、香火球 | [主页来源](game/public/assets/hub-prompts.json)、[界面来源](game/public/assets/ui-prompts.json)、[参考风格来源](game/public/assets/reference-prompts.json) |
 | 透明卡牌物件 | 九宫格透明物件的 9 张裁片，以及独立镜子、账簿 | [生成与编辑记录](game/public/assets/card-visual-prompts.json)、[矩形裁片记录](game/public/assets/card-art-slices.json) |
+| 逐牌专属主体 | 101 张独立生成的正方形透明 PNG，覆盖常规牌、状态与诅咒；按牌名及效果设计，不在不同定义之间共用 | [A 组完整提示词](game/public/assets/card-unique-a-prompts.json)、[B 组完整提示词](game/public/assets/card-unique-b-prompts.json)、[C 组完整提示词](game/public/assets/card-unique-c-prompts.json) |
 | 抽象卡牌背景 | 5 张源图集、15 张原像素裁片、15 张授权调色背景 | [抽象纹样来源](game/public/assets/card-pattern-prompts.json)、[裁片记录](game/public/assets/card-pattern-slices.json)、[调色记录](game/public/assets/card-color-adjustments.json) |
 | 四套主卡框 | 攻伐朱砂红、护身青玉绿、灵术靛蓝、阴契绛紫；948×1659，宽高比 4:7 | [四色卡框来源](game/public/assets/card-frame-vivid-prompts.json) |
 | 图鉴与背包小卡 | 中性纸框及红、绿、蓝、紫四套派生框；1122×1402，宽高比 4:5 | [中性小框](game/public/assets/collection-prompts.json)、[四类小框](game/public/assets/collection-frame-prompts.json) |
@@ -27,7 +30,9 @@
 | 地面阴影 | `enemy-shadow-hard.png`，2172×724；位图已有椭圆透视，程序只等比缩放、位移与改变透明度 | [阴影编辑来源](game/public/assets/appearance-refinement-prompts.json) |
 | 战斗表现 | 9 张位图，用于燃烧、化灰、斩击、火、雷、咒、护身、魂光及自身目标引导 | [特效提示词](game/public/assets/fx-prompts.json) |
 
-主卡框、抽象背景、透明物件和鬼火费用分别叠放，名称、类型和数值由代码排版。87 张常规玩家牌复用这些有来源的组件，**并非各有一幅独立新插画**。视觉家族、机械类型和稀有度分别配置，四色不能解释为只有四类战斗规则。
+主卡框、抽象背景、透明主体和鬼火费用分别叠放，名称、类型和数值由代码排版。101 条卡牌定义各有一张独立主体图；同一定义的基础版与升级版沿用其主体。四套卡框与抽象背景继续共用。旧通用物件仍用于法器、事件与既有配置快照，不再承担不同卡牌的主体。视觉家族、机械类型和稀有度分别配置，四色不能解释为只有四类战斗规则。
+
+本轮专属主体均使用内置 `image_gen` 逐张生成，保留原始 PNG 字节与 alpha。各组记录包含完整提示词、卡牌标识、生成原路径、尺寸和 SHA-256。居中只调整显示位置：[定位清单](game/public/assets/card-art-layouts.json) 保存主体边界、偏移与卡框画窗中心，不重绘、抠图或重采样生成素材。
 
 当前 15 张调色背景保留源图、尺寸、alpha 与纹样；离线调色是用户明确授权的既有派生处理。旧的 4 张调色卡框已被重新生成的鲜明框替代，不计入当前 15 张调色背景。
 

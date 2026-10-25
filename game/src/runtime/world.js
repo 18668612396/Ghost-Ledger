@@ -151,9 +151,24 @@ export function planConfiguredIntent(state, enemy, content, random = Math.random
 function previewEffects(effects, env) {
   return effects.flatMap(effect => effect.op === 'if' ? previewEffects(evaluate(effect.condition, env) ? effect.then || [] : effect.else || [], env) : [effect]);
 }
+
+function intentEffectTarget(state, enemy, effect) {
+  if (effect.target === 'player') return state;
+  if (effect.target === 'ally') {
+    const allies = (state.enemies || []).filter(candidate => alive(candidate) && !candidate.dead);
+    if (effect.targetUid) return allies.find(candidate => candidate.uid === effect.targetUid) || enemy;
+    return allies.find(candidate => candidate.uid === enemy.intent.targetUid && candidate.uid !== enemy.uid) || allies.find(candidate => candidate.uid !== enemy.uid) || enemy;
+  }
+  return enemy;
+}
+
+function intentBlockAmount(effect, target, env) {
+  return Math.max(0, Math.floor((numeric(effect.amount, env) + (effect.modified === false ? 0 : target.dexterity || 0)) * (effect.modified !== false && target.frail > 0 ? .75 : 1)));
+}
+
 /** The preview uses the exact announced effect list and never rolls randomness. */
 export function getConfiguredIntentView(state, enemy, content) {
-  if (!enemy || !alive(enemy) || !enemy.intent) return { kind: 'none', label: '静候', amount: 0, hits: 1, total: 0, detail: '没有尚在战场上的敌人。' };
+  if (!enemy || !alive(enemy) || !enemy.intent) return { kind: 'none', label: '静候', amount: 0, hits: 1, total: 0, actions: [{ kind: 'prepare', text: '本轮不攻击' }], detail: '没有尚在战场上的敌人。' };
   const env = envFor(state, enemy, content, null, true);
   const effects = previewEffects(enemy.intent.effects || [], env);
   const attacks = effects.filter(effect => effect.op === 'damage' && effect.target === 'player');
@@ -162,21 +177,80 @@ export function getConfiguredIntentView(state, enemy, content) {
     const amount = effect.attack === false ? Math.max(0, Math.floor(base)) : Math.max(0, Math.floor(Math.max(0, base + (enemy.attackBonus || 0) + enemy.strength * (effect.strengthScale ?? 1)) * (enemy.weak > 0 ? .75 : 1) * (state.exposed > 0 ? 1.5 : 1)));
     return { amount, hits: Math.max(0, Math.floor(numeric(effect.hits ?? 1, env))) };
   });
-  const pieces = strikes.map(item => `造成 ${item.amount}${item.hits > 1 ? `×${item.hits}` : ''} 点伤害`);
-  const names = { weak: '虚弱', exposed: '易伤', frail: '脆弱', entangled: '缠绕', strength: '力量', dexterity: '敏捷', artifact: '人工制品', ritual: '仪式', enrage: '激怒' };
-  for (const effect of effects) {
-    if (effect.op === 'block') pieces.push(`${effect.target === 'ally' ? '保护同伴，给予' : '获得'} ${numeric(effect.amount, env)} 护甲`);
-    if (effect.op === 'status') pieces.push(`${effect.target === 'player' ? '对你施加' : '获得'} ${numeric(effect.amount, env)} ${names[effect.key] || effect.key}`);
-    if (effect.op === 'addCard') pieces.push(`加入 ${numeric(effect.amount ?? 1, env)} 张${content.cards?.[effect.cardId]?.name || '状态牌'}`);
-    if (effect.op === 'steal') pieces.push(`盗走 ${numeric(effect.amount, env)} 冥钱`);
-    if (effect.op === 'summon') pieces.push(`分裂成 ${effect.ids.length} 只子体，继承分裂时的剩余生命`);
-    if (effect.op === 'escape') pieces.push('带走赃款并逃离');
-  }
   const total = strikes.reduce((sum, hit) => sum + hit.amount * hit.hits, 0);
+  const actions = strikes.map(item => ({ kind: 'attack', text: `攻击 ${item.amount}${item.hits > 1 ? `×${item.hits}` : ''}` }));
+  const pieces = strikes.map(item => `造成 ${item.amount}${item.hits > 1 ? `×${item.hits}` : ''} 点伤害`);
+  if (strikes.length > 1 || strikes.some(item => item.hits > 1)) {
+    actions.push({ kind: 'attack', text: `合计 ${total}伤害` });
+    pieces.push(`合计 ${total} 点伤害`);
+  }
+  const names = { weak: '虚弱', exposed: '易伤', frail: '脆弱', entangled: '缠绕', strength: '力量', dexterity: '敏捷', artifact: '御符', ritual: '仪式', enrage: '激怒', sharpHide: '荆甲', burn: '业火', curlUp: '蜷缩', angry: '愤怒', noDraw: '无法抽牌' };
+  const timedStatuses = ['weak', 'exposed', 'frail', 'entangled', 'noDraw'];
+  const zones = { hand: '手牌', drawPile: '抽牌堆', discard: '弃牌堆', exhaust: '消耗堆', powerZone: '能力区', limbo: '结算区' };
+  const shortZones = { ...zones, drawPile: '抽牌', discard: '弃牌', exhaust: '消耗' };
+  const add = (kind, text, detail = text) => { actions.push({ kind, text }); pieces.push(detail); };
+  const targetName = target => target === state ? '你' : target === enemy ? '自身' : content.enemies?.[target.id]?.name || '同伴';
+  for (const [index, effect] of effects.entries()) {
+    const target = intentEffectTarget(state, enemy, effect);
+    const subject = targetName(target);
+    if (effect.op === 'block') {
+      const amount = intentBlockAmount(effect, target, env);
+      add('defend', `${target === state ? '你' : ''}护甲 +${amount}`, `${subject}获得 ${amount} 点护甲`);
+      if (target !== state && target !== enemy) actions.push({ kind: 'defend', text: `给予 ${subject}` });
+    }
+    if (effect.op === 'status') {
+      const amount = numeric(effect.amount, env), name = names[effect.key] || effect.key;
+      const timed = timedStatuses.includes(effect.key);
+      const debuff = amount > 0 && [...timedStatuses, 'burn'].includes(effect.key) || amount < 0 && ['strength', 'dexterity'].includes(effect.key);
+      const text = timed ? `${subject}${name} ${amount}回合` : amount < 0 ? `${subject}失去 ${Math.abs(amount)}${name}` : `${target === enemy ? '' : subject}${name} +${amount}`;
+      const detail = effect.key === 'entangled' && amount > 0 ? `${text}，期间无法打出攻击牌` : text;
+      add(debuff ? 'debuff' : 'buff', text, detail);
+      if (effect.key === 'ritual' && amount > 0) add('buff', `行动后力量 +${(target.ritual || 0) + amount}`, `${subject}此后每次行动结束时，获得 ${(target.ritual || 0) + amount} 点力量`);
+      if (effect.key === 'enrage' && amount > 0) add('buff', `术法触发力量 +${(target.enrage || 0) + amount}`, `你每打出一张术法牌，${subject}获得 ${(target.enrage || 0) + amount} 点力量`);
+    }
+    if (effect.op === 'addCard') {
+      const amount = numeric(effect.amount ?? 1, env), name = content.cards?.[effect.cardId]?.name || '状态牌', zone = zones[effect.zone] || effect.zone || '弃牌堆';
+      add('debuff', `${shortZones[effect.zone] || zone} +${amount} ${name}`, `向${zone}加入 ${amount} 张${name}`);
+    }
+    if (effect.op === 'steal') add('debuff', `盗走 ≤${numeric(effect.amount, env)}冥钱`, `盗走最多 ${numeric(effect.amount, env)} 冥钱，盗款不受护甲抵挡`);
+    if (effect.op === 'summon') {
+      const verb = effect.replaceSource ? '分裂' : '召唤';
+      const children = effect.ids.map(id => content.enemies?.[id]?.name || '子体');
+      const same = children.every(name => name === children[0]);
+      const text = `${verb} ${children.length}只`;
+      add('split', text, `${verb}${effect.replaceSource ? '为' : ''} ${children.length} 只${same ? children[0] : `子体（${children.join('、')}）`}${effect.inheritHp ? `，各继承行动时的剩余生命（当前 ${enemy.hp}）` : ''}`);
+      for (const name of new Set(children)) actions.push({ kind: 'split', text: `子体 ${name}×${children.filter(child => child === name).length}` });
+      if (effect.inheritHp) actions.push({ kind: 'split', text: '继承剩余生命' });
+    }
+    if (effect.op === 'escape') {
+      add('escape', '逃离战场', enemy.stolen > 0 ? `带走已盗的 ${enemy.stolen} 冥钱并逃离` : '逃离战场');
+      if (enemy.stolen > 0) actions.push({ kind: 'escape', text: `带走 ${enemy.stolen}冥钱` });
+    }
+    if (effect.op === 'set' && ['block', 'sharpHide'].includes(effect.path)) {
+      // Only the final assignment is visible when a move sets a value twice.
+      if (effects.slice(index + 1).some(later => later.op === 'set' && later.path === effect.path && intentEffectTarget(state, enemy, later) === target)) continue;
+      const amount = numeric(effect.value, env);
+      if (effect.path === 'block') {
+        add('defend', amount > 0 ? `${target === state ? '你' : ''}护甲变为 ${amount}` : `清除${target === state ? '你' : ''}护甲`, amount > 0 ? `${subject}护甲变为 ${amount}` : `清除${subject}护甲`);
+        if (target !== state && target !== enemy) actions.push({ kind: 'defend', text: `给予 ${subject}` });
+      } else add('buff', amount > 0 ? `攻击牌反伤 ${amount}` : '移除荆甲反伤', amount > 0 ? `${subject}获得 ${amount} 荆甲：你每打出一张攻击牌，受到 ${amount} 点可被护甲抵挡的反伤` : `${subject}移除荆甲反伤`);
+    }
+    if (effect.op === 'transformCards') {
+      const from = content.cards?.[effect.from]?.name || effect.from, to = content.cards?.[effect.to]?.name || effect.to;
+      const affectedZones = (effect.zones || Object.keys(zones)).map(zone => zones[zone] || zone).join('、');
+      add('debuff', `全部${from}→${to}`, `将${affectedZones}中的所有${from}替换为${to}`);
+    }
+  }
+  if (!actions.length) actions.push({ kind: 'prepare', text: '本轮不攻击' });
+  if (enemy.intent.description) pieces.push(enemy.intent.description);
   const first = strikes[0];
   const block = effects.find(effect => effect.op === 'block');
-  const kind = strikes.length ? 'attack' : block ? 'defend' : effects.some(effect => effect.op === 'summon') ? 'split' : effects.some(effect => effect.op === 'escape') ? 'escape' : effects.some(effect => effect.op === 'status' && effect.target === 'player' || effect.op === 'addCard') ? 'debuff' : 'buff';
-  return { move: enemy.intent.move, kind, label: enemy.intent.label, amount: first?.amount ?? (block ? numeric(block.amount, env) : 0), hits: first?.hits ?? 1, total, detail: pieces.join('；') || enemy.intent.description || '正在准备下一次行动。', targetUid: enemy.intent.targetUid };
+  const kind = strikes.length ? 'attack' : actions.some(action => action.kind === 'defend') ? 'defend' : actions.some(action => action.kind === 'split') ? 'split' : actions.some(action => action.kind === 'escape') ? 'escape' : actions.some(action => action.kind === 'debuff') ? 'debuff' : actions[0].kind;
+  const primary = actions.findIndex(action => action.kind === kind);
+  if (primary > 0) actions.unshift(...actions.splice(primary, 1));
+  let detail = pieces.join('；') || '本轮不攻击。';
+  if (strikes.length) detail += `${/[。！？]$/.test(detail) ? '' : '。'}伤害按当前状态计算，未扣除你的护甲。`;
+  return { move: enemy.intent.move, kind, label: enemy.intent.label, amount: first?.amount ?? (block ? intentBlockAmount(block, intentEffectTarget(state, enemy, block), env) : 0), hits: first?.hits ?? 1, total, actions, detail, targetUid: enemy.intent.targetUid };
 }
 
 const DEFAULT_LABELS = {

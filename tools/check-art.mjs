@@ -61,6 +61,21 @@ function rasterBackground(value) {
   return remainder.length === 0;
 }
 
+function battleBackgroundShade(selector, value, location) {
+  if (location !== 'src/style.css' || !['.in-combat > .world-background::before', '.in-combat > .world-background::after'].includes(selector.replace(/\/\*[\s\S]*?\*\//g, '').trim().replace(/\s+/g, ' '))) return false;
+  const alpha = [];
+  const shape = value.trim().replace(/rgba\(\s*8\s*,\s*20\s*,\s*26\s*,\s*(0(?:\.\d+)?|\.\d+|1(?:\.0+)?)\s*\)/gi, (_, amount) => { alpha.push(Number(amount)); return 'shade'; });
+  const gradient = shape.match(/^linear-gradient\(\s*to (?:top|bottom)\s*,\s*shade\s*,\s*shade\s+(\d+(?:\.\d+)?)%\s*,\s*shade\s*\)$/i);
+  return Boolean(gradient && alpha.length === 3 && alpha[0] > 0 && alpha[0] <= .65 && alpha[1] >= 0 && alpha[1] <= alpha[0] && alpha[2] === 0 && Number(gradient[1]) > 0 && Number(gradient[1]) < 100);
+}
+
+function sourceWithoutBackgroundShades(source, filename) {
+  if (filename !== 'src/style.css') return source;
+  // Only the user-requested neutral fade inside the background is exempt.
+  // Preserve positions and inspect every other declaration normally.
+  return source.replace(/([^{}]+)\{[^{}]*\}/g, (rule, selector) => rule.replace(/(^|[;{])\s*(background(?:-image)?)\s*:\s*([^;}]+)/gi, (declaration, prefix, property, value) => battleBackgroundShade(selector, value, filename) ? declaration.replace(value, value.replace(/[^\r\n]/g, ' ')) : declaration));
+}
+
 function inspectCss(css, location) {
   const problems = [];
   const clean = css.replace(/\/\*[\s\S]*?\*\//g, '');
@@ -78,7 +93,8 @@ function inspectCss(css, location) {
     if (/^(?:mask|mask-image|-webkit-mask|-webkit-mask-image)$/.test(property) && !rasterBackground(value)) problems.push(`${label} 的遮罩必须来自图片素材。`);
     // 用户要求竖屏游戏之外只留纯色；仅豁免页面 body，游戏内美术仍须使用素材。
     const outsideGameFill = location === 'src/style.css' && selector.trim() === 'body' && property === 'background-color' && /^#[\da-f]{6}$/i.test(value);
-    if (/^(?:background|background-color|background-image)$/.test(property) && !rasterBackground(value) && !outsideGameFill) problems.push(`${label} 使用有色背景或程序底纹，请改为图片素材。`);
+    const backgroundShade = /^(?:background|background-image)$/.test(property) && battleBackgroundShade(selector, value, location);
+    if (/^(?:background|background-color|background-image)$/.test(property) && !rasterBackground(value) && !outsideGameFill && !backgroundShade) problems.push(`${label} 使用有色背景或程序底纹，请改为图片素材。`);
     if (property === 'scrollbar-color' && !/^(?:auto|inherit|initial|unset|revert|transparent\s+transparent)(?:\s*!important)?$/i.test(value)) problems.push(`${label} 使用程序着色滚动条，请保留原生自动外观或透明设置。`);
     if (/^border(?:-(?:top|right|bottom|left))?(?:-color)?$/.test(property)) {
       const colors = value.match(/(?:rgba?|hsla?)\([^)]*\)|#[\da-f]+|[a-z-]+/gi) || [];
@@ -92,6 +108,7 @@ function inspectCss(css, location) {
 
 export function inspectRuntimeSource(source, filename) {
   const problems = [];
+  const inspected = sourceWithoutBackgroundShades(source, filename);
   const checks = [
     [/<\s*(?:svg|path|circle|ellipse|rect|polygon|polyline|line)\b|data:image\/svg|\.svg(?:["'?#)]|$)/i, '禁止内联或程序 SVG 美术。'],
     [/<\s*canvas\b|\b(?:OffscreenCanvas|Path2D)\b|createElement\(\s*["']canvas["']|\.getContext\(\s*["'](?:2d|webgl2?)["']|\.(?:fillRect|strokeRect|drawImage|arc|bezierCurveTo)\s*\(/i, '禁止 Canvas 程序绘图。'],
@@ -100,7 +117,7 @@ export function inspectRuntimeSource(source, filename) {
     [/createElementNS\([^)]*svg|http:\/\/www\.w3\.org\/2000\/svg/i, '禁止通过 SVG API 绘制美术。'],
   ];
   for (const [pattern, message] of checks) {
-    const match = source.match(pattern);
+    const match = inspected.match(pattern);
     if (match) problems.push(`${filename}:${source.slice(0, match.index).split('\n').length} ${message}`);
   }
   if (filename.endsWith('.css')) problems.push(...inspectCss(source, filename));
@@ -131,7 +148,7 @@ export async function checkArt(root = defaultRoot) {
     try {
       const bytes = await readFile(resolve(assetsRoot, entry.filename));
       if (!bytes.subarray(0, 8).equals(pngSignature)) problems.push(`${entry.filename} 的 PNG 签名不正确。`);
-      const aspect = uiAspectRatios.get(entry.filename);
+      const aspect = uiAspectRatios.get(entry.filename) || (entry.filename.startsWith('card-art-unique-') ? [1, 1] : undefined);
       if (aspect && (bytes.length < 24 || bytes.readUInt32BE(16) * aspect[1] !== bytes.readUInt32BE(20) * aspect[0])) problems.push(`${entry.filename} 的源图比例应为 ${aspect.join(':')}，请勿压扁图集或卡框。`);
     } catch {
       problems.push(`缺少 PNG 美术：${entry.filename}`);

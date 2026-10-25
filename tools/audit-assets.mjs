@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { readContent } from './compile-content.mjs';
 import { SKIN_DATA } from '../game/src/skin-data.js';
 import { GAME_ROOT } from './paths.mjs';
+import { COMMON_CARD_ART_IDS } from '../game/src/card-visuals.js';
 
 const root = GAME_ROOT;
 export async function auditAssets(projectRoot = root) {
@@ -11,6 +12,7 @@ export async function auditAssets(projectRoot = root) {
   const content = await readContent(root);
   const manifest = JSON.parse(await readFile(resolve(root, 'public/assets/art-manifest.json'), 'utf8'));
   const required = new Set(['collection-slot.png']);
+  for (const id of COMMON_CARD_ART_IDS) required.add(`card-art-${id}.png`);
   async function scan(directory) {
     for (const entry of await readdir(directory, { withFileTypes: true })) {
       const path = resolve(directory, entry.name);

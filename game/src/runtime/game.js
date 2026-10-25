@@ -19,6 +19,20 @@ export function getConfiguredCardView(state, card) {
   const preview = state || { energy: Infinity, hp: 80, maxHp: 80, block: 0, turn: 1, hand: [], drawPile: [], discard: [], exhaust: [], limbo: [], enemies: [], debts: [], powers: {}, combatCounters: {}, stats: {} };
   return cardView(preview, card, contentFor(state));
 }
+// Shared by aiming feedback and play validation. Merely inspecting targets must
+// not resolve effects, consume randomness, or change the run.
+export function getConfiguredCardEnemyTargets(state, card) {
+  if (!state || !card) return [];
+  const held = (state.hand || []).find(instance => typeof card === 'string'
+    ? instance.uid === card || instance.cardId === card
+    : instance.uid === card.uid);
+  const instance = held || (typeof card === 'string' ? { cardId: card, upgradeLevel: 0 } : card);
+  const view = cardView(state, instance, contentFor(state));
+  if (!view || !['enemy', 'all'].includes(view.target)) return [];
+  const reason = state.phase !== 'combat' ? '此刻不在战斗中。'
+    : !held ? '此牌已不在手中。' : view.reason;
+  return liveEnemies(state).map(enemy => ({ uid: enemy.uid, eligible: !reason, reason }));
+}
 export function getConfiguredEnemies(state) { return liveEnemies(state); }
 export function getConfiguredEnemyIntent(state, uid) {
   const enemy = uid ? state.enemies.find(item => item.uid === uid) : liveEnemies(state)[0];
@@ -288,6 +302,11 @@ export function transitionConfigured(state, action) {
     const enemies = liveEnemies(next);
     const target = view.target === 'enemy' ? enemies.find(enemy => enemy.uid === action.targetUid) || (!action.targetUid && enemies.length === 1 ? enemies[0] : null) : null;
     if (view.target === 'enemy' && !target) return invalid(state, '请选择存活的鬼怪作为目标。');
+    if (view.target === 'enemy' || view.target === 'all') {
+      const targets = getConfiguredCardEnemyTargets(next, card);
+      const eligible = target ? targets.find(candidate => candidate.uid === target.uid) : targets.find(candidate => candidate.eligible);
+      if (!eligible?.eligible) return invalid(state, eligible?.reason || '当前没有可作用的鬼怪。');
+    }
     commitCard(next, content, card, target?.uid);
     next.notice = `打出${view.name}。`; next.lastEvent = { kind: 'play', cardId: card.cardId, uid: card.uid, targetUid: target?.uid }; log(next, next.notice); return finish();
   }

@@ -2,10 +2,12 @@ import { readdir, access } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { compileContent } from './compile-content.mjs';
+import { compileCardArtLayouts } from './compile-card-art-layout.mjs';
 import { REPO_ROOT, GAME_ROOT, TEST_ROOT } from './paths.mjs';
 
 const root = GAME_ROOT;
 await compileContent(root);
+await compileCardArtLayouts(root);
 for (const filename of ['index.html', 'src/main.js', 'src/engine.js', 'src/style.css', 'src/runtime/game.js', 'public/assets/ref-scene.png']) await access(resolve(root, filename));
 async function checkDirectory(path) {
   for (const entry of await readdir(path, { withFileTypes: true })) {

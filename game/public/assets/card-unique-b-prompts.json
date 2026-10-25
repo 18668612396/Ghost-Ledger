@@ -1,0 +1,1027 @@
+{
+  "generator": "image_gen built-in",
+  "date": "2026-10-25",
+  "purpose": "逐牌专属透明主体",
+  "assets": [
+    {
+      "cardId": "ic_flex",
+      "name": "借神力",
+      "filename": "card-art-unique-ic_flex.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 借神力. Actual rule: 获得2点力量，回合结束失去2点力量。 Upgrade rule: 获得4点力量，回合结束失去4点力量。\nSubject and action: A carved wooden ritual wrist-brace releasing one oversized warm-gold spectral fist. A teal spirit tether is loosening at the wrist, its last tip fading, conveying borrowed temporary strength rather than permanent possession. Compact diagonal fist-and-brace silhouette with balanced visual weight.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-4ead0534-6f2c-45e7-9d11-64318ffdc6c0.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "051f12d4460182ff3da6c8d51981554b34e96e1cf749cbaa1850ba6357539ad0",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          54,
+          57,
+          1217,
+          1207
+        ],
+        "transparentRatio": 0.4800657036240013,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_havoc",
+      "name": "听天命",
+      "filename": "card-art-unique-ic_havoc.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 听天命. Actual rule: 免费打出抽牌堆顶的牌，然后将它消耗。能力牌正常离场。\nSubject and action: A weathered bamboo divination cylinder tilted in midair, releasing one blank ivory fortune slip upward. A small teal guiding curl carries the slip while its trailing tip turns to ash, suggesting accepting the top omen and using it up. No written symbols.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-6ce98527-36af-400c-abe2-446e6c078ae5.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "b8538348427eae050ab9bb5ea88a5eebe1eced5ea8471d4aa656bb01666abddc",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          169,
+          10,
+          1171,
+          1246
+        ],
+        "transparentRatio": 0.5465775864919658,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_shrug_it_off",
+      "name": "幽冥步",
+      "filename": "card-art-unique-ic_shrug_it_off.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 幽冥步. Actual rule: 获得8点护甲，抽1张牌。 Upgrade rule: 获得11点护甲，抽1张牌。\nSubject and action: A pair of small dark cloth ghost-courier shoes taking a light mist-step through a jade protective crescent, with one ivory spirit-paper leaf lifted by the motion. The shoes and ward crescent are the main subject; no ground plane.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-aefe5dec-6d57-43ac-9a8f-79050dbaacb2.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "738e1336a8701e565eabf726f6f055413172b210bc6697beaaa4a4489ffffea0",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          86,
+          74,
+          1207,
+          1181
+        ],
+        "transparentRatio": 0.47784251479794165,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_true_grit",
+      "name": "净魂",
+      "filename": "card-art-unique-ic_true_grit.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 净魂. Actual rule: 获得7点护甲，随机消耗1张其他手牌。 Upgrade rule: 获得9点护甲，选择并消耗1张其他手牌。\nSubject and action: A white horsetail purification whisk brushing a dark paper stain off a small pale-teal spirit orb. The one removed paper fleck dissolves into ash and a restrained jade ward arc protects the newly clean orb. Clear purification action, not a lotus lamp.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-0ad13422-ff3d-4677-a813-f6a90dd67924.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "bf31912c098e42cd73cc926dd564d2836b3bcd756d41ae06b58dbd822cb96907",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          42,
+          93,
+          1240,
+          1182
+        ],
+        "transparentRatio": 0.5026619760943609,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_warcry",
+      "name": "唤魂",
+      "filename": "card-art-unique-ic_warcry.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 唤魂. Actual rule: 抽1张牌，将1张手牌放回抽牌堆顶。消耗。 Upgrade rule: 抽2张牌，将1张手牌放回抽牌堆顶。消耗。\nSubject and action: A compact Chinese soul-summoning pennant with short ivory streamers and cinnabar knots. Two small pale-teal soul wisps approach; one blank paper leaf curls back over the top of the staff, showing summoning and a deliberate return. Keep streamers short and fully visible.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-4a8cfca4-f191-4dab-9e9d-acd77b387a90.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "f17128f53d58ca20314eddae590f5d4821890ff880c662ed7589bd43f9866848",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          177,
+          28,
+          1180,
+          1219
+        ],
+        "transparentRatio": 0.6041452042459345,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_battle_trance",
+      "name": "入定",
+      "filename": "card-art-unique-ic_battle_trance.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 入定. Actual rule: 抽3张牌，本回合不能再抽牌。 Upgrade rule: 抽4张牌，本回合不能再抽牌。\nSubject and action: A small rounded ceramic ghost figure seated in calm meditation, holding a neat fan of three blank ivory spirit slips at its center. A closed jade incense-ring encircles its shoulders, suggesting focused insight followed by stillness. No scenery or floor.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-1a602eed-46dd-40e9-be8a-29bf2dd00b0d.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "32b6c48b50fdd07015ae047111d991ee69b437915a752b879677e66710d4895d",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          102,
+          66,
+          1151,
+          1202
+        ],
+        "transparentRatio": 0.5118294503839707,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_bloodletting",
+      "name": "血祭香",
+      "filename": "card-art-unique-ic_bloodletting.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 血祭香. Actual rule: 失去3点生命，获得2香火。 Upgrade rule: 失去3点生命，获得3香火。\nSubject and action: A small ivory porcelain incense burner receiving one suspended cinnabar life-pearl. The pearl becomes a vivid teal spirit flame at the burner mouth. One short red incense stem anchors the composition. Symbolic life offering only, no blood, wounds, body parts, or gore.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-6e30860a-0f25-45fe-8f1d-b16845034c1a.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "7ed877200132b5b995bf068d68978dd5208bc717d22a1efaa3ac2477aef545e7",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          62,
+          42,
+          1202,
+          1190
+        ],
+        "transparentRatio": 0.5820029812097302,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_burning_pact",
+      "name": "焚契",
+      "filename": "card-art-unique-ic_burning_pact.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 焚契. Actual rule: 消耗1张其他手牌，抽2张牌。 Upgrade rule: 消耗1张其他手牌，抽3张牌。\nSubject and action: A folded old ivory pact being consumed along its lower edge by contained teal flame. Two fresh blank parchment leaves emerge above the dissolving ash. The original contract and new leaves form one compact upward composition; no writing or seals with characters.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-5939ea6f-fe11-4b18-81fc-ba55def4570a.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "8cbe357a06c5bcecd482519e2b2c88cf4b61c18ce0d1b47b24d6f301e0f3b568",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          141,
+          32,
+          1127,
+          1238
+        ],
+        "transparentRatio": 0.5339729452673295,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_disarm",
+      "name": "缴械符",
+      "filename": "card-art-unique-ic_disarm.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 缴械符. Actual rule: 目标失去2点力量。消耗。 Upgrade rule: 目标失去3点力量。消耗。\nSubject and action: A short dark-steel saber with a bronze guard, firmly bound around its hilt by a blank ivory talisman ribbon and a jade knot. The blade points slightly down as its hostile glow fades. Intact but restrained weapon, not a broken sword or a generic loose charm.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-b2b9febe-4ab5-4112-bd22-403e1111f93d.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "c440b8dd4556b493a7c72f328f86a64cb9f252f56960a25355c7c8134dee24a5",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          148,
+          59,
+          1225,
+          1210
+        ],
+        "transparentRatio": 0.6345480745505928,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_dual_wield",
+      "name": "影双生",
+      "filename": "card-art-unique-ic_dual_wield.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 影双生. Actual rule: 选择手中1张攻击或能力牌，将其1张复制加入手牌。 Upgrade rule: 选择手中1张攻击或能力牌，将其2张复制加入手牌。\nSubject and action: A split jade hand mirror giving rise to two matching small paper-spirit silhouettes, one solid ivory and one pale translucent teal duplicate. Their mirrored gestures and shared origin clearly convey copying. Gentle folkloric spirits, not two full human characters.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-84f2e767-9fab-4f54-880c-20c208a09ff2.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "822fc3e432d4729bbb71440ede7dd0112396954475828e108e5e3babec4f12b8",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          89,
+          67,
+          1204,
+          1183
+        ],
+        "transparentRatio": 0.48712127571356983,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_entrench",
+      "name": "固魂阵",
+      "filename": "card-art-unique-ic_entrench.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 固魂阵. Actual rule: 使当前护甲翻倍。\nSubject and action: Two substantial interlocking jade shield-rings fitting together like a protective lock around one warm ivory soul-pearl. Make the nested double protection unmistakable with distinct inner and outer rims. Ritual protective object, no letters or numbers.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-690b34d3-c4bc-4dfc-ae2c-619a551cc827.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "49377e4b1dd76d76fe49036f18d7cc09e2dcd8498f1d074f1a805a5826e1065f",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          29,
+          78,
+          1235,
+          1197
+        ],
+        "transparentRatio": 0.4573403386674603,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_flame_barrier",
+      "name": "冥火壁",
+      "filename": "card-art-unique-ic_flame_barrier.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 冥火壁. Actual rule: 获得12点护甲。直到敌方回合结束，每次受到攻击对攻击者造成4点伤害。 Upgrade rule: 获得16点护甲。直到敌方回合结束，每次受到攻击对攻击者造成6点伤害。\nSubject and action: A compact curved barrier of dark tomb-stone plates rimmed with blue-green ghost flame. One tiny iron arrow meets its outer face and a few contained flame sparks turn back outward, conveying blocking and retaliation. The wall is an isolated shield-like object, not a scene.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-61e31dce-88fd-4e70-bbed-0e5f615ae3ce.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "3659a56297bbe4e06249914b7e614bab63d7e158f7604111d9c3893413ceed6a",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          33,
+          65,
+          1231,
+          1187
+        ],
+        "transparentRatio": 0.48969930989573396,
+        "corners": [
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "cardId": "ic_ghostly_armor",
+      "name": "阴兵甲",
+      "filename": "card-art-unique-ic_ghostly_armor.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 阴兵甲. Actual rule: 虚无。获得10点护甲。 Upgrade rule: 虚无。获得13点护甲。\nSubject and action: An empty Chinese underworld lamellar cuirass made from ivory spirit-paper, dark cords, and jade plates. Solid shoulders and breastplate above, lower armor edges fading into delicate pale-teal wisps. No wearer, corpse, helmeted person, or ground shadow.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-880b1f3c-2a2c-4017-ad11-bca7db506d9b.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "3ed85803a62c2fdbd117a4ea88d5af199b11f5d2864b45197a12d03c28caedbd",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          85,
+          41,
+          1192,
+          1233
+        ],
+        "transparentRatio": 0.4869947269216975,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_infernal_blade",
+      "name": "阴府赐刃",
+      "filename": "card-art-unique-ic_infernal_blade.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 阴府赐刃. Actual rule: 随机将1张攻击牌加入手牌，它本回合费用为0。消耗。\nSubject and action: A single pale-teal spectral hand emerging from a short dark ceremonial sleeve, presenting one finely made curved ghost-hunting blade. One fresh blank ivory spirit slip floats just beneath the blade as a gift. Only the hand, sleeve end, blade, and slip; no whole person.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-d87ceab6-4056-436b-8031-069571e45e33.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "f9bc53275f256bdbed758ad605b7fc54ccd27a6e3d0b503c30420e65b3c1f89b",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          50,
+          90,
+          1235,
+          1174
+        ],
+        "transparentRatio": 0.6604212612145123,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_intimidate",
+      "name": "喝煞",
+      "filename": "card-art-unique-ic_intimidate.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 喝煞. Actual rule: 对所有敌人施加1回合虚弱。消耗。 Upgrade rule: 对所有敌人施加2回合虚弱。消耗。\nSubject and action: A small fierce-but-charming cinnabar bronze ghost mask with its mouth open in a powerful shout. Three compact pale-teal sound crescents radiate from the mouth and scatter a few dark menace flecks. Metal mask is the clear subject; no bell, fire, lettering, or large cloud plate.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-056e9c14-bc36-4ca9-be53-d237d1503489.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "bf230c526b5e0932a35480b09f928804b60bebb2d380018f0f7b93e3e0fa9825",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          48,
+          69,
+          1212,
+          1195
+        ],
+        "transparentRatio": 0.5677404872192079,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_power_through",
+      "name": "带伤守夜",
+      "filename": "card-art-unique-ic_power_through.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 带伤守夜. Actual rule: 获得15点护甲，将2张伤口加入手牌。 Upgrade rule: 获得20点护甲，将2张伤口加入手牌。\nSubject and action: A patched night-watch shoulder guard and short armored sleeve held protectively beside a tiny warm lantern. Two ivory bandage strips with cinnabar stitching cross the guard. Worn but steadfast defense, symbolic mending only, no exposed wound, blood, or human torso.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-6cf3d632-05e4-4f5d-b16c-c633ebdfd696.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "393d63bddc3d21ada11e9ad9cc836c48232e0ee296b6b2510d8f5fc7f80d452d",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          47,
+          45,
+          1218,
+          1217
+        ],
+        "transparentRatio": 0.5174141312393642,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_rage",
+      "name": "战意护身",
+      "filename": "card-art-unique-ic_rage.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 战意护身. Actual rule: 本回合每打出1张攻击牌，获得3点护甲。 Upgrade rule: 本回合每打出1张攻击牌，获得5点护甲。\nSubject and action: A short cinnabar blade-stroke curling around one raised ritual gauntlet and turning into layered jade ward-scales. A small bright strike spark becomes the leading protective plate, showing attack feeding defense. One integrated kinetic emblem, not separate scattered weapons.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-461650b6-83f7-4807-aeed-eec6ea07c0a9.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "5cdbf9712aaace68e043369f46223b7620c79f9ef686b07c3fe229b2100e6265",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          82,
+          49,
+          1201,
+          1214
+        ],
+        "transparentRatio": 0.42416229787169096,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_second_wind",
+      "name": "弃尘护命",
+      "filename": "card-art-unique-ic_second_wind.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 弃尘护命. Actual rule: 消耗其他所有非攻击手牌，每消耗1张获得5点护甲。 Upgrade rule: 消耗其他所有非攻击手牌，每消耗1张获得7点护甲。\nSubject and action: A compact swirl of three spent blank spirit-paper leaves dissolving into soft grey ash, with that ash becoming three layered jade leaf-shields around a small central ivory core. Show deliberate release and renewed protection, no flowers or lantern.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-49623608-f8ac-498f-9722-ea624d042b59.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "fe20ea25fbb98d4339925d83729c5f81fba180bf5fd753776219aab29dbeac0f",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          96,
+          100,
+          1162,
+          1165
+        ],
+        "transparentRatio": 0.5125575828799198,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_seeing_red",
+      "name": "燃香",
+      "filename": "card-art-unique-ic_seeing_red.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 燃香. Actual rule: 获得2香火。消耗。\nSubject and action: A bundled pair of thick cinnabar incense sticks in a very small bronze holder. Each tip bears one bright rounded teal spirit flame, with short clean ash curls. Pure resource-burning ritual, no life-pearl, contract, bowl of blood, or surrounding altar.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-4b8b8f9a-dfe2-40a4-8b85-527af941e548.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "b46bd9077547226c67df389bfd8b03736eae85d8ad411310f7bd60d15f84feba",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          234,
+          47,
+          1058,
+          1182
+        ],
+        "transparentRatio": 0.7466200661869259,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_sentinel",
+      "name": "守夜傀",
+      "filename": "card-art-unique-ic_sentinel.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 守夜傀. Actual rule: 获得5点护甲。此牌被消耗时，获得2香火。 Upgrade rule: 获得8点护甲。此牌被消耗时，获得3香火。\nSubject and action: A stout vigilant ivory paper-talisman puppet with a folded jade chest-guard and arms held together as a shield. A tiny caged teal flame glows inside its chest; one outer paper corner is beginning to smoulder. Friendly folkloric sentinel, no writing or floor.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-38461455-df78-4249-8f2d-394461aadba7.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "1e7f5702b634ebca15ee42d8fb576972e5afdb73e5b27db3b6b5e405d7710992",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          45,
+          16,
+          1205,
+          1212
+        ],
+        "transparentRatio": 0.4982734674877712,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_shockwave",
+      "name": "荡魂钟",
+      "filename": "card-art-unique-ic_shockwave.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 荡魂钟. Actual rule: 对所有敌人施加3回合虚弱和3回合易伤。消耗。 Upgrade rule: 对所有敌人施加5回合虚弱和5回合易伤。消耗。\nSubject and action: A substantial ancient bronze ritual bell hanging from a short cinnabar knotted cord, visibly swinging. Three restrained teal soundwave arcs surround the bell and loosen a few tiny dark armor flakes, suggesting weakening and exposure. Distinct heavy bell silhouette, no stand or temple scene.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-43251dde-e490-4ebb-9ab7-6a48d8233e45.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "ac40f972ceb590f4e8d3f8ecf462c37547835ed1684e11ca1f394728700c46fd",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          144,
+          40,
+          1171,
+          1220
+        ],
+        "transparentRatio": 0.5503549725408199,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_spot_weakness",
+      "name": "照破虚实",
+      "filename": "card-art-unique-ic_spot_weakness.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 照破虚实. Actual rule: 若目标正准备攻击，获得3点力量。 Upgrade rule: 若目标正准备攻击，获得4点力量。\nSubject and action: An octagonal bronze inspection mirror with a jade handle. Its pale reflective face reveals the silhouette of one approaching ghost dagger, while a small warm-gold strength spark forms at the rim. No readable trigrams, letters, reflected landscape, or extra face.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-e9545ff9-8ee6-4402-aefb-8ee8401ee351.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "84c3ac032841c3acb28a364f7d6216aff241149a009197ecc832bb1f394075da",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          114,
+          80,
+          1181,
+          1187
+        ],
+        "transparentRatio": 0.556963490355583,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_double_tap",
+      "name": "叠符",
+      "filename": "card-art-unique-ic_double_tap.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 叠符. Actual rule: 本回合下一张攻击牌打出2次。 Upgrade rule: 本回合接下来的2张攻击牌各打出2次。\nSubject and action: Two ivory attack talismans overlapped in a clear staggered pair, joined by a short red cord. A single broad cinnabar blade-shaped brushstroke is echoed across both papers, suggesting one attack repeated. Purely abstract brush marks, no characters or digits.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-b1128751-b535-4e41-8ded-707e0813f447.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "feb0cb2ff1168a1dcf6e1ca818e9fc1f1c3036a505e32fe284e09ef89b3137c6",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          78,
+          82,
+          1191,
+          1211
+        ],
+        "transparentRatio": 0.49223092165675897,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_exhume",
+      "name": "返魂",
+      "filename": "card-art-unique-ic_exhume.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 返魂. Actual rule: 将消耗堆中1张非返魂牌加入手牌。消耗。\nSubject and action: A small pale-teal soul wisp lifting one intact blank ivory talisman out of a compact curl of spent paper ash. A jade knot catches the paper corner as it reforms. Clear restoration from ash, no grave, coffin, corpse, lotus, or landscape.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-f457a86d-20b2-4304-9f51-bba1dfcfead3.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "87c7add26b32924e4f9689f6c77dc97ab7a4497ac2c2ce921bb3b681b896a121",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          181,
+          33,
+          1127,
+          1237
+        ],
+        "transparentRatio": 0.5775477006275294,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_impervious",
+      "name": "金身护命",
+      "filename": "card-art-unique-ic_impervious.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 金身护命. Actual rule: 获得30点护甲。消耗。 Upgrade rule: 获得40点护甲。消耗。\nSubject and action: A compact gold underworld guardian effigy with folded protective arms behind one thick rounded tortoise-shell shield. Solid warm-gold armor with small jade inlays, reassuring and nearly impenetrable. One cohesive guardian-and-shield object, not a religious statue in a temple.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-e6a13b97-f9fd-4416-ba23-795b954f39f9.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "78b06855b497ad68979aaef2bcf826f4c8a6f1fadd08424a34a61c7e16f22117",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          58,
+          70,
+          1210,
+          1196
+        ],
+        "transparentRatio": 0.4599845089016582,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_limit_break",
+      "name": "破极",
+      "filename": "card-art-unique-ic_limit_break.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 破极. Actual rule: 使力量翻倍。消耗。 Upgrade rule: 使力量翻倍。\nSubject and action: One powerful warm-gold spectral fist breaking open a pair of heavy dark iron restraint rings. The two opened halves frame the fist symmetrically, with a compact doubled force echo behind the knuckles. No text, numerals, gore, or ground.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-c882538b-6355-4ebb-af75-4f3efbb51640.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "91402707c3733bc9ce92b591f16b4035c0c225ca4a922a16ed73b97477588f55",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          67,
+          31,
+          1200,
+          1207
+        ],
+        "transparentRatio": 0.43948424054190866,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_offering",
+      "name": "献灯",
+      "filename": "card-art-unique-ic_offering.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 献灯. Actual rule: 失去6点生命，获得2香火，抽3张牌。消耗。 Upgrade rule: 失去6点生命，获得2香火，抽5张牌。消耗。\nSubject and action: Two small ivory paper-spirit hands offering a lotus-shaped brass lamp upward. One symbolic cinnabar life-pearl feeds its teal flame and three fresh blank spirit-paper leaves rise close to the lamp. Gentle ritual offering, no blood, wound, full person, altar, or backdrop.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-cb0df9e1-30e8-4da9-9eb8-898d4e4531b5.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "b3445e10942ee41cfedb75287c9e456259c76ab2b8aa9a69ee5916a89d7885c3",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          35,
+          27,
+          1226,
+          1240
+        ],
+        "transparentRatio": 0.5306305309453131,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_combust",
+      "name": "魂火不熄",
+      "filename": "card-art-unique-ic_combust.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 魂火不熄. Actual rule: 每回合结束时失去1点生命，对所有敌人造成5点效果伤害。 Upgrade rule: 每回合结束时失去1点生命，对所有敌人造成7点效果伤害。\nSubject and action: A small cracked ritual hourglass containing an everlasting blue-green spirit flame instead of sand. A single cinnabar ember is being consumed at its waist and short flame tongues curl outward from the cracks. Continuous self-fuelled power, no human heart, blood, or large smoky base.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-efdf596f-d0db-4bb5-96fb-6e1981b5e755.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "b17c3f0c2d53a35202852f785cb4e5e4ec6d217d95d7428a9237bbdad6a92d25",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          163,
+          40,
+          1125,
+          1212
+        ],
+        "transparentRatio": 0.5910540814847035,
+        "corners": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_dark_embrace",
+      "name": "幽冥相拥",
+      "filename": "card-art-unique-ic_dark_embrace.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 幽冥相拥. Actual rule: 本场每消耗1张牌，抽1张牌。\nSubject and action: Two small gentle pale-teal spirits embracing around one ivory paper leaf that is dissolving into ash; a clean new leaf rises between their arms. Their curved bodies form a comforting compact loop. No chains, romance between humans, scenery, or wide ambient cloud.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-397f7308-1c2f-4c99-85dc-ff0ede0af99d.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "323d3a7f1edf79721cd3ba2cbef5b5aaae0ea014d176e9410386bade29db5f4b",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          77,
+          23,
+          1177,
+          1225
+        ],
+        "transparentRatio": 0.4972712519300281,
+        "corners": [
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "cardId": "ic_evolve",
+      "name": "化厄",
+      "filename": "card-art-unique-ic_evolve.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 化厄. Actual rule: 本场每抽到1张状态牌，额外抽1张牌。直接生成不触发。 Upgrade rule: 本场每抽到1张状态牌，额外抽2张牌。直接生成不触发。\nSubject and action: A dark thorn-edged paper cocoon opening into a small jade spirit moth whose two ivory wings resemble fresh blank cards. A few tiny black shell fragments fall away. Clear misfortune becoming useful renewal, no flowers, lantern, text, or sprawling swarm.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17272-8626-7022-91f1-5851caa2dd8b\\exec-54c7fda1-5b6a-4a01-a31e-a31e054aa6fd.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "0ae296f59a687492884f27aed91b329642320ad2139d52a4e14dc4c764ff2130",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          118,
+          61,
+          1203,
+          1208
+        ],
+        "transparentRatio": 0.561539596417461,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_feel_no_pain",
+      "name": "无惧阴伤",
+      "filename": "card-art-unique-ic_feel_no_pain.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 无惧阴伤. Actual rule: 本场每消耗1张牌，获得3点护甲。 Upgrade rule: 本场每消耗1张牌，获得4点护甲。\nSubject and action: A calm small white-ceramic ghost effigy protected by a jade shield rim. One charred spirit-paper leaf touches the rim and fuses into a new protective scale. The ghost is composed and unhurt, conveying fearless endurance; no visible injuries, blood, words, or ground shadow.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17231-d745-70b2-924c-edb5833a7624\\exec-f6f38350-c519-49c5-ac96-3671f6ff4499.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "bbcb57d65362ddb6af114f37cd46f7af65f7eea22e0a89fac8817f4523ce169b",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          55,
+          38,
+          1191,
+          1211
+        ],
+        "transparentRatio": 0.48872125943392625,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_fire_breathing",
+      "name": "吐幽焰",
+      "filename": "card-art-unique-ic_fire_breathing.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 吐幽焰. Actual rule: 本场每抽到1张状态或诅咒牌，对所有敌人造成6点效果伤害。 Upgrade rule: 本场每抽到1张状态或诅咒牌，对所有敌人造成10点效果伤害。\nSubject and action: A rounded living teal spirit-face swallowing one small dark paper scrap and breathing a short fan of three blue-green flame tongues. Soft ivory cheeks and expressive ink eyes, fierce but charming. Distinct living ghost head, not a bronze mask, incense bowl, fire backdrop, or full body.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17231-d745-70b2-924c-edb5833a7624\\exec-15d05cf7-ab53-4e3b-913f-6c7235cd172d.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "771c52099cb351784ecc1f876a4e830fcb806e9367cffe541c895ff53c1b9176",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          42,
+          38,
+          1216,
+          1205
+        ],
+        "transparentRatio": 0.49670845956416343,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_inflame",
+      "name": "神威附体",
+      "filename": "card-art-unique-ic_inflame.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 神威附体. Actual rule: 获得2点力量。 Upgrade rule: 获得3点力量。\nSubject and action: A small ivory ritual paper-doll in a short dark robe, with a cinnabar guardian mask hovering just above it. Steady warm-gold armored spirit arms settle into the doll shoulders, showing lasting divine possession rather than a borrowed tether. No readable talisman writing or whole human figure.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17231-d745-70b2-924c-edb5833a7624\\exec-02862ff4-edcd-427e-9e7d-7cf10c4caac3.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "6ffbafbf2df72622f6402e8f660d983e7ed7011abf609fea6831214d45a805c9",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          80,
+          22,
+          1208,
+          1202
+        ],
+        "transparentRatio": 0.4989437309381908,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "cardId": "ic_metallicize",
+      "name": "铜身",
+      "filename": "card-art-unique-ic_metallicize.png",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated card-illustration subject for a Chinese underworld folklore deckbuilding game. Hand-painted watercolor and gouache with fine expressive dark ink outlines and visible pigment texture. Slightly charming, solemn spirit-world craft, not photoreal horror, glossy 3D, anime poster, or vector icon. Palette: warm ivory, cinnabar red, aged brass/gold, jade green and pale teal ghost-light, selected to fit the subject. One cohesive subject with only necessary attached action cues. Square 1:1 composition, optically centered at 50% x and 50% y; balanced visual mass even if diagonal; subject occupies about 70–78% of the canvas, with at least 12% genuinely transparent safety padding on every side. Keep every part completely in frame and readable at small card size. Background must be real alpha-zero transparency, including gaps inside the subject. No floor, scene, rectangular backing, large ambient cloud plate, cast shadow, card border, UI, cost badge, writing, letters, digits, watermark, or unrelated confetti. Paper surfaces are blank; decorative marks must not resemble readable text.\nCard meaning for semantic context only (do not render any wording): 铜身. Actual rule: 每回合结束时获得3点护甲。 Upgrade rule: 每回合结束时获得4点护甲。\nSubject and action: A single raised protective forearm transforming into layered polished copper armor from wrist to elbow, with restrained jade-green patina at the seams. The open copper palm faces outward in defense as a fresh segment forms at the wrist. Only the armored arm, no coins, effigy, blood, text, or body.\nFraming emphasis: do NOT use an edge-to-edge close-up. Show the complete subject at a slightly smaller scale. Even flame tips, tassels, and ash remain well inside the transparent outer border.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17231-d745-70b2-924c-edb5833a7624\\exec-800edf83-81df-4083-b1df-55c587e254ff.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "ea57762581e178a8b0bd0a19d775af64c8cddcc62739c9fd09dcf1176ca1a359",
+      "operation": "generate",
+      "alphaAudit": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "bboxThreshold16": [
+          38,
+          34,
+          1224,
+          1220
+        ],
+        "transparentRatio": 0.6024523756832999,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ]
+}

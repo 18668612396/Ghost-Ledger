@@ -1,0 +1,7 @@
+{
+  "name": "ghost-ledger-content-editor",
+  "private": true,
+  "type": "module",
+  "scripts": { "dev": "node server.mjs" },
+  "engines": { "node": ">=20" }
+}

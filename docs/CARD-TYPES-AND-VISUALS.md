@@ -42,7 +42,7 @@
 
 `getCardVisual` 返回派生的 `frame` 以及配置中的 `family/background/icon/cost/impact` 等字段，并非只返回四个固定键。`impact` 选择位图命中表现，不是第五层纸牌。
 
-例如，`getCardFamily('ic_strike')` 返回攻伐家族；对应背景为 `card-pattern-color-brush`，物件为 `card-art-brush`，费用图为 `card-cost-flame`。卡名、类型、费用数字及规则文字另排版，动态费用和升级数值统一调用 `getCardView(run, instance)`，不按静态牌名拼接。
+例如，`getCardFamily('ic_strike')` 返回攻伐家族；对应背景为 `card-pattern-color-brush`，主体为 `card-art-unique-ic_strike`（判笔斩开魂缕），费用图为 `card-cost-flame`。卡名、类型、费用数字及规则文字另排版，动态费用和升级数值统一调用 `getCardView(run, instance)`，不按静态牌名拼接。
 
 鬼火位图等比宽度为卡宽 28%，焰心锚定卡宽 8%、卡高 5%；图片平移 `-50% / -64%`，数字居中于位图高度 64%。鬼火可少量外凸，牌名仍以整张卡为水平中心。纸牌不能因费用不足整张透明，也不能为长说明单独拉长卡框。
 
@@ -54,9 +54,9 @@
 
 ## 背景复用与来源
 
-保留 15 种抽象背景主题：笔墨、护盾涟漪、锁痕雷纹、愿力流光、回旋风痕、铜钱纹、余烬、音波、符印、莲纹、血痕、账簿墨流、镜芒、渡水波光和敕令符文。101 条定义按配置复用这些背景及透明物件；87 种常规玩家牌没有分别重画独立新插画。
+保留 15 种抽象背景主题：笔墨、护盾涟漪、锁痕雷纹、愿力流光、回旋风痕、铜钱纹、余烬、音波、符印、莲纹、血痕、账簿墨流、镜芒、渡水波光和敕令符文。101 条定义复用这些背景，但透明主体各自独立；包括 6 种状态及 8 种诅咒。基础版与升级版仍属于同一定义，沿用同一张主体图。
 
-来源见 [抽象背景提示词](../game/public/assets/card-pattern-prompts.json)、[矩形裁片](../game/public/assets/card-pattern-slices.json)、[授权调色](../game/public/assets/card-color-adjustments.json)、[鲜明主框](../game/public/assets/card-frame-vivid-prompts.json)、[鬼火费用](../game/public/assets/cost-flame-prompts.json)、[小卡框](../game/public/assets/collection-frame-prompts.json)。当前活动目录有 116 张 PNG，详见 [制作来源](../CREDITS.md)。
+来源见 [专属主体 A](../game/public/assets/card-unique-a-prompts.json)、[专属主体 B](../game/public/assets/card-unique-b-prompts.json)、[专属主体 C](../game/public/assets/card-unique-c-prompts.json)、[抽象背景提示词](../game/public/assets/card-pattern-prompts.json)、[矩形裁片](../game/public/assets/card-pattern-slices.json)、[授权调色](../game/public/assets/card-color-adjustments.json)、[鲜明主框](../game/public/assets/card-frame-vivid-prompts.json)、[鬼火费用](../game/public/assets/cost-flame-prompts.json)、[小卡框](../game/public/assets/collection-frame-prompts.json)。当前活动目录有 217 张 PNG，详见 [制作来源](../CREDITS.md)。
 
 旧具象背景、低饱和框、旧调色框及费用圆章属于 `.local/temp/v04-20261025/` 的归档，不再作为运行兜底。现有颜色滤镜受击反馈不改变素材来源；新增美术仍按现行规范制作和登记。
 

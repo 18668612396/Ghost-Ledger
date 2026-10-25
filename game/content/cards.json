@@ -37,7 +37,7 @@
     ],
     "visual": {
       "family": "strike",
-      "icon": "card-art-brush",
+      "icon": "card-art-unique-ic_strike",
       "background": "card-pattern-color-brush",
       "cost": "card-cost-flame",
       "impact": "slash"
@@ -91,7 +91,7 @@
     "tags": [],
     "visual": {
       "family": "strike",
-      "icon": "card-art-seal",
+      "icon": "card-art-unique-ic_bash",
       "background": "card-pattern-color-coin",
       "cost": "card-cost-flame",
       "impact": "curse"
@@ -145,7 +145,7 @@
     "tags": [],
     "visual": {
       "family": "strike",
-      "icon": "card-art-fire",
+      "icon": "card-art-unique-ic_anger",
       "background": "card-pattern-color-fire",
       "cost": "card-cost-flame",
       "impact": "fire"
@@ -184,7 +184,7 @@
     ],
     "visual": {
       "family": "strike",
-      "icon": "card-art-seal",
+      "icon": "card-art-unique-ic_body_slam",
       "background": "card-pattern-color-coin",
       "cost": "card-cost-flame",
       "impact": "thunder"
@@ -231,7 +231,7 @@
     "tags": [],
     "visual": {
       "family": "strike",
-      "icon": "card-art-chain",
+      "icon": "card-art-unique-ic_clash",
       "background": "card-pattern-color-brush",
       "cost": "card-cost-flame",
       "impact": "slash"
@@ -292,7 +292,7 @@
     "tags": [],
     "visual": {
       "family": "strike",
-      "icon": "card-art-step",
+      "icon": "card-art-unique-ic_cleave",
       "background": "card-pattern-color-fire",
       "cost": "card-cost-flame",
       "impact": "slash"
@@ -346,7 +346,7 @@
     "tags": [],
     "visual": {
       "family": "strike",
-      "icon": "card-art-chain",
+      "icon": "card-art-unique-ic_clothesline",
       "background": "card-pattern-color-fire",
       "cost": "card-cost-flame",
       "impact": "slash"
@@ -404,7 +404,7 @@
     "tags": [],
     "visual": {
       "family": "strike",
-      "icon": "card-art-bell",
+      "icon": "card-art-unique-ic_headbutt",
       "background": "card-pattern-color-coin",
       "cost": "card-cost-flame",
       "impact": "thunder"
@@ -450,7 +450,7 @@
     ],
     "visual": {
       "family": "strike",
-      "icon": "card-art-brush",
+      "icon": "card-art-unique-ic_heavy_blade",
       "background": "card-pattern-color-fire",
       "cost": "card-cost-flame",
       "impact": "slash"
@@ -502,7 +502,7 @@
     ],
     "visual": {
       "family": "strike",
-      "icon": "card-art-talisman",
+      "icon": "card-art-unique-ic_iron_wave",
       "background": "card-pattern-color-coin",
       "cost": "card-cost-flame",
       "impact": "thunder"
@@ -600,7 +600,7 @@
     ],
     "visual": {
       "family": "strike",
-      "icon": "card-art-brush",
+      "icon": "card-art-unique-ic_perfected_strike",
       "background": "card-pattern-color-brush",
       "cost": "card-cost-flame",
       "impact": "slash"
@@ -673,7 +673,7 @@
     ],
     "visual": {
       "family": "strike",
-      "icon": "card-art-brush",
+      "icon": "card-art-unique-ic_pommel_strike",
       "background": "card-pattern-color-coin",
       "cost": "card-cost-flame",
       "impact": "slash"
@@ -719,7 +719,7 @@
     ],
     "visual": {
       "family": "strike",
-      "icon": "card-art-coin",
+      "icon": "card-art-unique-ic_sword_boomerang",
       "background": "card-pattern-color-coin",
       "cost": "card-cost-flame",
       "impact": "slash"
@@ -773,7 +773,7 @@
     "tags": [],
     "visual": {
       "family": "strike",
-      "icon": "card-art-seal",
+      "icon": "card-art-unique-ic_thunderclap",
       "background": "card-pattern-color-brush",
       "cost": "card-cost-flame",
       "impact": "thunder"
@@ -820,7 +820,7 @@
     ],
     "visual": {
       "family": "strike",
-      "icon": "card-art-chain",
+      "icon": "card-art-unique-ic_twin_strike",
       "background": "card-pattern-color-coin",
       "cost": "card-cost-flame",
       "impact": "slash"
@@ -877,7 +877,7 @@
     ],
     "visual": {
       "family": "strike",
-      "icon": "card-art-brush",
+      "icon": "card-art-unique-ic_wild_strike",
       "background": "card-pattern-color-fire",
       "cost": "card-cost-flame",
       "impact": "slash"
@@ -920,7 +920,7 @@
     "tags": [],
     "visual": {
       "family": "strike",
-      "icon": "card-art-chain",
+      "icon": "card-art-unique-ic_blood_for_blood",
       "background": "card-pattern-color-blood",
       "cost": "card-cost-flame",
       "impact": "slash"
@@ -1007,7 +1007,7 @@
     "tags": [],
     "visual": {
       "family": "strike",
-      "icon": "card-art-brush",
+      "icon": "card-art-unique-ic_carnage",
       "background": "card-pattern-color-fire",
       "cost": "card-cost-flame",
       "impact": "slash"
@@ -1098,7 +1098,7 @@
     ],
     "visual": {
       "family": "strike",
-      "icon": "card-art-step",
+      "icon": "card-art-unique-ic_dropkick",
       "background": "card-pattern-color-coin",
       "cost": "card-cost-flame",
       "impact": "slash"
@@ -1150,7 +1150,7 @@
     "tags": [],
     "visual": {
       "family": "strike",
-      "icon": "card-art-brush",
+      "icon": "card-art-unique-ic_hemokinesis",
       "background": "card-pattern-color-blood",
       "cost": "card-cost-flame",
       "impact": "curse"
@@ -1199,7 +1199,7 @@
     ],
     "visual": {
       "family": "strike",
-      "icon": "card-art-chain",
+      "icon": "card-art-unique-ic_pummel",
       "background": "card-pattern-color-coin",
       "cost": "card-cost-flame",
       "impact": "slash"
@@ -1267,7 +1267,7 @@
     "tags": [],
     "visual": {
       "family": "strike",
-      "icon": "card-art-seal",
+      "icon": "card-art-unique-ic_rampage",
       "background": "card-pattern-color-fire",
       "cost": "card-cost-flame",
       "impact": "thunder"
@@ -1334,7 +1334,7 @@
     ],
     "visual": {
       "family": "strike",
-      "icon": "card-art-step",
+      "icon": "card-art-unique-ic_reckless_charge",
       "background": "card-pattern-color-brush",
       "cost": "card-cost-flame",
       "impact": "slash"
@@ -1403,7 +1403,7 @@
     "tags": [],
     "visual": {
       "family": "strike",
-      "icon": "card-art-fire",
+      "icon": "card-art-unique-ic_searing_blow",
       "background": "card-pattern-color-fire",
       "cost": "card-cost-flame",
       "impact": "fire"
@@ -1493,7 +1493,7 @@
     ],
     "visual": {
       "family": "strike",
-      "icon": "card-art-chain",
+      "icon": "card-art-unique-ic_sever_soul",
       "background": "card-pattern-color-brush",
       "cost": "card-cost-flame",
       "impact": "slash"
@@ -1559,7 +1559,7 @@
     "tags": [],
     "visual": {
       "family": "strike",
-      "icon": "card-art-seal",
+      "icon": "card-art-unique-ic_uppercut",
       "background": "card-pattern-color-coin",
       "cost": "card-cost-flame",
       "impact": "thunder"
@@ -1610,7 +1610,7 @@
     ],
     "visual": {
       "family": "strike",
-      "icon": "card-art-step",
+      "icon": "card-art-unique-ic_whirlwind",
       "background": "card-pattern-color-fire",
       "cost": "card-cost-flame",
       "impact": "slash"
@@ -1652,7 +1652,7 @@
     "tags": [],
     "visual": {
       "family": "strike",
-      "icon": "card-art-seal",
+      "icon": "card-art-unique-ic_bludgeon",
       "background": "card-pattern-color-fire",
       "cost": "card-cost-flame",
       "impact": "thunder"
@@ -1701,7 +1701,7 @@
     ],
     "visual": {
       "family": "strike",
-      "icon": "card-art-lotus",
+      "icon": "card-art-unique-ic_feed",
       "background": "card-pattern-color-fire",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -1765,7 +1765,7 @@
     ],
     "visual": {
       "family": "strike",
-      "icon": "card-art-talisman",
+      "icon": "card-art-unique-ic_fiend_fire",
       "background": "card-pattern-color-fire",
       "cost": "card-cost-flame",
       "impact": "fire"
@@ -1819,7 +1819,7 @@
     ],
     "visual": {
       "family": "strike",
-      "icon": "card-art-fire",
+      "icon": "card-art-unique-ic_immolate",
       "background": "card-pattern-color-fire",
       "cost": "card-cost-flame",
       "impact": "fire"
@@ -1868,7 +1868,7 @@
     ],
     "visual": {
       "family": "strike",
-      "icon": "card-art-lotus",
+      "icon": "card-art-unique-ic_reaper",
       "background": "card-pattern-color-coin",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -1913,7 +1913,7 @@
     ],
     "visual": {
       "family": "ward",
-      "icon": "card-art-talisman",
+      "icon": "card-art-unique-ic_defend",
       "background": "card-pattern-color-talisman",
       "cost": "card-cost-flame",
       "impact": "guard"
@@ -1964,7 +1964,7 @@
     ],
     "visual": {
       "family": "ward",
-      "icon": "card-art-seal",
+      "icon": "card-art-unique-ic_armaments",
       "background": "card-pattern-color-talisman",
       "cost": "card-cost-flame",
       "impact": "guard"
@@ -2020,7 +2020,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-seal",
+      "icon": "card-art-unique-ic_flex",
       "background": "card-pattern-color-bell",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -2056,7 +2056,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-ledger",
+      "icon": "card-art-unique-ic_havoc",
       "background": "card-pattern-color-ledger",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -2107,7 +2107,7 @@
     ],
     "visual": {
       "family": "ward",
-      "icon": "card-art-step",
+      "icon": "card-art-unique-ic_shrug_it_off",
       "background": "card-pattern-color-step",
       "cost": "card-cost-flame",
       "impact": "guard"
@@ -2159,7 +2159,7 @@
     ],
     "visual": {
       "family": "ward",
-      "icon": "card-art-lotus",
+      "icon": "card-art-unique-ic_true_grit",
       "background": "card-pattern-color-lotus",
       "cost": "card-cost-flame",
       "impact": "guard"
@@ -2220,7 +2220,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-bell",
+      "icon": "card-art-unique-ic_warcry",
       "background": "card-pattern-color-ferry",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -2272,7 +2272,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-mirror",
+      "icon": "card-art-unique-ic_battle_trance",
       "background": "card-pattern-color-ledger",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -2324,7 +2324,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-fire",
+      "icon": "card-art-unique-ic_bloodletting",
       "background": "card-pattern-color-ferry",
       "cost": "card-cost-flame",
       "impact": "fire"
@@ -2377,7 +2377,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-talisman",
+      "icon": "card-art-unique-ic_burning_pact",
       "background": "card-pattern-color-ledger",
       "cost": "card-cost-flame",
       "impact": "fire"
@@ -2423,7 +2423,7 @@
     "tags": [],
     "visual": {
       "family": "ward",
-      "icon": "card-art-talisman",
+      "icon": "card-art-unique-ic_disarm",
       "background": "card-pattern-color-mirror",
       "cost": "card-cost-flame",
       "impact": "curse"
@@ -2477,7 +2477,7 @@
     "tags": [],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-mirror",
+      "icon": "card-art-unique-ic_dual_wield",
       "background": "card-pattern-color-bell",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -2516,7 +2516,7 @@
     ],
     "visual": {
       "family": "ward",
-      "icon": "card-art-seal",
+      "icon": "card-art-unique-ic_entrench",
       "background": "card-pattern-color-mirror",
       "cost": "card-cost-flame",
       "impact": "guard"
@@ -2568,7 +2568,7 @@
     ],
     "visual": {
       "family": "ward",
-      "icon": "card-art-fire",
+      "icon": "card-art-unique-ic_flame_barrier",
       "background": "card-pattern-color-talisman",
       "cost": "card-cost-flame",
       "impact": "guard"
@@ -2612,7 +2612,7 @@
     ],
     "visual": {
       "family": "ward",
-      "icon": "card-art-talisman",
+      "icon": "card-art-unique-ic_ghostly_armor",
       "background": "card-pattern-color-step",
       "cost": "card-cost-flame",
       "impact": "guard"
@@ -2649,7 +2649,7 @@
     "tags": [],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-brush",
+      "icon": "card-art-unique-ic_infernal_blade",
       "background": "card-pattern-color-ferry",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -2695,7 +2695,7 @@
     "tags": [],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-bell",
+      "icon": "card-art-unique-ic_intimidate",
       "background": "card-pattern-color-bell",
       "cost": "card-cost-flame",
       "impact": "curse"
@@ -2750,7 +2750,7 @@
     ],
     "visual": {
       "family": "ward",
-      "icon": "card-art-talisman",
+      "icon": "card-art-unique-ic_power_through",
       "background": "card-pattern-color-mirror",
       "cost": "card-cost-flame",
       "impact": "guard"
@@ -2794,7 +2794,7 @@
     ],
     "visual": {
       "family": "ward",
-      "icon": "card-art-chain",
+      "icon": "card-art-unique-ic_rage",
       "background": "card-pattern-color-lotus",
       "cost": "card-cost-flame",
       "impact": "guard"
@@ -2849,7 +2849,7 @@
     ],
     "visual": {
       "family": "ward",
-      "icon": "card-art-lotus",
+      "icon": "card-art-unique-ic_second_wind",
       "background": "card-pattern-color-lotus",
       "cost": "card-cost-flame",
       "impact": "guard"
@@ -2887,7 +2887,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-fire",
+      "icon": "card-art-unique-ic_seeing_red",
       "background": "card-pattern-color-ferry",
       "cost": "card-cost-flame",
       "impact": "fire"
@@ -2937,7 +2937,7 @@
     ],
     "visual": {
       "family": "ward",
-      "icon": "card-art-seal",
+      "icon": "card-art-unique-ic_sentinel",
       "background": "card-pattern-color-step",
       "cost": "card-cost-flame",
       "impact": "guard"
@@ -3001,7 +3001,7 @@
     "tags": [],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-bell",
+      "icon": "card-art-unique-ic_shockwave",
       "background": "card-pattern-color-bell",
       "cost": "card-cost-flame",
       "impact": "thunder"
@@ -3065,7 +3065,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-mirror",
+      "icon": "card-art-unique-ic_spot_weakness",
       "background": "card-pattern-color-ledger",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -3105,7 +3105,7 @@
     "tags": [],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-talisman",
+      "icon": "card-art-unique-ic_double_tap",
       "background": "card-pattern-color-bell",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -3149,7 +3149,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-lotus",
+      "icon": "card-art-unique-ic_exhume",
       "background": "card-pattern-color-ferry",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -3193,7 +3193,7 @@
     ],
     "visual": {
       "family": "ward",
-      "icon": "card-art-seal",
+      "icon": "card-art-unique-ic_impervious",
       "background": "card-pattern-color-mirror",
       "cost": "card-cost-flame",
       "impact": "guard"
@@ -3236,7 +3236,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-seal",
+      "icon": "card-art-unique-ic_limit_break",
       "background": "card-pattern-color-bell",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -3299,7 +3299,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-lotus",
+      "icon": "card-art-unique-ic_offering",
       "background": "card-pattern-color-ferry",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -3351,7 +3351,7 @@
     "tags": [],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-fire",
+      "icon": "card-art-unique-ic_combust",
       "background": "card-pattern-color-ferry",
       "cost": "card-cost-flame",
       "impact": "fire"
@@ -3389,7 +3389,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-chain",
+      "icon": "card-art-unique-ic_dark_embrace",
       "background": "card-pattern-color-ledger",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -3434,7 +3434,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-lotus",
+      "icon": "card-art-unique-ic_evolve",
       "background": "card-pattern-color-bell",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -3479,7 +3479,7 @@
     ],
     "visual": {
       "family": "ward",
-      "icon": "card-art-talisman",
+      "icon": "card-art-unique-ic_feel_no_pain",
       "background": "card-pattern-color-lotus",
       "cost": "card-cost-flame",
       "impact": "guard"
@@ -3523,7 +3523,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-fire",
+      "icon": "card-art-unique-ic_fire_breathing",
       "background": "card-pattern-color-ferry",
       "cost": "card-cost-flame",
       "impact": "fire"
@@ -3569,7 +3569,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-seal",
+      "icon": "card-art-unique-ic_inflame",
       "background": "card-pattern-color-bell",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -3613,7 +3613,7 @@
     ],
     "visual": {
       "family": "ward",
-      "icon": "card-art-coin",
+      "icon": "card-art-unique-ic_metallicize",
       "background": "card-pattern-color-talisman",
       "cost": "card-cost-flame",
       "impact": "guard"
@@ -3657,7 +3657,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-brush",
+      "icon": "card-art-unique-ic_rupture",
       "background": "card-pattern-color-ledger",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -3694,7 +3694,7 @@
     ],
     "visual": {
       "family": "ward",
-      "icon": "card-art-seal",
+      "icon": "card-art-unique-ic_barricade",
       "background": "card-pattern-color-mirror",
       "cost": "card-cost-flame",
       "impact": "guard"
@@ -3750,7 +3750,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-fire",
+      "icon": "card-art-unique-ic_berserk",
       "background": "card-pattern-color-ferry",
       "cost": "card-cost-flame",
       "impact": "fire"
@@ -3790,7 +3790,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-lotus",
+      "icon": "card-art-unique-ic_brutality",
       "background": "card-pattern-color-ledger",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -3827,7 +3827,7 @@
     ],
     "visual": {
       "family": "oath",
-      "icon": "card-art-ledger",
+      "icon": "card-art-unique-ic_corruption",
       "background": "card-pattern-color-vow",
       "cost": "card-cost-flame",
       "impact": "curse"
@@ -3871,7 +3871,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-seal",
+      "icon": "card-art-unique-ic_demon_form",
       "background": "card-pattern-color-bell",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -3915,7 +3915,7 @@
     ],
     "visual": {
       "family": "ward",
-      "icon": "card-art-seal",
+      "icon": "card-art-unique-ic_juggernaut",
       "background": "card-pattern-color-mirror",
       "cost": "card-cost-flame",
       "impact": "thunder"
@@ -4023,7 +4023,7 @@
     ],
     "visual": {
       "family": "oath",
-      "icon": "card-art-chain",
+      "icon": "card-art-unique-debt_chain",
       "background": "card-pattern-color-chain",
       "cost": "card-cost-flame",
       "impact": "slash"
@@ -4071,7 +4071,7 @@
     ],
     "visual": {
       "family": "oath",
-      "icon": "card-art-talisman",
+      "icon": "card-art-unique-debt_vow",
       "background": "card-pattern-color-vow",
       "cost": "card-cost-flame",
       "impact": "guard"
@@ -4153,7 +4153,7 @@
     ],
     "visual": {
       "family": "oath",
-      "icon": "card-art-seal",
+      "icon": "card-art-unique-debt_seal",
       "background": "card-pattern-color-seal",
       "cost": "card-cost-flame",
       "impact": "curse"
@@ -4203,7 +4203,7 @@
     ],
     "visual": {
       "family": "ward",
-      "icon": "card-art-lotus",
+      "icon": "card-art-unique-debt_lotus",
       "background": "card-pattern-color-lotus",
       "cost": "card-cost-flame",
       "impact": "guard"
@@ -4257,7 +4257,7 @@
     ],
     "visual": {
       "family": "oath",
-      "icon": "card-art-brush",
+      "icon": "card-art-unique-debt_blood",
       "background": "card-pattern-color-blood",
       "cost": "card-cost-flame",
       "impact": "slash"
@@ -4307,7 +4307,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-ledger",
+      "icon": "card-art-unique-debt_ledger",
       "background": "card-pattern-color-ledger",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -4385,7 +4385,7 @@
     ],
     "visual": {
       "family": "ward",
-      "icon": "card-art-mirror",
+      "icon": "card-art-unique-debt_mirror",
       "background": "card-pattern-color-mirror",
       "cost": "card-cost-flame",
       "impact": "guard"
@@ -4465,7 +4465,7 @@
     ],
     "visual": {
       "family": "spirit",
-      "icon": "card-art-coin",
+      "icon": "card-art-unique-debt_ferry",
       "background": "card-pattern-color-ferry",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -4549,7 +4549,7 @@
     ],
     "visual": {
       "family": "oath",
-      "icon": "card-art-seal",
+      "icon": "card-art-unique-debt_verdict",
       "background": "card-pattern-color-verdict",
       "cost": "card-cost-flame",
       "impact": "curse"
@@ -4601,7 +4601,7 @@
     ],
     "visual": {
       "family": "oath",
-      "icon": "card-art-fire",
+      "icon": "card-art-unique-debt_loan",
       "background": "card-pattern-color-blood",
       "cost": "card-cost-flame",
       "impact": "fire"
@@ -4637,7 +4637,7 @@
     ],
     "visual": {
       "family": "oath",
-      "icon": "card-art-talisman",
+      "icon": "card-art-unique-debt_delay",
       "background": "card-pattern-color-vow",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -4689,7 +4689,7 @@
     ],
     "visual": {
       "family": "oath",
-      "icon": "card-art-ledger",
+      "icon": "card-art-unique-debt_register",
       "background": "card-pattern-color-verdict",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -4715,7 +4715,7 @@
     "tags": [],
     "visual": {
       "family": "oath",
-      "icon": "enemy-acid",
+      "icon": "card-art-unique-status_slimed",
       "background": "card-pattern-color-vow",
       "cost": "card-cost-flame",
       "impact": "curse"
@@ -4742,7 +4742,7 @@
     "tags": [],
     "visual": {
       "family": "oath",
-      "icon": "card-art-bell",
+      "icon": "card-art-unique-status_dazed",
       "background": "card-pattern-color-chain",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -4768,7 +4768,7 @@
     "tags": [],
     "visual": {
       "family": "oath",
-      "icon": "card-art-fire",
+      "icon": "card-art-unique-status_burn",
       "background": "card-pattern-color-blood",
       "cost": "card-cost-flame",
       "impact": "fire"
@@ -4803,7 +4803,7 @@
     "tags": [],
     "visual": {
       "family": "oath",
-      "icon": "card-art-fire",
+      "icon": "card-art-unique-status_burn_plus",
       "background": "card-pattern-color-verdict",
       "cost": "card-cost-flame",
       "impact": "fire"
@@ -4838,7 +4838,7 @@
     "tags": [],
     "visual": {
       "family": "oath",
-      "icon": "card-art-talisman",
+      "icon": "card-art-unique-status_wound",
       "background": "card-pattern-color-blood",
       "cost": "card-cost-flame",
       "impact": "curse"
@@ -4865,7 +4865,7 @@
     "tags": [],
     "visual": {
       "family": "oath",
-      "icon": "card-art-mirror",
+      "icon": "card-art-unique-status_void",
       "background": "card-pattern-color-chain",
       "cost": "card-cost-flame",
       "impact": "soul"
@@ -4897,7 +4897,7 @@
     "tags": [],
     "visual": {
       "family": "oath",
-      "icon": "card-art-ledger",
+      "icon": "card-art-unique-curse_injury",
       "background": "card-pattern-color-vow",
       "cost": "card-cost-flame",
       "impact": "curse"
@@ -4923,7 +4923,7 @@
     "tags": [],
     "visual": {
       "family": "oath",
-      "icon": "card-art-mirror",
+      "icon": "card-art-unique-curse_regret",
       "background": "card-pattern-color-vow",
       "cost": "card-cost-flame",
       "impact": "curse"
@@ -4960,7 +4960,7 @@
     "tags": [],
     "visual": {
       "family": "oath",
-      "icon": "card-art-bell",
+      "icon": "card-art-unique-curse_doubt",
       "background": "card-pattern-color-chain",
       "cost": "card-cost-flame",
       "impact": "curse"
@@ -4994,7 +4994,7 @@
     "tags": [],
     "visual": {
       "family": "oath",
-      "icon": "card-art-seal",
+      "icon": "card-art-unique-curse_shame",
       "background": "card-pattern-color-seal",
       "cost": "card-cost-flame",
       "impact": "curse"
@@ -5028,7 +5028,7 @@
     "tags": [],
     "visual": {
       "family": "oath",
-      "icon": "card-art-lotus",
+      "icon": "card-art-unique-curse_decay",
       "background": "card-pattern-color-vow",
       "cost": "card-cost-flame",
       "impact": "curse"
@@ -5064,7 +5064,7 @@
     "tags": [],
     "visual": {
       "family": "oath",
-      "icon": "card-art-step",
+      "icon": "card-art-unique-curse_clumsy",
       "background": "card-pattern-color-chain",
       "cost": "card-cost-flame",
       "impact": "curse"
@@ -5091,7 +5091,7 @@
     "tags": [],
     "visual": {
       "family": "oath",
-      "icon": "card-art-chain",
+      "icon": "card-art-unique-curse_writhe",
       "background": "card-pattern-color-chain",
       "cost": "card-cost-flame",
       "impact": "curse"
@@ -5117,7 +5117,7 @@
     "tags": [],
     "visual": {
       "family": "oath",
-      "icon": "card-art-brush",
+      "icon": "card-art-unique-curse_pain",
       "background": "card-pattern-color-blood",
       "cost": "card-cost-flame",
       "impact": "curse"

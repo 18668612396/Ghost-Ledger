@@ -1,3 +1,5 @@
+import { cardArtStyle } from './card-art-layout.js';
+
 const PURPOSES = Object.freeze({
   'collection-card': '查看卡牌详情',
   'collection-enemy': '查看怪物详情',
@@ -54,7 +56,7 @@ function renderTile(entry, asset) {
   const lock = entry.locked ? '<span class="collection-tile-lock">待解锁</span>' : '';
   const frame = FAMILIES.has(entry.family) ? `collection-frame-${entry.family}` : 'collection-slot';
   const paper = `<img class="collection-tile-paper"${attribute('src', asset(frame))} alt="" aria-hidden="true" draggable="false"/>`;
-  const foreground = `<img class="collection-tile-art"${attribute('src', asset(entry.icon))} alt="" aria-hidden="true" draggable="false"/>`;
+  const foreground = `<img class="collection-tile-art"${attribute('style', cardArtStyle({ family: entry.family, icon: entry.icon }, 'collection'))}${attribute('src', asset(entry.icon))} alt="" aria-hidden="true" draggable="false" loading="lazy" decoding="async"/>`;
   const picture = entry.background
     ? `<span class="collection-tile-picture" aria-hidden="true"><img class="collection-tile-background"${attribute('src', asset(entry.background))} alt="" draggable="false"/>${foreground}</span>`
     : foreground;
