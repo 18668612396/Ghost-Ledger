@@ -5,13 +5,14 @@
   "type": "module",
   "description": "夜渡·阴债录：第一人称地府卡牌原型",
   "scripts": {
-    "dev": "node scripts/serve.mjs",
-    "preview": "node scripts/serve.mjs --dist",
-    "check": "node scripts/check.mjs",
-    "content:check": "node scripts/compile-content.mjs",
-    "check:skins": "node scripts/check-skins.mjs",
-    "test": "node scripts/compile-content.mjs && node --test tests/*.test.mjs",
-    "build": "node scripts/build.mjs"
+    "dev": "node tools/serve.mjs",
+    "dev:qa": "node tools/serve.mjs --qa",
+    "preview": "node tools/serve.mjs --dist",
+    "check": "node tools/check.mjs",
+    "content:check": "node tools/compile-content.mjs",
+    "check:skins": "node tools/check-skins.mjs",
+    "test": "node tools/test.mjs",
+    "build": "node tools/build.mjs"
   },
   "engines": { "node": ">=20" }
 }

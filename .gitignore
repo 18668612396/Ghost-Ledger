@@ -1,0 +1,6 @@
+/.local/
+
+# 依赖与工具缓存
+node_modules/
+__pycache__/
+*.py[cod]

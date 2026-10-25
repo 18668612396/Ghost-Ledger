@@ -1,14 +1,22 @@
 # v0.5 架构与模块边界
 
-更新：2026-10-25。当前产品版本为 v0.5，存档格式为 `version:4 / ruleset:config-v1`。全游戏只运行一套配置驱动引擎，不兼容旧存档。过时代码、测试和素材归档到游戏自己的 `.local/temp/`，不作为运行或构建依赖。
+更新：2026-10-25。当前产品版本为 v0.5，存档格式为 `version:4 / ruleset:config-v1`。全游戏只运行一套配置驱动引擎，不兼容旧存档。过时代码、测试和素材归档到仓库根目录的 `.local/temp/`，不作为运行或构建依赖。
 
 本文件说明工程边界；具体字段与可复制示例见 [策划配置指南](CONTENT-AUTHORING-V05.md)，素材规则见 [美术规范](ART-STANDARDS-V05.md)，验证状态见 [开发记录](DEVELOPMENT-V05.md)。
+
+## 仓库目录边界
+
+文中路径均以仓库根目录 `E:\GitHub\Ghost-Ledger` 为基准。`game/` 放游戏本体，`tools/` 放编译、服务、构建及素材工具，`docs/` 放正式文档；测试源码、验收证据、构建产物与临时归档分别放 `.local/tests/`、`.local/evidence/`、`.local/dist/`、`.local/temp/`。整个 `.local/` 由 Git 忽略，新克隆不会自动取得这些本地文件。
+
+游戏源码和静态产物不导入工具或本地测试文件。`tools/paths.mjs` 集中定位仓库、游戏及本地目录，避免根据命令执行位置猜测路径；根 `package.json` 提供统一命令入口。普通开发服务只服务 `game/`，静态预览只服务 `.local/dist/`。
+
+本地受控夹具通过 `npm run dev:qa` 单独启用：只监听 `127.0.0.2`，默认端口 4212，将 `.local/evidence/` 映射为 `/evidence/`。默认开发与预览服务不提供该入口，归档和本地测试也不进入静态产物。
 
 ## 数据流
 
 ```mermaid
 flowchart TD
-  Tables["content/*.json 策划源表"] --> Compiler["compile-content.mjs"]
+  Tables["game/content/*.json 策划源表"] --> Compiler["compile-content.mjs"]
   Schema["content-schema.js 共享校验"] --> Compiler
   Compiler --> Generated["generated/content-data.js"]
   Generated --> API["engine.js 唯一公共接口"]
@@ -23,7 +31,7 @@ flowchart TD
   Result --> Save["当前格式校验 / 浏览器保存"]
   Result --> Views["卡面 / 战场 / 藏品视图"]
   Result --> FX["presentation/effects.js 位图动画"]
-  Assets["public/assets/ 来源素材"] --> Views
+  Assets["game/public/assets/ 来源素材"] --> Views
   Assets --> FX
   Schema --> Save
 ```
@@ -32,20 +40,20 @@ flowchart TD
 
 | 模块 | 负责 | 不承担 |
 | --- | --- | --- |
-| `content/*.json` | 卡牌、能力、怪物、遭遇、幕、事件、特效参数 | 可执行函数、DOM、卡牌专用代码 |
-| `scripts/compile-content.mjs` | 校验、引用检查、PNG 检查、内容哈希、生成索引 | 修补错误配置或静默猜测字段 |
-| `src/runtime/content-schema.js` | 浏览器与 Node 共用的结构、表达式及引用校验 | 加载旧规则或旧格式 |
-| `src/runtime/expressions.js` | 安全 AST 求值、种子随机、洗牌 | `eval`、任意脚本、预览消耗随机数 |
-| `src/runtime/effects.js` | 通用效果、触发器、卡区、选择、结算帧与事件 | 按具体 cardId 编写规则分支 |
-| `src/runtime/world.js` | 路线约束、遭遇配方、怪物实例、声明式 AI 与意图 | 按具体 enemyId 编写 AI 分支 |
-| `src/runtime/game.js` | 新局、阶段、动作合法性、战斗边界、奖励与通用节点服务、存档验证 | DOM、动画计时 |
-| `src/engine.js` | 对界面暴露唯一游戏 API | 引擎分流或旧档转换 |
-| `src/runtime/items.js` | 当前法器、药物目录及相关公共定义 | 已完全表格化的道具系统 |
-| `src/modes.js`、`src/progression.js` | 模式登记、局外解锁、结算与行装 | 战斗效果解释 |
-| `src/main.js` | 页面、菜单、输入协调、保存、表现调度 | 重新计算卡牌伤害 |
+| `game/content/*.json` | 卡牌、能力、怪物、遭遇、幕、事件、特效参数 | 可执行函数、DOM、卡牌专用代码 |
+| `tools/compile-content.mjs` | 校验、引用检查、PNG 检查、内容哈希、生成索引 | 修补错误配置或静默猜测字段 |
+| `game/src/runtime/content-schema.js` | 浏览器与 Node 共用的结构、表达式及引用校验 | 加载旧规则或旧格式 |
+| `game/src/runtime/expressions.js` | 安全 AST 求值、种子随机、洗牌 | `eval`、任意脚本、预览消耗随机数 |
+| `game/src/runtime/effects.js` | 通用效果、触发器、卡区、选择、结算帧与事件 | 按具体 cardId 编写规则分支 |
+| `game/src/runtime/world.js` | 路线约束、遭遇配方、怪物实例、声明式 AI 与意图 | 按具体 enemyId 编写 AI 分支 |
+| `game/src/runtime/game.js` | 新局、阶段、动作合法性、战斗边界、奖励与通用节点服务、存档验证 | DOM、动画计时 |
+| `game/src/engine.js` | 对界面暴露唯一游戏 API | 引擎分流或旧档转换 |
+| `game/src/runtime/items.js` | 当前法器、药物目录及相关公共定义 | 已完全表格化的道具系统 |
+| `game/src/modes.js`、`game/src/progression.js` | 模式登记、局外解锁、结算与行装 | 战斗效果解释 |
+| `game/src/main.js` | 页面、菜单、输入协调、保存、表现调度 | 重新计算卡牌伤害 |
 | `card-gesture.js`、`combat-targeting.js` | 区分点击与拖拽、目标区域判定 | 支付费用或修改战斗 |
 | `card-visuals.js`、`battlefield-view.js`、`collection-view.js` | 四层卡面、敌阵、简洁藏品网格 | 自行定义战斗规则 |
-| `src/presentation/*` | 消费事件、移动缩放已有位图、受击状态反馈 | 结算伤害、程序绘制美术 |
+| `game/src/presentation/*` | 消费事件、移动缩放已有位图、受击状态反馈 | 结算伤害、程序绘制美术 |
 | `skins.js`、`skin-data.js`、样式表 | 位图切片、比例、排版和响应式布局 | 用代码生成框、按钮、粒子或纹理 |
 
 现有边界是“内容与可组合战斗规则可配置”。新增模式入口、全新节点服务或法器机制仍是工程扩展，不应声称所有产品逻辑都能通过一行表格完成。
@@ -56,9 +64,9 @@ flowchart TD
 
 校验包括字段、操作参数、表达式、卡牌与能力引用、AI 兜底、遭遇人数、事件退出路径、路线约束及本地 PNG。非法原型字段、循环对象、过深嵌套与未知操作被拒绝。生成文件不接受手改。
 
-开发启动先编译，再监听 `content/`。合法修改更新生成文件；非法修改保留上一次有效生成结果并报告错误。页面需要刷新，新配置需新开夜巡；不是自动替换进行中冒险的规则。
+开发启动先编译，再监听 `game/content/`。合法修改更新生成文件；非法修改保留上一次有效生成结果并报告错误。页面需要刷新，新配置需新开夜巡；不是自动替换进行中冒险的规则。
 
-构建在空暂存目录进行，旧 `dist` 移入 `.local/temp/` 后再替换。静态产物只包含入口、活动源码与 `public/`；开发服务拒绝点目录访问，归档不会被当作素材兜底。
+构建在 `.local/temp/` 下的空暂存目录进行，旧 `.local/dist/` 归档后再替换。输入来自 `game/` 的入口、活动源码和 `public/`，输出为 `.local/dist/index.html`、`.local/dist/src/` 与 `.local/dist/public/`，不在产物内额外嵌套 `game/`。开发服务拒绝点目录访问，归档不会被当作素材兜底。
 
 ## 动作与结算
 

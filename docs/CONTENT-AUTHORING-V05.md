@@ -1,18 +1,20 @@
 # v0.5 策划配置指南
 
+文中路径以仓库根目录为基准。游戏源表位于 `game/content/`，开发工具位于 `tools/`；测试与本地证据位于 Git 忽略的 `.local/`，新克隆不包含这些本地资料。
+
 已有机制可以通过 JSON 组合增加内容。下文示例是教学记录，未加入正式牌池；使用时将整条记录追加到对应数组，保持 id 唯一。JSON 不能写注释、函数或尾随逗号。
 
 ## 源表与工作流程
 
 | 文件 | 每行定义 | 使用入口 |
 | --- | --- | --- |
-| `content/cards.json` | 卡牌基础、升级、触发与四层表现 | 起始牌组、奖励、生成、事件 |
-| `content/powers.json` | 持续能力、临时能力、事件监听与期限 | 卡牌或怪物的 `power` 效果 |
-| `content/enemies.json` | 怪物形象、生命、技能、AI、特性 | 遭遇中的怪物 id |
-| `content/encounters.json` | 1–5 怪阵容与抽选权重 | 幕的遭遇池、事件指定战斗 |
-| `content/acts.json` | 起始资源、地图、遭遇／事件／奖励池 | 创建冒险时的 `actId` |
-| `content/events.json` | 事件文案、条件、选项与效果 | 幕的 `eventPool` |
-| `content/visual-effects.json` | 位图特效与动画参数 | `visual.impact`、效果 `impact`、标准表现事件 |
+| `game/content/cards.json` | 卡牌基础、升级、触发与四层表现 | 起始牌组、奖励、生成、事件 |
+| `game/content/powers.json` | 持续能力、临时能力、事件监听与期限 | 卡牌或怪物的 `power` 效果 |
+| `game/content/enemies.json` | 怪物形象、生命、技能、AI、特性 | 遭遇中的怪物 id |
+| `game/content/encounters.json` | 1–5 怪阵容与抽选权重 | 幕的遭遇池、事件指定战斗 |
+| `game/content/acts.json` | 起始资源、地图、遭遇／事件／奖励池 | 创建冒险时的 `actId` |
+| `game/content/events.json` | 事件文案、条件、选项与效果 | 幕的 `eventPool` |
+| `game/content/visual-effects.json` | 位图特效与动画参数 | `visual.impact`、效果 `impact`、标准表现事件 |
 
 1. 从相近记录复制，换一个稳定 id，修改文字、数值、组合或素材引用。
 2. 检查引用链：卡牌是否进入本幕池；怪物是否进入遭遇；遭遇是否在本幕池；事件是否加入 `eventPool`。
@@ -20,7 +22,7 @@
 4. 开发服务会监听源表。看到“配置已更新”后，刷新页面并新开夜巡；继续已有夜巡仍使用原配置快照。
 5. 在游戏中验证获得、使用、升级、结算与显示，不只看 JSON 能否解析。
 
-编译输出在 `src/generated/content-data.js`，不要编辑它。编译失败时上一次有效结果仍保留；以终端错误或 `/__content/diagnostics` 为准，不能因为浏览器还能运行就认为新表生效了。
+编译输出在 `game/src/generated/content-data.js`，不要编辑它。编译失败时上一次有效结果仍保留；以终端错误或 `/__content/diagnostics` 为准，不能因为浏览器还能运行就认为新表生效了。
 
 ## 新增卡牌
 
@@ -76,7 +78,7 @@
 | `visual` | 家族框、抽象背景、透明主体、费用与命中特效引用 |
 | `source` | 可选调研索引或原创设计说明；不参与运行规则 |
 
-`visual.family` 有 `strike/ward/spirit/oath` 四种，分别对应红、绿、蓝、紫框；它与机械类型、稀有度分别配置。图片引用填写 `public/assets/` 下的 PNG 名称，不带路径或扩展名。新增图先完成 [美术来源与分层要求](ART-STANDARDS-V05.md)。
+`visual.family` 有 `strike/ward/spirit/oath` 四种，分别对应红、绿、蓝、紫框；它与机械类型、稀有度分别配置。图片引用填写 `game/public/assets/` 下的 PNG 名称，不带路径或扩展名。新增图先完成 [美术来源与分层要求](ART-STANDARDS-V05.md)。
 
 特殊入口为 `onDraw`、`onExhaust`、`onHandEnd` 与 `triggers`；它们仍执行相同效果列表。`costModifier` 调整实例费用，`playCondition` 与 `playConditionText` 定义可打出条件及原因。`generation.combat:false` 可从战内随机生成池排除牌。
 
@@ -110,7 +112,7 @@
 }
 ```
 
-主要操作如下，完整字段以 `src/runtime/content-schema.js` 为准：
+主要操作如下，完整字段以 `game/src/runtime/content-schema.js` 为准：
 
 | 操作 | 必要字段与用途 |
 | --- | --- |
@@ -268,7 +270,7 @@ AI 从上向下取首条满足 `when` 的规则。每条只选 `move`、`sequenc
 
 `encounterPools` 引用遭遇行的 pools 标签。`cardPools` 与 `specialCards` 形成奖励候选集合；basic、状态与诅咒即使列入 specialCards 也不会进入普通选牌奖励。`debtChance` 是在对应稀有度中尝试选择阴债牌的概率，`rarityWeights` 是相对权重。
 
-开发侧通过 `createConfiguredAdventure(seed, { actId: "act_example" })` 运行新幕。当前主页模式仍选择 act1；若要向玩家开放新幕，需要在 `src/modes.js` 及相关入口登记。当前首领胜利会结束冒险，新增幕不会自动建立连续章节。
+开发侧通过 `createConfiguredAdventure(seed, { actId: "act_example" })` 运行新幕。当前主页模式仍选择 act1；若要向玩家开放新幕，需要在 `game/src/modes.js` 及相关入口登记。当前首领胜利会结束冒险，新增幕不会自动建立连续章节。
 
 ## 新增事件
 

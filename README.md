@@ -17,12 +17,34 @@
 
 通关条件是存活并击败第 16 层首领；生命归零则失败。结算后回府，再次出门。
 
+## 仓库目录
+
+所有开发命令从仓库根目录执行，文档中的文件路径也以仓库根为基准。
+
+```text
+Ghost-Ledger/
+├─ game/              游戏本体：index.html、src/、content/、public/
+├─ tools/             配置编译、开发服务、构建与素材工具
+├─ docs/              正式设计、架构与开发记录
+├─ .local/            Git 忽略的本地内容
+│  ├─ tests/          测试源码
+│  ├─ evidence/       检查记录、截图与隔离 QA 夹具
+│  ├─ dist/           静态构建产物
+│  └─ temp/           临时文件、旧构建和历史归档
+├─ AGENTS.md          AI 协作、同模型子智能体与 Git 约定
+├─ ai_context.md      当前接手说明
+├─ CREDITS.md         素材来源与署名
+└─ package.json       统一开发命令
+```
+
+`.local/` 不进入版本管理；新的 Git 克隆不会自带本地测试或历史证据。游戏运行与构建不依赖这些测试和证据，执行测试前需在本机恢复或添加 `.local/tests/*.test.mjs`。
+
 ## 启动
 
 需要 **Node.js 20 或更新版本**及其附带的 npm。没有第三方运行依赖，无需安装依赖。
 
 ```powershell
-cd E:\GitHub\RandomGames\ghost-ledger
+cd E:\GitHub\Ghost-Ledger
 npm run dev
 ```
 
@@ -79,7 +101,7 @@ npm run dev
 
 ## 策划与开发
 
-只修改 `content/*.json` 源表，不手动修改 `src/generated/content-data.js`。开发服务会监听表变化并编译；错误显示在终端及 `/__content/diagnostics`。
+只修改 `game/content/*.json` 源表，不手动修改 `game/src/generated/content-data.js`。开发服务会监听表变化并编译；错误显示在终端及 `/__content/diagnostics`。开发工具位于 [tools/](tools/README.md)，目前包括编译、服务、构建和素材工具，尚无独立图形配置编辑器。
 
 - [策划配置指南](docs/CONTENT-AUTHORING-V05.md)：新增卡牌、能力、怪物、遭遇、幕、事件和特效。
 - [架构与模块边界](docs/ARCHITECTURE-V05.md)：唯一运行时、效果队列、随机数、存档与表现层。
@@ -94,7 +116,9 @@ npm run build
 npm run preview -- --port 4211
 ```
 
-`content:check` 校验并生成配置；`check` 还检查源码语法、活动素材及来源；`test` 执行规则和场景回归。构建先使用空目录，再将旧 `dist` 归档到 `.local/temp/`，生成可独立服务的静态 `dist`。可选的 `npm run check:skins` 需要 Python 与 Pillow，用于像素、比例和切片检查。
+`content:check` 校验并生成配置；`check` 还检查源码语法、活动素材及来源；`test` 执行 `.local/tests/` 中的规则和场景回归，没有测试文件时明确报错。构建先使用空目录，再将旧产物归档到 `.local/temp/`，生成可独立服务的 `.local/dist/`。可选的 `npm run check:skins` 需要 Python 与 Pillow，用于像素、比例和切片检查。
+
+普通开发服务只提供 `game/`，构建预览只提供 `.local/dist/`，均不开放本地证据。需要使用现有 QA 夹具时运行 `npm run dev:qa`，打开 [隔离 QA 入口](http://127.0.0.2:4212/evidence/v05-scenarios.html)。该服务仅监听 `127.0.0.2`，通过 `/evidence/` 提供 `.local/evidence/`；夹具可改写该来源的测试存档，避免在正常试玩来源使用。
 
 ## 当前限制
 
