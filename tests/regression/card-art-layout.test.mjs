@@ -39,7 +39,7 @@ test('all card definitions have distinct generated subjects with verifiable prov
 
 test('art replacement preserves every gameplay field and upgrade rule', async () => {
   const cards = await loadJson(resolve(GAME_ROOT, 'content/cards.json'));
-  const original = await loadJson(resolve(LOCAL_ROOT, 'temp/card-art-20261025/originals/game/content/cards.json'));
+  const original = await loadJson(new URL('../fixtures/card-art-before-unique.json', import.meta.url));
   const omitIcon = rows => rows.map(card => { const copy = structuredClone(card); delete copy.visual.icon; return copy; });
   assert.deepEqual(omitIcon(cards), omitIcon(original));
 });
@@ -67,6 +67,7 @@ test('opaque subject bounds land at the shared card-window and collection center
 test('art compiler rejects an unreviewed replacement and missing subject placement', async t => {
   const source = await loadJson(resolve(assetsRoot, 'card-art-layouts.json'));
   const [id, subject] = Object.entries(source.assets)[0];
+  await mkdir(resolve(LOCAL_ROOT, 'temp'), { recursive: true });
   const root = await mkdtemp(resolve(LOCAL_ROOT, 'temp/card-art-compiler-'));
   await mkdir(resolve(root, 'public/assets'), { recursive: true });
   await mkdir(resolve(root, 'content'), { recursive: true });
