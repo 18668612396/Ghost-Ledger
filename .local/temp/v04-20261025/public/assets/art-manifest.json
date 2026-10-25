@@ -1,0 +1,1400 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "filename": "background.png",
+      "purpose": "第一人称地府街巷、石桥与牌坊背景",
+      "source": "image_gen",
+      "promptSet": "prompts.json"
+    },
+    {
+      "filename": "paper.png",
+      "purpose": "纸扎童子透明敌人立绘",
+      "source": "image_gen",
+      "promptSet": "prompts.json"
+    },
+    {
+      "filename": "collector.png",
+      "purpose": "讨债鬼透明敌人立绘",
+      "source": "image_gen",
+      "promptSet": "prompts.json"
+    },
+    {
+      "filename": "judge.png",
+      "purpose": "判官透明头目立绘",
+      "source": "image_gen",
+      "promptSet": "prompts.json"
+    },
+    {
+      "filename": "card-art.png",
+      "purpose": "九宫格卡牌插画图集",
+      "source": "image_gen",
+      "promptSet": "prompts.json"
+    },
+    {
+      "filename": "ui-paper.png",
+      "purpose": "羊皮纸面板九切片素材",
+      "source": "image_gen",
+      "promptSet": "ui-prompts.json"
+    },
+    {
+      "filename": "ui-dark.png",
+      "purpose": "深青漆板面板九切片素材",
+      "source": "image_gen",
+      "promptSet": "ui-prompts.json"
+    },
+    {
+      "filename": "ui-card.png",
+      "purpose": "空白符牌框素材",
+      "source": "image_gen",
+      "promptSet": "ui-prompts.json"
+    },
+    {
+      "filename": "ui-buttons.png",
+      "purpose": "金色、青色、紫色三行按钮皮肤图集",
+      "source": "image_gen",
+      "promptSet": "ui-prompts.json"
+    },
+    {
+      "filename": "ui-icons.png",
+      "purpose": "十六宫格界面图标图集",
+      "source": "image_gen",
+      "promptSet": "ui-prompts.json"
+    },
+    {
+      "filename": "ui-badges.png",
+      "purpose": "费用、契印、香火球、路线节点、图标按钮与选框徽章图集",
+      "source": "image_gen",
+      "promptSet": "ui-prompts.json"
+    },
+    {
+      "filename": "ui-meters.png",
+      "purpose": "空血槽、红色血条填充与金色分隔纹理图集",
+      "source": "image_gen",
+      "promptSet": "ui-prompts.json"
+    },
+    {
+      "filename": "ui-logo.png",
+      "purpose": "游戏标题标志素材",
+      "source": "image_gen",
+      "promptSet": "ui-prompts.json"
+    },
+    {
+      "filename": "ui-favicon.png",
+      "purpose": "浏览器页签图标素材",
+      "source": "image_gen",
+      "promptSet": "ui-prompts.json"
+    },
+    {
+      "filename": "home-background.png",
+      "purpose": "鬼差府邸主页的清爽竖屏场景",
+      "source": "image_gen",
+      "promptSet": "hub-prompts.json"
+    },
+    {
+      "filename": "map-background.png",
+      "purpose": "路线地图的水墨纸面背景",
+      "source": "image_gen",
+      "promptSet": "hub-prompts.json"
+    },
+    {
+      "filename": "ui-card-clean.png",
+      "purpose": "减少装饰的符牌边框",
+      "source": "image_gen",
+      "promptSet": "hub-prompts.json"
+    },
+    {
+      "filename": "ui-quiet-panel.png",
+      "purpose": "紧凑界面使用的深青纸面九切片",
+      "source": "image_gen",
+      "promptSet": "hub-prompts.json"
+    },
+    {
+      "filename": "map-path.png",
+      "purpose": "节点之间的手绘路线连接笔触",
+      "source": "image_gen",
+      "promptSet": "hub-prompts.json"
+    },
+    {
+      "filename": "ref-scene.png",
+      "purpose": "贴近参考的浅青地府场景",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json"
+    },
+    {
+      "filename": "ref-avatar.png",
+      "purpose": "圆形小鬼差头像",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json"
+    },
+    {
+      "filename": "ref-icons.png",
+      "purpose": "十六宫格简洁手绘图标",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json"
+    },
+    {
+      "filename": "ref-nav.png",
+      "purpose": "六宫格独立府邸功能摆件",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json"
+    },
+    {
+      "filename": "ref-button.png",
+      "purpose": "可切分的青色按钮原始素材",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json"
+    },
+    {
+      "filename": "ref-scroll.png",
+      "purpose": "可九切片的羊皮卷轴原始素材",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json"
+    },
+    {
+      "filename": "ref-card.png",
+      "purpose": "固定二比三比例符牌",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json"
+    },
+    {
+      "filename": "ref-brushes.png",
+      "purpose": "三行笔触状态条原始素材",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json"
+    },
+    {
+      "filename": "ref-energy.png",
+      "purpose": "透明青色香火球",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json"
+    },
+    {
+      "filename": "ref-button-left.png",
+      "purpose": "按钮left切片",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json",
+      "derivedFrom": "ref-button.png",
+      "crop": [
+        31,
+        148,
+        260,
+        426
+      ]
+    },
+    {
+      "filename": "ref-button-middle.png",
+      "purpose": "按钮middle切片",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json",
+      "derivedFrom": "ref-button.png",
+      "crop": [
+        291,
+        148,
+        1592,
+        426
+      ]
+    },
+    {
+      "filename": "ref-button-right.png",
+      "purpose": "按钮right切片",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json",
+      "derivedFrom": "ref-button.png",
+      "crop": [
+        1883,
+        148,
+        260,
+        426
+      ]
+    },
+    {
+      "filename": "ref-scroll-tl.png",
+      "purpose": "卷轴tl切片",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json",
+      "derivedFrom": "ref-scroll.png",
+      "crop": [
+        0,
+        17,
+        120,
+        180
+      ]
+    },
+    {
+      "filename": "ref-scroll-t.png",
+      "purpose": "卷轴t切片",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json",
+      "derivedFrom": "ref-scroll.png",
+      "crop": [
+        120,
+        17,
+        769,
+        180
+      ]
+    },
+    {
+      "filename": "ref-scroll-tr.png",
+      "purpose": "卷轴tr切片",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json",
+      "derivedFrom": "ref-scroll.png",
+      "crop": [
+        889,
+        17,
+        120,
+        180
+      ]
+    },
+    {
+      "filename": "ref-scroll-l.png",
+      "purpose": "卷轴l切片",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json",
+      "derivedFrom": "ref-scroll.png",
+      "crop": [
+        0,
+        197,
+        120,
+        1125
+      ]
+    },
+    {
+      "filename": "ref-scroll-c.png",
+      "purpose": "卷轴c切片",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json",
+      "derivedFrom": "ref-scroll.png",
+      "crop": [
+        120,
+        197,
+        769,
+        1125
+      ]
+    },
+    {
+      "filename": "ref-scroll-r.png",
+      "purpose": "卷轴r切片",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json",
+      "derivedFrom": "ref-scroll.png",
+      "crop": [
+        889,
+        197,
+        120,
+        1125
+      ]
+    },
+    {
+      "filename": "ref-scroll-bl.png",
+      "purpose": "卷轴bl切片",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json",
+      "derivedFrom": "ref-scroll.png",
+      "crop": [
+        0,
+        1322,
+        120,
+        180
+      ]
+    },
+    {
+      "filename": "ref-scroll-b.png",
+      "purpose": "卷轴b切片",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json",
+      "derivedFrom": "ref-scroll.png",
+      "crop": [
+        120,
+        1322,
+        769,
+        180
+      ]
+    },
+    {
+      "filename": "ref-scroll-br.png",
+      "purpose": "卷轴br切片",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json",
+      "derivedFrom": "ref-scroll.png",
+      "crop": [
+        889,
+        1322,
+        120,
+        180
+      ]
+    },
+    {
+      "filename": "ref-brush-teal.png",
+      "purpose": "笔触状态条裁片",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json",
+      "derivedFrom": "ref-brushes.png",
+      "crop": [
+        0,
+        0,
+        2095,
+        241
+      ]
+    },
+    {
+      "filename": "ref-brush-red.png",
+      "purpose": "笔触状态条裁片",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json",
+      "derivedFrom": "ref-brushes.png",
+      "crop": [
+        81,
+        244,
+        2015,
+        237
+      ]
+    },
+    {
+      "filename": "ref-brush-jade.png",
+      "purpose": "笔触状态条裁片",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json",
+      "derivedFrom": "ref-brushes.png",
+      "crop": [
+        79,
+        482,
+        2020,
+        242
+      ]
+    },
+    {
+      "filename": "ref-path.png",
+      "purpose": "地图笔触裁片",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json",
+      "derivedFrom": "map-path.png",
+      "crop": [
+        42,
+        334,
+        2091,
+        64
+      ]
+    },
+    {
+      "filename": "ref-card-art.png",
+      "purpose": "此前带青色底块的卡牌插画源图，保留为历史与透明版编辑来源",
+      "source": "image_gen",
+      "promptSet": "reference-prompts.json"
+    },
+    {
+      "filename": "enemy-shadow.png",
+      "purpose": "怪物脚下圆形投影的透视椭圆透明位图，随浮动等比缩放并改变透明度",
+      "source": "image_gen",
+      "promptSet": "shadow-prompts.json"
+    },
+    {
+      "filename": "enemy-shadow-hard.png",
+      "purpose": "更清晰的硬边怪物接触阴影",
+      "source": "image_gen",
+      "promptSet": "appearance-refinement-prompts.json"
+    },
+    {
+      "filename": "card-frame-opaque.png",
+      "purpose": "此前通用卡框，保留为分类卡框的编辑来源与历史",
+      "source": "image_gen",
+      "promptSet": "appearance-refinement-prompts.json"
+    },
+    {
+      "filename": "card-art-cutouts.png",
+      "purpose": "透明底九宫格卡牌物件源图，不包含方形底色或烟雾底托",
+      "source": "image_gen",
+      "promptSet": "card-visual-prompts.json"
+    },
+    {
+      "filename": "card-frame-attack.png",
+      "purpose": "此前红绿类型卡框，保留为历史，当前使用中性透明画窗框",
+      "source": "image_gen",
+      "promptSet": "card-visual-prompts.json"
+    },
+    {
+      "filename": "card-frame-skill.png",
+      "purpose": "此前红绿类型卡框，保留为历史，当前使用中性透明画窗框",
+      "source": "image_gen",
+      "promptSet": "card-visual-prompts.json"
+    },
+    {
+      "filename": "card-art-mirror.png",
+      "purpose": "照骨镜独立透明插画",
+      "source": "image_gen",
+      "promptSet": "card-visual-prompts.json"
+    },
+    {
+      "filename": "card-art-ledger.png",
+      "purpose": "销账书独立透明插画",
+      "source": "image_gen",
+      "promptSet": "card-visual-prompts.json"
+    },
+    {
+      "filename": "card-art-brush.png",
+      "purpose": "透明卡牌插画：brush；生成图集原像素矩形裁片",
+      "source": "image_gen",
+      "promptSet": "card-visual-prompts.json",
+      "derivedFrom": "card-art-cutouts.png",
+      "crop": [
+        0,
+        0,
+        418,
+        418
+      ]
+    },
+    {
+      "filename": "card-art-talisman.png",
+      "purpose": "透明卡牌插画：talisman；生成图集原像素矩形裁片",
+      "source": "image_gen",
+      "promptSet": "card-visual-prompts.json",
+      "derivedFrom": "card-art-cutouts.png",
+      "crop": [
+        418,
+        0,
+        418,
+        418
+      ]
+    },
+    {
+      "filename": "card-art-chain.png",
+      "purpose": "透明卡牌插画：chain；生成图集原像素矩形裁片",
+      "source": "image_gen",
+      "promptSet": "card-visual-prompts.json",
+      "derivedFrom": "card-art-cutouts.png",
+      "crop": [
+        836,
+        0,
+        418,
+        418
+      ]
+    },
+    {
+      "filename": "card-art-step.png",
+      "purpose": "透明卡牌插画：step；生成图集原像素矩形裁片",
+      "source": "image_gen",
+      "promptSet": "card-visual-prompts.json",
+      "derivedFrom": "card-art-cutouts.png",
+      "crop": [
+        0,
+        418,
+        418,
+        418
+      ]
+    },
+    {
+      "filename": "card-art-fire.png",
+      "purpose": "透明卡牌插画：fire；生成图集原像素矩形裁片",
+      "source": "image_gen",
+      "promptSet": "card-visual-prompts.json",
+      "derivedFrom": "card-art-cutouts.png",
+      "crop": [
+        418,
+        418,
+        418,
+        418
+      ]
+    },
+    {
+      "filename": "card-art-bell.png",
+      "purpose": "透明卡牌插画：bell；生成图集原像素矩形裁片",
+      "source": "image_gen",
+      "promptSet": "card-visual-prompts.json",
+      "derivedFrom": "card-art-cutouts.png",
+      "crop": [
+        836,
+        418,
+        418,
+        418
+      ]
+    },
+    {
+      "filename": "card-art-seal.png",
+      "purpose": "透明卡牌插画：seal；生成图集原像素矩形裁片",
+      "source": "image_gen",
+      "promptSet": "card-visual-prompts.json",
+      "derivedFrom": "card-art-cutouts.png",
+      "crop": [
+        0,
+        836,
+        418,
+        418
+      ]
+    },
+    {
+      "filename": "card-art-coin.png",
+      "purpose": "透明卡牌插画：coin；生成图集原像素矩形裁片",
+      "source": "image_gen",
+      "promptSet": "card-visual-prompts.json",
+      "derivedFrom": "card-art-cutouts.png",
+      "crop": [
+        418,
+        836,
+        418,
+        418
+      ]
+    },
+    {
+      "filename": "card-art-lotus.png",
+      "purpose": "透明卡牌插画：lotus；生成图集原像素矩形裁片",
+      "source": "image_gen",
+      "promptSet": "card-visual-prompts.json",
+      "derivedFrom": "card-art-cutouts.png",
+      "crop": [
+        836,
+        836,
+        418,
+        418
+      ]
+    },
+    {
+      "filename": "card-frame-wash.png",
+      "purpose": "历史具象场景方案：当前中性旧纸卡框；画窗透明、标题和规则纸面不透明",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json"
+    },
+    {
+      "filename": "card-cost-spirit.png",
+      "purpose": "当前独立低饱和香火费用章，数字由代码排版",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json"
+    },
+    {
+      "filename": "card-scenes-01.png",
+      "purpose": "历史具象场景方案：三场景横向背景源图：card-scenes-01.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json"
+    },
+    {
+      "filename": "card-scenes-02.png",
+      "purpose": "历史具象场景方案：三场景横向背景源图：card-scenes-02.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json"
+    },
+    {
+      "filename": "card-scenes-03.png",
+      "purpose": "历史具象场景方案：三场景横向背景源图：card-scenes-03.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json"
+    },
+    {
+      "filename": "card-scenes-04.png",
+      "purpose": "历史具象场景方案：三场景横向背景源图：card-scenes-04.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json"
+    },
+    {
+      "filename": "card-scenes-05.png",
+      "purpose": "历史具象场景方案：三场景横向背景源图：card-scenes-05.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json"
+    },
+    {
+      "filename": "card-bg-brush.png",
+      "purpose": "历史具象场景方案：每牌独立场景背景原像素裁片：card-bg-brush.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json",
+      "derivedFrom": "card-scenes-01.png",
+      "crop": [
+        0,
+        0,
+        724,
+        724
+      ]
+    },
+    {
+      "filename": "card-bg-talisman.png",
+      "purpose": "历史具象场景方案：每牌独立场景背景原像素裁片：card-bg-talisman.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json",
+      "derivedFrom": "card-scenes-01.png",
+      "crop": [
+        724,
+        0,
+        724,
+        724
+      ]
+    },
+    {
+      "filename": "card-bg-chain.png",
+      "purpose": "历史具象场景方案：每牌独立场景背景原像素裁片：card-bg-chain.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json",
+      "derivedFrom": "card-scenes-01.png",
+      "crop": [
+        1448,
+        0,
+        724,
+        724
+      ]
+    },
+    {
+      "filename": "card-bg-vow.png",
+      "purpose": "历史具象场景方案：每牌独立场景背景原像素裁片：card-bg-vow.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json",
+      "derivedFrom": "card-scenes-02.png",
+      "crop": [
+        0,
+        0,
+        724,
+        724
+      ]
+    },
+    {
+      "filename": "card-bg-step.png",
+      "purpose": "历史具象场景方案：每牌独立场景背景原像素裁片：card-bg-step.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json",
+      "derivedFrom": "card-scenes-02.png",
+      "crop": [
+        724,
+        0,
+        724,
+        724
+      ]
+    },
+    {
+      "filename": "card-bg-coin.png",
+      "purpose": "历史具象场景方案：每牌独立场景背景原像素裁片：card-bg-coin.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json",
+      "derivedFrom": "card-scenes-02.png",
+      "crop": [
+        1448,
+        0,
+        724,
+        724
+      ]
+    },
+    {
+      "filename": "card-bg-fire.png",
+      "purpose": "历史具象场景方案：每牌独立场景背景原像素裁片：card-bg-fire.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json",
+      "derivedFrom": "card-scenes-03.png",
+      "crop": [
+        0,
+        0,
+        724,
+        724
+      ]
+    },
+    {
+      "filename": "card-bg-bell.png",
+      "purpose": "历史具象场景方案：每牌独立场景背景原像素裁片：card-bg-bell.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json",
+      "derivedFrom": "card-scenes-03.png",
+      "crop": [
+        724,
+        0,
+        724,
+        724
+      ]
+    },
+    {
+      "filename": "card-bg-seal.png",
+      "purpose": "历史具象场景方案：每牌独立场景背景原像素裁片：card-bg-seal.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json",
+      "derivedFrom": "card-scenes-03.png",
+      "crop": [
+        1448,
+        0,
+        724,
+        724
+      ]
+    },
+    {
+      "filename": "card-bg-lotus.png",
+      "purpose": "历史具象场景方案：每牌独立场景背景原像素裁片：card-bg-lotus.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json",
+      "derivedFrom": "card-scenes-04.png",
+      "crop": [
+        0,
+        0,
+        724,
+        724
+      ]
+    },
+    {
+      "filename": "card-bg-blood.png",
+      "purpose": "历史具象场景方案：每牌独立场景背景原像素裁片：card-bg-blood.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json",
+      "derivedFrom": "card-scenes-04.png",
+      "crop": [
+        724,
+        0,
+        724,
+        724
+      ]
+    },
+    {
+      "filename": "card-bg-ledger.png",
+      "purpose": "历史具象场景方案：每牌独立场景背景原像素裁片：card-bg-ledger.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json",
+      "derivedFrom": "card-scenes-04.png",
+      "crop": [
+        1448,
+        0,
+        724,
+        724
+      ]
+    },
+    {
+      "filename": "card-bg-mirror.png",
+      "purpose": "历史具象场景方案：每牌独立场景背景原像素裁片：card-bg-mirror.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json",
+      "derivedFrom": "card-scenes-05.png",
+      "crop": [
+        0,
+        0,
+        724,
+        724
+      ]
+    },
+    {
+      "filename": "card-bg-ferry.png",
+      "purpose": "历史具象场景方案：每牌独立场景背景原像素裁片：card-bg-ferry.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json",
+      "derivedFrom": "card-scenes-05.png",
+      "crop": [
+        724,
+        0,
+        724,
+        724
+      ]
+    },
+    {
+      "filename": "card-bg-verdict.png",
+      "purpose": "历史具象场景方案：每牌独立场景背景原像素裁片：card-bg-verdict.png",
+      "source": "image_gen",
+      "promptSet": "card-layer-prompts.json",
+      "derivedFrom": "card-scenes-05.png",
+      "crop": [
+        1448,
+        0,
+        724,
+        724
+      ]
+    },
+    {
+      "filename": "card-frame-muted-attack.png",
+      "purpose": "低饱和类型卡框，4:7、透明画窗",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json"
+    },
+    {
+      "filename": "card-frame-muted-skill.png",
+      "purpose": "低饱和类型卡框，4:7、透明画窗",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json"
+    },
+    {
+      "filename": "card-patterns-01.png",
+      "purpose": "抽象纹样源图集，9:4",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json"
+    },
+    {
+      "filename": "card-patterns-02.png",
+      "purpose": "抽象纹样源图集，9:4",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json"
+    },
+    {
+      "filename": "card-patterns-03.png",
+      "purpose": "抽象纹样源图集，9:4",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json"
+    },
+    {
+      "filename": "card-patterns-04.png",
+      "purpose": "抽象纹样源图集，9:4",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json"
+    },
+    {
+      "filename": "card-patterns-05.png",
+      "purpose": "抽象纹样源图集，9:4",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json"
+    },
+    {
+      "filename": "card-pattern-brush.png",
+      "purpose": "每牌独立3:4抽象背景：card-pattern-brush.png",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json",
+      "derivedFrom": "card-patterns-01.png",
+      "crop": [
+        0,
+        0,
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-talisman.png",
+      "purpose": "每牌独立3:4抽象背景：card-pattern-talisman.png",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json",
+      "derivedFrom": "card-patterns-01.png",
+      "crop": [
+        627,
+        0,
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-chain.png",
+      "purpose": "每牌独立3:4抽象背景：card-pattern-chain.png",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json",
+      "derivedFrom": "card-patterns-01.png",
+      "crop": [
+        1254,
+        0,
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-vow.png",
+      "purpose": "每牌独立3:4抽象背景：card-pattern-vow.png",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json",
+      "derivedFrom": "card-patterns-02.png",
+      "crop": [
+        0,
+        0,
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-step.png",
+      "purpose": "每牌独立3:4抽象背景：card-pattern-step.png",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json",
+      "derivedFrom": "card-patterns-02.png",
+      "crop": [
+        627,
+        0,
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-coin.png",
+      "purpose": "每牌独立3:4抽象背景：card-pattern-coin.png",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json",
+      "derivedFrom": "card-patterns-02.png",
+      "crop": [
+        1254,
+        0,
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-fire.png",
+      "purpose": "每牌独立3:4抽象背景：card-pattern-fire.png",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json",
+      "derivedFrom": "card-patterns-03.png",
+      "crop": [
+        0,
+        0,
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-bell.png",
+      "purpose": "每牌独立3:4抽象背景：card-pattern-bell.png",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json",
+      "derivedFrom": "card-patterns-03.png",
+      "crop": [
+        627,
+        0,
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-seal.png",
+      "purpose": "每牌独立3:4抽象背景：card-pattern-seal.png",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json",
+      "derivedFrom": "card-patterns-03.png",
+      "crop": [
+        1254,
+        0,
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-lotus.png",
+      "purpose": "每牌独立3:4抽象背景：card-pattern-lotus.png",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json",
+      "derivedFrom": "card-patterns-04.png",
+      "crop": [
+        0,
+        0,
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-blood.png",
+      "purpose": "每牌独立3:4抽象背景：card-pattern-blood.png",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json",
+      "derivedFrom": "card-patterns-04.png",
+      "crop": [
+        627,
+        0,
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-ledger.png",
+      "purpose": "每牌独立3:4抽象背景：card-pattern-ledger.png",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json",
+      "derivedFrom": "card-patterns-04.png",
+      "crop": [
+        1254,
+        0,
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-mirror.png",
+      "purpose": "每牌独立3:4抽象背景：card-pattern-mirror.png",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json",
+      "derivedFrom": "card-patterns-05.png",
+      "crop": [
+        0,
+        0,
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-ferry.png",
+      "purpose": "每牌独立3:4抽象背景：card-pattern-ferry.png",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json",
+      "derivedFrom": "card-patterns-05.png",
+      "crop": [
+        627,
+        0,
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-verdict.png",
+      "purpose": "每牌独立3:4抽象背景：card-pattern-verdict.png",
+      "source": "image_gen",
+      "promptSet": "card-pattern-prompts.json",
+      "derivedFrom": "card-patterns-05.png",
+      "crop": [
+        1254,
+        0,
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-frame-color-strike.png",
+      "purpose": "用户授权对已有生成位图调色：strike frame",
+      "source": "image_gen",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-frame-muted-attack.png",
+      "promptSet": "card-color-adjustments.json"
+    },
+    {
+      "filename": "card-pattern-color-brush.png",
+      "purpose": "用户授权对已有生成位图调色：strike background",
+      "source": "image_gen",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-brush.png",
+      "promptSet": "card-color-adjustments.json"
+    },
+    {
+      "filename": "card-pattern-color-coin.png",
+      "purpose": "用户授权对已有生成位图调色：strike background",
+      "source": "image_gen",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-coin.png",
+      "promptSet": "card-color-adjustments.json"
+    },
+    {
+      "filename": "card-pattern-color-fire.png",
+      "purpose": "用户授权对已有生成位图调色：strike background",
+      "source": "image_gen",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-fire.png",
+      "promptSet": "card-color-adjustments.json"
+    },
+    {
+      "filename": "card-frame-color-ward.png",
+      "purpose": "用户授权对已有生成位图调色：ward frame",
+      "source": "image_gen",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-frame-muted-skill.png",
+      "promptSet": "card-color-adjustments.json"
+    },
+    {
+      "filename": "card-pattern-color-talisman.png",
+      "purpose": "用户授权对已有生成位图调色：ward background",
+      "source": "image_gen",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-talisman.png",
+      "promptSet": "card-color-adjustments.json"
+    },
+    {
+      "filename": "card-pattern-color-step.png",
+      "purpose": "用户授权对已有生成位图调色：ward background",
+      "source": "image_gen",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-step.png",
+      "promptSet": "card-color-adjustments.json"
+    },
+    {
+      "filename": "card-pattern-color-lotus.png",
+      "purpose": "用户授权对已有生成位图调色：ward background",
+      "source": "image_gen",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-lotus.png",
+      "promptSet": "card-color-adjustments.json"
+    },
+    {
+      "filename": "card-pattern-color-mirror.png",
+      "purpose": "用户授权对已有生成位图调色：ward background",
+      "source": "image_gen",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-mirror.png",
+      "promptSet": "card-color-adjustments.json"
+    },
+    {
+      "filename": "card-frame-color-spirit.png",
+      "purpose": "用户授权对已有生成位图调色：spirit frame",
+      "source": "image_gen",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-frame-muted-skill.png",
+      "promptSet": "card-color-adjustments.json"
+    },
+    {
+      "filename": "card-pattern-color-bell.png",
+      "purpose": "用户授权对已有生成位图调色：spirit background",
+      "source": "image_gen",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-bell.png",
+      "promptSet": "card-color-adjustments.json"
+    },
+    {
+      "filename": "card-pattern-color-ledger.png",
+      "purpose": "用户授权对已有生成位图调色：spirit background",
+      "source": "image_gen",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-ledger.png",
+      "promptSet": "card-color-adjustments.json"
+    },
+    {
+      "filename": "card-pattern-color-ferry.png",
+      "purpose": "用户授权对已有生成位图调色：spirit background",
+      "source": "image_gen",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-ferry.png",
+      "promptSet": "card-color-adjustments.json"
+    },
+    {
+      "filename": "card-frame-color-oath.png",
+      "purpose": "用户授权对已有生成位图调色：oath frame",
+      "source": "image_gen",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-frame-muted-attack.png",
+      "promptSet": "card-color-adjustments.json"
+    },
+    {
+      "filename": "card-pattern-color-chain.png",
+      "purpose": "用户授权对已有生成位图调色：oath background",
+      "source": "image_gen",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-chain.png",
+      "promptSet": "card-color-adjustments.json"
+    },
+    {
+      "filename": "card-pattern-color-vow.png",
+      "purpose": "用户授权对已有生成位图调色：oath background",
+      "source": "image_gen",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-vow.png",
+      "promptSet": "card-color-adjustments.json"
+    },
+    {
+      "filename": "card-pattern-color-seal.png",
+      "purpose": "用户授权对已有生成位图调色：oath background",
+      "source": "image_gen",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-seal.png",
+      "promptSet": "card-color-adjustments.json"
+    },
+    {
+      "filename": "card-pattern-color-blood.png",
+      "purpose": "用户授权对已有生成位图调色：oath background",
+      "source": "image_gen",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-blood.png",
+      "promptSet": "card-color-adjustments.json"
+    },
+    {
+      "filename": "card-pattern-color-verdict.png",
+      "purpose": "用户授权对已有生成位图调色：oath background",
+      "source": "image_gen",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-verdict.png",
+      "promptSet": "card-color-adjustments.json"
+    },
+    {
+      "filename": "card-frame-vivid-strike.png",
+      "purpose": "攻伐视觉分组的高饱和4:7透明卡框，image_gen重新生成",
+      "source": "image_gen",
+      "promptSet": "card-frame-vivid-prompts.json"
+    },
+    {
+      "filename": "card-frame-vivid-ward.png",
+      "purpose": "护身视觉分组的高饱和4:7透明卡框，image_gen重新生成",
+      "source": "image_gen",
+      "promptSet": "card-frame-vivid-prompts.json"
+    },
+    {
+      "filename": "card-frame-vivid-spirit.png",
+      "purpose": "灵术视觉分组的高饱和4:7透明卡框，image_gen重新生成",
+      "source": "image_gen",
+      "promptSet": "card-frame-vivid-prompts.json"
+    },
+    {
+      "filename": "card-frame-vivid-oath.png",
+      "purpose": "阴契视觉分组的高饱和4:7透明卡框，image_gen重新生成",
+      "source": "image_gen",
+      "promptSet": "card-frame-vivid-prompts.json"
+    },
+    {
+      "filename": "card-cost-flame.png",
+      "purpose": "卡牌费用的独立青蓝鬼火：透明轮廓、浅青焰心，数字单独排版",
+      "source": "image_gen",
+      "promptSet": "cost-flame-prompts.json"
+    },
+    {
+      "filename": "enemy-cultist.png",
+      "purpose": "第一幕原创地府怪物：cultist，独立透明正方形立绘",
+      "source": "image_gen",
+      "promptSet": "act1-enemy-prompts.json"
+    },
+    {
+      "filename": "enemy-jaw.png",
+      "purpose": "第一幕原创地府怪物：jaw，独立透明正方形立绘",
+      "source": "image_gen",
+      "promptSet": "act1-enemy-prompts.json"
+    },
+    {
+      "filename": "enemy-louse_red.png",
+      "purpose": "第一幕原创地府怪物：louse_red，独立透明正方形立绘",
+      "source": "image_gen",
+      "promptSet": "act1-enemy-prompts.json"
+    },
+    {
+      "filename": "enemy-louse_green.png",
+      "purpose": "第一幕原创地府怪物：louse_green，独立透明正方形立绘",
+      "source": "image_gen",
+      "promptSet": "act1-enemy-prompts.json"
+    },
+    {
+      "filename": "enemy-acid.png",
+      "purpose": "第一幕原创地府怪物：acid，独立透明正方形立绘",
+      "source": "image_gen",
+      "promptSet": "act1-enemy-prompts.json"
+    },
+    {
+      "filename": "enemy-spike.png",
+      "purpose": "第一幕原创地府怪物：spike，独立透明正方形立绘",
+      "source": "image_gen",
+      "promptSet": "act1-enemy-prompts.json"
+    },
+    {
+      "filename": "enemy-slaver_red.png",
+      "purpose": "第一幕原创地府怪物：slaver_red，独立透明正方形立绘",
+      "source": "image_gen",
+      "promptSet": "act1-enemy-prompts.json"
+    },
+    {
+      "filename": "enemy-looter.png",
+      "purpose": "第一幕原创地府怪物：looter，独立透明正方形立绘",
+      "source": "image_gen",
+      "promptSet": "act1-enemy-prompts.json"
+    },
+    {
+      "filename": "enemy-fungi.png",
+      "purpose": "第一幕原创地府怪物：fungi，独立透明正方形立绘",
+      "source": "image_gen",
+      "promptSet": "act1-enemy-prompts.json"
+    },
+    {
+      "filename": "enemy-gremlin_mad.png",
+      "purpose": "第一幕原创地府怪物：gremlin_mad，独立透明正方形立绘",
+      "source": "image_gen",
+      "promptSet": "act1-enemy-prompts.json"
+    },
+    {
+      "filename": "enemy-gremlin_shield.png",
+      "purpose": "第一幕原创地府怪物：gremlin_shield，独立透明正方形立绘",
+      "source": "image_gen",
+      "promptSet": "act1-enemy-prompts.json"
+    },
+    {
+      "filename": "enemy-gremlin_sneaky.png",
+      "purpose": "第一幕原创地府怪物：gremlin_sneaky，独立透明正方形立绘",
+      "source": "image_gen",
+      "promptSet": "act1-enemy-prompts.json"
+    },
+    {
+      "filename": "enemy-gremlin_wizard.png",
+      "purpose": "第一幕原创地府怪物：gremlin_wizard，独立透明正方形立绘",
+      "source": "image_gen",
+      "promptSet": "act1-enemy-prompts.json"
+    },
+    {
+      "filename": "enemy-nob.png",
+      "purpose": "第一幕原创地府怪物：nob，独立透明正方形立绘",
+      "source": "image_gen",
+      "promptSet": "act1-enemy-prompts.json"
+    },
+    {
+      "filename": "enemy-lagavulin.png",
+      "purpose": "第一幕原创地府怪物：lagavulin，独立透明正方形立绘",
+      "source": "image_gen",
+      "promptSet": "act1-enemy-prompts.json"
+    },
+    {
+      "filename": "enemy-sentry.png",
+      "purpose": "第一幕原创地府怪物：sentry，独立透明正方形立绘",
+      "source": "image_gen",
+      "promptSet": "act1-enemy-prompts.json"
+    },
+    {
+      "filename": "enemy-slime_boss.png",
+      "purpose": "第一幕原创地府怪物：slime_boss，独立透明正方形立绘",
+      "source": "image_gen",
+      "promptSet": "act1-enemy-prompts.json"
+    },
+    {
+      "filename": "enemy-hexaghost.png",
+      "purpose": "第一幕原创地府怪物：hexaghost，独立透明正方形立绘",
+      "source": "image_gen",
+      "promptSet": "act1-enemy-prompts.json"
+    },
+    {
+      "filename": "collection-slot.png",
+      "purpose": "图鉴、符匣、牌堆与行囊共用的4:5简洁纸质藏品格",
+      "source": "image_gen",
+      "promptSet": "collection-prompts.json"
+    },
+    {
+      "filename": "collection-frame-strike.png",
+      "purpose": "图鉴与牌堆简洁攻伐色框，参考对应主卡框颜色",
+      "source": "image_gen",
+      "promptSet": "collection-frame-prompts.json"
+    },
+    {
+      "filename": "collection-frame-ward.png",
+      "purpose": "图鉴与牌堆简洁护身色框，参考对应主卡框颜色",
+      "source": "image_gen",
+      "promptSet": "collection-frame-prompts.json"
+    },
+    {
+      "filename": "collection-frame-spirit.png",
+      "purpose": "图鉴与牌堆简洁灵术色框，参考对应主卡框颜色",
+      "source": "image_gen",
+      "promptSet": "collection-frame-prompts.json"
+    },
+    {
+      "filename": "collection-frame-oath.png",
+      "purpose": "图鉴与牌堆简洁阴契色框，参考对应主卡框颜色",
+      "source": "image_gen",
+      "promptSet": "collection-frame-prompts.json"
+    },
+    {
+      "filename": "fx-burn.png",
+      "purpose": "出牌魂火燃烧透明位图",
+      "source": "image_gen",
+      "promptSet": "fx-prompts.json"
+    },
+    {
+      "filename": "fx-ash.png",
+      "purpose": "回合末手牌灰烬透明位图",
+      "source": "image_gen",
+      "promptSet": "fx-prompts.json"
+    },
+    {
+      "filename": "fx-slash.png",
+      "purpose": "攻伐斩击命中透明位图",
+      "source": "image_gen",
+      "promptSet": "fx-prompts.json"
+    },
+    {
+      "filename": "fx-fire.png",
+      "purpose": "赤焰命中透明位图",
+      "source": "image_gen",
+      "promptSet": "fx-prompts.json"
+    },
+    {
+      "filename": "fx-thunder.png",
+      "purpose": "雷法命中透明位图",
+      "source": "image_gen",
+      "promptSet": "fx-prompts.json"
+    },
+    {
+      "filename": "fx-curse.png",
+      "purpose": "阴咒命中透明位图",
+      "source": "image_gen",
+      "promptSet": "fx-prompts.json"
+    },
+    {
+      "filename": "fx-guard.png",
+      "purpose": "护身灵障透明位图",
+      "source": "image_gen",
+      "promptSet": "fx-prompts.json"
+    },
+    {
+      "filename": "fx-soul.png",
+      "purpose": "魂光流转透明位图",
+      "source": "image_gen",
+      "promptSet": "fx-prompts.json"
+    },
+    {
+      "filename": "fx-self-guide.png",
+      "purpose": "自身目标底部蓝色渐变引导透明位图",
+      "source": "image_gen",
+      "promptSet": "fx-prompts.json"
+    }
+  ]
+}

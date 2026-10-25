@@ -1,0 +1,65 @@
+{
+  "viewport": [
+    390,
+    844
+  ],
+  "source": "enemy-shadow-hard.png",
+  "durationSeconds": 3.6,
+  "range": {
+    "scale": [
+      0.8,
+      1
+    ],
+    "opacity": [
+      0.42,
+      0.62
+    ]
+  },
+  "samples": [
+    {
+      "delay": [
+        "-0.4523s",
+        "-0.4523s"
+      ],
+      "duration": "3.6s",
+      "float": "matrix(1, 0, 0, 1, 0, -1.56975)",
+      "opacity": "0.580756",
+      "shadow": "matrix(0.960756, 0, 0, 0.960756, -132.833, 44.276)"
+    },
+    {
+      "delay": [
+        "-0.6617s",
+        "-0.6617s"
+      ],
+      "duration": "3.6s",
+      "float": "matrix(1, 0, 0, 1, 0, -4.08991)",
+      "opacity": "0.517752",
+      "shadow": "matrix(0.897752, 0, 0, 0.897752, -132.833, 44.276)"
+    }
+  ],
+  "calculated": [
+    {
+      "risePixels": 1.56975,
+      "scale": 0.960756,
+      "opacity": 0.580756,
+      "scaleError": 2.499999999239222e-7,
+      "opacityError": 2.499999999239222e-7
+    },
+    {
+      "risePixels": 4.08991,
+      "scale": 0.897752,
+      "opacity": 0.517752,
+      "scaleError": 2.500000000349445e-7,
+      "opacityError": 2.500000000349445e-7
+    }
+  ],
+  "paper": {
+    "observedCardOpacity": 1,
+    "rasterLayers": 3,
+    "sourceInteriorAlphaRange": [
+      252,
+      254
+    ],
+    "composition": "1 - (1 - alpha)^3"
+  }
+}

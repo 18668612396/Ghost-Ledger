@@ -1,0 +1,158 @@
+[
+  {
+    "action": "long-single-attack",
+    "result": {
+      "cards": [
+        {
+          "cost": "1",
+          "description": "获得 5 点护甲。",
+          "id": "a_defend",
+          "index": 1,
+          "name": "守灯",
+          "playable": true,
+          "uid": "a-card-7"
+        },
+        {
+          "cost": "1",
+          "description": "造成 6 点伤害。",
+          "id": "a_strike",
+          "index": 2,
+          "name": "斩魂",
+          "playable": true,
+          "uid": "a-card-3"
+        },
+        {
+          "cost": "1",
+          "description": "获得 5 点护甲。",
+          "id": "a_defend",
+          "index": 3,
+          "name": "守灯",
+          "playable": true,
+          "uid": "a-card-8"
+        },
+        {
+          "cost": "1",
+          "description": "获得 5 点护甲。",
+          "id": "a_defend",
+          "index": 4,
+          "name": "守灯",
+          "playable": true,
+          "uid": "a-card-9"
+        }
+      ],
+      "debt": "阴债 0借火后两回合到期行囊",
+      "enemies": [
+        {
+          "hp": "敌方生命 48/54",
+          "intent": "引魂祭师意图：招魂仪式",
+          "name": "引魂祭师",
+          "uid": "a-enemy-1"
+        }
+      ],
+      "energy": "香火 2/3",
+      "player": "玩家生命 80/80",
+      "round": "第 1 回合"
+    }
+  },
+  {
+    "action": "downward-cancel",
+    "result": {
+      "cards": [
+        {
+          "cost": "1",
+          "description": "获得 5 点护甲。",
+          "id": "a_defend",
+          "index": 1,
+          "name": "守灯",
+          "playable": true,
+          "uid": "a-card-7"
+        },
+        {
+          "cost": "1",
+          "description": "造成 6 点伤害。",
+          "id": "a_strike",
+          "index": 2,
+          "name": "斩魂",
+          "playable": true,
+          "uid": "a-card-3"
+        },
+        {
+          "cost": "1",
+          "description": "获得 5 点护甲。",
+          "id": "a_defend",
+          "index": 3,
+          "name": "守灯",
+          "playable": true,
+          "uid": "a-card-8"
+        },
+        {
+          "cost": "1",
+          "description": "获得 5 点护甲。",
+          "id": "a_defend",
+          "index": 4,
+          "name": "守灯",
+          "playable": true,
+          "uid": "a-card-9"
+        }
+      ],
+      "debt": "阴债 0借火后两回合到期行囊",
+      "enemies": [
+        {
+          "hp": "敌方生命 48/54",
+          "intent": "引魂祭师意图：招魂仪式",
+          "name": "引魂祭师",
+          "uid": "a-enemy-1"
+        }
+      ],
+      "energy": "香火 2/3",
+      "player": "玩家生命 80/80",
+      "round": "第 1 回合"
+    }
+  },
+  {
+    "action": "self-card-up-to-blank",
+    "result": {
+      "cards": [
+        {
+          "cost": "1",
+          "description": "获得 5 点护甲。",
+          "id": "a_defend",
+          "index": 1,
+          "name": "守灯",
+          "playable": true,
+          "uid": "a-card-7"
+        },
+        {
+          "cost": "1",
+          "description": "造成 6 点伤害。",
+          "id": "a_strike",
+          "index": 2,
+          "name": "斩魂",
+          "playable": true,
+          "uid": "a-card-3"
+        },
+        {
+          "cost": "1",
+          "description": "获得 5 点护甲。",
+          "id": "a_defend",
+          "index": 3,
+          "name": "守灯",
+          "playable": true,
+          "uid": "a-card-8"
+        }
+      ],
+      "debt": "阴债 0借火后两回合到期行囊",
+      "enemies": [
+        {
+          "hp": "敌方生命 48/54",
+          "intent": "引魂祭师意图：招魂仪式",
+          "name": "引魂祭师",
+          "uid": "a-enemy-1"
+        }
+      ],
+      "energy": "香火 1/3",
+      "player": "玩家生命 80/80",
+      "round": "第 1 回合"
+    }
+  }
+]

@@ -1,0 +1,252 @@
+{
+  "generator": "image_gen built-in",
+  "date": "2026-10-24",
+  "reference": "User supplied codex-clipboard-03766cd3-8999-4aa4-b9cf-d22ffe7d0642.png; visual style reference only",
+  "assets": [
+    {
+      "filename": "ref-scene.png",
+      "transparent_background": false,
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: 9:16 portrait background, first-person view along the broad stone path and small arched bridge toward a Chinese tiled archway in a charming underworld town. Very closely match reference image's pale cyan sky, hazy blue-green roof silhouettes, warm little lanterns, lotus flowers and small friendly floating spirit wisps. Clear center path, plenty of quiet negative space above and below. Environment only: NO foreground player, NO enemy, no cards or interface. Full bleed."
+    },
+    {
+      "filename": "ref-avatar.png",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: one circular character portrait for a small HUD avatar, on truly transparent outside. A cute Chinese ghost constable boy with black Qing-style official cap and yellow talisman, round face, large dark eyes, black-and-jade uniform, warm friendly expression, shoulders and head inside a simple thin aged-brass circular rim. A tiny blue spirit sits just outside upper left rim. Fill almost all square canvas. No rectangular card, no backdrop, no dramatic glow."
+    },
+    {
+      "filename": "ref-icons.png",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: one square 4 by 4 icon sprite sheet on genuinely transparent canvas, sixteen equally sized square cells in exact aligned grid with generous transparent gutter inside each cell. One simple hand-painted icon per cell, no frames, no tile backgrounds. Row 1 left to right: small pale cyan ghost flame; coral red heart; blank pale jade shield with dark ink outline; rolled parchment book. Row 2: bronze sound horn; muted horn with ink slash; brass cog; simple ochre arrow pointing right. Row 3: dark ink X close mark; round ivory skull; pink lotus; two blank parchment cards. Row 4: small teal-and-gold hanging lantern; jade check mark; red debt talisman tag; small cinnabar official seal. Keep all equal visual size and very readable at 24 pixels. Simple shapes exactly like icons in reference, not ornate. Nothing crosses cell boundaries."
+    },
+    {
+      "filename": "ref-nav.png",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: one 3 by 2 sprite sheet of six cute hand-painted menu objects, square cells, entire canvas 3:2 ratio, exact aligned grid, transparent canvas and transparent gutters. No words, no boards, no labels. Row 1 left to right: ghost constable satchel with paper talisman; tiny Chinese shrine pavilion with jade roof; open official record book and brush. Row 2: small brazier with cyan spirit fire; an ornate but simple brass spirit bell with purple cord; tall scroll and bamboo brush holder. Same shallow 3/4 perspective, muted gold and jade and parchment style as the bottom menu objects in Image 1. Keep each object completely contained in its own equal square cell with empty margin."
+    },
+    {
+      "filename": "ref-button.png",
+      "transparent_background": true,
+      "prompt": "Edit this exact UI button asset. Preserve the silhouette, both end-cap shapes, the thin dark ink and ochre rim, placement and wide aspect ratio. Change ONLY the interior blue-jade paint: replace the large watercolor patches with a single uniform desaturated blue-jade color across the entire interior, with only extremely fine, low-contrast paper grain. No broad light/dark patches, no center highlight, no edge shading, no banding, no gradients, no stains. The left, center and right interior must have the same flat base tone so cropped middle tiles can repeat without a visible vertical seam. Keep top and bottom center border lines straight and consistent. Same simple light Chinese watercolor game UI as before. No text or icons. Keep the outside truly transparent with zero alpha, no cast shadow. Do not change the end caps.",
+      "initialGenerationPrompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: ONE empty horizontal jade-blue UI button, wide 3:1 canvas, fills canvas almost edge to edge, truly transparent only outside its outline. EXACTLY like reference's End Turn button: softly angular beveled silhouette, short chamfered round ends, thin irregular warm ochre/bronze ink rim, desaturated blue-jade paper center. Simple small end details ONLY in leftmost and rightmost 18 percent. The central 64 percent has straight parallel top and bottom edges and completely plain subtly painted center, so it can be repeated horizontally. Flat front view, no text, no icons, no shadows, no glow, no tall flourishes, no rectangular outer background.",
+      "editTarget": "Initial generated ref-button.png",
+      "refinement": "Uniform interior paint to prevent visible tiling seams; preserve silhouette and end caps."
+    },
+    {
+      "filename": "ref-scroll.png",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: ONE empty parchment scroll panel intended for nine-slice tiled UI. Portrait 2:3 canvas; fills almost all canvas, only corners/outside genuinely transparent. Cream warm paper with extremely subtle fine watercolor grain. Slim dark ink and ochre border, simple wooden rolled rods across full top and bottom, rounded brown rod ends. Middle edges straight, thin and quiet. Center completely blank paper with no stains or folds, suitable for text. Same scroll panel language as Meng Po event on right of reference. No red event tab, no picture, no symbols, no text, no cast shadow or external board."
+    },
+    {
+      "filename": "ref-card.png",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: ONE blank portrait playing card frame, aspect ratio 2:3, fills canvas edge to edge except genuinely transparent outer corners. Match reference's parchment talisman cards: softly curved raised title top, slim hand-ink warm ochre border, pale cream paper, tasteful worn corners. Empty title area 14 percent high, empty artwork window middle 50 percent high, empty rules area bottom 36 percent high. Front view with no perspective. The art window is a plain quiet pale jade area awaiting separate art, no icons, no pictures, no glyphs, no cost badge, no text. No carved gold ornaments, no ghost flames around border, no glow, no board behind."
+    },
+    {
+      "filename": "ref-brushes.png",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: one wide sprite sheet of THREE separate horizontal ink-brush swashes stacked in three equal rows, transparent around all strokes, entire canvas ratio 3:1. Each row has one long thin opaque brush swash centered inside its cell, rough tapered hand-painted ends, soft irregular edges but readable opaque center. Row 1 muted deep teal; Row 2 dusty coral-red for health bar; Row 3 muted pale jade. No borders, no decorative symbols, no text, no glow, no square corners. Each swash nearly spans full width and keeps generous transparent vertical gutter, exact equal rows. Calm simple flat paint, exactly like the name/health brush strips in upper left of reference."
+    },
+    {
+      "filename": "ref-energy.png",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: ONE pale turquoise spirit-flame energy orb, round luminous but soft watercolor silhouette with a few upward ghost-fire tongues, blue-jade translucent inside, dark hand-ink accents, pale cyan core space kept blank for a number added later. Truly transparent outside. Fill square canvas, no rectangular background, no sharp neon glow or sparks, no text, no number, no ornate metal ring. Exactly the small 3/3 fire orb at lower left of the reference."
+    },
+    {
+      "filename": "ref-button-left.png",
+      "derivedFrom": "ref-button.png",
+      "crop": [
+        31,
+        148,
+        260,
+        426
+      ],
+      "operation": "crop-only, no resampling, no pixel painting",
+      "prompt": "Edit this exact UI button asset. Preserve the silhouette, both end-cap shapes, the thin dark ink and ochre rim, placement and wide aspect ratio. Change ONLY the interior blue-jade paint: replace the large watercolor patches with a single uniform desaturated blue-jade color across the entire interior, with only extremely fine, low-contrast paper grain. No broad light/dark patches, no center highlight, no edge shading, no banding, no gradients, no stains. The left, center and right interior must have the same flat base tone so cropped middle tiles can repeat without a visible vertical seam. Keep top and bottom center border lines straight and consistent. Same simple light Chinese watercolor game UI as before. No text or icons. Keep the outside truly transparent with zero alpha, no cast shadow. Do not change the end caps.\nProduction derivation: exact rectangular crop [31,148,260,426] from ref-button.png. Retain original RGBA pixels, no drawing, no resampling."
+    },
+    {
+      "filename": "ref-button-middle.png",
+      "derivedFrom": "ref-button.png",
+      "crop": [
+        291,
+        148,
+        1592,
+        426
+      ],
+      "operation": "crop-only, no resampling, no pixel painting",
+      "prompt": "Edit this exact UI button asset. Preserve the silhouette, both end-cap shapes, the thin dark ink and ochre rim, placement and wide aspect ratio. Change ONLY the interior blue-jade paint: replace the large watercolor patches with a single uniform desaturated blue-jade color across the entire interior, with only extremely fine, low-contrast paper grain. No broad light/dark patches, no center highlight, no edge shading, no banding, no gradients, no stains. The left, center and right interior must have the same flat base tone so cropped middle tiles can repeat without a visible vertical seam. Keep top and bottom center border lines straight and consistent. Same simple light Chinese watercolor game UI as before. No text or icons. Keep the outside truly transparent with zero alpha, no cast shadow. Do not change the end caps.\nProduction derivation: exact rectangular crop [291,148,1592,426] from ref-button.png. Retain original RGBA pixels, no drawing, no resampling."
+    },
+    {
+      "filename": "ref-button-right.png",
+      "derivedFrom": "ref-button.png",
+      "crop": [
+        1883,
+        148,
+        260,
+        426
+      ],
+      "operation": "crop-only, no resampling, no pixel painting",
+      "prompt": "Edit this exact UI button asset. Preserve the silhouette, both end-cap shapes, the thin dark ink and ochre rim, placement and wide aspect ratio. Change ONLY the interior blue-jade paint: replace the large watercolor patches with a single uniform desaturated blue-jade color across the entire interior, with only extremely fine, low-contrast paper grain. No broad light/dark patches, no center highlight, no edge shading, no banding, no gradients, no stains. The left, center and right interior must have the same flat base tone so cropped middle tiles can repeat without a visible vertical seam. Keep top and bottom center border lines straight and consistent. Same simple light Chinese watercolor game UI as before. No text or icons. Keep the outside truly transparent with zero alpha, no cast shadow. Do not change the end caps.\nProduction derivation: exact rectangular crop [1883,148,260,426] from ref-button.png. Retain original RGBA pixels, no drawing, no resampling."
+    },
+    {
+      "filename": "ref-scroll-tl.png",
+      "derivedFrom": "ref-scroll.png",
+      "crop": [
+        0,
+        17,
+        120,
+        180
+      ],
+      "operation": "crop-only, no resampling, no pixel painting",
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: ONE empty parchment scroll panel intended for nine-slice tiled UI. Portrait 2:3 canvas; fills almost all canvas, only corners/outside genuinely transparent. Cream warm paper with extremely subtle fine watercolor grain. Slim dark ink and ochre border, simple wooden rolled rods across full top and bottom, rounded brown rod ends. Middle edges straight, thin and quiet. Center completely blank paper with no stains or folds, suitable for text. Same scroll panel language as Meng Po event on right of reference. No red event tab, no picture, no symbols, no text, no cast shadow or external board.\nProduction derivation: exact rectangular crop [0,17,120,180] from ref-scroll.png. Retain original RGBA pixels, no drawing, no resampling."
+    },
+    {
+      "filename": "ref-scroll-t.png",
+      "derivedFrom": "ref-scroll.png",
+      "crop": [
+        120,
+        17,
+        769,
+        180
+      ],
+      "operation": "crop-only, no resampling, no pixel painting",
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: ONE empty parchment scroll panel intended for nine-slice tiled UI. Portrait 2:3 canvas; fills almost all canvas, only corners/outside genuinely transparent. Cream warm paper with extremely subtle fine watercolor grain. Slim dark ink and ochre border, simple wooden rolled rods across full top and bottom, rounded brown rod ends. Middle edges straight, thin and quiet. Center completely blank paper with no stains or folds, suitable for text. Same scroll panel language as Meng Po event on right of reference. No red event tab, no picture, no symbols, no text, no cast shadow or external board.\nProduction derivation: exact rectangular crop [120,17,769,180] from ref-scroll.png. Retain original RGBA pixels, no drawing, no resampling."
+    },
+    {
+      "filename": "ref-scroll-tr.png",
+      "derivedFrom": "ref-scroll.png",
+      "crop": [
+        889,
+        17,
+        120,
+        180
+      ],
+      "operation": "crop-only, no resampling, no pixel painting",
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: ONE empty parchment scroll panel intended for nine-slice tiled UI. Portrait 2:3 canvas; fills almost all canvas, only corners/outside genuinely transparent. Cream warm paper with extremely subtle fine watercolor grain. Slim dark ink and ochre border, simple wooden rolled rods across full top and bottom, rounded brown rod ends. Middle edges straight, thin and quiet. Center completely blank paper with no stains or folds, suitable for text. Same scroll panel language as Meng Po event on right of reference. No red event tab, no picture, no symbols, no text, no cast shadow or external board.\nProduction derivation: exact rectangular crop [889,17,120,180] from ref-scroll.png. Retain original RGBA pixels, no drawing, no resampling."
+    },
+    {
+      "filename": "ref-scroll-l.png",
+      "derivedFrom": "ref-scroll.png",
+      "crop": [
+        0,
+        197,
+        120,
+        1125
+      ],
+      "operation": "crop-only, no resampling, no pixel painting",
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: ONE empty parchment scroll panel intended for nine-slice tiled UI. Portrait 2:3 canvas; fills almost all canvas, only corners/outside genuinely transparent. Cream warm paper with extremely subtle fine watercolor grain. Slim dark ink and ochre border, simple wooden rolled rods across full top and bottom, rounded brown rod ends. Middle edges straight, thin and quiet. Center completely blank paper with no stains or folds, suitable for text. Same scroll panel language as Meng Po event on right of reference. No red event tab, no picture, no symbols, no text, no cast shadow or external board.\nProduction derivation: exact rectangular crop [0,197,120,1125] from ref-scroll.png. Retain original RGBA pixels, no drawing, no resampling."
+    },
+    {
+      "filename": "ref-scroll-c.png",
+      "derivedFrom": "ref-scroll.png",
+      "crop": [
+        120,
+        197,
+        769,
+        1125
+      ],
+      "operation": "crop-only, no resampling, no pixel painting",
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: ONE empty parchment scroll panel intended for nine-slice tiled UI. Portrait 2:3 canvas; fills almost all canvas, only corners/outside genuinely transparent. Cream warm paper with extremely subtle fine watercolor grain. Slim dark ink and ochre border, simple wooden rolled rods across full top and bottom, rounded brown rod ends. Middle edges straight, thin and quiet. Center completely blank paper with no stains or folds, suitable for text. Same scroll panel language as Meng Po event on right of reference. No red event tab, no picture, no symbols, no text, no cast shadow or external board.\nProduction derivation: exact rectangular crop [120,197,769,1125] from ref-scroll.png. Retain original RGBA pixels, no drawing, no resampling."
+    },
+    {
+      "filename": "ref-scroll-r.png",
+      "derivedFrom": "ref-scroll.png",
+      "crop": [
+        889,
+        197,
+        120,
+        1125
+      ],
+      "operation": "crop-only, no resampling, no pixel painting",
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: ONE empty parchment scroll panel intended for nine-slice tiled UI. Portrait 2:3 canvas; fills almost all canvas, only corners/outside genuinely transparent. Cream warm paper with extremely subtle fine watercolor grain. Slim dark ink and ochre border, simple wooden rolled rods across full top and bottom, rounded brown rod ends. Middle edges straight, thin and quiet. Center completely blank paper with no stains or folds, suitable for text. Same scroll panel language as Meng Po event on right of reference. No red event tab, no picture, no symbols, no text, no cast shadow or external board.\nProduction derivation: exact rectangular crop [889,197,120,1125] from ref-scroll.png. Retain original RGBA pixels, no drawing, no resampling."
+    },
+    {
+      "filename": "ref-scroll-bl.png",
+      "derivedFrom": "ref-scroll.png",
+      "crop": [
+        0,
+        1322,
+        120,
+        180
+      ],
+      "operation": "crop-only, no resampling, no pixel painting",
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: ONE empty parchment scroll panel intended for nine-slice tiled UI. Portrait 2:3 canvas; fills almost all canvas, only corners/outside genuinely transparent. Cream warm paper with extremely subtle fine watercolor grain. Slim dark ink and ochre border, simple wooden rolled rods across full top and bottom, rounded brown rod ends. Middle edges straight, thin and quiet. Center completely blank paper with no stains or folds, suitable for text. Same scroll panel language as Meng Po event on right of reference. No red event tab, no picture, no symbols, no text, no cast shadow or external board.\nProduction derivation: exact rectangular crop [0,1322,120,180] from ref-scroll.png. Retain original RGBA pixels, no drawing, no resampling."
+    },
+    {
+      "filename": "ref-scroll-b.png",
+      "derivedFrom": "ref-scroll.png",
+      "crop": [
+        120,
+        1322,
+        769,
+        180
+      ],
+      "operation": "crop-only, no resampling, no pixel painting",
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: ONE empty parchment scroll panel intended for nine-slice tiled UI. Portrait 2:3 canvas; fills almost all canvas, only corners/outside genuinely transparent. Cream warm paper with extremely subtle fine watercolor grain. Slim dark ink and ochre border, simple wooden rolled rods across full top and bottom, rounded brown rod ends. Middle edges straight, thin and quiet. Center completely blank paper with no stains or folds, suitable for text. Same scroll panel language as Meng Po event on right of reference. No red event tab, no picture, no symbols, no text, no cast shadow or external board.\nProduction derivation: exact rectangular crop [120,1322,769,180] from ref-scroll.png. Retain original RGBA pixels, no drawing, no resampling."
+    },
+    {
+      "filename": "ref-scroll-br.png",
+      "derivedFrom": "ref-scroll.png",
+      "crop": [
+        889,
+        1322,
+        120,
+        180
+      ],
+      "operation": "crop-only, no resampling, no pixel painting",
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: ONE empty parchment scroll panel intended for nine-slice tiled UI. Portrait 2:3 canvas; fills almost all canvas, only corners/outside genuinely transparent. Cream warm paper with extremely subtle fine watercolor grain. Slim dark ink and ochre border, simple wooden rolled rods across full top and bottom, rounded brown rod ends. Middle edges straight, thin and quiet. Center completely blank paper with no stains or folds, suitable for text. Same scroll panel language as Meng Po event on right of reference. No red event tab, no picture, no symbols, no text, no cast shadow or external board.\nProduction derivation: exact rectangular crop [889,1322,120,180] from ref-scroll.png. Retain original RGBA pixels, no drawing, no resampling."
+    },
+    {
+      "filename": "ref-brush-teal.png",
+      "derivedFrom": "ref-brushes.png",
+      "crop": [
+        0,
+        0,
+        2095,
+        241
+      ],
+      "operation": "crop-only, no resampling, no pixel painting",
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: one wide sprite sheet of THREE separate horizontal ink-brush swashes stacked in three equal rows, transparent around all strokes, entire canvas ratio 3:1. Each row has one long thin opaque brush swash centered inside its cell, rough tapered hand-painted ends, soft irregular edges but readable opaque center. Row 1 muted deep teal; Row 2 dusty coral-red for health bar; Row 3 muted pale jade. No borders, no decorative symbols, no text, no glow, no square corners. Each swash nearly spans full width and keeps generous transparent vertical gutter, exact equal rows. Calm simple flat paint, exactly like the name/health brush strips in upper left of reference.\nProduction derivation: exact rectangular crop [0,0,2095,241] from ref-brushes.png. Retain original RGBA pixels, no drawing, no resampling."
+    },
+    {
+      "filename": "ref-brush-red.png",
+      "derivedFrom": "ref-brushes.png",
+      "crop": [
+        81,
+        244,
+        2015,
+        237
+      ],
+      "operation": "crop-only, no resampling, no pixel painting",
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: one wide sprite sheet of THREE separate horizontal ink-brush swashes stacked in three equal rows, transparent around all strokes, entire canvas ratio 3:1. Each row has one long thin opaque brush swash centered inside its cell, rough tapered hand-painted ends, soft irregular edges but readable opaque center. Row 1 muted deep teal; Row 2 dusty coral-red for health bar; Row 3 muted pale jade. No borders, no decorative symbols, no text, no glow, no square corners. Each swash nearly spans full width and keeps generous transparent vertical gutter, exact equal rows. Calm simple flat paint, exactly like the name/health brush strips in upper left of reference.\nProduction derivation: exact rectangular crop [81,244,2015,237] from ref-brushes.png. Retain original RGBA pixels, no drawing, no resampling."
+    },
+    {
+      "filename": "ref-brush-jade.png",
+      "derivedFrom": "ref-brushes.png",
+      "crop": [
+        79,
+        482,
+        2020,
+        242
+      ],
+      "operation": "crop-only, no resampling, no pixel painting",
+      "prompt": "Use case: stylized-concept. Production raster asset for this Chinese underworld portrait card game. Image 1 is the EXACT VISUAL STYLE reference, not an edit target. Match its soft flat hand-painted watercolor/gouache, simple dark ink outlines, pale turquoise, muted jade, dusty coral, warm parchment, restrained ochre trim, chibi folklore. A light approachable Chinese ghost story look, NOT realistic, NOT ornate metallic fantasy, NOT neon, no elaborate gold filigree. No text, numbers, letters, logo or watermark. Asset: one wide sprite sheet of THREE separate horizontal ink-brush swashes stacked in three equal rows, transparent around all strokes, entire canvas ratio 3:1. Each row has one long thin opaque brush swash centered inside its cell, rough tapered hand-painted ends, soft irregular edges but readable opaque center. Row 1 muted deep teal; Row 2 dusty coral-red for health bar; Row 3 muted pale jade. No borders, no decorative symbols, no text, no glow, no square corners. Each swash nearly spans full width and keeps generous transparent vertical gutter, exact equal rows. Calm simple flat paint, exactly like the name/health brush strips in upper left of reference.\nProduction derivation: exact rectangular crop [79,482,2020,242] from ref-brushes.png. Retain original RGBA pixels, no drawing, no resampling."
+    },
+    {
+      "filename": "ref-path.png",
+      "derivedFrom": "map-path.png",
+      "crop": [
+        42,
+        334,
+        2091,
+        64
+      ],
+      "operation": "crop-only, no resampling, no pixel painting",
+      "prompt": "Use case: stylized-concept. Create one production-ready raster game asset for a mobile portrait Chinese underworld deckbuilder. Image 1 is STYLE REFERENCE ONLY: hand-painted gouache and watercolor, irregular delicate ink contours, muted turquoise and jade, parchment cream, ochre and coral, charming eerie Chinese folklore. Match this painterly language. No text, numbers, logos, watermark or interface baked in. Asset: ONE isolated long thin horizontal brush-painted walking trail centered on a wide transparent canvas. A simple warm dark ochre ink stroke running left to right with slightly broken dry-brush texture, nearly straight, narrow consistent width, subtly irregular handmade edges. Dark enough visible on cream parchment. It will be scaled and rotated to connect separate map nodes. No arrows, no endpoints, no circles, no symbols, no other strokes, no paper backdrop, no text. Transparent around this one trail.\nProduction derivation: exact rectangular crop [42,334,2091,64] from map-path.png. Retain original RGBA pixels, no drawing, no resampling."
+    },
+    {
+      "filename": "ref-card-art.png",
+      "transparent_background": false,
+      "prompt": "Use case: stylized-concept. Create one production square 3 by 3 card illustration atlas for this portrait Chinese underworld deckbuilder. Image 1 is the exact STYLE reference. Match its simple hand-ink outlines, soft flat watercolor/gouache, muted pale jade and warm parchment, restrained ochre details, cute Chinese folklore. Each of NINE exact equally sized square cells has one fully contained illustration on a quiet desaturated dark-jade painted background, with no border between cells, no words, no numbers. Row 1: left a traditional calligraphy brush; center a yellow Taoist paper talisman with a few decorative ink glyphs; right a simple bronze soul-lock token on a loop of chain. Row 2: left a paper crane moving through wisps; center a small incense brazier with pale cyan ghost flame; right a simple brass spirit bell with purple cord. Row 3: left a small red-and-jade official seal; center three ancient copper coins tied with red cord; right a glowing pink lotus lantern. Exact aligned square grid, no object crosses a cell, allow clear margin within every cell. Simpler lighter illustration than dark ornate fantasy art, no realistic metal reflections, no carved filigree, no neon, no 3D rendering, no watermark."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "generator": "OpenAI built-in image_gen",
+  "created": "2026-10-25",
+  "request": "用户要求重新生成四套框；饱和度可以与之前高饱和红绿框一样。保留4:7几何和透明画窗，使用朱砂红、青玉绿、靛蓝、绛紫四种鲜明类型色。",
+  "assets": [
+    {
+      "filename": "card-frame-vivid-strike.png",
+      "family": "strike",
+      "name": "攻伐",
+      "prompt": "Use case: precise-object-edit.\nAsset type: a single production card-frame PNG for a Chinese folklore underworld roguelike mobile game, variant 攻伐.\nInput image 1 is the EDIT TARGET and strict geometry reference: the tall empty card frame. Input image 2 is a STYLE / SATURATION reference only: the earlier brightly pigmented card frame.\nRepaint and refine image 1 into a beautiful hand-painted paper-and-pigment card frame. Use rich cinnabar vermilion red, strong saturated Chinese red lacquer with warm darker crimson edges on the entire curved title ribbon and narrow side/bottom frame, with warm antique gold inner piping, fine dark ink contours, restrained ornamental Chinese cloud corner flourishes. Give color the same confident, HIGH SATURATION as image 2, no dusty gray tint, no pastel pink, no washed-out pale ribbon. Keep authentic gouache/watercolor grain, soft painterly pigment variation and delicate worn paper. The ribbon is dark enough for ivory title text that will be added in code. Bottom rules paper is LIGHT warm creamy parchment, fully opaque and uncolored, suitable for dark ink text. The frame belongs to one unified four-color family; no extra symbols.\nSTRICT GEOMETRY: preserve the full target silhouette, slim tall 4:7 canvas ratio, the width of gold outlines, the arched title ribbon in the top 11%, the large portrait art aperture with left/right edges at 7%/93% and top/bottom at 11%/69%, and bottom parchment text area from 70% to 97%. Keep the large central art aperture exactly in place, completely transparent (alpha zero), not painted cream. Outside the organic card silhouette also genuinely transparent alpha zero. The ribbon, frame trim, and bottom parchment must be fully opaque.\nThe output must be exactly one empty frame asset, flat front view, straight-on, canvas tightly framing the full card, no perspective. Portrait 4:7 aspect ratio, do not shorten or fatten. No text, no letters, no numbers, no cost badge, no character, no icon, no background illustration, no backdrop, no shadow, no checkerboard pattern. This is an actual transparent PNG UI frame, not a mockup.",
+      "inputImages": [
+        {
+          "filename": "card-frame-muted-attack.png",
+          "role": "edit target / exact 4:7 geometry"
+        },
+        {
+          "filename": "card-frame-attack.png",
+          "role": "saturated pigment style reference"
+        }
+      ],
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a16d07-7efd-7a81-83b3-7ed404ff275a\\exec-f7b7b7f6-d1b4-4916-94a8-0c9a861c1ce1.png"
+    },
+    {
+      "filename": "card-frame-vivid-ward.png",
+      "family": "ward",
+      "name": "护身",
+      "prompt": "Use case: precise-object-edit.\nAsset type: a single production card-frame PNG for a Chinese folklore underworld roguelike mobile game, variant 护身.\nInput image 1 is the EDIT TARGET and strict geometry reference: the tall empty card frame. Input image 2 is a STYLE / SATURATION reference only: the earlier brightly pigmented card frame.\nRepaint and refine image 1 into a beautiful hand-painted paper-and-pigment card frame. Use rich emerald jade green, strong saturated forest jade glaze with deep teal green edges on the entire curved title ribbon and narrow side/bottom frame, with warm antique gold inner piping, fine dark ink contours, restrained ornamental Chinese cloud corner flourishes. Give color the same confident, HIGH SATURATION as image 2, no dusty gray tint, no pastel pink, no washed-out pale ribbon. Keep authentic gouache/watercolor grain, soft painterly pigment variation and delicate worn paper. The ribbon is dark enough for ivory title text that will be added in code. Bottom rules paper is LIGHT warm creamy parchment, fully opaque and uncolored, suitable for dark ink text. The frame belongs to one unified four-color family; no extra symbols.\nSTRICT GEOMETRY: preserve the full target silhouette, slim tall 4:7 canvas ratio, the width of gold outlines, the arched title ribbon in the top 11%, the large portrait art aperture with left/right edges at 7%/93% and top/bottom at 11%/69%, and bottom parchment text area from 70% to 97%. Keep the large central art aperture exactly in place, completely transparent (alpha zero), not painted cream. Outside the organic card silhouette also genuinely transparent alpha zero. The ribbon, frame trim, and bottom parchment must be fully opaque.\nThe output must be exactly one empty frame asset, flat front view, straight-on, canvas tightly framing the full card, no perspective. Portrait 4:7 aspect ratio, do not shorten or fatten. No text, no letters, no numbers, no cost badge, no character, no icon, no background illustration, no backdrop, no shadow, no checkerboard pattern. This is an actual transparent PNG UI frame, not a mockup.",
+      "inputImages": [
+        {
+          "filename": "card-frame-muted-attack.png",
+          "role": "edit target / exact 4:7 geometry"
+        },
+        {
+          "filename": "card-frame-skill.png",
+          "role": "saturated pigment style reference"
+        }
+      ],
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a16d07-7efd-7a81-83b3-7ed404ff275a\\exec-2696b61b-4438-49e5-9017-429333348ff9.png"
+    },
+    {
+      "filename": "card-frame-vivid-spirit.png",
+      "family": "spirit",
+      "name": "灵术",
+      "prompt": "Use case: precise-object-edit.\nAsset type: a single production card-frame PNG for a Chinese folklore underworld roguelike mobile game, variant 灵术.\nInput image 1 is the EDIT TARGET and strict geometry reference: the tall empty card frame. Input image 2 is a STYLE / SATURATION reference only: the earlier brightly pigmented card frame.\nRepaint and refine image 1 into a beautiful hand-painted paper-and-pigment card frame. Use rich saturated lapis indigo blue, jewel blue pigment with deeper navy blue edges on the entire curved title ribbon and narrow side/bottom frame, with warm antique gold inner piping, fine dark ink contours, restrained ornamental Chinese cloud corner flourishes. Give color the same confident, HIGH SATURATION as image 2, no dusty gray tint, no pastel pink, no washed-out pale ribbon. Keep authentic gouache/watercolor grain, soft painterly pigment variation and delicate worn paper. The ribbon is dark enough for ivory title text that will be added in code. Bottom rules paper is LIGHT warm creamy parchment, fully opaque and uncolored, suitable for dark ink text. The frame belongs to one unified four-color family; no extra symbols.\nSTRICT GEOMETRY: preserve the full target silhouette, slim tall 4:7 canvas ratio, the width of gold outlines, the arched title ribbon in the top 11%, the large portrait art aperture with left/right edges at 7%/93% and top/bottom at 11%/69%, and bottom parchment text area from 70% to 97%. Keep the large central art aperture exactly in place, completely transparent (alpha zero), not painted cream. Outside the organic card silhouette also genuinely transparent alpha zero. The ribbon, frame trim, and bottom parchment must be fully opaque.\nThe output must be exactly one empty frame asset, flat front view, straight-on, canvas tightly framing the full card, no perspective. Portrait 4:7 aspect ratio, do not shorten or fatten. No text, no letters, no numbers, no cost badge, no character, no icon, no background illustration, no backdrop, no shadow, no checkerboard pattern. This is an actual transparent PNG UI frame, not a mockup.",
+      "inputImages": [
+        {
+          "filename": "card-frame-muted-attack.png",
+          "role": "edit target / exact 4:7 geometry"
+        },
+        {
+          "filename": "card-frame-skill.png",
+          "role": "saturated pigment style reference"
+        }
+      ],
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a16d07-7efd-7a81-83b3-7ed404ff275a\\exec-f528f48f-ec16-453c-b097-297a0006fe1b.png"
+    },
+    {
+      "filename": "card-frame-vivid-oath.png",
+      "family": "oath",
+      "name": "阴契",
+      "prompt": "Use case: precise-object-edit.\nAsset type: a single production card-frame PNG for a Chinese folklore underworld roguelike mobile game, variant 阴契.\nInput image 1 is the EDIT TARGET and strict geometry reference: the tall empty card frame. Input image 2 is a STYLE / SATURATION reference only: the earlier brightly pigmented card frame.\nRepaint and refine image 1 into a beautiful hand-painted paper-and-pigment card frame. Use rich saturated amethyst violet purple, elegant plum purple pigment with deeper grape purple edges on the entire curved title ribbon and narrow side/bottom frame, with warm antique gold inner piping, fine dark ink contours, restrained ornamental Chinese cloud corner flourishes. Give color the same confident, HIGH SATURATION as image 2, no dusty gray tint, no pastel pink, no washed-out pale ribbon. Keep authentic gouache/watercolor grain, soft painterly pigment variation and delicate worn paper. The ribbon is dark enough for ivory title text that will be added in code. Bottom rules paper is LIGHT warm creamy parchment, fully opaque and uncolored, suitable for dark ink text. The frame belongs to one unified four-color family; no extra symbols.\nSTRICT GEOMETRY: preserve the full target silhouette, slim tall 4:7 canvas ratio, the width of gold outlines, the arched title ribbon in the top 11%, the large portrait art aperture with left/right edges at 7%/93% and top/bottom at 11%/69%, and bottom parchment text area from 70% to 97%. Keep the large central art aperture exactly in place, completely transparent (alpha zero), not painted cream. Outside the organic card silhouette also genuinely transparent alpha zero. The ribbon, frame trim, and bottom parchment must be fully opaque.\nThe output must be exactly one empty frame asset, flat front view, straight-on, canvas tightly framing the full card, no perspective. Portrait 4:7 aspect ratio, do not shorten or fatten. No text, no letters, no numbers, no cost badge, no character, no icon, no background illustration, no backdrop, no shadow, no checkerboard pattern. This is an actual transparent PNG UI frame, not a mockup.",
+      "inputImages": [
+        {
+          "filename": "card-frame-muted-attack.png",
+          "role": "edit target / exact 4:7 geometry"
+        },
+        {
+          "filename": "card-frame-attack.png",
+          "role": "saturated pigment style reference"
+        }
+      ],
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a16d07-7efd-7a81-83b3-7ed404ff275a\\exec-3b3bb6f1-3aa7-4e40-8799-b8c4768df64d.png"
+    }
+  ]
+}

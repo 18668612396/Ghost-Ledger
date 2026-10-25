@@ -1,0 +1,20 @@
+card-frame-color-strike.png: saturation 0.106 -> 0.160; original size/mode/alpha preserved
+card-pattern-color-brush.png: saturation 0.403 -> 0.573; original size/mode/alpha preserved
+card-pattern-color-coin.png: saturation 0.487 -> 0.667; original size/mode/alpha preserved
+card-pattern-color-fire.png: saturation 0.467 -> 0.650; original size/mode/alpha preserved
+card-frame-color-ward.png: saturation 0.043 -> 0.098; original size/mode/alpha preserved
+card-pattern-color-talisman.png: saturation 0.105 -> 0.187; original size/mode/alpha preserved
+card-pattern-color-step.png: saturation 0.200 -> 0.346; original size/mode/alpha preserved
+card-pattern-color-lotus.png: saturation 0.064 -> 0.116; original size/mode/alpha preserved
+card-pattern-color-mirror.png: saturation 0.140 -> 0.242; original size/mode/alpha preserved
+card-frame-color-spirit.png: saturation 0.043 -> 0.098; original size/mode/alpha preserved
+card-pattern-color-bell.png: saturation 0.129 -> 0.228; original size/mode/alpha preserved
+card-pattern-color-ledger.png: saturation 0.133 -> 0.233; original size/mode/alpha preserved
+card-pattern-color-ferry.png: saturation 0.115 -> 0.204; original size/mode/alpha preserved
+card-frame-color-oath.png: saturation 0.106 -> 0.160; original size/mode/alpha preserved
+card-pattern-color-chain.png: saturation 0.222 -> 0.378; original size/mode/alpha preserved
+card-pattern-color-vow.png: saturation 0.104 -> 0.185; original size/mode/alpha preserved
+card-pattern-color-seal.png: saturation 0.500 -> 0.650; original size/mode/alpha preserved
+card-pattern-color-blood.png: saturation 0.339 -> 0.545; original size/mode/alpha preserved
+card-pattern-color-verdict.png: saturation 0.354 -> 0.552; original size/mode/alpha preserved
+Verified four graded frames and fifteen graded backgrounds; no files written.

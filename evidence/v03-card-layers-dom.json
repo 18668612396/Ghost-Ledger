@@ -1,0 +1,129 @@
+{
+  "cards": [
+    {
+      "id": "talisman",
+      "imagesReady": true,
+      "layers": [
+        {
+          "kind": "background",
+          "source": "http://localhost:4210/public/assets/card-bg-talisman.png"
+        },
+        {
+          "kind": "icon",
+          "source": "http://localhost:4210/public/assets/card-art-talisman.png"
+        },
+        {
+          "kind": "frame",
+          "source": "http://localhost:4210/public/assets/card-frame-wash.png"
+        },
+        {
+          "kind": "cost",
+          "source": "http://localhost:4210/public/assets/card-cost-spirit.png"
+        }
+      ],
+      "opacity": "1",
+      "ratio": 0.6684210526315789
+    },
+    {
+      "id": "talisman",
+      "imagesReady": true,
+      "layers": [
+        {
+          "kind": "background",
+          "source": "http://localhost:4210/public/assets/card-bg-talisman.png"
+        },
+        {
+          "kind": "icon",
+          "source": "http://localhost:4210/public/assets/card-art-talisman.png"
+        },
+        {
+          "kind": "frame",
+          "source": "http://localhost:4210/public/assets/card-frame-wash.png"
+        },
+        {
+          "kind": "cost",
+          "source": "http://localhost:4210/public/assets/card-cost-spirit.png"
+        }
+      ],
+      "opacity": "1",
+      "ratio": 0.6684210526315789
+    },
+    {
+      "id": "talisman",
+      "imagesReady": true,
+      "layers": [
+        {
+          "kind": "background",
+          "source": "http://localhost:4210/public/assets/card-bg-talisman.png"
+        },
+        {
+          "kind": "icon",
+          "source": "http://localhost:4210/public/assets/card-art-talisman.png"
+        },
+        {
+          "kind": "frame",
+          "source": "http://localhost:4210/public/assets/card-frame-wash.png"
+        },
+        {
+          "kind": "cost",
+          "source": "http://localhost:4210/public/assets/card-cost-spirit.png"
+        }
+      ],
+      "opacity": "1",
+      "ratio": 0.6684210526315789
+    },
+    {
+      "id": "coin",
+      "imagesReady": true,
+      "layers": [
+        {
+          "kind": "background",
+          "source": "http://localhost:4210/public/assets/card-bg-coin.png"
+        },
+        {
+          "kind": "icon",
+          "source": "http://localhost:4210/public/assets/card-art-coin.png"
+        },
+        {
+          "kind": "frame",
+          "source": "http://localhost:4210/public/assets/card-frame-wash.png"
+        },
+        {
+          "kind": "cost",
+          "source": "http://localhost:4210/public/assets/card-cost-spirit.png"
+        }
+      ],
+      "opacity": "1",
+      "ratio": 0.6684210526315789
+    },
+    {
+      "id": "step",
+      "imagesReady": true,
+      "layers": [
+        {
+          "kind": "background",
+          "source": "http://localhost:4210/public/assets/card-bg-step.png"
+        },
+        {
+          "kind": "icon",
+          "source": "http://localhost:4210/public/assets/card-art-step.png"
+        },
+        {
+          "kind": "frame",
+          "source": "http://localhost:4210/public/assets/card-frame-wash.png"
+        },
+        {
+          "kind": "cost",
+          "source": "http://localhost:4210/public/assets/card-cost-spirit.png"
+        }
+      ],
+      "opacity": "1",
+      "ratio": 0.6684210526315789
+    }
+  ],
+  "overflow": false,
+  "viewport": {
+    "height": 844,
+    "width": 390
+  }
+}

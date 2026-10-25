@@ -1,0 +1,235 @@
+[
+  {
+    "id": "shrine",
+    "title": "纸灯神龛",
+    "description": "神龛里压着两道旧契，捧走它们也要接下代价。",
+    "choices": [
+      {
+        "id": "blood",
+        "title": "以血换签",
+        "description": "失去6生命，获得生死签。",
+        "effects": [
+          {
+            "op": "loseHp",
+            "amount": 6,
+            "cause": "event"
+          },
+          {
+            "op": "permanentCard",
+            "cardId": "debt_seal"
+          }
+        ],
+        "when": {
+          "op": "gt",
+          "args": [
+            {
+              "stat": "player.hp"
+            },
+            6
+          ]
+        }
+      },
+      {
+        "id": "debt",
+        "title": "借契取书",
+        "description": "欠下2阴债，获得销账书。",
+        "effects": [
+          {
+            "op": "debt",
+            "amount": 2,
+            "delay": 2
+          },
+          {
+            "op": "permanentCard",
+            "cardId": "debt_ledger"
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "title": "合掌离开",
+        "description": "恢复4生命。",
+        "effects": [
+          {
+            "op": "heal",
+            "amount": 4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "market",
+    "title": "鬼市借灯",
+    "description": "纸灯下有一碗热汤、一串旧钱。摊主等你开口。",
+    "choices": [
+      {
+        "id": "heal",
+        "title": "收下热汤",
+        "description": "恢复10生命。",
+        "effects": [
+          {
+            "op": "heal",
+            "amount": 10
+          }
+        ]
+      },
+      {
+        "id": "gold",
+        "title": "借走供钱",
+        "description": "获得35冥钱，欠下2阴债。",
+        "effects": [
+          {
+            "op": "gold",
+            "amount": 35
+          },
+          {
+            "op": "debt",
+            "amount": 2,
+            "delay": 2
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "title": "谢过离开",
+        "description": "不做交易。",
+        "effects": []
+      }
+    ]
+  },
+  {
+    "id": "mushrooms",
+    "title": "孢子鬼林",
+    "description": "三团菌影围住一束遗落的符纸，贸然靠近会惊醒它们。",
+    "choices": [
+      {
+        "id": "fight",
+        "title": "驱散三只孽菌童",
+        "description": "进入三敌事件战；胜利后获得选牌和冥钱。",
+        "effects": [],
+        "encounterId": "event_mushrooms"
+      },
+      {
+        "id": "leave",
+        "title": "沿小路绕行",
+        "description": "恢复4生命。",
+        "effects": [
+          {
+            "op": "heal",
+            "amount": 4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gold",
+    "title": "遗落冥钱",
+    "description": "供桌上摆着一袋无人认领的冥钱，红线还系着一张债契。",
+    "choices": [
+      {
+        "id": "take",
+        "title": "解下钱袋",
+        "description": "获得50冥钱，欠下3阴债。",
+        "effects": [
+          {
+            "op": "gold",
+            "amount": 50
+          },
+          {
+            "op": "debt",
+            "amount": 3,
+            "delay": 2
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "title": "留下一盏灯",
+        "description": "恢复6生命。",
+        "effects": [
+          {
+            "op": "heal",
+            "amount": 6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "debt_archive",
+    "title": "阴契旧档",
+    "description": "书吏愿意替你延灯或抹去旧账，但每项都需要真金白银。",
+    "choices": [
+      {
+        "id": "pay",
+        "title": "捐钱销账",
+        "description": "花20冥钱，偿还4阴债。",
+        "effects": [
+          {
+            "op": "gold",
+            "amount": -20
+          },
+          {
+            "op": "repay",
+            "amount": 4
+          }
+        ],
+        "when": {
+          "op": "and",
+          "args": [
+            {
+              "op": "gte",
+              "args": [
+                {
+                  "stat": "player.gold"
+                },
+                20
+              ]
+            },
+            {
+              "op": "gt",
+              "args": [
+                {
+                  "debt": "total"
+                },
+                0
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "learn",
+        "title": "誊录延灯符",
+        "description": "花35冥钱，将延灯符加入永久牌组。",
+        "effects": [
+          {
+            "op": "gold",
+            "amount": -35
+          },
+          {
+            "op": "permanentCard",
+            "cardId": "debt_delay"
+          }
+        ],
+        "when": {
+          "op": "gte",
+          "args": [
+            {
+              "stat": "player.gold"
+            },
+            35
+          ]
+        }
+      },
+      {
+        "id": "leave",
+        "title": "卷起空白纸",
+        "description": "不做交易。",
+        "effects": []
+      }
+    ]
+  }
+]

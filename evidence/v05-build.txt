@@ -1,0 +1,8 @@
+
+> ghost-ledger@0.5.0 build
+> node scripts/build.mjs
+
+配置 b0f18351bd641c415a41：cards 101 · powers 19 · enemies 25 · encounters 21 · acts 1 · events 5 · visuals 9
+116 张 PNG 的文件签名、来源链、生成提示词/调色记录及运行源码美术约束检查通过。
+入口、全部模块语法及游戏美术资源检查通过。
+独立静态构建已生成至 ghost-ledger/dist/。

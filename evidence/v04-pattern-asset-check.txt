@@ -1,0 +1,19 @@
+card-pattern-brush.png: exact RGB 3:4 crop, fully opaque, sha256 f1d0613b7931b7a116591fcbf01bfe6aa74041ff3955c7df51fd6bcac1ec5cd7
+card-pattern-talisman.png: exact RGB 3:4 crop, fully opaque, sha256 d8f4169fec6a85713013b7f12bf9f2e6dc2a2c4959d3027b95cba1075b68861f
+card-pattern-chain.png: exact RGB 3:4 crop, fully opaque, sha256 520363cd0228d29c2b106c42f42ebea5fa2e43e113c54460b98e3c9421c12a15
+card-pattern-vow.png: exact RGB 3:4 crop, fully opaque, sha256 04d94314cbac3037891428eca6e8cc126a511001e10add6d7fd0543448865d8c
+card-pattern-step.png: exact RGB 3:4 crop, fully opaque, sha256 a1581316b11fe11707bd3085c69cf4b84a3b4884a3176b4ef059105a957e8e1d
+card-pattern-coin.png: exact RGB 3:4 crop, fully opaque, sha256 60fca44a1e3f068be98cc223eec2fdc5fbfc9ac616a265fe0b657a5a9d7ad4c4
+card-pattern-fire.png: exact RGB 3:4 crop, fully opaque, sha256 4fe87d1d5cb4e4c2e6f02d02c1f6a8f6edbc4284393cf435ff3b50d9df919f01
+card-pattern-bell.png: exact RGB 3:4 crop, fully opaque, sha256 63065611fd33271d0ad6ca63915f2d236c38083254fccb00f74403702feef89d
+card-pattern-seal.png: exact RGB 3:4 crop, fully opaque, sha256 d4339528292515ad00d3fad59ec8114873fbf1e4df105018e4463f5918a850be
+card-pattern-lotus.png: exact RGB 3:4 crop, fully opaque, sha256 9be3065734ecff11fb5fd5b6e4655f903e5bf25a35f260a8ef8e9be1a0590758
+card-pattern-blood.png: exact RGB 3:4 crop, fully opaque, sha256 94897dd0763bb0c6d7d6fc20331379b88ca1346e519cda1bcc1525251a08995c
+card-pattern-ledger.png: exact RGB 3:4 crop, fully opaque, sha256 186ca27177ea22e3c3e515f70121380ec8ce8f0a816b17afa35a79b7387acd5e
+card-pattern-mirror.png: exact RGB 3:4 crop, fully opaque, sha256 a7d053505e1f61e385dd53c84ec1c5ca19de843cd86873fa05434ef70f68fe95
+card-pattern-ferry.png: exact RGB 3:4 crop, fully opaque, sha256 307d81fda3bada1d361d1462b4d6afa30f2ee45f0f59ca796c9b5eada6c72a40
+card-pattern-verdict.png: exact RGB 3:4 crop, fully opaque, sha256 40cbc1bcc869ad9edf36e4b2d3e054b38fa26ad5ede528983739a8f677559c86
+card-frame-muted-attack.png: 4:7 frame, opaque title/rules paper, transparent window and outside corners
+card-frame-muted-skill.png: 4:7 frame, opaque title/rules paper, transparent window and outside corners
+card-cost-spirit.png: square badge, opaque center, transparent outside corners
+Verified 15 distinct opaque patterns, two 4:7 frames and one cost badge; no files written.

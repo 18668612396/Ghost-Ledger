@@ -1,0 +1,12 @@
+/* All effect color, shape, texture and alpha come from generated PNGs. */
+.fx-portal { position: fixed; z-index: 140; pointer-events: none; overflow: hidden; }
+.fx-portal *, .fx-self-guide, .fx-self-guide * { pointer-events: none !important; user-select: none; }
+.fx-sprite { position: absolute; z-index: 2; max-width: none; object-fit: contain; transform: translate(-50%, -50%); transform-origin: center; }
+.fx-card-copy, .fx-card-copy:disabled { position: absolute; z-index: 1; margin: 0; max-width: none; opacity: 1; transform-origin: center; transition: none; }
+.fx-enemy-copy, .fx-enemy-copy:disabled { position: absolute; z-index: 0; margin: 0; max-width: none; opacity: 1; transform-origin: center; transition: none; }
+.fx-self-guide { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; opacity: .7; }
+.fx-self-guide > img { width: 100%; height: auto; object-fit: contain; }
+.fx-self-guide-ready > img { transform: translateY(-3px); }
+@media (prefers-reduced-motion: reduce) {
+  .fx-self-guide-ready > img { transform: none; }
+}

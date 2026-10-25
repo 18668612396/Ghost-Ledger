@@ -1,0 +1,19 @@
+{
+  "generator": "image_gen built-in",
+  "date": "2026-10-24",
+  "purpose": "User feedback: stronger firm-edged monster shadow; opaque hand cards in all states.",
+  "assets": [
+    {
+      "filename": "enemy-shadow-hard.png",
+      "transparent_background": true,
+      "editTarget": "enemy-shadow.png",
+      "prompt": "Use case: precise-object-edit. Edit the attached existing monster ground-shadow sprite. Keep its 3:1 landscape canvas, centered horizontal ellipse, overall footprint and perspective. Change ONLY the shadow treatment: a clearly visible, firm-edged contact shadow, uniformly filled deep desaturated charcoal (roughly RGB 28,34,36), no bright center, no internal gradients, no mottled texture. This is the projection of a circular footprint onto a ground plane, rendered as a shallow horizontal ellipse. The inside of the entire ellipse must be fully opaque alpha 255 and uniform in value; opacity will be controlled by the game. Make the perimeter mostly HARD and clean with only a tiny anti-aliased transition, at most 1-2 pixels at display scale. No wide feather, haze, glow, blur, rings, outline, floor, figure, text, or checkerboard. Outside the ellipse must be genuinely transparent alpha 0. Preserve the existing ellipse size/placement and image aspect ratio. Raster sprite only."
+    },
+    {
+      "filename": "card-frame-opaque.png",
+      "transparent_background": true,
+      "editTarget": "ref-card.png",
+      "prompt": "Use case: precise-object-edit. Edit ONLY the opacity of this existing portrait 2:3 Chinese watercolor playing-card frame. Preserve exactly the parchment silhouette, slim ink and ochre border, curved title header, cream title and lower rules paper, quiet pale jade filled art window, overall proportions and hand-painted style. All visible paper, jade window and border INSIDE the card silhouette must be fully solid, 100% OPAQUE, ALPHA 255, with no semi-transparency or holes. This is a solid physical paper card that must fully occlude other cards and scenery behind it. Keep ONLY the small areas OUTSIDE the card silhouette (outside curved top and rounded corners) truly transparent alpha 0. Do NOT turn the middle art window transparent. Do not add any outer rectangle, background board, cast shadow, glow, text, numerals or symbols. Do not change the artwork layout or add decorations. Exact portrait aspect ratio 2:3, same front view. Preserve the existing visual colors and texture, change opacity only."
+    }
+  ]
+}

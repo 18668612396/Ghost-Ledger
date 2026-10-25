@@ -1,0 +1,108 @@
+{
+  "url": "http://localhost:4210/",
+  "session": "🃏 拖牌验收",
+  "method": "cua Tab.drag(from,to), real browser mouse drag; no evaluate/event injection/state edits",
+  "steps": [
+    {
+      "card": "判官笔",
+      "from": [
+        809,
+        883
+      ],
+      "to": [
+        851,
+        611
+      ],
+      "before": {
+        "energy": 3,
+        "enemyHp": 38,
+        "playerHp": 54,
+        "block": 0,
+        "handCount": 5,
+        "drawPile": 5,
+        "discard": 0
+      },
+      "after": {
+        "energy": 2,
+        "enemyHp": 31,
+        "playerHp": 54,
+        "block": 0,
+        "handCount": 4,
+        "drawPile": 5,
+        "discard": 1
+      },
+      "inspectionOpened": false
+    },
+    {
+      "card": "幽冥步",
+      "from": [
+        849,
+        878
+      ],
+      "to": [
+        890,
+        608
+      ],
+      "before": {
+        "energy": 2,
+        "enemyHp": 31,
+        "playerHp": 54,
+        "block": 0,
+        "handCount": 4,
+        "drawPile": 5,
+        "discard": 1
+      },
+      "after": {
+        "energy": 1,
+        "enemyHp": 31,
+        "playerHp": 54,
+        "block": 5,
+        "handCount": 4,
+        "drawPile": 4,
+        "discard": 2
+      },
+      "inspectionOpened": false
+    },
+    {
+      "card": "镇魂符",
+      "from": [
+        847,
+        875
+      ],
+      "to": [
+        857,
+        948
+      ],
+      "gesture": "drag down within hand and release; cancellation without crossing upper play boundary",
+      "before": {
+        "energy": 1,
+        "enemyHp": 31,
+        "playerHp": 54,
+        "block": 5,
+        "handCount": 4,
+        "drawPile": 4,
+        "discard": 2
+      },
+      "after": {
+        "energy": 1,
+        "enemyHp": 31,
+        "playerHp": 54,
+        "block": 5,
+        "handCount": 4,
+        "drawPile": 4,
+        "discard": 2
+      },
+      "inspectionOpened": false
+    }
+  ],
+  "limitations": [
+    "Native documented Tab.drag accepts start/end only, so an up-then-return trajectory without releasing was not tested.",
+    "Desktop Chrome mouse drag only; no physical touchscreen test."
+  ],
+  "evidence": [
+    "v03-card-art-drag-before.png",
+    "v03-card-art-drag-after-attack.png",
+    "v03-card-art-drag-after-skill.png",
+    "v03-card-art-drag-cancel.png"
+  ]
+}

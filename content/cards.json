@@ -1,0 +1,5141 @@
+[
+  {
+    "id": "ic_strike",
+    "name": "斩魂",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Strike",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "basic",
+    "cost": 1,
+    "target": "enemy",
+    "text": "造成6点伤害。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 6,
+        "target": "enemy"
+      }
+    ],
+    "upgrade": {
+      "text": "造成9点伤害。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 9,
+          "target": "enemy"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "strike"
+    ],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-brush",
+      "background": "card-pattern-color-brush",
+      "cost": "card-cost-flame",
+      "impact": "slash"
+    }
+  },
+  {
+    "id": "ic_bash",
+    "name": "破煞",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Bash",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "basic",
+    "cost": 2,
+    "target": "enemy",
+    "text": "造成8点伤害，施加2回合易伤。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 8,
+        "target": "enemy"
+      },
+      {
+        "op": "status",
+        "amount": 2,
+        "key": "exposed",
+        "target": "enemy"
+      }
+    ],
+    "upgrade": {
+      "text": "造成10点伤害，施加3回合易伤。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 10,
+          "target": "enemy"
+        },
+        {
+          "op": "status",
+          "amount": 3,
+          "key": "exposed",
+          "target": "enemy"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-seal",
+      "background": "card-pattern-color-coin",
+      "cost": "card-cost-flame",
+      "impact": "curse"
+    }
+  },
+  {
+    "id": "ic_anger",
+    "name": "嗔火",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Anger",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "common",
+    "cost": 0,
+    "target": "enemy",
+    "text": "造成6点伤害，将此牌的复制加入弃牌堆。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 6,
+        "target": "enemy"
+      },
+      {
+        "op": "copyCard",
+        "selection": "self",
+        "amount": 1,
+        "zone": "discard"
+      }
+    ],
+    "upgrade": {
+      "text": "造成8点伤害，将此牌的复制加入弃牌堆。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 8,
+          "target": "enemy"
+        },
+        {
+          "op": "copyCard",
+          "selection": "self",
+          "amount": 1,
+          "zone": "discard"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-fire",
+      "background": "card-pattern-color-fire",
+      "cost": "card-cost-flame",
+      "impact": "fire"
+    }
+  },
+  {
+    "id": "ic_body_slam",
+    "name": "镇山印",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Body Slam",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "common",
+    "cost": 1,
+    "target": "enemy",
+    "text": "造成{damage}点攻击伤害，基础伤害等于当前护甲。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": {
+          "stat": "player.block"
+        },
+        "target": "enemy"
+      }
+    ],
+    "upgrade": {
+      "cost": 0
+    },
+    "keywords": [],
+    "tags": [
+      "block"
+    ],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-seal",
+      "background": "card-pattern-color-coin",
+      "cost": "card-cost-flame",
+      "impact": "thunder"
+    },
+    "textValues": {
+      "damage": {
+        "stat": "player.block"
+      }
+    }
+  },
+  {
+    "id": "ic_clash",
+    "name": "断魂",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Clash",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "common",
+    "cost": 0,
+    "target": "enemy",
+    "text": "其他手牌全为攻击牌时才能使用。造成14点伤害。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 14,
+        "target": "enemy"
+      }
+    ],
+    "upgrade": {
+      "text": "其他手牌全为攻击牌时才能使用。造成18点伤害。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 18,
+          "target": "enemy"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-chain",
+      "background": "card-pattern-color-brush",
+      "cost": "card-cost-flame",
+      "impact": "slash"
+    },
+    "playCondition": {
+      "op": "eq",
+      "args": [
+        {
+          "count": {
+            "zone": "hand",
+            "excludeSelf": true
+          }
+        },
+        {
+          "count": {
+            "zone": "hand",
+            "type": "attack",
+            "excludeSelf": true
+          }
+        }
+      ]
+    },
+    "playConditionText": "其他手牌必须全为攻击牌。"
+  },
+  {
+    "id": "ic_cleave",
+    "name": "横扫阴风",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Cleave",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "common",
+    "cost": 1,
+    "target": "all",
+    "text": "对所有敌人造成8点伤害。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 8,
+        "target": "allEnemies"
+      }
+    ],
+    "upgrade": {
+      "text": "对所有敌人造成11点伤害。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 11,
+          "target": "allEnemies"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-step",
+      "background": "card-pattern-color-fire",
+      "cost": "card-cost-flame",
+      "impact": "slash"
+    }
+  },
+  {
+    "id": "ic_clothesline",
+    "name": "锁喉索",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Clothesline",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "common",
+    "cost": 2,
+    "target": "enemy",
+    "text": "造成12点伤害，施加2回合虚弱。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 12,
+        "target": "enemy"
+      },
+      {
+        "op": "status",
+        "amount": 2,
+        "key": "weak",
+        "target": "enemy"
+      }
+    ],
+    "upgrade": {
+      "text": "造成14点伤害，施加3回合虚弱。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 14,
+          "target": "enemy"
+        },
+        {
+          "op": "status",
+          "amount": 3,
+          "key": "weak",
+          "target": "enemy"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-chain",
+      "background": "card-pattern-color-fire",
+      "cost": "card-cost-flame",
+      "impact": "slash"
+    }
+  },
+  {
+    "id": "ic_headbutt",
+    "name": "回魂击",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Headbutt",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "common",
+    "cost": 1,
+    "target": "enemy",
+    "text": "造成9点伤害，将弃牌堆中1张牌放到抽牌堆顶。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 9,
+        "target": "enemy"
+      },
+      {
+        "op": "moveCard",
+        "from": "discard",
+        "to": "drawPile",
+        "position": "top",
+        "selection": "chosen",
+        "prompt": "选择要放回抽牌堆顶的牌"
+      }
+    ],
+    "upgrade": {
+      "text": "造成12点伤害，将弃牌堆中1张牌放到抽牌堆顶。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 12,
+          "target": "enemy"
+        },
+        {
+          "op": "moveCard",
+          "from": "discard",
+          "to": "drawPile",
+          "position": "top",
+          "selection": "chosen",
+          "prompt": "选择要放回抽牌堆顶的牌"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-bell",
+      "background": "card-pattern-color-coin",
+      "cost": "card-cost-flame",
+      "impact": "thunder"
+    }
+  },
+  {
+    "id": "ic_heavy_blade",
+    "name": "千钧斩",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Heavy Blade",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "common",
+    "cost": 2,
+    "target": "enemy",
+    "text": "造成14点伤害。本次攻击获得3倍力量加成。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 14,
+        "target": "enemy",
+        "strengthScale": 3
+      }
+    ],
+    "upgrade": {
+      "text": "造成14点伤害。本次攻击获得5倍力量加成。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 14,
+          "target": "enemy",
+          "strengthScale": 5
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "strength"
+    ],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-brush",
+      "background": "card-pattern-color-fire",
+      "cost": "card-cost-flame",
+      "impact": "slash"
+    }
+  },
+  {
+    "id": "ic_iron_wave",
+    "name": "铁衣震",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Iron Wave",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "common",
+    "cost": 1,
+    "target": "enemy",
+    "text": "获得5点护甲，造成5点伤害。",
+    "effects": [
+      {
+        "op": "block",
+        "amount": 5
+      },
+      {
+        "op": "damage",
+        "amount": 5,
+        "target": "enemy"
+      }
+    ],
+    "upgrade": {
+      "text": "获得7点护甲，造成7点伤害。",
+      "effects": [
+        {
+          "op": "block",
+          "amount": 7
+        },
+        {
+          "op": "damage",
+          "amount": 7,
+          "target": "enemy"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "block"
+    ],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-talisman",
+      "background": "card-pattern-color-coin",
+      "cost": "card-cost-flame",
+      "impact": "thunder"
+    }
+  },
+  {
+    "id": "ic_perfected_strike",
+    "name": "万刃归魂",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Perfected Strike",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "common",
+    "cost": 2,
+    "target": "enemy",
+    "text": "造成{damage}点伤害：基础6点，每有1张未消耗的「斩击」牌额外2点。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": {
+          "op": "add",
+          "args": [
+            6,
+            {
+              "op": "mul",
+              "args": [
+                2,
+                {
+                  "count": {
+                    "zone": "combat",
+                    "tag": "strike"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "target": "enemy"
+      }
+    ],
+    "upgrade": {
+      "text": "造成{damage}点伤害：基础6点，每有1张未消耗的「斩击」牌额外3点。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": {
+            "op": "add",
+            "args": [
+              6,
+              {
+                "op": "mul",
+                "args": [
+                  3,
+                  {
+                    "count": {
+                      "zone": "combat",
+                      "tag": "strike"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "target": "enemy"
+        }
+      ],
+      "textValues": {
+        "damage": {
+          "op": "add",
+          "args": [
+            6,
+            {
+              "op": "mul",
+              "args": [
+                3,
+                {
+                  "count": {
+                    "zone": "combat",
+                    "tag": "strike"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "keywords": [],
+    "tags": [
+      "strike"
+    ],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-brush",
+      "background": "card-pattern-color-brush",
+      "cost": "card-cost-flame",
+      "impact": "slash"
+    },
+    "textValues": {
+      "damage": {
+        "op": "add",
+        "args": [
+          6,
+          {
+            "op": "mul",
+            "args": [
+              2,
+              {
+                "count": {
+                  "zone": "combat",
+                  "tag": "strike"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ic_pommel_strike",
+    "name": "引魂斩",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Pommel Strike",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "common",
+    "cost": 1,
+    "target": "enemy",
+    "text": "造成9点伤害，抽1张牌。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 9,
+        "target": "enemy"
+      },
+      {
+        "op": "draw",
+        "amount": 1
+      }
+    ],
+    "upgrade": {
+      "text": "造成10点伤害，抽2张牌。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 10,
+          "target": "enemy"
+        },
+        {
+          "op": "draw",
+          "amount": 2
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "strike",
+      "draw"
+    ],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-brush",
+      "background": "card-pattern-color-coin",
+      "cost": "card-cost-flame",
+      "impact": "slash"
+    }
+  },
+  {
+    "id": "ic_sword_boomerang",
+    "name": "飞钱斩",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Sword Boomerang",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "common",
+    "cost": 1,
+    "target": "all",
+    "text": "随机对敌人造成3点伤害，共3次。每次重新选择目标。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 3,
+        "target": "randomEnemy",
+        "hits": 3
+      }
+    ],
+    "upgrade": {
+      "text": "随机对敌人造成3点伤害，共4次。每次重新选择目标。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 3,
+          "target": "randomEnemy",
+          "hits": 4
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "strength"
+    ],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-coin",
+      "background": "card-pattern-color-coin",
+      "cost": "card-cost-flame",
+      "impact": "slash"
+    }
+  },
+  {
+    "id": "ic_thunderclap",
+    "name": "惊雷咒",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Thunderclap",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "common",
+    "cost": 1,
+    "target": "all",
+    "text": "对所有敌人造成4点伤害，然后施加1回合易伤。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 4,
+        "target": "allEnemies"
+      },
+      {
+        "op": "status",
+        "amount": 1,
+        "key": "exposed",
+        "target": "allEnemies"
+      }
+    ],
+    "upgrade": {
+      "text": "对所有敌人造成7点伤害，然后施加1回合易伤。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 7,
+          "target": "allEnemies"
+        },
+        {
+          "op": "status",
+          "amount": 1,
+          "key": "exposed",
+          "target": "allEnemies"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-seal",
+      "background": "card-pattern-color-brush",
+      "cost": "card-cost-flame",
+      "impact": "thunder"
+    }
+  },
+  {
+    "id": "ic_twin_strike",
+    "name": "双生斩",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Twin Strike",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "common",
+    "cost": 1,
+    "target": "enemy",
+    "text": "造成5点伤害，攻击2次。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 5,
+        "target": "enemy",
+        "hits": 2
+      }
+    ],
+    "upgrade": {
+      "text": "造成7点伤害，攻击2次。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 7,
+          "target": "enemy",
+          "hits": 2
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "strike",
+      "strength"
+    ],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-chain",
+      "background": "card-pattern-color-coin",
+      "cost": "card-cost-flame",
+      "impact": "slash"
+    }
+  },
+  {
+    "id": "ic_wild_strike",
+    "name": "裂骨斩",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Wild Strike",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "common",
+    "cost": 1,
+    "target": "enemy",
+    "text": "造成12点伤害，将1张伤口随机放入抽牌堆。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 12,
+        "target": "enemy"
+      },
+      {
+        "op": "addCard",
+        "cardId": "status_wound",
+        "zone": "drawPile",
+        "position": "random"
+      }
+    ],
+    "upgrade": {
+      "text": "造成17点伤害，将1张伤口随机放入抽牌堆。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 17,
+          "target": "enemy"
+        },
+        {
+          "op": "addCard",
+          "cardId": "status_wound",
+          "zone": "drawPile",
+          "position": "random"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "strike",
+      "status"
+    ],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-brush",
+      "background": "card-pattern-color-fire",
+      "cost": "card-cost-flame",
+      "impact": "slash"
+    }
+  },
+  {
+    "id": "ic_blood_for_blood",
+    "name": "以血偿血",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Blood for Blood",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "uncommon",
+    "cost": 4,
+    "target": "enemy",
+    "text": "造成18点伤害。本场每次失去生命，此牌费用降低1。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 18,
+        "target": "enemy"
+      }
+    ],
+    "upgrade": {
+      "cost": 3,
+      "text": "造成22点伤害。本场每次失去生命，此牌费用降低1。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 22,
+          "target": "enemy"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-chain",
+      "background": "card-pattern-color-blood",
+      "cost": "card-cost-flame",
+      "impact": "slash"
+    },
+    "costModifier": {
+      "stat": "card.costReduction"
+    },
+    "triggers": [
+      {
+        "event": "hpLost",
+        "zones": [
+          "hand",
+          "drawPile",
+          "discard"
+        ],
+        "when": {
+          "op": "and",
+          "args": [
+            {
+              "op": "gt",
+              "args": [
+                {
+                  "stat": "event.hpLoss"
+                },
+                0
+              ]
+            },
+            {
+              "op": "eq",
+              "args": [
+                {
+                  "stat": "event.targetUid"
+                },
+                "player"
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "modifyCard",
+            "key": "costReduction",
+            "amount": -1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ic_carnage",
+    "name": "屠魂",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Carnage",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "uncommon",
+    "cost": 2,
+    "target": "enemy",
+    "text": "虚无。造成20点伤害。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 20,
+        "target": "enemy"
+      }
+    ],
+    "upgrade": {
+      "text": "虚无。造成28点伤害。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 28,
+          "target": "enemy"
+        }
+      ]
+    },
+    "keywords": [
+      "ethereal"
+    ],
+    "tags": [],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-brush",
+      "background": "card-pattern-color-fire",
+      "cost": "card-cost-flame",
+      "impact": "slash"
+    }
+  },
+  {
+    "id": "ic_dropkick",
+    "name": "踏煞",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Dropkick",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "enemy",
+    "text": "造成5点伤害。若目标易伤，获得1香火并抽1张牌。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 5,
+        "target": "enemy"
+      },
+      {
+        "op": "if",
+        "condition": {
+          "op": "gt",
+          "args": [
+            {
+              "stat": "target.exposed"
+            },
+            0
+          ]
+        },
+        "then": [
+          {
+            "op": "energy",
+            "amount": 1
+          },
+          {
+            "op": "draw",
+            "amount": 1
+          }
+        ],
+        "else": []
+      }
+    ],
+    "upgrade": {
+      "text": "造成8点伤害。若目标易伤，获得1香火并抽1张牌。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 8,
+          "target": "enemy"
+        },
+        {
+          "op": "if",
+          "condition": {
+            "op": "gt",
+            "args": [
+              {
+                "stat": "target.exposed"
+              },
+              0
+            ]
+          },
+          "then": [
+            {
+              "op": "energy",
+              "amount": 1
+            },
+            {
+              "op": "draw",
+              "amount": 1
+            }
+          ],
+          "else": []
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "draw",
+      "energy"
+    ],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-step",
+      "background": "card-pattern-color-coin",
+      "cost": "card-cost-flame",
+      "impact": "slash"
+    }
+  },
+  {
+    "id": "ic_hemokinesis",
+    "name": "血书判",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Hemokinesis",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "enemy",
+    "text": "失去2点生命，造成15点伤害。",
+    "effects": [
+      {
+        "op": "loseHp",
+        "amount": 2,
+        "cause": "card"
+      },
+      {
+        "op": "damage",
+        "amount": 15,
+        "target": "enemy"
+      }
+    ],
+    "upgrade": {
+      "text": "失去2点生命，造成20点伤害。",
+      "effects": [
+        {
+          "op": "loseHp",
+          "amount": 2,
+          "cause": "card"
+        },
+        {
+          "op": "damage",
+          "amount": 20,
+          "target": "enemy"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-brush",
+      "background": "card-pattern-color-blood",
+      "cost": "card-cost-flame",
+      "impact": "curse"
+    }
+  },
+  {
+    "id": "ic_pummel",
+    "name": "连环索",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Pummel",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "enemy",
+    "text": "造成2点伤害，攻击4次。消耗。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 2,
+        "target": "enemy",
+        "hits": 4
+      }
+    ],
+    "upgrade": {
+      "text": "造成2点伤害，攻击5次。消耗。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 2,
+          "target": "enemy",
+          "hits": 5
+        }
+      ]
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [
+      "strength",
+      "exhaust"
+    ],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-chain",
+      "background": "card-pattern-color-coin",
+      "cost": "card-cost-flame",
+      "impact": "slash"
+    }
+  },
+  {
+    "id": "ic_rampage",
+    "name": "百战煞",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Rampage",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "enemy",
+    "text": "造成{damage}点伤害。每次打出后，此副本本场伤害增加5。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": {
+          "op": "add",
+          "args": [
+            8,
+            {
+              "stat": "card.rampageDamage"
+            }
+          ]
+        },
+        "target": "enemy"
+      },
+      {
+        "op": "modifyCard",
+        "key": "rampageDamage",
+        "amount": 5
+      }
+    ],
+    "upgrade": {
+      "text": "造成{damage}点伤害。每次打出后，此副本本场伤害增加8。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": {
+            "op": "add",
+            "args": [
+              8,
+              {
+                "stat": "card.rampageDamage"
+              }
+            ]
+          },
+          "target": "enemy"
+        },
+        {
+          "op": "modifyCard",
+          "key": "rampageDamage",
+          "amount": 8
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-seal",
+      "background": "card-pattern-color-fire",
+      "cost": "card-cost-flame",
+      "impact": "thunder"
+    },
+    "textValues": {
+      "damage": {
+        "op": "add",
+        "args": [
+          8,
+          {
+            "stat": "card.rampageDamage"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ic_reckless_charge",
+    "name": "无常突",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Reckless Charge",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "uncommon",
+    "cost": 0,
+    "target": "enemy",
+    "text": "造成7点伤害，将1张眩晕随机放入抽牌堆。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 7,
+        "target": "enemy"
+      },
+      {
+        "op": "addCard",
+        "cardId": "status_dazed",
+        "zone": "drawPile",
+        "position": "random"
+      }
+    ],
+    "upgrade": {
+      "text": "造成10点伤害，将1张眩晕随机放入抽牌堆。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 10,
+          "target": "enemy"
+        },
+        {
+          "op": "addCard",
+          "cardId": "status_dazed",
+          "zone": "drawPile",
+          "position": "random"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "status"
+    ],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-step",
+      "background": "card-pattern-color-brush",
+      "cost": "card-cost-flame",
+      "impact": "slash"
+    }
+  },
+  {
+    "id": "ic_searing_blow",
+    "name": "炼狱烙",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Searing Blow",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "uncommon",
+    "cost": 2,
+    "target": "enemy",
+    "text": "造成{damage}点伤害。可反复升级，每次增伤依次为4、5、6……。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": {
+          "op": "add",
+          "args": [
+            12,
+            {
+              "op": "div",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "op": "pow",
+                      "args": [
+                        {
+                          "stat": "card.upgradeLevel"
+                        },
+                        2
+                      ]
+                    },
+                    {
+                      "op": "mul",
+                      "args": [
+                        7,
+                        {
+                          "stat": "card.upgradeLevel"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                2
+              ]
+            }
+          ]
+        },
+        "target": "enemy"
+      }
+    ],
+    "upgrade": {
+      "text": "造成{damage}点伤害。可反复升级，每次增伤依次为4、5、6……。"
+    },
+    "keywords": [],
+    "tags": [],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-fire",
+      "background": "card-pattern-color-fire",
+      "cost": "card-cost-flame",
+      "impact": "fire"
+    },
+    "upgradePolicy": "repeat",
+    "textValues": {
+      "damage": {
+        "op": "add",
+        "args": [
+          12,
+          {
+            "op": "div",
+            "args": [
+              {
+                "op": "add",
+                "args": [
+                  {
+                    "op": "pow",
+                    "args": [
+                      {
+                        "stat": "card.upgradeLevel"
+                      },
+                      2
+                    ]
+                  },
+                  {
+                    "op": "mul",
+                    "args": [
+                      7,
+                      {
+                        "stat": "card.upgradeLevel"
+                      }
+                    ]
+                  }
+                ]
+              },
+              2
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ic_sever_soul",
+    "name": "斩断尘缘",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Sever Soul",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "uncommon",
+    "cost": 2,
+    "target": "enemy",
+    "text": "消耗其他所有非攻击手牌，造成16点伤害。",
+    "effects": [
+      {
+        "op": "exhaust",
+        "selection": "nonAttacks"
+      },
+      {
+        "op": "damage",
+        "amount": 16,
+        "target": "enemy"
+      }
+    ],
+    "upgrade": {
+      "text": "消耗其他所有非攻击手牌，造成22点伤害。",
+      "effects": [
+        {
+          "op": "exhaust",
+          "selection": "nonAttacks"
+        },
+        {
+          "op": "damage",
+          "amount": 22,
+          "target": "enemy"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "exhaust"
+    ],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-chain",
+      "background": "card-pattern-color-brush",
+      "cost": "card-cost-flame",
+      "impact": "slash"
+    }
+  },
+  {
+    "id": "ic_uppercut",
+    "name": "撼魂",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Uppercut",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "uncommon",
+    "cost": 2,
+    "target": "enemy",
+    "text": "造成13点伤害，施加1回合虚弱和1回合易伤。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 13,
+        "target": "enemy"
+      },
+      {
+        "op": "status",
+        "amount": 1,
+        "key": "weak",
+        "target": "enemy"
+      },
+      {
+        "op": "status",
+        "amount": 1,
+        "key": "exposed",
+        "target": "enemy"
+      }
+    ],
+    "upgrade": {
+      "text": "造成13点伤害，施加2回合虚弱和2回合易伤。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 13,
+          "target": "enemy"
+        },
+        {
+          "op": "status",
+          "amount": 2,
+          "key": "weak",
+          "target": "enemy"
+        },
+        {
+          "op": "status",
+          "amount": 2,
+          "key": "exposed",
+          "target": "enemy"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-seal",
+      "background": "card-pattern-color-coin",
+      "cost": "card-cost-flame",
+      "impact": "thunder"
+    }
+  },
+  {
+    "id": "ic_whirlwind",
+    "name": "万魂风",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Whirlwind",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "uncommon",
+    "cost": "X",
+    "target": "all",
+    "text": "消耗全部剩余香火。对所有敌人造成5点伤害，重复X次。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 5,
+        "target": "allEnemies",
+        "hits": {
+          "stat": "context.x"
+        }
+      }
+    ],
+    "upgrade": {
+      "text": "消耗全部剩余香火。对所有敌人造成8点伤害，重复X次。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 8,
+          "target": "allEnemies",
+          "hits": {
+            "stat": "context.x"
+          }
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "strength",
+      "energy"
+    ],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-step",
+      "background": "card-pattern-color-fire",
+      "cost": "card-cost-flame",
+      "impact": "slash"
+    }
+  },
+  {
+    "id": "ic_bludgeon",
+    "name": "断狱",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Bludgeon",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "rare",
+    "cost": 3,
+    "target": "enemy",
+    "text": "造成32点伤害。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 32,
+        "target": "enemy"
+      }
+    ],
+    "upgrade": {
+      "text": "造成42点伤害。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 42,
+          "target": "enemy"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-seal",
+      "background": "card-pattern-color-fire",
+      "cost": "card-cost-flame",
+      "impact": "thunder"
+    }
+  },
+  {
+    "id": "ic_feed",
+    "name": "噬魂",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Feed",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "rare",
+    "cost": 1,
+    "target": "enemy",
+    "text": "造成10点伤害。由此击杀非召唤仆从时，永久增加3点最大生命。消耗。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 10,
+        "target": "enemy",
+        "fatalMaxHp": 3
+      }
+    ],
+    "upgrade": {
+      "text": "造成12点伤害。由此击杀非召唤仆从时，永久增加4点最大生命。消耗。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 12,
+          "target": "enemy",
+          "fatalMaxHp": 4
+        }
+      ]
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [
+      "healing",
+      "exhaust"
+    ],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-lotus",
+      "background": "card-pattern-color-fire",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    },
+    "generation": {
+      "combat": false
+    }
+  },
+  {
+    "id": "ic_fiend_fire",
+    "name": "万符俱焚",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Fiend Fire",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "rare",
+    "cost": 2,
+    "target": "enemy",
+    "text": "消耗其他所有手牌。每实际消耗1张，对目标造成7点伤害。消耗。",
+    "effects": [
+      {
+        "op": "exhaust",
+        "selection": "allHand"
+      },
+      {
+        "op": "damage",
+        "amount": 7,
+        "target": "enemy",
+        "hits": {
+          "stat": "context.exhausted"
+        }
+      }
+    ],
+    "upgrade": {
+      "text": "消耗其他所有手牌。每实际消耗1张，对目标造成10点伤害。消耗。",
+      "effects": [
+        {
+          "op": "exhaust",
+          "selection": "allHand"
+        },
+        {
+          "op": "damage",
+          "amount": 10,
+          "target": "enemy",
+          "hits": {
+            "stat": "context.exhausted"
+          }
+        }
+      ]
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [
+      "exhaust",
+      "strength"
+    ],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-talisman",
+      "background": "card-pattern-color-fire",
+      "cost": "card-cost-flame",
+      "impact": "fire"
+    }
+  },
+  {
+    "id": "ic_immolate",
+    "name": "焚纸送魂",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Immolate",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "rare",
+    "cost": 2,
+    "target": "all",
+    "text": "对所有敌人造成21点伤害，将1张灼伤加入弃牌堆。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 21,
+        "target": "allEnemies"
+      },
+      {
+        "op": "addCard",
+        "cardId": "status_burn",
+        "zone": "discard"
+      }
+    ],
+    "upgrade": {
+      "text": "对所有敌人造成28点伤害，将1张灼伤加入弃牌堆。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 28,
+          "target": "allEnemies"
+        },
+        {
+          "op": "addCard",
+          "cardId": "status_burn",
+          "zone": "discard"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "status"
+    ],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-fire",
+      "background": "card-pattern-color-fire",
+      "cost": "card-cost-flame",
+      "impact": "fire"
+    }
+  },
+  {
+    "id": "ic_reaper",
+    "name": "渡尽黄泉",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Reaper",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "attack",
+    "rarity": "rare",
+    "cost": 2,
+    "target": "all",
+    "text": "对所有敌人造成4点伤害，恢复等同实际扣除敌人生命的生命。消耗。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 4,
+        "target": "allEnemies",
+        "healFromDamage": true
+      }
+    ],
+    "upgrade": {
+      "text": "对所有敌人造成5点伤害，恢复等同实际扣除敌人生命的生命。消耗。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 5,
+          "target": "allEnemies",
+          "healFromDamage": true
+        }
+      ]
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [
+      "healing",
+      "exhaust"
+    ],
+    "visual": {
+      "family": "strike",
+      "icon": "card-art-lotus",
+      "background": "card-pattern-color-coin",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    },
+    "generation": {
+      "combat": false
+    }
+  },
+  {
+    "id": "ic_defend",
+    "name": "守灯",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Defend",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "basic",
+    "cost": 1,
+    "target": "self",
+    "text": "获得5点护甲。",
+    "effects": [
+      {
+        "op": "block",
+        "amount": 5
+      }
+    ],
+    "upgrade": {
+      "text": "获得8点护甲。",
+      "effects": [
+        {
+          "op": "block",
+          "amount": 8
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "block"
+    ],
+    "visual": {
+      "family": "ward",
+      "icon": "card-art-talisman",
+      "background": "card-pattern-color-talisman",
+      "cost": "card-cost-flame",
+      "impact": "guard"
+    }
+  },
+  {
+    "id": "ic_armaments",
+    "name": "敕符",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Armaments",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "common",
+    "cost": 1,
+    "target": "self",
+    "text": "获得5点护甲，本场升级1张手牌。",
+    "effects": [
+      {
+        "op": "block",
+        "amount": 5
+      },
+      {
+        "op": "upgrade",
+        "selection": "chosen",
+        "prompt": "选择本场要升级的手牌"
+      }
+    ],
+    "upgrade": {
+      "text": "获得5点护甲，本场升级所有手牌。",
+      "effects": [
+        {
+          "op": "block",
+          "amount": 5
+        },
+        {
+          "op": "upgrade",
+          "selection": "allHand"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "block"
+    ],
+    "visual": {
+      "family": "ward",
+      "icon": "card-art-seal",
+      "background": "card-pattern-color-talisman",
+      "cost": "card-cost-flame",
+      "impact": "guard"
+    }
+  },
+  {
+    "id": "ic_flex",
+    "name": "借神力",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Flex",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "common",
+    "cost": 0,
+    "target": "self",
+    "text": "获得2点力量，回合结束失去2点力量。",
+    "effects": [
+      {
+        "op": "status",
+        "amount": 2,
+        "key": "strength",
+        "target": "self"
+      },
+      {
+        "op": "power",
+        "amount": 2,
+        "id": "temporary_strength_loss"
+      }
+    ],
+    "upgrade": {
+      "text": "获得4点力量，回合结束失去4点力量。",
+      "effects": [
+        {
+          "op": "status",
+          "amount": 4,
+          "key": "strength",
+          "target": "self"
+        },
+        {
+          "op": "power",
+          "amount": 4,
+          "id": "temporary_strength_loss"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "strength"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-seal",
+      "background": "card-pattern-color-bell",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "ic_havoc",
+    "name": "听天命",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Havoc",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "common",
+    "cost": 1,
+    "target": "self",
+    "text": "免费打出抽牌堆顶的牌，然后将它消耗。能力牌正常离场。",
+    "effects": [
+      {
+        "op": "playTop",
+        "exhaust": true
+      }
+    ],
+    "upgrade": {
+      "cost": 0
+    },
+    "keywords": [],
+    "tags": [
+      "exhaust"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-ledger",
+      "background": "card-pattern-color-ledger",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "ic_shrug_it_off",
+    "name": "幽冥步",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Shrug It Off",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "common",
+    "cost": 1,
+    "target": "self",
+    "text": "获得8点护甲，抽1张牌。",
+    "effects": [
+      {
+        "op": "block",
+        "amount": 8
+      },
+      {
+        "op": "draw",
+        "amount": 1
+      }
+    ],
+    "upgrade": {
+      "text": "获得11点护甲，抽1张牌。",
+      "effects": [
+        {
+          "op": "block",
+          "amount": 11
+        },
+        {
+          "op": "draw",
+          "amount": 1
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "block",
+      "draw"
+    ],
+    "visual": {
+      "family": "ward",
+      "icon": "card-art-step",
+      "background": "card-pattern-color-step",
+      "cost": "card-cost-flame",
+      "impact": "guard"
+    }
+  },
+  {
+    "id": "ic_true_grit",
+    "name": "净魂",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "True Grit",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "common",
+    "cost": 1,
+    "target": "self",
+    "text": "获得7点护甲，随机消耗1张其他手牌。",
+    "effects": [
+      {
+        "op": "block",
+        "amount": 7
+      },
+      {
+        "op": "exhaust",
+        "selection": "randomHand"
+      }
+    ],
+    "upgrade": {
+      "text": "获得9点护甲，选择并消耗1张其他手牌。",
+      "effects": [
+        {
+          "op": "block",
+          "amount": 9
+        },
+        {
+          "op": "exhaust",
+          "selection": "chosen",
+          "prompt": "选择要消耗的手牌"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "block",
+      "exhaust"
+    ],
+    "visual": {
+      "family": "ward",
+      "icon": "card-art-lotus",
+      "background": "card-pattern-color-lotus",
+      "cost": "card-cost-flame",
+      "impact": "guard"
+    }
+  },
+  {
+    "id": "ic_warcry",
+    "name": "唤魂",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Warcry",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "common",
+    "cost": 0,
+    "target": "self",
+    "text": "抽1张牌，将1张手牌放回抽牌堆顶。消耗。",
+    "effects": [
+      {
+        "op": "draw",
+        "amount": 1
+      },
+      {
+        "op": "moveCard",
+        "from": "hand",
+        "to": "drawPile",
+        "position": "top",
+        "selection": "chosen",
+        "prompt": "选择1张手牌放回抽牌堆顶"
+      }
+    ],
+    "upgrade": {
+      "text": "抽2张牌，将1张手牌放回抽牌堆顶。消耗。",
+      "effects": [
+        {
+          "op": "draw",
+          "amount": 2
+        },
+        {
+          "op": "moveCard",
+          "from": "hand",
+          "to": "drawPile",
+          "position": "top",
+          "selection": "chosen",
+          "prompt": "选择1张手牌放回抽牌堆顶"
+        }
+      ]
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [
+      "draw",
+      "exhaust"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-bell",
+      "background": "card-pattern-color-ferry",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "ic_battle_trance",
+    "name": "入定",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Battle Trance",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 0,
+    "target": "self",
+    "text": "抽3张牌，本回合不能再抽牌。",
+    "effects": [
+      {
+        "op": "draw",
+        "amount": 3
+      },
+      {
+        "op": "power",
+        "amount": 1,
+        "id": "no_draw"
+      }
+    ],
+    "upgrade": {
+      "text": "抽4张牌，本回合不能再抽牌。",
+      "effects": [
+        {
+          "op": "draw",
+          "amount": 4
+        },
+        {
+          "op": "power",
+          "amount": 1,
+          "id": "no_draw"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "draw"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-mirror",
+      "background": "card-pattern-color-ledger",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "ic_bloodletting",
+    "name": "血祭香",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Bloodletting",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 0,
+    "target": "self",
+    "text": "失去3点生命，获得2香火。",
+    "effects": [
+      {
+        "op": "loseHp",
+        "amount": 3,
+        "cause": "card"
+      },
+      {
+        "op": "energy",
+        "amount": 2
+      }
+    ],
+    "upgrade": {
+      "text": "失去3点生命，获得3香火。",
+      "effects": [
+        {
+          "op": "loseHp",
+          "amount": 3,
+          "cause": "card"
+        },
+        {
+          "op": "energy",
+          "amount": 3
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "energy"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-fire",
+      "background": "card-pattern-color-ferry",
+      "cost": "card-cost-flame",
+      "impact": "fire"
+    }
+  },
+  {
+    "id": "ic_burning_pact",
+    "name": "焚契",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Burning Pact",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "self",
+    "text": "消耗1张其他手牌，抽2张牌。",
+    "effects": [
+      {
+        "op": "exhaust",
+        "selection": "chosen",
+        "prompt": "选择要消耗的手牌"
+      },
+      {
+        "op": "draw",
+        "amount": 2
+      }
+    ],
+    "upgrade": {
+      "text": "消耗1张其他手牌，抽3张牌。",
+      "effects": [
+        {
+          "op": "exhaust",
+          "selection": "chosen",
+          "prompt": "选择要消耗的手牌"
+        },
+        {
+          "op": "draw",
+          "amount": 3
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "exhaust",
+      "draw"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-talisman",
+      "background": "card-pattern-color-ledger",
+      "cost": "card-cost-flame",
+      "impact": "fire"
+    }
+  },
+  {
+    "id": "ic_disarm",
+    "name": "缴械符",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Disarm",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "enemy",
+    "text": "目标失去2点力量。消耗。",
+    "effects": [
+      {
+        "op": "status",
+        "amount": -2,
+        "key": "strength",
+        "target": "enemy"
+      }
+    ],
+    "upgrade": {
+      "text": "目标失去3点力量。消耗。",
+      "effects": [
+        {
+          "op": "status",
+          "amount": -3,
+          "key": "strength",
+          "target": "enemy"
+        }
+      ]
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [],
+    "visual": {
+      "family": "ward",
+      "icon": "card-art-talisman",
+      "background": "card-pattern-color-mirror",
+      "cost": "card-cost-flame",
+      "impact": "curse"
+    }
+  },
+  {
+    "id": "ic_dual_wield",
+    "name": "影双生",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Dual Wield",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "self",
+    "text": "选择手中1张攻击或能力牌，将其1张复制加入手牌。",
+    "effects": [
+      {
+        "op": "copyCard",
+        "selection": "chosen",
+        "types": [
+          "attack",
+          "power"
+        ],
+        "amount": 1,
+        "zone": "hand",
+        "prompt": "选择要复制的攻击或能力牌"
+      }
+    ],
+    "upgrade": {
+      "text": "选择手中1张攻击或能力牌，将其2张复制加入手牌。",
+      "effects": [
+        {
+          "op": "copyCard",
+          "selection": "chosen",
+          "types": [
+            "attack",
+            "power"
+          ],
+          "amount": 2,
+          "zone": "hand",
+          "prompt": "选择要复制的攻击或能力牌"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-mirror",
+      "background": "card-pattern-color-bell",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "ic_entrench",
+    "name": "固魂阵",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Entrench",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 2,
+    "target": "self",
+    "text": "使当前护甲翻倍。",
+    "effects": [
+      {
+        "op": "block",
+        "amount": {
+          "stat": "player.block"
+        },
+        "modified": false
+      }
+    ],
+    "upgrade": {
+      "cost": 1
+    },
+    "keywords": [],
+    "tags": [
+      "block"
+    ],
+    "visual": {
+      "family": "ward",
+      "icon": "card-art-seal",
+      "background": "card-pattern-color-mirror",
+      "cost": "card-cost-flame",
+      "impact": "guard"
+    }
+  },
+  {
+    "id": "ic_flame_barrier",
+    "name": "冥火壁",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Flame Barrier",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 2,
+    "target": "self",
+    "text": "获得12点护甲。直到敌方回合结束，每次受到攻击对攻击者造成4点伤害。",
+    "effects": [
+      {
+        "op": "block",
+        "amount": 12
+      },
+      {
+        "op": "power",
+        "amount": 4,
+        "id": "flame_barrier"
+      }
+    ],
+    "upgrade": {
+      "text": "获得16点护甲。直到敌方回合结束，每次受到攻击对攻击者造成6点伤害。",
+      "effects": [
+        {
+          "op": "block",
+          "amount": 16
+        },
+        {
+          "op": "power",
+          "amount": 6,
+          "id": "flame_barrier"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "block"
+    ],
+    "visual": {
+      "family": "ward",
+      "icon": "card-art-fire",
+      "background": "card-pattern-color-talisman",
+      "cost": "card-cost-flame",
+      "impact": "guard"
+    }
+  },
+  {
+    "id": "ic_ghostly_armor",
+    "name": "阴兵甲",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Ghostly Armor",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "self",
+    "text": "虚无。获得10点护甲。",
+    "effects": [
+      {
+        "op": "block",
+        "amount": 10
+      }
+    ],
+    "upgrade": {
+      "text": "虚无。获得13点护甲。",
+      "effects": [
+        {
+          "op": "block",
+          "amount": 13
+        }
+      ]
+    },
+    "keywords": [
+      "ethereal"
+    ],
+    "tags": [
+      "block"
+    ],
+    "visual": {
+      "family": "ward",
+      "icon": "card-art-talisman",
+      "background": "card-pattern-color-step",
+      "cost": "card-cost-flame",
+      "impact": "guard"
+    }
+  },
+  {
+    "id": "ic_infernal_blade",
+    "name": "阴府赐刃",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Infernal Blade",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "self",
+    "text": "随机将1张攻击牌加入手牌，它本回合费用为0。消耗。",
+    "effects": [
+      {
+        "op": "generateCard",
+        "pool": "attack",
+        "temporaryCost": 0
+      }
+    ],
+    "upgrade": {
+      "cost": 0
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-brush",
+      "background": "card-pattern-color-ferry",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "ic_intimidate",
+    "name": "喝煞",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Intimidate",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 0,
+    "target": "all",
+    "text": "对所有敌人施加1回合虚弱。消耗。",
+    "effects": [
+      {
+        "op": "status",
+        "amount": 1,
+        "key": "weak",
+        "target": "allEnemies"
+      }
+    ],
+    "upgrade": {
+      "text": "对所有敌人施加2回合虚弱。消耗。",
+      "effects": [
+        {
+          "op": "status",
+          "amount": 2,
+          "key": "weak",
+          "target": "allEnemies"
+        }
+      ]
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-bell",
+      "background": "card-pattern-color-bell",
+      "cost": "card-cost-flame",
+      "impact": "curse"
+    }
+  },
+  {
+    "id": "ic_power_through",
+    "name": "带伤守夜",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Power Through",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "self",
+    "text": "获得15点护甲，将2张伤口加入手牌。",
+    "effects": [
+      {
+        "op": "block",
+        "amount": 15
+      },
+      {
+        "op": "addCard",
+        "cardId": "status_wound",
+        "amount": 2,
+        "zone": "hand"
+      }
+    ],
+    "upgrade": {
+      "text": "获得20点护甲，将2张伤口加入手牌。",
+      "effects": [
+        {
+          "op": "block",
+          "amount": 20
+        },
+        {
+          "op": "addCard",
+          "cardId": "status_wound",
+          "amount": 2,
+          "zone": "hand"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "block",
+      "status"
+    ],
+    "visual": {
+      "family": "ward",
+      "icon": "card-art-talisman",
+      "background": "card-pattern-color-mirror",
+      "cost": "card-cost-flame",
+      "impact": "guard"
+    }
+  },
+  {
+    "id": "ic_rage",
+    "name": "战意护身",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Rage",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 0,
+    "target": "self",
+    "text": "本回合每打出1张攻击牌，获得3点护甲。",
+    "effects": [
+      {
+        "op": "power",
+        "amount": 3,
+        "id": "rage"
+      }
+    ],
+    "upgrade": {
+      "text": "本回合每打出1张攻击牌，获得5点护甲。",
+      "effects": [
+        {
+          "op": "power",
+          "amount": 5,
+          "id": "rage"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "block"
+    ],
+    "visual": {
+      "family": "ward",
+      "icon": "card-art-chain",
+      "background": "card-pattern-color-lotus",
+      "cost": "card-cost-flame",
+      "impact": "guard"
+    }
+  },
+  {
+    "id": "ic_second_wind",
+    "name": "弃尘护命",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Second Wind",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "self",
+    "text": "消耗其他所有非攻击手牌，每消耗1张获得5点护甲。",
+    "effects": [
+      {
+        "op": "exhaust",
+        "selection": "nonAttacks",
+        "onEach": [
+          {
+            "op": "block",
+            "amount": 5
+          }
+        ]
+      }
+    ],
+    "upgrade": {
+      "text": "消耗其他所有非攻击手牌，每消耗1张获得7点护甲。",
+      "effects": [
+        {
+          "op": "exhaust",
+          "selection": "nonAttacks",
+          "onEach": [
+            {
+              "op": "block",
+              "amount": 7
+            }
+          ]
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "block",
+      "exhaust"
+    ],
+    "visual": {
+      "family": "ward",
+      "icon": "card-art-lotus",
+      "background": "card-pattern-color-lotus",
+      "cost": "card-cost-flame",
+      "impact": "guard"
+    }
+  },
+  {
+    "id": "ic_seeing_red",
+    "name": "燃香",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Seeing Red",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "self",
+    "text": "获得2香火。消耗。",
+    "effects": [
+      {
+        "op": "energy",
+        "amount": 2
+      }
+    ],
+    "upgrade": {
+      "cost": 0
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [
+      "energy"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-fire",
+      "background": "card-pattern-color-ferry",
+      "cost": "card-cost-flame",
+      "impact": "fire"
+    }
+  },
+  {
+    "id": "ic_sentinel",
+    "name": "守夜傀",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Sentinel",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "self",
+    "text": "获得5点护甲。此牌被消耗时，获得2香火。",
+    "effects": [
+      {
+        "op": "block",
+        "amount": 5
+      }
+    ],
+    "upgrade": {
+      "text": "获得8点护甲。此牌被消耗时，获得3香火。",
+      "effects": [
+        {
+          "op": "block",
+          "amount": 8
+        }
+      ],
+      "onExhaust": [
+        {
+          "op": "energy",
+          "amount": 3
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "block",
+      "exhaust",
+      "energy"
+    ],
+    "visual": {
+      "family": "ward",
+      "icon": "card-art-seal",
+      "background": "card-pattern-color-step",
+      "cost": "card-cost-flame",
+      "impact": "guard"
+    },
+    "onExhaust": [
+      {
+        "op": "energy",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": "ic_shockwave",
+    "name": "荡魂钟",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Shockwave",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 2,
+    "target": "all",
+    "text": "对所有敌人施加3回合虚弱和3回合易伤。消耗。",
+    "effects": [
+      {
+        "op": "status",
+        "amount": 3,
+        "key": "weak",
+        "target": "allEnemies"
+      },
+      {
+        "op": "status",
+        "amount": 3,
+        "key": "exposed",
+        "target": "allEnemies"
+      }
+    ],
+    "upgrade": {
+      "text": "对所有敌人施加5回合虚弱和5回合易伤。消耗。",
+      "effects": [
+        {
+          "op": "status",
+          "amount": 5,
+          "key": "weak",
+          "target": "allEnemies"
+        },
+        {
+          "op": "status",
+          "amount": 5,
+          "key": "exposed",
+          "target": "allEnemies"
+        }
+      ]
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-bell",
+      "background": "card-pattern-color-bell",
+      "cost": "card-cost-flame",
+      "impact": "thunder"
+    }
+  },
+  {
+    "id": "ic_spot_weakness",
+    "name": "照破虚实",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Spot Weakness",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "enemy",
+    "text": "若目标正准备攻击，获得3点力量。",
+    "effects": [
+      {
+        "op": "if",
+        "condition": {
+          "stat": "target.intentAttacks"
+        },
+        "then": [
+          {
+            "op": "status",
+            "amount": 3,
+            "key": "strength",
+            "target": "self"
+          }
+        ],
+        "else": []
+      }
+    ],
+    "upgrade": {
+      "text": "若目标正准备攻击，获得4点力量。",
+      "effects": [
+        {
+          "op": "if",
+          "condition": {
+            "stat": "target.intentAttacks"
+          },
+          "then": [
+            {
+              "op": "status",
+              "amount": 4,
+              "key": "strength",
+              "target": "self"
+            }
+          ],
+          "else": []
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "strength"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-mirror",
+      "background": "card-pattern-color-ledger",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "ic_double_tap",
+    "name": "叠符",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Double Tap",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "rare",
+    "cost": 1,
+    "target": "self",
+    "text": "本回合下一张攻击牌打出2次。",
+    "effects": [
+      {
+        "op": "repeatNext",
+        "amount": 1
+      }
+    ],
+    "upgrade": {
+      "text": "本回合接下来的2张攻击牌各打出2次。",
+      "effects": [
+        {
+          "op": "repeatNext",
+          "amount": 2
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-talisman",
+      "background": "card-pattern-color-bell",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "ic_exhume",
+    "name": "返魂",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Exhume",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "rare",
+    "cost": 1,
+    "target": "self",
+    "text": "将消耗堆中1张非返魂牌加入手牌。消耗。",
+    "effects": [
+      {
+        "op": "moveCard",
+        "from": "exhaust",
+        "to": "hand",
+        "selection": "chosen",
+        "excludeIds": [
+          "ic_exhume"
+        ],
+        "prompt": "选择要唤回的牌（不可选择返魂）"
+      }
+    ],
+    "upgrade": {
+      "cost": 0
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [
+      "exhaust"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-lotus",
+      "background": "card-pattern-color-ferry",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "ic_impervious",
+    "name": "金身护命",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Impervious",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "rare",
+    "cost": 2,
+    "target": "self",
+    "text": "获得30点护甲。消耗。",
+    "effects": [
+      {
+        "op": "block",
+        "amount": 30
+      }
+    ],
+    "upgrade": {
+      "text": "获得40点护甲。消耗。",
+      "effects": [
+        {
+          "op": "block",
+          "amount": 40
+        }
+      ]
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [
+      "block"
+    ],
+    "visual": {
+      "family": "ward",
+      "icon": "card-art-seal",
+      "background": "card-pattern-color-mirror",
+      "cost": "card-cost-flame",
+      "impact": "guard"
+    }
+  },
+  {
+    "id": "ic_limit_break",
+    "name": "破极",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Limit Break",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "rare",
+    "cost": 1,
+    "target": "self",
+    "text": "使力量翻倍。消耗。",
+    "effects": [
+      {
+        "op": "status",
+        "amount": {
+          "stat": "player.strength"
+        },
+        "key": "strength",
+        "target": "self"
+      }
+    ],
+    "upgrade": {
+      "text": "使力量翻倍。",
+      "keywords": []
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [
+      "strength"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-seal",
+      "background": "card-pattern-color-bell",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "ic_offering",
+    "name": "献灯",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Offering",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "skill",
+    "rarity": "rare",
+    "cost": 0,
+    "target": "self",
+    "text": "失去6点生命，获得2香火，抽3张牌。消耗。",
+    "effects": [
+      {
+        "op": "loseHp",
+        "amount": 6,
+        "cause": "card"
+      },
+      {
+        "op": "energy",
+        "amount": 2
+      },
+      {
+        "op": "draw",
+        "amount": 3
+      }
+    ],
+    "upgrade": {
+      "text": "失去6点生命，获得2香火，抽5张牌。消耗。",
+      "effects": [
+        {
+          "op": "loseHp",
+          "amount": 6,
+          "cause": "card"
+        },
+        {
+          "op": "energy",
+          "amount": 2
+        },
+        {
+          "op": "draw",
+          "amount": 5
+        }
+      ]
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [
+      "draw",
+      "energy"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-lotus",
+      "background": "card-pattern-color-ferry",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "ic_combust",
+    "name": "魂火不熄",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Combust",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "power",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "self",
+    "text": "每回合结束时失去1点生命，对所有敌人造成5点效果伤害。",
+    "effects": [
+      {
+        "op": "power",
+        "amount": 1,
+        "id": "combust_cost"
+      },
+      {
+        "op": "power",
+        "amount": 5,
+        "id": "combust_damage"
+      }
+    ],
+    "upgrade": {
+      "text": "每回合结束时失去1点生命，对所有敌人造成7点效果伤害。",
+      "effects": [
+        {
+          "op": "power",
+          "amount": 1,
+          "id": "combust_cost"
+        },
+        {
+          "op": "power",
+          "amount": 7,
+          "id": "combust_damage"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-fire",
+      "background": "card-pattern-color-ferry",
+      "cost": "card-cost-flame",
+      "impact": "fire"
+    }
+  },
+  {
+    "id": "ic_dark_embrace",
+    "name": "幽冥相拥",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Dark Embrace",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "power",
+    "rarity": "uncommon",
+    "cost": 2,
+    "target": "self",
+    "text": "本场每消耗1张牌，抽1张牌。",
+    "effects": [
+      {
+        "op": "power",
+        "amount": 1,
+        "id": "dark_embrace"
+      }
+    ],
+    "upgrade": {
+      "cost": 1
+    },
+    "keywords": [],
+    "tags": [
+      "exhaust",
+      "draw"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-chain",
+      "background": "card-pattern-color-ledger",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "ic_evolve",
+    "name": "化厄",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Evolve",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "power",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "self",
+    "text": "本场每抽到1张状态牌，额外抽1张牌。直接生成不触发。",
+    "effects": [
+      {
+        "op": "power",
+        "amount": 1,
+        "id": "evolve"
+      }
+    ],
+    "upgrade": {
+      "text": "本场每抽到1张状态牌，额外抽2张牌。直接生成不触发。",
+      "effects": [
+        {
+          "op": "power",
+          "amount": 2,
+          "id": "evolve"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "status",
+      "draw"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-lotus",
+      "background": "card-pattern-color-bell",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "ic_feel_no_pain",
+    "name": "无惧阴伤",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Feel No Pain",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "power",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "self",
+    "text": "本场每消耗1张牌，获得3点护甲。",
+    "effects": [
+      {
+        "op": "power",
+        "amount": 3,
+        "id": "feel_no_pain"
+      }
+    ],
+    "upgrade": {
+      "text": "本场每消耗1张牌，获得4点护甲。",
+      "effects": [
+        {
+          "op": "power",
+          "amount": 4,
+          "id": "feel_no_pain"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "block",
+      "exhaust"
+    ],
+    "visual": {
+      "family": "ward",
+      "icon": "card-art-talisman",
+      "background": "card-pattern-color-lotus",
+      "cost": "card-cost-flame",
+      "impact": "guard"
+    }
+  },
+  {
+    "id": "ic_fire_breathing",
+    "name": "吐幽焰",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Fire Breathing",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "power",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "self",
+    "text": "本场每抽到1张状态或诅咒牌，对所有敌人造成6点效果伤害。",
+    "effects": [
+      {
+        "op": "power",
+        "amount": 6,
+        "id": "fire_breathing"
+      }
+    ],
+    "upgrade": {
+      "text": "本场每抽到1张状态或诅咒牌，对所有敌人造成10点效果伤害。",
+      "effects": [
+        {
+          "op": "power",
+          "amount": 10,
+          "id": "fire_breathing"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "status"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-fire",
+      "background": "card-pattern-color-ferry",
+      "cost": "card-cost-flame",
+      "impact": "fire"
+    }
+  },
+  {
+    "id": "ic_inflame",
+    "name": "神威附体",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Inflame",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "power",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "self",
+    "text": "获得2点力量。",
+    "effects": [
+      {
+        "op": "status",
+        "amount": 2,
+        "key": "strength",
+        "target": "self"
+      }
+    ],
+    "upgrade": {
+      "text": "获得3点力量。",
+      "effects": [
+        {
+          "op": "status",
+          "amount": 3,
+          "key": "strength",
+          "target": "self"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "strength"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-seal",
+      "background": "card-pattern-color-bell",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "ic_metallicize",
+    "name": "铜身",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Metallicize",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "power",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "self",
+    "text": "每回合结束时获得3点护甲。",
+    "effects": [
+      {
+        "op": "power",
+        "amount": 3,
+        "id": "metallicize"
+      }
+    ],
+    "upgrade": {
+      "text": "每回合结束时获得4点护甲。",
+      "effects": [
+        {
+          "op": "power",
+          "amount": 4,
+          "id": "metallicize"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "block"
+    ],
+    "visual": {
+      "family": "ward",
+      "icon": "card-art-coin",
+      "background": "card-pattern-color-talisman",
+      "cost": "card-cost-flame",
+      "impact": "guard"
+    }
+  },
+  {
+    "id": "ic_rupture",
+    "name": "血契神力",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Rupture",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "power",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "self",
+    "text": "每次因卡牌效果实际失去生命，获得1点力量。阴债到期不触发。",
+    "effects": [
+      {
+        "op": "power",
+        "amount": 1,
+        "id": "rupture"
+      }
+    ],
+    "upgrade": {
+      "text": "每次因卡牌效果实际失去生命，获得2点力量。阴债到期不触发。",
+      "effects": [
+        {
+          "op": "power",
+          "amount": 2,
+          "id": "rupture"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "strength"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-brush",
+      "background": "card-pattern-color-ledger",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "ic_barricade",
+    "name": "不破法坛",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Barricade",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "power",
+    "rarity": "rare",
+    "cost": 3,
+    "target": "self",
+    "text": "本场回合开始时保留护甲。",
+    "effects": [
+      {
+        "op": "power",
+        "amount": 1,
+        "id": "barricade"
+      }
+    ],
+    "upgrade": {
+      "cost": 2
+    },
+    "keywords": [],
+    "tags": [
+      "block"
+    ],
+    "visual": {
+      "family": "ward",
+      "icon": "card-art-seal",
+      "background": "card-pattern-color-mirror",
+      "cost": "card-cost-flame",
+      "impact": "guard"
+    }
+  },
+  {
+    "id": "ic_berserk",
+    "name": "孤注燃命",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Berserk",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "power",
+    "rarity": "rare",
+    "cost": 0,
+    "target": "self",
+    "text": "自身获得2回合易伤。此后每回合开始额外获得1香火。",
+    "effects": [
+      {
+        "op": "status",
+        "amount": 2,
+        "key": "exposed",
+        "target": "self"
+      },
+      {
+        "op": "power",
+        "amount": 1,
+        "id": "berserk"
+      }
+    ],
+    "upgrade": {
+      "text": "自身获得1回合易伤。此后每回合开始额外获得1香火。",
+      "effects": [
+        {
+          "op": "status",
+          "amount": 1,
+          "key": "exposed",
+          "target": "self"
+        },
+        {
+          "op": "power",
+          "amount": 1,
+          "id": "berserk"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "energy"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-fire",
+      "background": "card-pattern-color-ferry",
+      "cost": "card-cost-flame",
+      "impact": "fire"
+    }
+  },
+  {
+    "id": "ic_brutality",
+    "name": "血引灯",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Brutality",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "power",
+    "rarity": "rare",
+    "cost": 0,
+    "target": "self",
+    "text": "此后每回合开始失去1点生命，抽1张牌。",
+    "effects": [
+      {
+        "op": "power",
+        "amount": 1,
+        "id": "brutality"
+      }
+    ],
+    "upgrade": {
+      "text": "固有。此后每回合开始失去1点生命，抽1张牌。",
+      "keywords": [
+        "innate"
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "draw"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-lotus",
+      "background": "card-pattern-color-ledger",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "ic_corruption",
+    "name": "堕入幽冥",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Corruption",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "power",
+    "rarity": "rare",
+    "cost": 3,
+    "target": "self",
+    "text": "本场术法牌费用变为0，打出后消耗。X费仍使用剩余香火。",
+    "effects": [
+      {
+        "op": "power",
+        "amount": 1,
+        "id": "corruption"
+      }
+    ],
+    "upgrade": {
+      "cost": 2
+    },
+    "keywords": [],
+    "tags": [
+      "exhaust"
+    ],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-ledger",
+      "background": "card-pattern-color-vow",
+      "cost": "card-cost-flame",
+      "impact": "curse"
+    }
+  },
+  {
+    "id": "ic_demon_form",
+    "name": "夜叉化身",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Demon Form",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "power",
+    "rarity": "rare",
+    "cost": 3,
+    "target": "self",
+    "text": "此后每回合开始获得2点力量。",
+    "effects": [
+      {
+        "op": "power",
+        "amount": 2,
+        "id": "demon_form"
+      }
+    ],
+    "upgrade": {
+      "text": "此后每回合开始获得3点力量。",
+      "effects": [
+        {
+          "op": "power",
+          "amount": 3,
+          "id": "demon_form"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "strength"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-seal",
+      "background": "card-pattern-color-bell",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "ic_juggernaut",
+    "name": "镇狱威仪",
+    "source": {
+      "game": "Slay the Spire 1",
+      "character": "Ironclad",
+      "card": "Juggernaut",
+      "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+    },
+    "pool": "ironclad",
+    "type": "power",
+    "rarity": "rare",
+    "cost": 2,
+    "target": "self",
+    "text": "本场每次获得护甲，对随机1名敌人造成5点效果伤害。",
+    "effects": [
+      {
+        "op": "power",
+        "amount": 5,
+        "id": "juggernaut"
+      }
+    ],
+    "upgrade": {
+      "text": "本场每次获得护甲，对随机1名敌人造成7点效果伤害。",
+      "effects": [
+        {
+          "op": "power",
+          "amount": 7,
+          "id": "juggernaut"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "block"
+    ],
+    "visual": {
+      "family": "ward",
+      "icon": "card-art-seal",
+      "background": "card-pattern-color-mirror",
+      "cost": "card-cost-flame",
+      "impact": "thunder"
+    }
+  },
+  {
+    "id": "debt_chain",
+    "name": "勾魂索",
+    "source": {
+      "game": "夜渡·阴债录",
+      "design": "阴债扩展v1"
+    },
+    "pool": "debt",
+    "type": "attack",
+    "rarity": "common",
+    "cost": 1,
+    "target": "enemy",
+    "text": "造成7点伤害；有阴债时额外4点。由此击杀时偿还至多2阴债。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": {
+          "op": "add",
+          "args": [
+            7,
+            {
+              "op": "mul",
+              "args": [
+                4,
+                {
+                  "op": "gt",
+                  "args": [
+                    {
+                      "debt": "total"
+                    },
+                    0
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "target": "enemy"
+      },
+      {
+        "op": "if",
+        "condition": {
+          "stat": "context.lastKilled"
+        },
+        "then": [
+          {
+            "op": "repay",
+            "amount": 2
+          }
+        ],
+        "else": []
+      }
+    ],
+    "upgrade": {
+      "text": "造成10点伤害；有阴债时额外6点。由此击杀时偿还至多2阴债。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": {
+            "op": "add",
+            "args": [
+              10,
+              {
+                "op": "mul",
+                "args": [
+                  6,
+                  {
+                    "op": "gt",
+                    "args": [
+                      {
+                        "debt": "total"
+                      },
+                      0
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "target": "enemy"
+        },
+        {
+          "op": "if",
+          "condition": {
+            "stat": "context.lastKilled"
+          },
+          "then": [
+            {
+              "op": "repay",
+              "amount": 2
+            }
+          ],
+          "else": []
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "debt"
+    ],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-chain",
+      "background": "card-pattern-color-chain",
+      "cost": "card-cost-flame",
+      "impact": "slash"
+    }
+  },
+  {
+    "id": "debt_vow",
+    "name": "还愿符",
+    "source": {
+      "game": "夜渡·阴债录",
+      "design": "阴债扩展v1"
+    },
+    "pool": "debt",
+    "type": "skill",
+    "rarity": "common",
+    "cost": 1,
+    "target": "self",
+    "text": "获得4点护甲，偿还至多2阴债。",
+    "effects": [
+      {
+        "op": "block",
+        "amount": 4
+      },
+      {
+        "op": "repay",
+        "amount": 2
+      }
+    ],
+    "upgrade": {
+      "text": "获得7点护甲，偿还至多3阴债。",
+      "effects": [
+        {
+          "op": "block",
+          "amount": 7
+        },
+        {
+          "op": "repay",
+          "amount": 3
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "debt"
+    ],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-talisman",
+      "background": "card-pattern-color-vow",
+      "cost": "card-cost-flame",
+      "impact": "guard"
+    }
+  },
+  {
+    "id": "debt_seal",
+    "name": "生死签",
+    "source": {
+      "game": "夜渡·阴债录",
+      "design": "阴债扩展v1"
+    },
+    "pool": "debt",
+    "type": "attack",
+    "rarity": "uncommon",
+    "cost": 2,
+    "target": "enemy",
+    "text": "造成16点伤害。若有阴债将在下次巡更到期，额外6点伤害。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": {
+          "op": "add",
+          "args": [
+            16,
+            {
+              "op": "mul",
+              "args": [
+                6,
+                {
+                  "op": "gt",
+                  "args": [
+                    {
+                      "debt": "dueNext"
+                    },
+                    0
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "target": "enemy"
+      }
+    ],
+    "upgrade": {
+      "text": "造成21点伤害。若有阴债将在下次巡更到期，额外8点伤害。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": {
+            "op": "add",
+            "args": [
+              21,
+              {
+                "op": "mul",
+                "args": [
+                  8,
+                  {
+                    "op": "gt",
+                    "args": [
+                      {
+                        "debt": "dueNext"
+                      },
+                      0
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "target": "enemy"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "debt"
+    ],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-seal",
+      "background": "card-pattern-color-seal",
+      "cost": "card-cost-flame",
+      "impact": "curse"
+    }
+  },
+  {
+    "id": "debt_lotus",
+    "name": "莲灯渡",
+    "source": {
+      "game": "夜渡·阴债录",
+      "design": "阴债扩展v1"
+    },
+    "pool": "debt",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "self",
+    "text": "获得8点护甲，偿还至多2阴债。消耗。",
+    "effects": [
+      {
+        "op": "block",
+        "amount": 8
+      },
+      {
+        "op": "repay",
+        "amount": 2
+      }
+    ],
+    "upgrade": {
+      "text": "获得11点护甲，偿还至多3阴债。消耗。",
+      "effects": [
+        {
+          "op": "block",
+          "amount": 11
+        },
+        {
+          "op": "repay",
+          "amount": 3
+        }
+      ]
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [
+      "debt"
+    ],
+    "visual": {
+      "family": "ward",
+      "icon": "card-art-lotus",
+      "background": "card-pattern-color-lotus",
+      "cost": "card-cost-flame",
+      "impact": "guard"
+    }
+  },
+  {
+    "id": "debt_blood",
+    "name": "借命斩",
+    "source": {
+      "game": "夜渡·阴债录",
+      "design": "阴债扩展v1"
+    },
+    "pool": "debt",
+    "type": "attack",
+    "rarity": "common",
+    "cost": 0,
+    "target": "enemy",
+    "text": "造成10点伤害，新增2阴债，于2次巡更后到期。消耗。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 10,
+        "target": "enemy"
+      },
+      {
+        "op": "debt",
+        "amount": 2,
+        "delay": 2
+      }
+    ],
+    "upgrade": {
+      "text": "造成14点伤害，新增2阴债，于2次巡更后到期。消耗。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": 14,
+          "target": "enemy"
+        },
+        {
+          "op": "debt",
+          "amount": 2,
+          "delay": 2
+        }
+      ]
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [
+      "debt"
+    ],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-brush",
+      "background": "card-pattern-color-blood",
+      "cost": "card-cost-flame",
+      "impact": "slash"
+    }
+  },
+  {
+    "id": "debt_ledger",
+    "name": "销账书",
+    "source": {
+      "game": "夜渡·阴债录",
+      "design": "阴债扩展v1"
+    },
+    "pool": "debt",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "self",
+    "text": "偿还至多4阴债，抽2张牌。消耗。",
+    "effects": [
+      {
+        "op": "repay",
+        "amount": 4
+      },
+      {
+        "op": "draw",
+        "amount": 2
+      }
+    ],
+    "upgrade": {
+      "text": "偿还至多6阴债，抽3张牌。消耗。",
+      "effects": [
+        {
+          "op": "repay",
+          "amount": 6
+        },
+        {
+          "op": "draw",
+          "amount": 3
+        }
+      ]
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [
+      "debt"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-ledger",
+      "background": "card-pattern-color-ledger",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "debt_mirror",
+    "name": "照骨镜",
+    "source": {
+      "game": "夜渡·阴债录",
+      "design": "阴债扩展v1"
+    },
+    "pool": "debt",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "self",
+    "text": "获得7点护甲；若本回合已实际偿债，再获得6点护甲。",
+    "effects": [
+      {
+        "op": "block",
+        "amount": 7
+      },
+      {
+        "op": "if",
+        "condition": {
+          "op": "gt",
+          "args": [
+            {
+              "debt": "repaidTurn"
+            },
+            0
+          ]
+        },
+        "then": [
+          {
+            "op": "block",
+            "amount": 6
+          }
+        ],
+        "else": []
+      }
+    ],
+    "upgrade": {
+      "text": "获得10点护甲；若本回合已实际偿债，再获得8点护甲。",
+      "effects": [
+        {
+          "op": "block",
+          "amount": 10
+        },
+        {
+          "op": "if",
+          "condition": {
+            "op": "gt",
+            "args": [
+              {
+                "debt": "repaidTurn"
+              },
+              0
+            ]
+          },
+          "then": [
+            {
+              "op": "block",
+              "amount": 8
+            }
+          ],
+          "else": []
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "debt"
+    ],
+    "visual": {
+      "family": "ward",
+      "icon": "card-art-mirror",
+      "background": "card-pattern-color-mirror",
+      "cost": "card-cost-flame",
+      "impact": "guard"
+    }
+  },
+  {
+    "id": "debt_ferry",
+    "name": "摆渡钱",
+    "source": {
+      "game": "夜渡·阴债录",
+      "design": "阴债扩展v1"
+    },
+    "pool": "debt",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 0,
+    "target": "self",
+    "text": "偿还至多2阴债。本牌实际偿还大于0时，获得1香火。消耗。",
+    "effects": [
+      {
+        "op": "repay",
+        "amount": 2
+      },
+      {
+        "op": "if",
+        "condition": {
+          "op": "gt",
+          "args": [
+            {
+              "stat": "context.lastPaid"
+            },
+            0
+          ]
+        },
+        "then": [
+          {
+            "op": "energy",
+            "amount": 1
+          }
+        ],
+        "else": []
+      }
+    ],
+    "upgrade": {
+      "text": "偿还至多3阴债。本牌实际偿还大于0时，获得2香火。消耗。",
+      "effects": [
+        {
+          "op": "repay",
+          "amount": 3
+        },
+        {
+          "op": "if",
+          "condition": {
+            "op": "gt",
+            "args": [
+              {
+                "stat": "context.lastPaid"
+              },
+              0
+            ]
+          },
+          "then": [
+            {
+              "op": "energy",
+              "amount": 2
+            }
+          ],
+          "else": []
+        }
+      ]
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [
+      "debt"
+    ],
+    "visual": {
+      "family": "spirit",
+      "icon": "card-art-coin",
+      "background": "card-pattern-color-ferry",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "debt_verdict",
+    "name": "阎罗敕令",
+    "source": {
+      "game": "夜渡·阴债录",
+      "design": "阴债扩展v1"
+    },
+    "pool": "debt",
+    "type": "attack",
+    "rarity": "rare",
+    "cost": 3,
+    "target": "enemy",
+    "text": "造成24点伤害。本场每实际偿还1阴债额外2点，额外至多16点。消耗。",
+    "effects": [
+      {
+        "op": "damage",
+        "amount": {
+          "op": "add",
+          "args": [
+            24,
+            {
+              "op": "min",
+              "args": [
+                16,
+                {
+                  "op": "mul",
+                  "args": [
+                    2,
+                    {
+                      "debt": "repaidCombat"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "target": "enemy"
+      }
+    ],
+    "upgrade": {
+      "text": "造成32点伤害。本场每实际偿还1阴债额外2点，额外至多24点。消耗。",
+      "effects": [
+        {
+          "op": "damage",
+          "amount": {
+            "op": "add",
+            "args": [
+              32,
+              {
+                "op": "min",
+                "args": [
+                  24,
+                  {
+                    "op": "mul",
+                    "args": [
+                      2,
+                      {
+                        "debt": "repaidCombat"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "target": "enemy"
+        }
+      ]
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [
+      "debt"
+    ],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-seal",
+      "background": "card-pattern-color-verdict",
+      "cost": "card-cost-flame",
+      "impact": "curse"
+    }
+  },
+  {
+    "id": "debt_loan",
+    "name": "借火契",
+    "source": {
+      "game": "夜渡·阴债录",
+      "design": "阴债扩展v1"
+    },
+    "pool": "debt",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 0,
+    "target": "self",
+    "text": "获得2香火，新增4阴债，于2次巡更后到期。消耗。",
+    "effects": [
+      {
+        "op": "energy",
+        "amount": 2
+      },
+      {
+        "op": "debt",
+        "amount": 4,
+        "delay": 2
+      }
+    ],
+    "upgrade": {
+      "text": "获得3香火，新增4阴债，于2次巡更后到期。消耗。",
+      "effects": [
+        {
+          "op": "energy",
+          "amount": 3
+        },
+        {
+          "op": "debt",
+          "amount": 4,
+          "delay": 2
+        }
+      ]
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [
+      "debt"
+    ],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-fire",
+      "background": "card-pattern-color-blood",
+      "cost": "card-cost-flame",
+      "impact": "fire"
+    }
+  },
+  {
+    "id": "debt_delay",
+    "name": "延灯符",
+    "source": {
+      "game": "夜渡·阴债录",
+      "design": "阴债扩展v1"
+    },
+    "pool": "debt",
+    "type": "skill",
+    "rarity": "uncommon",
+    "cost": 1,
+    "target": "self",
+    "text": "将最早到期且未延期的1笔阴债延后1次巡更。每笔债整个冒险只能延期一次。消耗。",
+    "effects": [
+      {
+        "op": "delayDebt",
+        "amount": 1
+      }
+    ],
+    "upgrade": {
+      "cost": 0
+    },
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [
+      "debt"
+    ],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-talisman",
+      "background": "card-pattern-color-vow",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    },
+    "playCondition": {
+      "op": "gt",
+      "args": [
+        {
+          "debt": "eligibleDelay"
+        },
+        0
+      ]
+    },
+    "playConditionText": "需要至少一笔从未延期的阴债。"
+  },
+  {
+    "id": "debt_register",
+    "name": "司债录",
+    "source": {
+      "game": "夜渡·阴债录",
+      "design": "阴债扩展v1"
+    },
+    "pool": "debt",
+    "type": "power",
+    "rarity": "rare",
+    "cost": 1,
+    "target": "self",
+    "text": "本场每回合第一次实际偿还阴债时，抽1张牌。",
+    "effects": [
+      {
+        "op": "power",
+        "amount": 1,
+        "id": "debt_register"
+      }
+    ],
+    "upgrade": {
+      "text": "本场每回合第一次实际偿还阴债时，抽2张牌。",
+      "effects": [
+        {
+          "op": "power",
+          "amount": 2,
+          "id": "debt_register"
+        }
+      ]
+    },
+    "keywords": [],
+    "tags": [
+      "debt"
+    ],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-ledger",
+      "background": "card-pattern-color-verdict",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "status_slimed",
+    "name": "黏液",
+    "source": {
+      "game": "Slay the Spire 1",
+      "category": "status"
+    },
+    "pool": "status",
+    "type": "status",
+    "rarity": "special",
+    "cost": 1,
+    "target": "self",
+    "text": "花费1香火消耗此牌。",
+    "effects": [],
+    "keywords": [
+      "exhaust"
+    ],
+    "tags": [],
+    "visual": {
+      "family": "oath",
+      "icon": "enemy-acid",
+      "background": "card-pattern-color-vow",
+      "cost": "card-cost-flame",
+      "impact": "curse"
+    }
+  },
+  {
+    "id": "status_dazed",
+    "name": "眩晕",
+    "source": {
+      "game": "Slay the Spire 1",
+      "category": "status"
+    },
+    "pool": "status",
+    "type": "status",
+    "rarity": "special",
+    "cost": null,
+    "target": "self",
+    "text": "无法打出。虚无：回合结束仍在手中时消耗。",
+    "effects": [],
+    "keywords": [
+      "unplayable",
+      "ethereal"
+    ],
+    "tags": [],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-bell",
+      "background": "card-pattern-color-chain",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    }
+  },
+  {
+    "id": "status_burn",
+    "name": "灼伤",
+    "source": {
+      "game": "Slay the Spire 1",
+      "category": "status"
+    },
+    "pool": "status",
+    "type": "status",
+    "rarity": "special",
+    "cost": null,
+    "target": "self",
+    "text": "无法打出。回合结束仍在手中时，受到2点可被护甲抵挡的伤害。",
+    "effects": [],
+    "keywords": [
+      "unplayable"
+    ],
+    "tags": [],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-fire",
+      "background": "card-pattern-color-blood",
+      "cost": "card-cost-flame",
+      "impact": "fire"
+    },
+    "onHandEnd": [
+      {
+        "op": "damage",
+        "amount": 2,
+        "target": "self",
+        "attack": false,
+        "cause": "card"
+      }
+    ]
+  },
+  {
+    "id": "status_burn_plus",
+    "name": "灼伤·烈",
+    "source": {
+      "game": "Slay the Spire 1",
+      "category": "status"
+    },
+    "pool": "status",
+    "type": "status",
+    "rarity": "special",
+    "cost": null,
+    "target": "self",
+    "text": "无法打出。回合结束仍在手中时，受到4点可被护甲抵挡的伤害。",
+    "effects": [],
+    "keywords": [
+      "unplayable"
+    ],
+    "tags": [],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-fire",
+      "background": "card-pattern-color-verdict",
+      "cost": "card-cost-flame",
+      "impact": "fire"
+    },
+    "onHandEnd": [
+      {
+        "op": "damage",
+        "amount": 4,
+        "target": "self",
+        "attack": false,
+        "cause": "card"
+      }
+    ]
+  },
+  {
+    "id": "status_wound",
+    "name": "伤口",
+    "source": {
+      "game": "Slay the Spire 1",
+      "category": "status"
+    },
+    "pool": "status",
+    "type": "status",
+    "rarity": "special",
+    "cost": null,
+    "target": "self",
+    "text": "无法打出。",
+    "effects": [],
+    "keywords": [
+      "unplayable"
+    ],
+    "tags": [],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-talisman",
+      "background": "card-pattern-color-blood",
+      "cost": "card-cost-flame",
+      "impact": "curse"
+    }
+  },
+  {
+    "id": "status_void",
+    "name": "空虚",
+    "source": {
+      "game": "Slay the Spire 1",
+      "category": "status"
+    },
+    "pool": "status",
+    "type": "status",
+    "rarity": "special",
+    "cost": null,
+    "target": "self",
+    "text": "无法打出。虚无。抽到此牌时失去1香火。",
+    "effects": [],
+    "keywords": [
+      "unplayable",
+      "ethereal"
+    ],
+    "tags": [],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-mirror",
+      "background": "card-pattern-color-chain",
+      "cost": "card-cost-flame",
+      "impact": "soul"
+    },
+    "onDraw": [
+      {
+        "op": "energy",
+        "amount": -1
+      }
+    ]
+  },
+  {
+    "id": "curse_injury",
+    "name": "业障",
+    "source": {
+      "game": "Slay the Spire 1",
+      "category": "curse"
+    },
+    "pool": "curse",
+    "type": "curse",
+    "rarity": "special",
+    "cost": null,
+    "target": "self",
+    "text": "无法打出。",
+    "effects": [],
+    "keywords": [
+      "unplayable"
+    ],
+    "tags": [],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-ledger",
+      "background": "card-pattern-color-vow",
+      "cost": "card-cost-flame",
+      "impact": "curse"
+    }
+  },
+  {
+    "id": "curse_regret",
+    "name": "悔念",
+    "source": {
+      "game": "Slay the Spire 1",
+      "category": "curse"
+    },
+    "pool": "curse",
+    "type": "curse",
+    "rarity": "special",
+    "cost": null,
+    "target": "self",
+    "text": "无法打出。回合结束时，每有1张手牌失去1点生命。",
+    "effects": [],
+    "keywords": [
+      "unplayable"
+    ],
+    "tags": [],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-mirror",
+      "background": "card-pattern-color-vow",
+      "cost": "card-cost-flame",
+      "impact": "curse"
+    },
+    "onHandEnd": [
+      {
+        "op": "loseHp",
+        "amount": {
+          "count": {
+            "zone": "hand"
+          }
+        },
+        "cause": "card"
+      }
+    ]
+  },
+  {
+    "id": "curse_doubt",
+    "name": "疑惧",
+    "source": {
+      "game": "Slay the Spire 1",
+      "category": "curse"
+    },
+    "pool": "curse",
+    "type": "curse",
+    "rarity": "special",
+    "cost": null,
+    "target": "self",
+    "text": "无法打出。回合结束时自身获得1回合虚弱。",
+    "effects": [],
+    "keywords": [
+      "unplayable"
+    ],
+    "tags": [],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-bell",
+      "background": "card-pattern-color-chain",
+      "cost": "card-cost-flame",
+      "impact": "curse"
+    },
+    "onHandEnd": [
+      {
+        "op": "status",
+        "amount": 1,
+        "key": "weak",
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "id": "curse_shame",
+    "name": "蒙羞",
+    "source": {
+      "game": "Slay the Spire 1",
+      "category": "curse"
+    },
+    "pool": "curse",
+    "type": "curse",
+    "rarity": "special",
+    "cost": null,
+    "target": "self",
+    "text": "无法打出。回合结束时自身获得1回合脆弱。",
+    "effects": [],
+    "keywords": [
+      "unplayable"
+    ],
+    "tags": [],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-seal",
+      "background": "card-pattern-color-seal",
+      "cost": "card-cost-flame",
+      "impact": "curse"
+    },
+    "onHandEnd": [
+      {
+        "op": "status",
+        "amount": 1,
+        "key": "frail",
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "id": "curse_decay",
+    "name": "腐咒",
+    "source": {
+      "game": "Slay the Spire 1",
+      "category": "curse"
+    },
+    "pool": "curse",
+    "type": "curse",
+    "rarity": "special",
+    "cost": null,
+    "target": "self",
+    "text": "无法打出。回合结束时，受到2点可被护甲抵挡的伤害。",
+    "effects": [],
+    "keywords": [
+      "unplayable"
+    ],
+    "tags": [],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-lotus",
+      "background": "card-pattern-color-vow",
+      "cost": "card-cost-flame",
+      "impact": "curse"
+    },
+    "onHandEnd": [
+      {
+        "op": "damage",
+        "amount": 2,
+        "target": "self",
+        "attack": false,
+        "cause": "card"
+      }
+    ]
+  },
+  {
+    "id": "curse_clumsy",
+    "name": "踉跄",
+    "source": {
+      "game": "Slay the Spire 1",
+      "category": "curse"
+    },
+    "pool": "curse",
+    "type": "curse",
+    "rarity": "special",
+    "cost": null,
+    "target": "self",
+    "text": "无法打出。虚无。",
+    "effects": [],
+    "keywords": [
+      "unplayable",
+      "ethereal"
+    ],
+    "tags": [],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-step",
+      "background": "card-pattern-color-chain",
+      "cost": "card-cost-flame",
+      "impact": "curse"
+    }
+  },
+  {
+    "id": "curse_writhe",
+    "name": "缠身",
+    "source": {
+      "game": "Slay the Spire 1",
+      "category": "curse"
+    },
+    "pool": "curse",
+    "type": "curse",
+    "rarity": "special",
+    "cost": null,
+    "target": "self",
+    "text": "固有。无法打出。",
+    "effects": [],
+    "keywords": [
+      "innate",
+      "unplayable"
+    ],
+    "tags": [],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-chain",
+      "background": "card-pattern-color-chain",
+      "cost": "card-cost-flame",
+      "impact": "curse"
+    }
+  },
+  {
+    "id": "curse_pain",
+    "name": "苦痛",
+    "source": {
+      "game": "Slay the Spire 1",
+      "category": "curse"
+    },
+    "pool": "curse",
+    "type": "curse",
+    "rarity": "special",
+    "cost": null,
+    "target": "self",
+    "text": "无法打出。在手中时，每打出其他牌失去1点生命。",
+    "effects": [],
+    "keywords": [
+      "unplayable"
+    ],
+    "tags": [],
+    "visual": {
+      "family": "oath",
+      "icon": "card-art-brush",
+      "background": "card-pattern-color-blood",
+      "cost": "card-cost-flame",
+      "impact": "curse"
+    },
+    "triggers": [
+      {
+        "event": "cardPlayed",
+        "zones": [
+          "hand"
+        ],
+        "effects": [
+          {
+            "op": "loseHp",
+            "amount": 1,
+            "cause": "card"
+          }
+        ]
+      }
+    ]
+  }
+]

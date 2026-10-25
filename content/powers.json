@@ -1,0 +1,442 @@
+[
+  {
+    "id": "temporary_strength_loss",
+    "name": "借力归还",
+    "description": "回合结束失去对应力量。",
+    "triggers": [
+      {
+        "event": "turnEnd",
+        "effects": [
+          {
+            "op": "status",
+            "amount": {
+              "op": "mul",
+              "args": [
+                -1,
+                {
+                  "stat": "power.amount"
+                }
+              ]
+            },
+            "key": "strength",
+            "target": "self"
+          }
+        ]
+      }
+    ],
+    "expires": "turnEnd",
+    "debuff": true
+  },
+  {
+    "id": "no_draw",
+    "name": "封念",
+    "description": "本回合不能抽牌。",
+    "triggers": [],
+    "expires": "handEnd",
+    "debuff": true,
+    "modifiers": {
+      "noDraw": true
+    }
+  },
+  {
+    "id": "flame_barrier",
+    "name": "冥火反击",
+    "description": "受到攻击后，对攻击者造成固定反伤。",
+    "triggers": [
+      {
+        "event": "attacked",
+        "effects": [
+          {
+            "op": "damage",
+            "amount": {
+              "stat": "power.amount"
+            },
+            "target": "attacker",
+            "attack": false
+          }
+        ],
+        "when": {
+          "stat": "event.attack"
+        }
+      }
+    ],
+    "expires": "roundEnd"
+  },
+  {
+    "id": "rage",
+    "name": "战意护身",
+    "description": "每打出攻击牌获得固定护甲。",
+    "triggers": [
+      {
+        "event": "cardPlayed",
+        "effects": [
+          {
+            "op": "block",
+            "amount": {
+              "stat": "power.amount"
+            },
+            "modified": false
+          }
+        ],
+        "when": {
+          "op": "eq",
+          "args": [
+            {
+              "stat": "event.cardType"
+            },
+            "attack"
+          ]
+        }
+      }
+    ],
+    "expires": "turnEnd"
+  },
+  {
+    "id": "combust_cost",
+    "name": "魂火燃命",
+    "description": "回合结束支付魂火生命。",
+    "triggers": [
+      {
+        "event": "turnEnd",
+        "effects": [
+          {
+            "op": "loseHp",
+            "amount": {
+              "stat": "power.amount"
+            },
+            "cause": "card"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "combust_damage",
+    "name": "魂火焚敌",
+    "description": "回合结束造成全体固定伤害。",
+    "triggers": [
+      {
+        "event": "turnEnd",
+        "effects": [
+          {
+            "op": "damage",
+            "amount": {
+              "stat": "power.amount"
+            },
+            "target": "allEnemies",
+            "attack": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dark_embrace",
+    "name": "幽冥相拥",
+    "description": "每次消耗卡牌后抽牌。",
+    "triggers": [
+      {
+        "event": "cardExhausted",
+        "effects": [
+          {
+            "op": "draw",
+            "amount": {
+              "stat": "power.amount"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "evolve",
+    "name": "化厄",
+    "description": "抽到状态牌时额外抽牌。",
+    "triggers": [
+      {
+        "event": "cardDrawn",
+        "effects": [
+          {
+            "op": "draw",
+            "amount": {
+              "stat": "power.amount"
+            }
+          }
+        ],
+        "when": {
+          "op": "eq",
+          "args": [
+            {
+              "stat": "event.cardType"
+            },
+            "status"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "feel_no_pain",
+    "name": "无惧阴伤",
+    "description": "每次消耗卡牌获得固定护甲。",
+    "triggers": [
+      {
+        "event": "cardExhausted",
+        "effects": [
+          {
+            "op": "block",
+            "amount": {
+              "stat": "power.amount"
+            },
+            "modified": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fire_breathing",
+    "name": "吐幽焰",
+    "description": "抽到状态或诅咒时造成全体固定伤害。",
+    "triggers": [
+      {
+        "event": "cardDrawn",
+        "effects": [
+          {
+            "op": "damage",
+            "amount": {
+              "stat": "power.amount"
+            },
+            "target": "allEnemies",
+            "attack": false
+          }
+        ],
+        "when": {
+          "op": "or",
+          "args": [
+            {
+              "op": "eq",
+              "args": [
+                {
+                  "stat": "event.cardType"
+                },
+                "status"
+              ]
+            },
+            {
+              "op": "eq",
+              "args": [
+                {
+                  "stat": "event.cardType"
+                },
+                "curse"
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "metallicize",
+    "name": "铜身",
+    "description": "回合结束获得固定护甲。",
+    "triggers": [
+      {
+        "event": "turnEnd",
+        "effects": [
+          {
+            "op": "block",
+            "amount": {
+              "stat": "power.amount"
+            },
+            "modified": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rupture",
+    "name": "血契神力",
+    "description": "卡牌造成实际生命损失时增加力量。",
+    "triggers": [
+      {
+        "event": "hpLost",
+        "effects": [
+          {
+            "op": "status",
+            "amount": {
+              "stat": "power.amount"
+            },
+            "key": "strength",
+            "target": "self"
+          }
+        ],
+        "when": {
+          "op": "and",
+          "args": [
+            {
+              "op": "eq",
+              "args": [
+                {
+                  "stat": "event.cause"
+                },
+                "card"
+              ]
+            },
+            {
+              "op": "gt",
+              "args": [
+                {
+                  "stat": "event.hpLoss"
+                },
+                0
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "barricade",
+    "name": "不破法坛",
+    "description": "回合开始保留护甲。",
+    "triggers": [],
+    "modifiers": {
+      "retainBlock": true
+    }
+  },
+  {
+    "id": "berserk",
+    "name": "孤注燃命",
+    "description": "每回合开始增加香火。",
+    "triggers": [
+      {
+        "event": "turnStart",
+        "effects": [
+          {
+            "op": "energy",
+            "amount": {
+              "stat": "power.amount"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "brutality",
+    "name": "血引灯",
+    "description": "回合开始失去生命并抽牌。",
+    "triggers": [
+      {
+        "event": "turnStart",
+        "effects": [
+          {
+            "op": "loseHp",
+            "amount": {
+              "stat": "power.amount"
+            },
+            "cause": "card"
+          },
+          {
+            "op": "draw",
+            "amount": {
+              "stat": "power.amount"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "corruption",
+    "name": "堕入幽冥",
+    "description": "固定费用术法变为零费，打出术法会消耗。",
+    "triggers": [],
+    "modifiers": {
+      "skillCostZero": true,
+      "exhaustSkills": true
+    }
+  },
+  {
+    "id": "demon_form",
+    "name": "夜叉化身",
+    "description": "回合开始增加力量。",
+    "triggers": [
+      {
+        "event": "turnStart",
+        "effects": [
+          {
+            "op": "status",
+            "amount": {
+              "stat": "power.amount"
+            },
+            "key": "strength",
+            "target": "self"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "juggernaut",
+    "name": "镇狱威仪",
+    "description": "每次获得护甲，对随机敌人造成固定伤害。",
+    "triggers": [
+      {
+        "event": "blockGained",
+        "effects": [
+          {
+            "op": "damage",
+            "amount": {
+              "stat": "power.amount"
+            },
+            "target": "randomEnemy",
+            "attack": false
+          }
+        ],
+        "when": {
+          "op": "gt",
+          "args": [
+            {
+              "stat": "event.amount"
+            },
+            0
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "debt_register",
+    "name": "司债录",
+    "description": "每回合第一次实际偿债时抽牌。",
+    "triggers": [
+      {
+        "event": "debtRepaid",
+        "effects": [
+          {
+            "op": "draw",
+            "amount": {
+              "stat": "power.amount"
+            }
+          }
+        ],
+        "id": "first_actual_repayment",
+        "limit": "oncePerTurn",
+        "when": {
+          "op": "gt",
+          "args": [
+            {
+              "stat": "event.amount"
+            },
+            0
+          ]
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,496 @@
+{
+  "date": "2026-10-25",
+  "purpose": "卡牌功能对齐前的当前源码审计；只创建内存中的全新样本，不读取或修改浏览器存档。",
+  "status": "research-only-no-gameplay-change",
+  "sourceHashes": {
+    "src/card-defs.js": "95966c952e9a60d8c90605718d44638861f6e5a23fbf9b748c692a93407b8b88",
+    "src/act1-engine.js": "7df897d682eb497f1ffa4d897c8c7fabdd4c5a848e361395a91f844a084efc71",
+    "src/progression.js": "69ea507edfc81999c7efa6daf7a493259748838e8ef806e4d9be1fe9715a5c8b",
+    "src/modes.js": "2250ca9c9175ddd40a2b906d0144be11774ea0cdfac1683afaa76d342f245763"
+  },
+  "definitions": {
+    "total": 24,
+    "byType": {
+      "attack": 11,
+      "skill": 9,
+      "status": 4
+    },
+    "cards": [
+      {
+        "id": "brush",
+        "name": "判官笔",
+        "type": "attack",
+        "cost": 1,
+        "upgradedCost": 1,
+        "description": "造成 7 点伤害。",
+        "upgradedDescription": "造成 10 点伤害。",
+        "target": "enemy",
+        "exhaust": false,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "talisman",
+        "name": "镇魂符",
+        "type": "skill",
+        "cost": 1,
+        "upgradedCost": 1,
+        "description": "获得 6 点护甲。",
+        "upgradedDescription": "获得 9 点护甲。",
+        "target": "self",
+        "exhaust": false,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "chain",
+        "name": "勾魂索",
+        "type": "attack",
+        "cost": 1,
+        "upgradedCost": 1,
+        "description": "造成 7 点伤害；有阴债时额外造成 4 点。击败敌人时偿还 2 点阴债。",
+        "upgradedDescription": "造成 10 点伤害；有阴债时额外造成 6 点。击败敌人时偿还 2 点阴债。",
+        "target": "enemy",
+        "exhaust": false,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "vow",
+        "name": "还愿符",
+        "type": "skill",
+        "cost": 1,
+        "upgradedCost": 1,
+        "description": "获得 4 点护甲，偿还 2 点阴债。",
+        "upgradedDescription": "获得 7 点护甲，偿还 3 点阴债。",
+        "target": "self",
+        "exhaust": false,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "step",
+        "name": "幽冥步",
+        "type": "skill",
+        "cost": 1,
+        "upgradedCost": 1,
+        "description": "获得 5 点护甲，抽 1 张牌。",
+        "upgradedDescription": "获得 8 点护甲，抽 1 张牌。",
+        "target": "self",
+        "exhaust": false,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "coin",
+        "name": "透骨钱",
+        "type": "attack",
+        "cost": 0,
+        "upgradedCost": 0,
+        "description": "造成 3 点伤害，抽 1 张牌。消耗。",
+        "upgradedDescription": "造成 5 点伤害，抽 1 张牌。消耗。",
+        "target": "enemy",
+        "exhaust": true,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "fire",
+        "name": "业火符",
+        "type": "attack",
+        "cost": 1,
+        "upgradedCost": 1,
+        "description": "造成 5 点伤害，施加 4 层业火。业火在回合结束时造成等量伤害，随后减少 1 层。",
+        "upgradedDescription": "造成 8 点伤害，施加 6 层业火。",
+        "target": "enemy",
+        "exhaust": false,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "bell",
+        "name": "摄魂铃",
+        "type": "skill",
+        "cost": 1,
+        "upgradedCost": 1,
+        "description": "获得 3 点护甲，施加 2 回合易伤。易伤使攻击伤害提高 50%。",
+        "upgradedDescription": "获得 5 点护甲，施加 3 回合易伤。",
+        "target": "enemy",
+        "exhaust": false,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "seal",
+        "name": "生死签",
+        "type": "attack",
+        "cost": 2,
+        "upgradedCost": 2,
+        "description": "造成 16 点伤害；有阴债时额外造成 6 点。",
+        "upgradedDescription": "造成 21 点伤害；有阴债时额外造成 8 点。",
+        "target": "enemy",
+        "exhaust": false,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "lotus",
+        "name": "莲灯渡",
+        "type": "skill",
+        "cost": 1,
+        "upgradedCost": 1,
+        "description": "获得 8 点护甲，偿还 2 点阴债。消耗。",
+        "upgradedDescription": "获得 11 点护甲，偿还 3 点阴债。消耗。",
+        "target": "self",
+        "exhaust": true,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "blood",
+        "name": "借命斩",
+        "type": "attack",
+        "cost": 0,
+        "upgradedCost": 0,
+        "description": "造成 10 点伤害，欠下 2 点阴债，于两个回合后到期。消耗。",
+        "upgradedDescription": "造成 14 点伤害，欠下 2 点阴债，于两个回合后到期。消耗。",
+        "target": "enemy",
+        "exhaust": true,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "ledger",
+        "name": "销账书",
+        "type": "skill",
+        "cost": 1,
+        "upgradedCost": 1,
+        "description": "偿还 4 点阴债，抽 2 张牌。消耗。",
+        "upgradedDescription": "偿还 6 点阴债，抽 3 张牌。消耗。",
+        "target": "self",
+        "exhaust": true,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "mirror",
+        "name": "照骨镜",
+        "type": "skill",
+        "cost": 1,
+        "upgradedCost": 1,
+        "description": "获得 7 点护甲；本回合已偿还过阴债时，再获得 6 点护甲。",
+        "upgradedDescription": "获得 10 点护甲；本回合已偿债时再获得 8 点。",
+        "target": "self",
+        "exhaust": false,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "ferry",
+        "name": "摆渡钱",
+        "type": "skill",
+        "cost": 0,
+        "upgradedCost": 0,
+        "description": "偿还 2 点阴债，获得 1 点香火。消耗。",
+        "upgradedDescription": "偿还 3 点阴债，获得 2 点香火。消耗。",
+        "target": "self",
+        "exhaust": true,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "verdict",
+        "name": "阎罗敕令",
+        "type": "attack",
+        "cost": 3,
+        "upgradedCost": 3,
+        "description": "造成 24 点伤害；每点阴债额外造成 2 点，最多额外 16 点。消耗。",
+        "upgradedDescription": "造成 32 点伤害；每点阴债额外造成 2 点，最多额外 24 点。消耗。",
+        "target": "enemy",
+        "exhaust": true,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "a_strike",
+        "name": "斩魂",
+        "type": "attack",
+        "cost": 1,
+        "upgradedCost": 1,
+        "description": "造成 6 点伤害。",
+        "upgradedDescription": "造成 9 点伤害。",
+        "target": "enemy",
+        "exhaust": false,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "a_defend",
+        "name": "守灯",
+        "type": "skill",
+        "cost": 1,
+        "upgradedCost": 1,
+        "description": "获得 5 点护甲。",
+        "upgradedDescription": "获得 8 点护甲。",
+        "target": "self",
+        "exhaust": false,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "a_bash",
+        "name": "破煞",
+        "type": "attack",
+        "cost": 2,
+        "upgradedCost": 2,
+        "description": "造成 8 点伤害，施加 2 回合易伤。",
+        "upgradedDescription": "造成 10 点伤害，施加 3 回合易伤。",
+        "target": "enemy",
+        "exhaust": false,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "a_cleave",
+        "name": "横扫阴风",
+        "type": "attack",
+        "cost": 1,
+        "upgradedCost": 1,
+        "description": "对所有敌人造成 8 点伤害。",
+        "upgradedDescription": "对所有敌人造成 11 点伤害。",
+        "target": "all",
+        "exhaust": false,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "a_flame",
+        "name": "焚纸送魂",
+        "type": "attack",
+        "cost": 2,
+        "upgradedCost": 2,
+        "description": "对所有敌人造成 14 点伤害。将 1 张灼伤放入弃牌堆。",
+        "upgradedDescription": "对所有敌人造成 18 点伤害。将 1 张灼伤放入弃牌堆。",
+        "target": "all",
+        "exhaust": false,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "a_slimed",
+        "name": "黏液",
+        "type": "status",
+        "cost": 1,
+        "upgradedCost": 1,
+        "description": "消耗。清理黏液会占用香火。",
+        "upgradedDescription": "消耗。清理黏液会占用香火。",
+        "target": "self",
+        "exhaust": true,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "a_dazed",
+        "name": "眩晕",
+        "type": "status",
+        "cost": null,
+        "upgradedCost": null,
+        "description": "无法打出。虚无：回合结束时仍在手中便消耗。",
+        "upgradedDescription": "无法打出。虚无：回合结束时仍在手中便消耗。",
+        "target": "self",
+        "exhaust": false,
+        "ethereal": true,
+        "hasRarity": false
+      },
+      {
+        "id": "a_burn",
+        "name": "灼伤",
+        "type": "status",
+        "cost": null,
+        "upgradedCost": null,
+        "description": "无法打出。回合结束时仍在手中，受到 2 点伤害，可被护甲抵挡。",
+        "upgradedDescription": "无法打出。回合结束时仍在手中，受到 2 点伤害，可被护甲抵挡。",
+        "target": "self",
+        "exhaust": false,
+        "ethereal": false,
+        "hasRarity": false
+      },
+      {
+        "id": "a_burn_plus",
+        "name": "灼伤+",
+        "type": "status",
+        "cost": null,
+        "upgradedCost": null,
+        "description": "无法打出。回合结束时仍在手中，受到 4 点伤害，可被护甲抵挡。",
+        "upgradedDescription": "无法打出。回合结束时仍在手中，受到 4 点伤害，可被护甲抵挡。",
+        "target": "self",
+        "exhaust": false,
+        "ethereal": false,
+        "hasRarity": false
+      }
+    ]
+  },
+  "runs": {
+    "firstRunFromHome": {
+      "validSave": true,
+      "hp": 80,
+      "energy": 3,
+      "deck": [
+        "a_strike",
+        "a_strike",
+        "a_strike",
+        "a_strike",
+        "a_strike",
+        "a_defend",
+        "a_defend",
+        "a_defend",
+        "a_defend",
+        "a_bash"
+      ],
+      "startingCardCounts": {
+        "a_strike": 5,
+        "a_defend": 4,
+        "a_bash": 1
+      },
+      "rewardPoolCount": 8,
+      "rewardPool": [
+        "a_cleave",
+        "a_flame",
+        "fire",
+        "bell",
+        "seal",
+        "lotus",
+        "blood",
+        "ferry"
+      ]
+    },
+    "repaymentUnlockFromHome": {
+      "validSave": true,
+      "hp": 80,
+      "energy": 3,
+      "deck": [
+        "a_strike",
+        "a_strike",
+        "a_strike",
+        "a_strike",
+        "a_strike",
+        "a_defend",
+        "a_defend",
+        "a_defend",
+        "a_defend",
+        "a_bash"
+      ],
+      "startingCardCounts": {
+        "a_strike": 5,
+        "a_defend": 4,
+        "a_bash": 1
+      },
+      "rewardPoolCount": 11,
+      "rewardPool": [
+        "a_cleave",
+        "a_flame",
+        "fire",
+        "bell",
+        "seal",
+        "lotus",
+        "blood",
+        "ferry",
+        "ledger",
+        "mirror",
+        "verdict"
+      ]
+    },
+    "engineDefault": {
+      "validSave": true,
+      "hp": 80,
+      "energy": 3,
+      "deck": [
+        "a_strike",
+        "a_strike",
+        "a_strike",
+        "a_strike",
+        "a_strike",
+        "a_defend",
+        "a_defend",
+        "a_defend",
+        "a_defend",
+        "a_bash"
+      ],
+      "startingCardCounts": {
+        "a_strike": 5,
+        "a_defend": 4,
+        "a_bash": 1
+      },
+      "rewardPoolCount": 15,
+      "rewardPool": [
+        "a_cleave",
+        "a_flame",
+        "chain",
+        "vow",
+        "step",
+        "coin",
+        "fire",
+        "bell",
+        "seal",
+        "lotus",
+        "blood",
+        "ledger",
+        "mirror",
+        "ferry",
+        "verdict"
+      ]
+    }
+  },
+  "observations": {
+    "mechanicallyAlignedPlayerCards": [
+      "a_strike",
+      "a_defend",
+      "a_bash",
+      "a_cleave"
+    ],
+    "analogousButDifferent": {
+      "a_flame": {
+        "originalCard": "Immolate",
+        "currentDamage": [
+          14,
+          18
+        ],
+        "referenceDamage": [
+          21,
+          28
+        ],
+        "currentCost": 2,
+        "referenceCost": 2,
+        "reference": "https://wikiwiki.jp/slaythespire/焼身"
+      },
+      "step": {
+        "originalCard": "Shrug It Off",
+        "currentBlock": [
+          5,
+          8
+        ],
+        "referenceBlock": [
+          8,
+          11
+        ],
+        "currentDraw": 1,
+        "referenceDraw": 1,
+        "reference": "https://wikiwiki.jp/slaythespire/アイアンクラッドのカード一覧"
+      }
+    },
+    "missingCapabilities": [
+      "power-card-zone",
+      "card-rarity-and-weighted-rewards",
+      "select-card-in-hand-or-pile",
+      "exhaust-trigger-synergies",
+      "card-driven-strength-growth",
+      "x-cost",
+      "per-combat-card-modifiers",
+      "multi-level-permanent-upgrades",
+      "wound-status",
+      "persistent-curse-cards"
+    ],
+    "ordinaryRewardsNow": "shuffle(state.rewardPool).slice(0,3)",
+    "scope": "数值对应仅覆盖表中列出的效果；没有据此声称全部结算时序、隐藏交互或原作逐种子一致。"
+  }
+}

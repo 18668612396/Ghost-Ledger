@@ -1,0 +1,92 @@
+[
+  {
+    "label": "判官笔 · 攻击 · 1 香火",
+    "loaded": true,
+    "ratio": 1,
+    "source": "http://localhost:4210/public/assets/card-art-brush.png"
+  },
+  {
+    "label": "镇魂符 · 术法 · 1 香火",
+    "loaded": true,
+    "ratio": 1,
+    "source": "http://localhost:4210/public/assets/card-art-talisman.png"
+  },
+  {
+    "label": "勾魂索 · 攻击 · 1 香火",
+    "loaded": true,
+    "ratio": 1,
+    "source": "http://localhost:4210/public/assets/card-art-chain.png"
+  },
+  {
+    "label": "还愿符 · 术法 · 1 香火",
+    "loaded": true,
+    "ratio": 1,
+    "source": "http://localhost:4210/public/assets/card-art-talisman.png"
+  },
+  {
+    "label": "幽冥步 · 术法 · 1 香火",
+    "loaded": true,
+    "ratio": 1,
+    "source": "http://localhost:4210/public/assets/card-art-step.png"
+  },
+  {
+    "label": "透骨钱 · 攻击 · 0 香火",
+    "loaded": true,
+    "ratio": 1,
+    "source": "http://localhost:4210/public/assets/card-art-coin.png"
+  },
+  {
+    "label": "业火符 · 攻击 · 1 香火",
+    "loaded": true,
+    "ratio": 1,
+    "source": "http://localhost:4210/public/assets/card-art-fire.png"
+  },
+  {
+    "label": "摄魂铃 · 术法 · 1 香火",
+    "loaded": true,
+    "ratio": 1,
+    "source": "http://localhost:4210/public/assets/card-art-bell.png"
+  },
+  {
+    "label": "生死签 · 攻击 · 2 香火",
+    "loaded": true,
+    "ratio": 1,
+    "source": "http://localhost:4210/public/assets/card-art-seal.png"
+  },
+  {
+    "label": "莲灯渡 · 术法 · 1 香火",
+    "loaded": true,
+    "ratio": 1,
+    "source": "http://localhost:4210/public/assets/card-art-lotus.png"
+  },
+  {
+    "label": "借命斩 · 攻击 · 0 香火",
+    "loaded": true,
+    "ratio": 1,
+    "source": "http://localhost:4210/public/assets/card-art-chain.png"
+  },
+  {
+    "label": "销账书 · 术法 · 1 香火",
+    "loaded": true,
+    "ratio": 1,
+    "source": "http://localhost:4210/public/assets/card-art-ledger.png"
+  },
+  {
+    "label": "照骨镜 · 术法 · 1 香火",
+    "loaded": true,
+    "ratio": 1,
+    "source": "http://localhost:4210/public/assets/card-art-mirror.png"
+  },
+  {
+    "label": "摆渡钱 · 术法 · 0 香火",
+    "loaded": true,
+    "ratio": 1,
+    "source": "http://localhost:4210/public/assets/card-art-coin.png"
+  },
+  {
+    "label": "阎罗敕令 · 攻击 · 3 香火",
+    "loaded": true,
+    "ratio": 1,
+    "source": "http://localhost:4210/public/assets/card-art-seal.png"
+  }
+]

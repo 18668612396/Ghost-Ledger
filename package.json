@@ -1,0 +1,17 @@
+{
+  "name": "ghost-ledger",
+  "version": "0.5.0",
+  "private": true,
+  "type": "module",
+  "description": "夜渡·阴债录：第一人称地府卡牌原型",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "preview": "node scripts/serve.mjs --dist",
+    "check": "node scripts/check.mjs",
+    "content:check": "node scripts/compile-content.mjs",
+    "check:skins": "node scripts/check-skins.mjs",
+    "test": "node scripts/compile-content.mjs && node --test tests/*.test.mjs",
+    "build": "node scripts/build.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

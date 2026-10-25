@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-25",
+  "scope": "位图表现模块隔离浏览器交互检查；不是主游戏完整冒险或用户验收",
+  "url": "http://127.0.0.1:4210/evidence/v05-effects-lab.html",
+  "storage": "fixture不读取也不写入存档",
+  "actions": [
+    {"label":"出牌燃烧","elapsedMs":487,"remainingEffects":0},
+    {"label":"回合化灰","elapsedMs":473,"remainingEffects":0},
+    {"label":"击杀后命中","elapsedMs":474,"remainingEffects":0},
+    {"label":"斩击","elapsedMs":417,"remainingEffects":0},
+    {"label":"火焰","elapsedMs":507,"remainingEffects":0},
+    {"label":"雷击","elapsedMs":458,"remainingEffects":0},
+    {"label":"阴咒","elapsedMs":510,"remainingEffects":0},
+    {"label":"护身","elapsedMs":507,"remainingEffects":0},
+    {"label":"魂光","elapsedMs":524,"remainingEffects":0}
+  ],
+  "selfGuide": {"sourceRatio":3,"displayRatio":3,"pointerEvents":"none","guideZ":4,"handParentZ":5},
+  "redFlash": "实际截图检查后改为负45度短路径色相插值，整只怪物变红，结束后恢复；没有经过绿色。",
+  "screenshots": ["v05-fx-hit.png","v05-fx-self-guide.png"],
+  "consoleErrorsOrWarnings": [],
+  "temporaryBrowserTabClosed": true
+}

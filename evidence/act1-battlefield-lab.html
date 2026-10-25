@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>第一幕战场 · 受控布局检查</title>
+    <link rel="icon" type="image/png" href="../public/assets/ui-favicon.png" />
+    <link rel="stylesheet" href="../src/style.css" />
+    <link rel="stylesheet" href="../src/skins.css" />
+    <style>
+      .lab-controls { display: flex; flex-direction: column; gap: 5px; padding: 5px 12px; overflow-y: auto; scrollbar-color: auto; }
+      .lab-controls > p { flex-shrink: 0; margin: 0; text-align: center; font-size: 11px; line-height: 1.4; }
+      .lab-cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; flex-shrink: 0; }
+      .lab-cases .secondary-button { min-height: 40px; padding: 4px max(12px, var(--skin-cap-right, 12px)) 4px max(12px, var(--skin-cap-left, 12px)); font-size: 12px; letter-spacing: 0; }
+      .lab-cases [aria-pressed="true"] { font-weight: 700; }
+      .lab-details { flex-shrink: 0; font-size: 10px; line-height: 1.5; }
+      .lab-details > summary { cursor: pointer; }
+      .lab-details pre { margin: 5px 0; white-space: pre-wrap; overflow-wrap: anywhere; font: 9px/1.4 monospace; }
+      .lab-footer-output { font-size: 9px; white-space: nowrap; }
+      .lab-title-note { font-size: 9px; }
+    </style>
+  </head>
+  <body>
+    <main id="app" aria-label="第一幕受控布局检查，不保存游戏进度"></main>
+    <script type="module">
+      import { createAct1Adventure, ENEMY_DEFS, getEnemies } from '../src/engine.js';
+      import { createAct1Enemy, planAct1EnemyIntent } from '../src/act1-engine.js';
+      import { renderBattlefield } from '../src/battlefield-view.js';
+      import { decorateSkins } from '../src/skins.js';
+
+      // These are explicit layout fixtures, never loaded/saved runs. No storage
+      // API, game action dispatch, profile settlement, or production main.js.
+      const CASES = [
+        { id: 'double', label: '双怪 · 纸蛛', enemies: ['louse_red', 'louse_green'] },
+        { id: 'sentries', label: '三碑 · 精英', enemies: ['sentry', 'sentry', 'sentry'] },
+        { id: 'five', label: '五怪 · 泥灵', enemies: ['spike_s', 'spike_s', 'spike_s', 'acid_s', 'acid_s'] },
+        { id: 'slime', label: '腐河鬼王', enemies: ['slime_boss'] },
+        { id: 'guardian', label: '铁面判官', enemies: ['guardian'] },
+        { id: 'hexaghost', label: '六灯冥魂', enemies: ['hexaghost'] },
+      ];
+      const ICONS = ['flame', 'heart', 'shield', 'book', 'sound', 'muted', 'gear', 'arrow', 'close', 'skull', 'lotus', 'cards', 'lantern', 'check', 'debt', 'seal'];
+      const app = document.querySelector('#app');
+      let caseId = 'double', state, pendingTarget = null, selectedUid = null, alternate = false, resizeObserver;
+
+      function asset(name) { return new URL(`../public/assets/${name}.png`, import.meta.url).href; }
+      function icon(name, extra = '') {
+        const i = Math.max(0, ICONS.indexOf(name));
+        return `<span class="icon ${extra}" style="--icon-x:${i % 4 * 100 / 3}%;--icon-y:${Math.floor(i / 4) * 100 / 3}%" aria-hidden="true"></span>`;
+      }
+      function healthMarkup(hp, maxHp, extra = '') {
+        return `<div class="brush-health ${extra}" aria-label="${extra ? '敌方' : '玩家'}生命 ${hp}/${maxHp}"><span class="hp-clip" style="width:${Math.max(0, hp / maxHp * 100)}%"><img src="${asset('ref-brush-red')}" alt=""/></span><strong>${hp}<small>/${maxHp}</small></strong></div>`;
+      }
+      function brushLabel(text) { return `<span class="brush-label"><img src="${asset('ref-brush-teal')}" alt=""/><span>${text}</span></span>`; }
+
+      function buildFixture() {
+        const fixture = CASES.find(item => item.id === caseId);
+        state = createAct1Adventure(70017, { runId: `layout-fixture-${caseId}` });
+        state.phase = 'combat';
+        state.enemies = fixture.enemies.map((id, index) => createAct1Enemy(state, id, index));
+        if (caseId === 'guardian' && alternate) {
+          state.enemies[0].ai.phase = 'defense'; state.enemies[0].ai.defenseStep = 1; state.enemies[0].sharpHide = 3;
+        } else if (caseId === 'hexaghost') {
+          state.enemies[0].turns = alternate ? 8 : 1; state.enemies[0].strength = alternate ? 2 : 0;
+        } else if (caseId === 'slime' && alternate) state.enemies[0].hp = 62;
+        else if (alternate) for (const enemy of state.enemies) { enemy.strength = 2; enemy.exposed = 2; }
+        for (const enemy of state.enemies) enemy.intent = planAct1EnemyIntent(state, enemy);
+        state.enemy = state.enemies[0]; selectedUid = null;
+      }
+
+      function rect(element) {
+        if (!element) return null;
+        const r = element.getBoundingClientRect();
+        return Object.fromEntries(['x', 'y', 'width', 'height', 'top', 'right', 'bottom', 'left'].map(key => [key, Math.round(r[key] * 100) / 100]));
+      }
+      function measure() {
+        const arena = app.querySelector('.arena');
+        if (!arena) return;
+        const measurement = {
+          purpose: '受控布局检查；不是自然闯关、战斗胜利或首领试玩证据',
+          caseId, alternate, viewport: { width: innerWidth, height: innerHeight }, playerHp: [state.hp, state.maxHp],
+          shell: rect(app.querySelector('.game-shell')), header: rect(app.querySelector('.combat-header')),
+          battlefield: rect(arena), reservedControls: rect(app.querySelector('.combat-bottom')),
+          slots: [...arena.querySelectorAll('.enemy-slot')].map(element => ({
+            uid: element.dataset.enemyUid,
+            name: element.querySelector('.enemy-name').textContent,
+            slot: rect(element), target: rect(element.querySelector('.enemy-target')), intent: rect(element.querySelector('.intent')),
+            health: rect(element.querySelector('.brush-health')), plate: rect(element.querySelector('.enemy-plate')),
+            art: rect(element.querySelector('.enemy-art')), imageLoaded: element.querySelector('.enemy-art').naturalWidth > 0,
+          })),
+          vacancies: [...arena.querySelectorAll('.enemy-vacancy')].map(rect), selectedUid,
+        };
+        app.querySelector('#lab-metrics').textContent = JSON.stringify(measurement, null, 2);
+        app.querySelector('#lab-footer-output').textContent = `${innerWidth}×${innerHeight} · 战场 ${Math.round(arena.getBoundingClientRect().height)}px`;
+      }
+
+      function render() {
+        const fixture = CASES.find(item => item.id === caseId);
+        const oldScroll = app.querySelector('.lab-controls')?.scrollTop ?? 0;
+        const detailsOpen = Boolean(app.querySelector('.lab-details')?.open);
+        app.innerHTML = `<div class="game-shell in-combat" data-lab-case="${caseId}">
+          <div class="world-background" aria-hidden="true"></div>
+          <header class="combat-header"><div class="player-sheet"><button class="avatar-button" data-lab-action="reset" aria-label="重置当前布局案例"><img class="avatar-art" src="${asset('ref-avatar')}" alt="小鬼差" draggable="false"/></button><div class="player-strips">${brushLabel('小鬼差')}${healthMarkup(80, 80)}<div class="player-substats"><span>${icon('shield')}护甲 <strong>0</strong></span></div></div></div><div class="combat-location"><span>布局检查</span><small>不是正式冒险</small></div><div class="combat-tools"><button class="icon-button" data-lab-action="target" aria-label="切换选目标预览">${icon('book')}</button><button class="icon-button" data-lab-action="alternate" aria-label="切换机制状态预览">${icon('gear')}</button></div><span class="player-status-row lab-title-note">受控案例 · 不读取或保存游戏进度</span></header>
+          ${renderBattlefield(state, { pendingTarget, asset, icon, healthMarkup, animationTime: 0 })}
+          <div class="combat-bottom">
+            <div class="debt-row"><button data-lab-action="target">${icon('debt')}布局预览 <b>${getEnemies(state).length}</b><small>${pendingTarget ? '选目标预览中' : '点击鬼怪检查触点'}</small></button></div>
+            <section class="hand lab-controls" aria-label="受控布局案例选择">
+              <p>${fixture.label} · ${alternate ? '机制状态' : '初始状态'} · 不进行出牌或战斗结算</p>
+              <nav class="lab-cases" aria-label="选择布局案例">${CASES.map(item => `<button class="secondary-button" data-lab-case-id="${item.id}" aria-pressed="${item.id === caseId}">${item.label}</button>`).join('')}</nav>
+              <details class="lab-details" ${detailsOpen ? 'open' : ''}><summary>查看当前 DOM 尺寸 JSON</summary><pre id="lab-metrics"></pre></details>
+            </section>
+            <div class="hand-hint"><span id="lab-selection-note">${selectedUid ? `已点中 ${selectedUid}` : '受控布局检查 · 复用生产战场与位图'}</span></div>
+            <div class="command-bar"><div class="energy-orb" aria-label="布局占位香火3/3"><strong>3<small>/3</small></strong></div><button class="borrow-button" data-lab-action="target"><strong>选目标</strong><small>仅看反馈</small></button><button class="repay-button" data-lab-action="vacancy"><strong>首位空缺</strong><small>保持站位</small></button><button class="end-button" data-lab-action="reset">重置案例</button></div>
+            <footer class="game-footer"><button data-lab-action="measure">${icon('cards')}测量</button><span>不保存游戏进度</span><output class="lab-footer-output" id="lab-footer-output"></output></footer>
+          </div>
+        </div>`;
+        decorateSkins(app);
+        app.querySelector('.lab-controls').scrollTop = oldScroll;
+        if (selectedUid) [...app.querySelectorAll('.enemy-slot')].find(slot => slot.dataset.enemyUid === selectedUid)?.classList.add('drag-aim');
+        resizeObserver?.disconnect(); resizeObserver = new ResizeObserver(measure); resizeObserver.observe(app.querySelector('.arena'));
+        for (const image of app.querySelectorAll('img')) image.addEventListener('load', measure, { once: true });
+        requestAnimationFrame(measure);
+      }
+
+      app.addEventListener('click', event => {
+        const caseButton = event.target.closest('[data-lab-case-id]');
+        if (caseButton) { caseId = caseButton.dataset.labCaseId; alternate = false; pendingTarget = null; buildFixture(); render(); return; }
+        const action = event.target.closest('[data-lab-action]')?.dataset.labAction;
+        if (action === 'reset') { alternate = false; pendingTarget = null; buildFixture(); render(); return; }
+        if (action === 'alternate') { alternate = !alternate; buildFixture(); render(); return; }
+        if (action === 'target') { pendingTarget = pendingTarget ? null : { kind: 'layout-preview' }; render(); return; }
+        if (action === 'vacancy') { const first = state.enemies[0]; first.hp = first.hp > 0 ? 0 : first.maxHp; first.dead = first.hp === 0; selectedUid = null; render(); return; }
+        if (action === 'measure') { measure(); return; }
+        const slot = event.target.closest('.enemy-slot');
+        if (slot) { selectedUid = slot.dataset.enemyUid; render(); app.querySelector('#lab-selection-note').textContent = `已点中 ${ENEMY_DEFS[state.enemies.find(enemy => enemy.uid === selectedUid).id].name} · ${selectedUid}`; measure(); }
+      });
+      window.addEventListener('resize', measure);
+      document.fonts.ready.then(measure);
+      buildFixture(); render();
+    </script>
+  </body>
+</html>

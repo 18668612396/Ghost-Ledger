@@ -1,0 +1,312 @@
+{
+  "generator": "OpenAI built-in image_gen",
+  "created": "2026-10-25",
+  "request": "用户要求补齐第一幕缺少的怪物，生成地府题材原创透明怪物立绘，保留手绘水彩风格。最终18张为独立生图，不通过代码绘制、抠图或染色。",
+  "sourceStyleReferences": [
+    "paper.png",
+    "collector.png",
+    "judge.png"
+  ],
+  "atlasExperiment": {
+    "status": "reference-only, not shipped or runtime assets",
+    "reason": "Initial atlas characters cross fixed cell boundaries, so no atlas crops were shipped.",
+    "references": [
+      {
+        "atlasId": "01",
+        "prompt": "Use case: stylized-concept.\nAsset type: one production transparent sprite atlas for a mobile Chinese folklore underworld card game.\nThe three input images are VISUAL STYLE REFERENCES ONLY, not edit targets. Match their charming hand-painted watercolor/gouache, soft paper grain, confident dark ink outlines, chibi proportions, expressive faces, cream paper, antique-gold ornaments, faded cinnabar red, dark indigo robes and jade/cyan ghost fire. Keep the painterly detail and handcrafted edges. These are original Chinese underworld folk monsters, NOT the monsters or artwork from any existing card game.\nCRITICAL ATLAS LAYOUT: a wide 3:2 canvas containing exactly SIX independent character cutouts in a strict 3-column by 2-row grid of equal SQUARE cells. No visible grid or cell borders. Each character is fully contained inside its own cell, no part crosses cell boundaries. Each occupies around 82% of its square cell's width and 86% of its height, with feet/base near the lower 94% line. Center each in its cell. Consistent front or slight three-quarter view facing the player, full body, clean readable silhouette, eyes directed toward viewer. Use a wide high-resolution 3:2 canvas such as 1881x1254. Outside every silhouette is genuine alpha transparency.\nNo backdrop, scenery, ground plane, floor, ground shadow, cast shadow, frame, card, UI, labels, names, numbers, visible letters, watermark, divider lines, checkerboard painting, gore, realistic horror, 3D rendering or glossy mobile-game plastic. Decorative talisman marks should be abstract brush marks, not readable text. Keep bodies opaque; preserve true transparency only outside cutouts. The six cell contents in reading order are:\n1. Top row, column 1: A candle-bearing paper-robed ritual priest: a small Chinese folk ghost in cream folded-paper robes, pointed dark ceremonial hat, blue-white ghost face, holding a red candle and paper talisman. Calm chanting pose.\n2. Top row, column 2: A squat four-legged dream-eating beast: round charcoal-indigo body, broad muzzle with two large ivory tusks, jade cloud fur markings, expressive sleepy hostile eyes. Chinese folk guardian-beast silhouette.\n3. Top row, column 3: A red folded-paper ghost spider: crumpled cinnabar paper shell, four bent paper legs on either side, round black ink eyes, little ivory fangs and tiny gold talisman seal.\n4. Bottom row, column 1: A jade-green folded-paper ghost spider: green layered paper shell, eight folded legs, pale green mist beneath body, black ink eyes and a thin curled paper antenna. Clearly distinct green counterpart to the red spider.\n5. Bottom row, column 2: A jade-green swamp-mud spirit: squat translucent-looking but opaque-bodied blob, pale cyan sad ghost face, small pieces of paper talisman floating embedded in mud, dripping rounded arms. Gentle uneven contour.\n6. Bottom row, column 3: A purple-black thorn-mud spirit: squat dusky plum mud blob with a few chunky dark stone thorns across back, pale lilac ghost face, stubby arms, reddish seals embedded in body. Distinct angular outline.",
+        "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-2d3f85d3-ec2c-470f-957f-519ad41a44c3.png",
+        "layout": "3 columns × 2 rows",
+        "characters": [
+          "cultist",
+          "jaw",
+          "louse_red",
+          "louse_green",
+          "acid",
+          "spike"
+        ]
+      },
+      {
+        "atlasId": "02",
+        "prompt": "Use case: stylized-concept.\nAsset type: one production transparent sprite atlas for a mobile Chinese folklore underworld card game.\nThe three input images are VISUAL STYLE REFERENCES ONLY, not edit targets. Match their charming hand-painted watercolor/gouache, soft paper grain, confident dark ink outlines, chibi proportions, expressive faces, cream paper, antique-gold ornaments, faded cinnabar red, dark indigo robes and jade/cyan ghost fire. Keep the painterly detail and handcrafted edges. These are original Chinese underworld folk monsters, NOT the monsters or artwork from any existing card game.\nCRITICAL ATLAS LAYOUT: a wide 3:2 canvas containing exactly SIX independent character cutouts in a strict 3-column by 2-row grid of equal SQUARE cells. No visible grid or cell borders. Each character is fully contained inside its own cell, no part crosses cell boundaries. Each occupies around 82% of its square cell's width and 86% of its height, with feet/base near the lower 94% line. Center each in its cell. Consistent front or slight three-quarter view facing the player, full body, clean readable silhouette, eyes directed toward viewer. Use a wide high-resolution 3:2 canvas such as 1881x1254. Outside every silhouette is genuine alpha transparency.\nNo backdrop, scenery, ground plane, floor, ground shadow, cast shadow, frame, card, UI, labels, names, numbers, visible letters, watermark, divider lines, checkerboard painting, gore, realistic horror, 3D rendering or glossy mobile-game plastic. Decorative talisman marks should be abstract brush marks, not readable text. Keep bodies opaque; preserve true transparency only outside cutouts. The six cell contents in reading order are:\n1. Top row, column 1: A red-faced chain-hook underworld bailiff: chibi masked ghost warrior in faded scarlet and black Chinese official robes, thick chain and curved hook held across body, ivory tusks, teal jade waist ornament.\n2. Top row, column 2: A hunched little money-thief ghost in dark teal patched cloth and straw hood, sneaky narrow eyes, clutching an oversized warm-gold coin purse, a few attached square-hole coins, red sash.\n3. Top row, column 3: A fungal ghost child: a pale round-faced imp peeking from under a broad dusty ochre and coral mushroom cap, small ragged cream robe, mushroom growths on shoulders, violet gill accents.\n4. Bottom row, column 1: An angry crimson ghost child with round red skin, little ivory horns, puffed cheeks and clenched fists, torn cream tunic with indigo patches, black ink brows, leaning forward furiously.\n5. Bottom row, column 2: A small pale blue ghost child mostly protected by a large dark jade wooden shield with a bronze central boss, short black official cap, cream robe and gold tassels, wary eyes peeking over shield.\n6. Bottom row, column 3: A thin nimble gray-green ghost child carrying two short curved bronze knives, low stance, pointed black cloth cap, narrow eyes, dark plum patched clothes and red ankle ties.",
+        "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-453c6272-9e9f-4739-945a-eb2735fd8eba.png",
+        "layout": "3 columns × 2 rows",
+        "characters": [
+          "slaver_red",
+          "looter",
+          "fungi",
+          "gremlin_mad",
+          "gremlin_shield",
+          "gremlin_sneaky"
+        ]
+      },
+      {
+        "atlasId": "03",
+        "prompt": "Use case: stylized-concept.\nAsset type: one production transparent sprite atlas for a mobile Chinese folklore underworld card game.\nThe three input images are VISUAL STYLE REFERENCES ONLY, not edit targets. Match their charming hand-painted watercolor/gouache, soft paper grain, confident dark ink outlines, chibi proportions, expressive faces, cream paper, antique-gold ornaments, faded cinnabar red, dark indigo robes and jade/cyan ghost fire. Keep the painterly detail and handcrafted edges. These are original Chinese underworld folk monsters, NOT the monsters or artwork from any existing card game.\nCRITICAL ATLAS LAYOUT: a wide 3:2 canvas containing exactly SIX independent character cutouts in a strict 3-column by 2-row grid of equal SQUARE cells. No visible grid or cell borders. Each character is fully contained inside its own cell, no part crosses cell boundaries. Each occupies around 82% of its square cell's width and 86% of its height, with feet/base near the lower 94% line. Center each in its cell. Consistent front or slight three-quarter view facing the player, full body, clean readable silhouette, eyes directed toward viewer. Use a wide high-resolution 3:2 canvas such as 1881x1254. Outside every silhouette is genuine alpha transparency.\nNo backdrop, scenery, ground plane, floor, ground shadow, cast shadow, frame, card, UI, labels, names, numbers, visible letters, watermark, divider lines, checkerboard painting, gore, realistic horror, 3D rendering or glossy mobile-game plastic. Decorative talisman marks should be abstract brush marks, not readable text. Keep bodies opaque; preserve true transparency only outside cutouts. The six cell contents in reading order are:\n1. Top row, column 1: A tiny elderly ghost wizard in indigo Chinese paper robes with a tall crooked dark hat, long white eyebrows, both hands raising a blank cream talisman between turquoise spell wisps, a few red seal marks.\n2. Top row, column 2: A powerful bull-headed underworld enforcer: huge broad-shouldered chibi ox demon in worn dark blue and antique-gold armor, warm gray skin, large ivory horns, thick arms wielding a heavy wooden ritual club, red waist sash.\n3. Top row, column 3: An ancient sleepy coffin guardian: a weathered gray-blue ghost with long wispy beard half-seated inside an upright open dark wooden coffin, closed eyes and folded arms, tarnished brass corners and cream sealing strips. Coffin and figure are one compact silhouette.\n4. Bottom row, column 1: One floating soul-sealing stone stele: thick upright jade-gray stone tablet with a rounded Chinese architectural cap, a single large turquoise ghost-eye stone inset at center, abstract red talisman strokes, bronze binding corners, small hanging red cord. Only ONE stele, not three.\n5. Bottom row, column 2: A large underworld mud king: plump jade-teal sludge monster with a broad cute fierce ghost face, flowing rounded mud arms, small bent antique-gold crown and red paper seal at forehead, rich swamp-green layers. Big boss personality, compact full-body silhouette.\n6. Bottom row, column 3: A six-lantern revenant: one central pale-blue ghost-mask lantern with a dark carved Chinese bronze frame, surrounded by EXACTLY SIX small red-and-gold soul lanterns attached in a circular orbit by dark wispy cords; turquoise ghost fire at each lantern. All six orbiting lanterns and center mask form ONE compact connected enemy sprite, no backdrop.",
+        "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-7c69580a-f261-4d63-a141-9d5da22ba81b.png",
+        "layout": "3 columns × 2 rows",
+        "characters": [
+          "gremlin_wizard",
+          "nob",
+          "lagavulin",
+          "sentry",
+          "slime_boss",
+          "hexaghost"
+        ]
+      }
+    ]
+  },
+  "assets": [
+    {
+      "filename": "enemy-cultist.png",
+      "id": "cultist",
+      "purpose": "A candle-bearing paper-robed ritual priest: a small Chinese folk ghost in cream folded-paper robes, pointed dark ceremonial hat, blue-white ghost face, holding a red candle and paper talisman. Calm chanting pose.",
+      "prompt": "Use case: precise-object-edit.\nAsset type: ONE isolated full-body transparent PNG game enemy sprite.\nThe reference image is a six-character atlas. The ONLY target character is at the top row, left column: A candle-bearing paper-robed ritual priest: a small Chinese folk ghost in cream folded-paper robes, pointed dark ceremonial hat, blue-white ghost face, holding a red candle and paper talisman. Calm chanting pose.\nCreate a standalone faithful full-body version of THAT ONE monster. Preserve its distinctive design, costume, colors, props, face, painterly watercolor paper grain and dark hand-ink contours. Do not copy any other monster or any background from the atlas. This is not a literal rectangle crop: complete the whole target character cleanly with NO clipped feet, hat, horns, weapon, flame, coffin or lantern, and NO fragments from neighboring monsters.\nA square 1:1 transparent canvas. Center the complete sprite horizontally, put feet or base at about 92% of canvas height, leave a consistent 7% clear transparent margin all around. Fill about 82-86% of the square in the major dimension while preserving the original natural proportions. Front or slight three-quarter view facing player. Opaque body and props, actual alpha-zero background everywhere outside the silhouette; do not add diffuse colored background haze, drop shadows, ground plane, cast shadow, colored backdrop or floor. The game adds ground shadow separately.\nSame charming Chinese underworld folklore watercolor/gouache style as the atlas, with cream paper, jade/cyan ghost-fire, faded cinnabar, dark indigo and antique-gold detail. Not 3D, not realistic, no plastic look. No frame, card, interface, labels, names, numbers, visible lettering, watermark, extra beings, detached unrelated wisps, or checkerboard drawing. Decorative seals stay abstract. Return exactly one finished production sprite, not an atlas.",
+      "reference": {
+        "role": "generated atlas character identity and style reference",
+        "atlasId": "01",
+        "cellIndex": 0,
+        "path": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-2d3f85d3-ec2c-470f-957f-519ad41a44c3.png"
+      },
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-bc3cda37-9c2a-4aa6-8ba9-4e8cccb4b317.png"
+    },
+    {
+      "filename": "enemy-jaw.png",
+      "id": "jaw",
+      "purpose": "A squat four-legged dream-eating beast: round charcoal-indigo body, broad muzzle with two large ivory tusks, jade cloud fur markings, expressive sleepy hostile eyes. Chinese folk guardian-beast silhouette.",
+      "prompt": "Use case: precise-object-edit.\nAsset type: ONE isolated full-body transparent PNG game enemy sprite.\nThe reference image is a six-character atlas. The ONLY target character is at the top row, middle column: A squat four-legged dream-eating beast: round charcoal-indigo body, broad muzzle with two large ivory tusks, jade cloud fur markings, expressive sleepy hostile eyes. Chinese folk guardian-beast silhouette.\nCreate a standalone faithful full-body version of THAT ONE monster. Preserve its distinctive design, costume, colors, props, face, painterly watercolor paper grain and dark hand-ink contours. Do not copy any other monster or any background from the atlas. This is not a literal rectangle crop: complete the whole target character cleanly with NO clipped feet, hat, horns, weapon, flame, coffin or lantern, and NO fragments from neighboring monsters.\nA square 1:1 transparent canvas. Center the complete sprite horizontally, put feet or base at about 92% of canvas height, leave a consistent 7% clear transparent margin all around. Fill about 82-86% of the square in the major dimension while preserving the original natural proportions. Front or slight three-quarter view facing player. Opaque body and props, actual alpha-zero background everywhere outside the silhouette; do not add diffuse colored background haze, drop shadows, ground plane, cast shadow, colored backdrop or floor. The game adds ground shadow separately.\nSame charming Chinese underworld folklore watercolor/gouache style as the atlas, with cream paper, jade/cyan ghost-fire, faded cinnabar, dark indigo and antique-gold detail. Not 3D, not realistic, no plastic look. No frame, card, interface, labels, names, numbers, visible lettering, watermark, extra beings, detached unrelated wisps, or checkerboard drawing. Decorative seals stay abstract. Return exactly one finished production sprite, not an atlas.",
+      "reference": {
+        "role": "generated atlas character identity and style reference",
+        "atlasId": "01",
+        "cellIndex": 1,
+        "path": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-2d3f85d3-ec2c-470f-957f-519ad41a44c3.png"
+      },
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-9140256c-fe95-4037-b171-958347691cc1.png"
+    },
+    {
+      "filename": "enemy-louse_red.png",
+      "id": "louse_red",
+      "purpose": "A red folded-paper ghost spider: crumpled cinnabar paper shell, four bent paper legs on either side, round black ink eyes, little ivory fangs and tiny gold talisman seal.",
+      "prompt": "Use case: precise-object-edit.\nAsset type: ONE isolated full-body transparent PNG game enemy sprite.\nThe reference image is a six-character atlas. The ONLY target character is at the top row, right column: A red folded-paper ghost spider: crumpled cinnabar paper shell, four bent paper legs on either side, round black ink eyes, little ivory fangs and tiny gold talisman seal.\nCreate a standalone faithful full-body version of THAT ONE monster. Preserve its distinctive design, costume, colors, props, face, painterly watercolor paper grain and dark hand-ink contours. Do not copy any other monster or any background from the atlas. This is not a literal rectangle crop: complete the whole target character cleanly with NO clipped feet, hat, horns, weapon, flame, coffin or lantern, and NO fragments from neighboring monsters.\nA square 1:1 transparent canvas. Center the complete sprite horizontally, put feet or base at about 92% of canvas height, leave a consistent 7% clear transparent margin all around. Fill about 82-86% of the square in the major dimension while preserving the original natural proportions. Front or slight three-quarter view facing player. Opaque body and props, actual alpha-zero background everywhere outside the silhouette; do not add diffuse colored background haze, drop shadows, ground plane, cast shadow, colored backdrop or floor. The game adds ground shadow separately.\nSame charming Chinese underworld folklore watercolor/gouache style as the atlas, with cream paper, jade/cyan ghost-fire, faded cinnabar, dark indigo and antique-gold detail. Not 3D, not realistic, no plastic look. No frame, card, interface, labels, names, numbers, visible lettering, watermark, extra beings, detached unrelated wisps, or checkerboard drawing. Decorative seals stay abstract. Return exactly one finished production sprite, not an atlas.",
+      "reference": {
+        "role": "generated atlas character identity and style reference",
+        "atlasId": "01",
+        "cellIndex": 2,
+        "path": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-2d3f85d3-ec2c-470f-957f-519ad41a44c3.png"
+      },
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-d6fdd0fc-d250-4c61-8328-6b54fc8040ff.png"
+    },
+    {
+      "filename": "enemy-louse_green.png",
+      "id": "louse_green",
+      "purpose": "A jade-green folded-paper ghost spider: green layered paper shell, eight folded legs, pale green mist beneath body, black ink eyes and a thin curled paper antenna. Clearly distinct green counterpart to the red spider.",
+      "prompt": "Use case: precise-object-edit.\nAsset type: ONE isolated full-body transparent PNG game enemy sprite.\nThe reference image is a six-character atlas. The ONLY target character is at the bottom row, left column: A jade-green folded-paper ghost spider: green layered paper shell, eight folded legs, pale green mist beneath body, black ink eyes and a thin curled paper antenna. Clearly distinct green counterpart to the red spider.\nCreate a standalone faithful full-body version of THAT ONE monster. Preserve its distinctive design, costume, colors, props, face, painterly watercolor paper grain and dark hand-ink contours. Do not copy any other monster or any background from the atlas. This is not a literal rectangle crop: complete the whole target character cleanly with NO clipped feet, hat, horns, weapon, flame, coffin or lantern, and NO fragments from neighboring monsters.\nA square 1:1 transparent canvas. Center the complete sprite horizontally, put feet or base at about 92% of canvas height, leave a consistent 7% clear transparent margin all around. Fill about 82-86% of the square in the major dimension while preserving the original natural proportions. Front or slight three-quarter view facing player. Opaque body and props, actual alpha-zero background everywhere outside the silhouette; do not add diffuse colored background haze, drop shadows, ground plane, cast shadow, colored backdrop or floor. The game adds ground shadow separately.\nSame charming Chinese underworld folklore watercolor/gouache style as the atlas, with cream paper, jade/cyan ghost-fire, faded cinnabar, dark indigo and antique-gold detail. Not 3D, not realistic, no plastic look. No frame, card, interface, labels, names, numbers, visible lettering, watermark, extra beings, detached unrelated wisps, or checkerboard drawing. Decorative seals stay abstract. Return exactly one finished production sprite, not an atlas.",
+      "reference": {
+        "role": "generated atlas character identity and style reference",
+        "atlasId": "01",
+        "cellIndex": 3,
+        "path": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-2d3f85d3-ec2c-470f-957f-519ad41a44c3.png"
+      },
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-6b455121-3c2a-4dff-8025-93888f547347.png"
+    },
+    {
+      "filename": "enemy-acid.png",
+      "id": "acid",
+      "purpose": "A jade-green swamp-mud spirit: squat translucent-looking but opaque-bodied blob, pale cyan sad ghost face, small pieces of paper talisman floating embedded in mud, dripping rounded arms. Gentle uneven contour.",
+      "prompt": "Use case: precise-object-edit.\nAsset type: ONE isolated full-body transparent PNG game enemy sprite.\nThe reference image is a six-character atlas. The ONLY target character is at the bottom row, middle column: A jade-green swamp-mud spirit: squat translucent-looking but opaque-bodied blob, pale cyan sad ghost face, small pieces of paper talisman floating embedded in mud, dripping rounded arms. Gentle uneven contour.\nCreate a standalone faithful full-body version of THAT ONE monster. Preserve its distinctive design, costume, colors, props, face, painterly watercolor paper grain and dark hand-ink contours. Do not copy any other monster or any background from the atlas. This is not a literal rectangle crop: complete the whole target character cleanly with NO clipped feet, hat, horns, weapon, flame, coffin or lantern, and NO fragments from neighboring monsters.\nA square 1:1 transparent canvas. Center the complete sprite horizontally, put feet or base at about 92% of canvas height, leave a consistent 7% clear transparent margin all around. Fill about 82-86% of the square in the major dimension while preserving the original natural proportions. Front or slight three-quarter view facing player. Opaque body and props, actual alpha-zero background everywhere outside the silhouette; do not add diffuse colored background haze, drop shadows, ground plane, cast shadow, colored backdrop or floor. The game adds ground shadow separately.\nSame charming Chinese underworld folklore watercolor/gouache style as the atlas, with cream paper, jade/cyan ghost-fire, faded cinnabar, dark indigo and antique-gold detail. Not 3D, not realistic, no plastic look. No frame, card, interface, labels, names, numbers, visible lettering, watermark, extra beings, detached unrelated wisps, or checkerboard drawing. Decorative seals stay abstract. Return exactly one finished production sprite, not an atlas.",
+      "reference": {
+        "role": "generated atlas character identity and style reference",
+        "atlasId": "01",
+        "cellIndex": 4,
+        "path": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-2d3f85d3-ec2c-470f-957f-519ad41a44c3.png"
+      },
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-4e152b14-fe0b-4a61-81ad-c382cb867b63.png"
+    },
+    {
+      "filename": "enemy-spike.png",
+      "id": "spike",
+      "purpose": "A purple-black thorn-mud spirit: squat dusky plum mud blob with a few chunky dark stone thorns across back, pale lilac ghost face, stubby arms, reddish seals embedded in body. Distinct angular outline.",
+      "prompt": "Use case: precise-object-edit.\nAsset type: ONE isolated full-body transparent PNG game enemy sprite.\nThe reference image is a six-character atlas. The ONLY target character is at the bottom row, right column: A purple-black thorn-mud spirit: squat dusky plum mud blob with a few chunky dark stone thorns across back, pale lilac ghost face, stubby arms, reddish seals embedded in body. Distinct angular outline.\nCreate a standalone faithful full-body version of THAT ONE monster. Preserve its distinctive design, costume, colors, props, face, painterly watercolor paper grain and dark hand-ink contours. Do not copy any other monster or any background from the atlas. This is not a literal rectangle crop: complete the whole target character cleanly with NO clipped feet, hat, horns, weapon, flame, coffin or lantern, and NO fragments from neighboring monsters.\nA square 1:1 transparent canvas. Center the complete sprite horizontally, put feet or base at about 92% of canvas height, leave a consistent 7% clear transparent margin all around. Fill about 82-86% of the square in the major dimension while preserving the original natural proportions. Front or slight three-quarter view facing player. Opaque body and props, actual alpha-zero background everywhere outside the silhouette; do not add diffuse colored background haze, drop shadows, ground plane, cast shadow, colored backdrop or floor. The game adds ground shadow separately.\nSame charming Chinese underworld folklore watercolor/gouache style as the atlas, with cream paper, jade/cyan ghost-fire, faded cinnabar, dark indigo and antique-gold detail. Not 3D, not realistic, no plastic look. No frame, card, interface, labels, names, numbers, visible lettering, watermark, extra beings, detached unrelated wisps, or checkerboard drawing. Decorative seals stay abstract. Return exactly one finished production sprite, not an atlas.",
+      "reference": {
+        "role": "generated atlas character identity and style reference",
+        "atlasId": "01",
+        "cellIndex": 5,
+        "path": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-2d3f85d3-ec2c-470f-957f-519ad41a44c3.png"
+      },
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-f3e5c7be-5e14-4c31-a7af-16394a88f078.png"
+    },
+    {
+      "filename": "enemy-slaver_red.png",
+      "id": "slaver_red",
+      "purpose": "A red-faced chain-hook underworld bailiff: chibi masked ghost warrior in faded scarlet and black Chinese official robes, thick chain and curved hook held across body, ivory tusks, teal jade waist ornament.",
+      "prompt": "Use case: precise-object-edit.\nAsset type: ONE isolated full-body transparent PNG game enemy sprite.\nThe reference image is a six-character atlas. The ONLY target character is at the top row, left column: A red-faced chain-hook underworld bailiff: chibi masked ghost warrior in faded scarlet and black Chinese official robes, thick chain and curved hook held across body, ivory tusks, teal jade waist ornament.\nCreate a standalone faithful full-body version of THAT ONE monster. Preserve its distinctive design, costume, colors, props, face, painterly watercolor paper grain and dark hand-ink contours. Do not copy any other monster or any background from the atlas. This is not a literal rectangle crop: complete the whole target character cleanly with NO clipped feet, hat, horns, weapon, flame, coffin or lantern, and NO fragments from neighboring monsters.\nA square 1:1 transparent canvas. Center the complete sprite horizontally, put feet or base at about 92% of canvas height, leave a consistent 7% clear transparent margin all around. Fill about 82-86% of the square in the major dimension while preserving the original natural proportions. Front or slight three-quarter view facing player. Opaque body and props, actual alpha-zero background everywhere outside the silhouette; do not add diffuse colored background haze, drop shadows, ground plane, cast shadow, colored backdrop or floor. The game adds ground shadow separately.\nSame charming Chinese underworld folklore watercolor/gouache style as the atlas, with cream paper, jade/cyan ghost-fire, faded cinnabar, dark indigo and antique-gold detail. Not 3D, not realistic, no plastic look. No frame, card, interface, labels, names, numbers, visible lettering, watermark, extra beings, detached unrelated wisps, or checkerboard drawing. Decorative seals stay abstract. Return exactly one finished production sprite, not an atlas.",
+      "reference": {
+        "role": "generated atlas character identity and style reference",
+        "atlasId": "02",
+        "cellIndex": 0,
+        "path": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-453c6272-9e9f-4739-945a-eb2735fd8eba.png"
+      },
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-625002e2-022a-4f20-b540-5e840949455f.png"
+    },
+    {
+      "filename": "enemy-looter.png",
+      "id": "looter",
+      "purpose": "A hunched little money-thief ghost in dark teal patched cloth and straw hood, sneaky narrow eyes, clutching an oversized warm-gold coin purse, a few attached square-hole coins, red sash.",
+      "prompt": "Use case: precise-object-edit.\nAsset type: ONE isolated full-body transparent PNG game enemy sprite.\nThe reference image is a six-character atlas. The ONLY target character is at the top row, middle column: A hunched little money-thief ghost in dark teal patched cloth and straw hood, sneaky narrow eyes, clutching an oversized warm-gold coin purse, a few attached square-hole coins, red sash.\nCreate a standalone faithful full-body version of THAT ONE monster. Preserve its distinctive design, costume, colors, props, face, painterly watercolor paper grain and dark hand-ink contours. Do not copy any other monster or any background from the atlas. This is not a literal rectangle crop: complete the whole target character cleanly with NO clipped feet, hat, horns, weapon, flame, coffin or lantern, and NO fragments from neighboring monsters.\nA square 1:1 transparent canvas. Center the complete sprite horizontally, put feet or base at about 92% of canvas height, leave a consistent 7% clear transparent margin all around. Fill about 82-86% of the square in the major dimension while preserving the original natural proportions. Front or slight three-quarter view facing player. Opaque body and props, actual alpha-zero background everywhere outside the silhouette; do not add diffuse colored background haze, drop shadows, ground plane, cast shadow, colored backdrop or floor. The game adds ground shadow separately.\nSame charming Chinese underworld folklore watercolor/gouache style as the atlas, with cream paper, jade/cyan ghost-fire, faded cinnabar, dark indigo and antique-gold detail. Not 3D, not realistic, no plastic look. No frame, card, interface, labels, names, numbers, visible lettering, watermark, extra beings, detached unrelated wisps, or checkerboard drawing. Decorative seals stay abstract. Return exactly one finished production sprite, not an atlas.",
+      "reference": {
+        "role": "generated atlas character identity and style reference",
+        "atlasId": "02",
+        "cellIndex": 1,
+        "path": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-453c6272-9e9f-4739-945a-eb2735fd8eba.png"
+      },
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-d294ae31-957d-4215-b9a4-a1006e39240a.png"
+    },
+    {
+      "filename": "enemy-fungi.png",
+      "id": "fungi",
+      "purpose": "A fungal ghost child: a pale round-faced imp peeking from under a broad dusty ochre and coral mushroom cap, small ragged cream robe, mushroom growths on shoulders, violet gill accents.",
+      "prompt": "Use case: precise-object-edit.\nAsset type: ONE isolated full-body transparent PNG game enemy sprite.\nThe reference image is a six-character atlas. The ONLY target character is at the top row, right column: A fungal ghost child: a pale round-faced imp peeking from under a broad dusty ochre and coral mushroom cap, small ragged cream robe, mushroom growths on shoulders, violet gill accents.\nCreate a standalone faithful full-body version of THAT ONE monster. Preserve its distinctive design, costume, colors, props, face, painterly watercolor paper grain and dark hand-ink contours. Do not copy any other monster or any background from the atlas. This is not a literal rectangle crop: complete the whole target character cleanly with NO clipped feet, hat, horns, weapon, flame, coffin or lantern, and NO fragments from neighboring monsters.\nA square 1:1 transparent canvas. Center the complete sprite horizontally, put feet or base at about 92% of canvas height, leave a consistent 7% clear transparent margin all around. Fill about 82-86% of the square in the major dimension while preserving the original natural proportions. Front or slight three-quarter view facing player. Opaque body and props, actual alpha-zero background everywhere outside the silhouette; do not add diffuse colored background haze, drop shadows, ground plane, cast shadow, colored backdrop or floor. The game adds ground shadow separately.\nSame charming Chinese underworld folklore watercolor/gouache style as the atlas, with cream paper, jade/cyan ghost-fire, faded cinnabar, dark indigo and antique-gold detail. Not 3D, not realistic, no plastic look. No frame, card, interface, labels, names, numbers, visible lettering, watermark, extra beings, detached unrelated wisps, or checkerboard drawing. Decorative seals stay abstract. Return exactly one finished production sprite, not an atlas.",
+      "reference": {
+        "role": "generated atlas character identity and style reference",
+        "atlasId": "02",
+        "cellIndex": 2,
+        "path": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-453c6272-9e9f-4739-945a-eb2735fd8eba.png"
+      },
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-17c4b5ea-4655-4cdc-a1c1-fd89c848f4ca.png"
+    },
+    {
+      "filename": "enemy-gremlin_mad.png",
+      "id": "gremlin_mad",
+      "purpose": "An angry crimson ghost child with round red skin, little ivory horns, puffed cheeks and clenched fists, torn cream tunic with indigo patches, black ink brows, leaning forward furiously.",
+      "prompt": "Use case: precise-object-edit.\nAsset type: ONE isolated full-body transparent PNG game enemy sprite.\nThe reference image is a six-character atlas. The ONLY target character is at the bottom row, left column: An angry crimson ghost child with round red skin, little ivory horns, puffed cheeks and clenched fists, torn cream tunic with indigo patches, black ink brows, leaning forward furiously.\nCreate a standalone faithful full-body version of THAT ONE monster. Preserve its distinctive design, costume, colors, props, face, painterly watercolor paper grain and dark hand-ink contours. Do not copy any other monster or any background from the atlas. This is not a literal rectangle crop: complete the whole target character cleanly with NO clipped feet, hat, horns, weapon, flame, coffin or lantern, and NO fragments from neighboring monsters.\nA square 1:1 transparent canvas. Center the complete sprite horizontally, put feet or base at about 92% of canvas height, leave a consistent 7% clear transparent margin all around. Fill about 82-86% of the square in the major dimension while preserving the original natural proportions. Front or slight three-quarter view facing player. Opaque body and props, actual alpha-zero background everywhere outside the silhouette; do not add diffuse colored background haze, drop shadows, ground plane, cast shadow, colored backdrop or floor. The game adds ground shadow separately.\nSame charming Chinese underworld folklore watercolor/gouache style as the atlas, with cream paper, jade/cyan ghost-fire, faded cinnabar, dark indigo and antique-gold detail. Not 3D, not realistic, no plastic look. No frame, card, interface, labels, names, numbers, visible lettering, watermark, extra beings, detached unrelated wisps, or checkerboard drawing. Decorative seals stay abstract. Return exactly one finished production sprite, not an atlas.",
+      "reference": {
+        "role": "generated atlas character identity and style reference",
+        "atlasId": "02",
+        "cellIndex": 3,
+        "path": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-453c6272-9e9f-4739-945a-eb2735fd8eba.png"
+      },
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-4224681e-b5c4-43e9-8e28-8373cc847f49.png"
+    },
+    {
+      "filename": "enemy-gremlin_shield.png",
+      "id": "gremlin_shield",
+      "purpose": "A small pale blue ghost child mostly protected by a large dark jade wooden shield with a bronze central boss, short black official cap, cream robe and gold tassels, wary eyes peeking over shield.",
+      "prompt": "Use case: precise-object-edit.\nAsset type: ONE isolated full-body transparent PNG game enemy sprite.\nThe reference image is a six-character atlas. The ONLY target character is at the bottom row, middle column: A small pale blue ghost child mostly protected by a large dark jade wooden shield with a bronze central boss, short black official cap, cream robe and gold tassels, wary eyes peeking over shield.\nCreate a standalone faithful full-body version of THAT ONE monster. Preserve its distinctive design, costume, colors, props, face, painterly watercolor paper grain and dark hand-ink contours. Do not copy any other monster or any background from the atlas. This is not a literal rectangle crop: complete the whole target character cleanly with NO clipped feet, hat, horns, weapon, flame, coffin or lantern, and NO fragments from neighboring monsters.\nA square 1:1 transparent canvas. Center the complete sprite horizontally, put feet or base at about 92% of canvas height, leave a consistent 7% clear transparent margin all around. Fill about 82-86% of the square in the major dimension while preserving the original natural proportions. Front or slight three-quarter view facing player. Opaque body and props, actual alpha-zero background everywhere outside the silhouette; do not add diffuse colored background haze, drop shadows, ground plane, cast shadow, colored backdrop or floor. The game adds ground shadow separately.\nSame charming Chinese underworld folklore watercolor/gouache style as the atlas, with cream paper, jade/cyan ghost-fire, faded cinnabar, dark indigo and antique-gold detail. Not 3D, not realistic, no plastic look. No frame, card, interface, labels, names, numbers, visible lettering, watermark, extra beings, detached unrelated wisps, or checkerboard drawing. Decorative seals stay abstract. Return exactly one finished production sprite, not an atlas.",
+      "reference": {
+        "role": "generated atlas character identity and style reference",
+        "atlasId": "02",
+        "cellIndex": 4,
+        "path": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-453c6272-9e9f-4739-945a-eb2735fd8eba.png"
+      },
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-81ebb6be-ddbd-420b-9565-c115ec05f676.png"
+    },
+    {
+      "filename": "enemy-gremlin_sneaky.png",
+      "id": "gremlin_sneaky",
+      "purpose": "A thin nimble gray-green ghost child carrying two short curved bronze knives, low stance, pointed black cloth cap, narrow eyes, dark plum patched clothes and red ankle ties.",
+      "prompt": "Use case: precise-object-edit.\nAsset type: ONE isolated full-body transparent PNG game enemy sprite.\nThe reference image is a six-character atlas. The ONLY target character is at the bottom row, right column: A thin nimble gray-green ghost child carrying two short curved bronze knives, low stance, pointed black cloth cap, narrow eyes, dark plum patched clothes and red ankle ties.\nCreate a standalone faithful full-body version of THAT ONE monster. Preserve its distinctive design, costume, colors, props, face, painterly watercolor paper grain and dark hand-ink contours. Do not copy any other monster or any background from the atlas. This is not a literal rectangle crop: complete the whole target character cleanly with NO clipped feet, hat, horns, weapon, flame, coffin or lantern, and NO fragments from neighboring monsters.\nA square 1:1 transparent canvas. Center the complete sprite horizontally, put feet or base at about 92% of canvas height, leave a consistent 7% clear transparent margin all around. Fill about 82-86% of the square in the major dimension while preserving the original natural proportions. Front or slight three-quarter view facing player. Opaque body and props, actual alpha-zero background everywhere outside the silhouette; do not add diffuse colored background haze, drop shadows, ground plane, cast shadow, colored backdrop or floor. The game adds ground shadow separately.\nSame charming Chinese underworld folklore watercolor/gouache style as the atlas, with cream paper, jade/cyan ghost-fire, faded cinnabar, dark indigo and antique-gold detail. Not 3D, not realistic, no plastic look. No frame, card, interface, labels, names, numbers, visible lettering, watermark, extra beings, detached unrelated wisps, or checkerboard drawing. Decorative seals stay abstract. Return exactly one finished production sprite, not an atlas.",
+      "reference": {
+        "role": "generated atlas character identity and style reference",
+        "atlasId": "02",
+        "cellIndex": 5,
+        "path": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-453c6272-9e9f-4739-945a-eb2735fd8eba.png"
+      },
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-9c71b2db-32f8-4da9-8d70-9d5ebb6af25b.png"
+    },
+    {
+      "filename": "enemy-gremlin_wizard.png",
+      "id": "gremlin_wizard",
+      "purpose": "A tiny elderly ghost wizard in indigo Chinese paper robes with a tall crooked dark hat, long white eyebrows, both hands raising a blank cream talisman between turquoise spell wisps, a few red seal marks.",
+      "prompt": "Use case: precise-object-edit.\nAsset type: ONE isolated full-body transparent PNG game enemy sprite.\nThe reference image is a six-character atlas. The ONLY target character is at the top row, left column: A tiny elderly ghost wizard in indigo Chinese paper robes with a tall crooked dark hat, long white eyebrows, both hands raising a blank cream talisman between turquoise spell wisps, a few red seal marks.\nCreate a standalone faithful full-body version of THAT ONE monster. Preserve its distinctive design, costume, colors, props, face, painterly watercolor paper grain and dark hand-ink contours. Do not copy any other monster or any background from the atlas. This is not a literal rectangle crop: complete the whole target character cleanly with NO clipped feet, hat, horns, weapon, flame, coffin or lantern, and NO fragments from neighboring monsters.\nA square 1:1 transparent canvas. Center the complete sprite horizontally, put feet or base at about 92% of canvas height, leave a consistent 7% clear transparent margin all around. Fill about 82-86% of the square in the major dimension while preserving the original natural proportions. Front or slight three-quarter view facing player. Opaque body and props, actual alpha-zero background everywhere outside the silhouette; do not add diffuse colored background haze, drop shadows, ground plane, cast shadow, colored backdrop or floor. The game adds ground shadow separately.\nSame charming Chinese underworld folklore watercolor/gouache style as the atlas, with cream paper, jade/cyan ghost-fire, faded cinnabar, dark indigo and antique-gold detail. Not 3D, not realistic, no plastic look. No frame, card, interface, labels, names, numbers, visible lettering, watermark, extra beings, detached unrelated wisps, or checkerboard drawing. Decorative seals stay abstract. Return exactly one finished production sprite, not an atlas.",
+      "reference": {
+        "role": "generated atlas character identity and style reference",
+        "atlasId": "03",
+        "cellIndex": 0,
+        "path": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-7c69580a-f261-4d63-a141-9d5da22ba81b.png"
+      },
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-2fc4aad3-c699-42eb-aca9-d802018e053e.png"
+    },
+    {
+      "filename": "enemy-nob.png",
+      "id": "nob",
+      "purpose": "A powerful bull-headed underworld enforcer: huge broad-shouldered chibi ox demon in worn dark blue and antique-gold armor, warm gray skin, large ivory horns, thick arms wielding a heavy wooden ritual club, red waist sash.",
+      "prompt": "Use case: precise-object-edit.\nAsset type: ONE isolated full-body transparent PNG game enemy sprite.\nThe reference image is a six-character atlas. The ONLY target character is at the top row, middle column: A powerful bull-headed underworld enforcer: huge broad-shouldered chibi ox demon in worn dark blue and antique-gold armor, warm gray skin, large ivory horns, thick arms wielding a heavy wooden ritual club, red waist sash.\nCreate a standalone faithful full-body version of THAT ONE monster. Preserve its distinctive design, costume, colors, props, face, painterly watercolor paper grain and dark hand-ink contours. Do not copy any other monster or any background from the atlas. This is not a literal rectangle crop: complete the whole target character cleanly with NO clipped feet, hat, horns, weapon, flame, coffin or lantern, and NO fragments from neighboring monsters.\nA square 1:1 transparent canvas. Center the complete sprite horizontally, put feet or base at about 92% of canvas height, leave a consistent 7% clear transparent margin all around. Fill about 82-86% of the square in the major dimension while preserving the original natural proportions. Front or slight three-quarter view facing player. Opaque body and props, actual alpha-zero background everywhere outside the silhouette; do not add diffuse colored background haze, drop shadows, ground plane, cast shadow, colored backdrop or floor. The game adds ground shadow separately.\nSame charming Chinese underworld folklore watercolor/gouache style as the atlas, with cream paper, jade/cyan ghost-fire, faded cinnabar, dark indigo and antique-gold detail. Not 3D, not realistic, no plastic look. No frame, card, interface, labels, names, numbers, visible lettering, watermark, extra beings, detached unrelated wisps, or checkerboard drawing. Decorative seals stay abstract. Return exactly one finished production sprite, not an atlas.",
+      "reference": {
+        "role": "generated atlas character identity and style reference",
+        "atlasId": "03",
+        "cellIndex": 1,
+        "path": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-7c69580a-f261-4d63-a141-9d5da22ba81b.png"
+      },
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-2b3dbe1c-280e-4052-8e2f-2eb314c725ba.png"
+    },
+    {
+      "filename": "enemy-lagavulin.png",
+      "id": "lagavulin",
+      "purpose": "An ancient sleepy coffin guardian: a weathered gray-blue ghost with long wispy beard half-seated inside an upright open dark wooden coffin, closed eyes and folded arms, tarnished brass corners and cream sealing strips. Coffin and figure are one compact silhouette.",
+      "prompt": "Use case: precise-object-edit.\nAsset type: ONE isolated full-body transparent PNG game enemy sprite.\nThe reference image is a six-character atlas. The ONLY target character is at the top row, right column: An ancient sleepy coffin guardian: a weathered gray-blue ghost with long wispy beard half-seated inside an upright open dark wooden coffin, closed eyes and folded arms, tarnished brass corners and cream sealing strips. Coffin and figure are one compact silhouette.\nCreate a standalone faithful full-body version of THAT ONE monster. Preserve its distinctive design, costume, colors, props, face, painterly watercolor paper grain and dark hand-ink contours. Do not copy any other monster or any background from the atlas. This is not a literal rectangle crop: complete the whole target character cleanly with NO clipped feet, hat, horns, weapon, flame, coffin or lantern, and NO fragments from neighboring monsters.\nA square 1:1 transparent canvas. Center the complete sprite horizontally, put feet or base at about 92% of canvas height, leave a consistent 7% clear transparent margin all around. Fill about 82-86% of the square in the major dimension while preserving the original natural proportions. Front or slight three-quarter view facing player. Opaque body and props, actual alpha-zero background everywhere outside the silhouette; do not add diffuse colored background haze, drop shadows, ground plane, cast shadow, colored backdrop or floor. The game adds ground shadow separately.\nSame charming Chinese underworld folklore watercolor/gouache style as the atlas, with cream paper, jade/cyan ghost-fire, faded cinnabar, dark indigo and antique-gold detail. Not 3D, not realistic, no plastic look. No frame, card, interface, labels, names, numbers, visible lettering, watermark, extra beings, detached unrelated wisps, or checkerboard drawing. Decorative seals stay abstract. Return exactly one finished production sprite, not an atlas.",
+      "reference": {
+        "role": "generated atlas character identity and style reference",
+        "atlasId": "03",
+        "cellIndex": 2,
+        "path": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-7c69580a-f261-4d63-a141-9d5da22ba81b.png"
+      },
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-29bf8b5f-92db-477d-a6a3-075af6c8c6bb.png"
+    },
+    {
+      "filename": "enemy-sentry.png",
+      "id": "sentry",
+      "purpose": "One floating soul-sealing stone stele: thick upright jade-gray stone tablet with a rounded Chinese architectural cap, a single large turquoise ghost-eye stone inset at center, abstract red talisman strokes, bronze binding corners, small hanging red cord. Only ONE stele, not three.",
+      "prompt": "Use case: precise-object-edit.\nAsset type: ONE isolated full-body transparent PNG game enemy sprite.\nThe reference image is a six-character atlas. The ONLY target character is at the bottom row, left column: One floating soul-sealing stone stele: thick upright jade-gray stone tablet with a rounded Chinese architectural cap, a single large turquoise ghost-eye stone inset at center, abstract red talisman strokes, bronze binding corners, small hanging red cord. Only ONE stele, not three.\nCreate a standalone faithful full-body version of THAT ONE monster. Preserve its distinctive design, costume, colors, props, face, painterly watercolor paper grain and dark hand-ink contours. Do not copy any other monster or any background from the atlas. This is not a literal rectangle crop: complete the whole target character cleanly with NO clipped feet, hat, horns, weapon, flame, coffin or lantern, and NO fragments from neighboring monsters.\nA square 1:1 transparent canvas. Center the complete sprite horizontally, put feet or base at about 92% of canvas height, leave a consistent 7% clear transparent margin all around. Fill about 82-86% of the square in the major dimension while preserving the original natural proportions. Front or slight three-quarter view facing player. Opaque body and props, actual alpha-zero background everywhere outside the silhouette; do not add diffuse colored background haze, drop shadows, ground plane, cast shadow, colored backdrop or floor. The game adds ground shadow separately.\nSame charming Chinese underworld folklore watercolor/gouache style as the atlas, with cream paper, jade/cyan ghost-fire, faded cinnabar, dark indigo and antique-gold detail. Not 3D, not realistic, no plastic look. No frame, card, interface, labels, names, numbers, visible lettering, watermark, extra beings, detached unrelated wisps, or checkerboard drawing. Decorative seals stay abstract. Return exactly one finished production sprite, not an atlas.",
+      "reference": {
+        "role": "generated atlas character identity and style reference",
+        "atlasId": "03",
+        "cellIndex": 3,
+        "path": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-7c69580a-f261-4d63-a141-9d5da22ba81b.png"
+      },
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-eecce3e6-592f-4b8a-9bb6-7c8e9aba557b.png"
+    },
+    {
+      "filename": "enemy-slime_boss.png",
+      "id": "slime_boss",
+      "purpose": "A large underworld mud king: plump jade-teal sludge monster with a broad cute fierce ghost face, flowing rounded mud arms, small bent antique-gold crown and red paper seal at forehead, rich swamp-green layers. Big boss personality, compact full-body silhouette.",
+      "prompt": "Use case: precise-object-edit.\nAsset type: ONE isolated full-body transparent PNG game enemy sprite.\nThe reference image is a six-character atlas. The ONLY target character is at the bottom row, middle column: A large underworld mud king: plump jade-teal sludge monster with a broad cute fierce ghost face, flowing rounded mud arms, small bent antique-gold crown and red paper seal at forehead, rich swamp-green layers. Big boss personality, compact full-body silhouette.\nCreate a standalone faithful full-body version of THAT ONE monster. Preserve its distinctive design, costume, colors, props, face, painterly watercolor paper grain and dark hand-ink contours. Do not copy any other monster or any background from the atlas. This is not a literal rectangle crop: complete the whole target character cleanly with NO clipped feet, hat, horns, weapon, flame, coffin or lantern, and NO fragments from neighboring monsters.\nA square 1:1 transparent canvas. Center the complete sprite horizontally, put feet or base at about 92% of canvas height, leave a consistent 7% clear transparent margin all around. Fill about 82-86% of the square in the major dimension while preserving the original natural proportions. Front or slight three-quarter view facing player. Opaque body and props, actual alpha-zero background everywhere outside the silhouette; do not add diffuse colored background haze, drop shadows, ground plane, cast shadow, colored backdrop or floor. The game adds ground shadow separately.\nSame charming Chinese underworld folklore watercolor/gouache style as the atlas, with cream paper, jade/cyan ghost-fire, faded cinnabar, dark indigo and antique-gold detail. Not 3D, not realistic, no plastic look. No frame, card, interface, labels, names, numbers, visible lettering, watermark, extra beings, detached unrelated wisps, or checkerboard drawing. Decorative seals stay abstract. Return exactly one finished production sprite, not an atlas.",
+      "reference": {
+        "role": "generated atlas character identity and style reference",
+        "atlasId": "03",
+        "cellIndex": 4,
+        "path": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-7c69580a-f261-4d63-a141-9d5da22ba81b.png"
+      },
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-f5cc7dbf-eee7-4623-ad78-b338e8195c21.png"
+    },
+    {
+      "filename": "enemy-hexaghost.png",
+      "id": "hexaghost",
+      "purpose": "A six-lantern revenant: one central pale-blue ghost-mask lantern with a dark carved Chinese bronze frame, surrounded by EXACTLY SIX small red-and-gold soul lanterns attached in a circular orbit by dark wispy cords; turquoise ghost fire at each lantern. All six orbiting lanterns and center mask form ONE compact connected enemy sprite, no backdrop.",
+      "prompt": "Use case: precise-object-edit.\nAsset type: ONE isolated full-body transparent PNG game enemy sprite.\nThe reference image is a six-character atlas. The ONLY target character is at the bottom row, right column: A six-lantern revenant: one central pale-blue ghost-mask lantern with a dark carved Chinese bronze frame, surrounded by EXACTLY SIX small red-and-gold soul lanterns attached in a circular orbit by dark wispy cords; turquoise ghost fire at each lantern. All six orbiting lanterns and center mask form ONE compact connected enemy sprite, no backdrop.\nCreate a standalone faithful full-body version of THAT ONE monster. Preserve its distinctive design, costume, colors, props, face, painterly watercolor paper grain and dark hand-ink contours. Do not copy any other monster or any background from the atlas. This is not a literal rectangle crop: complete the whole target character cleanly with NO clipped feet, hat, horns, weapon, flame, coffin or lantern, and NO fragments from neighboring monsters.\nA square 1:1 transparent canvas. Center the complete sprite horizontally, put feet or base at about 92% of canvas height, leave a consistent 7% clear transparent margin all around. Fill about 82-86% of the square in the major dimension while preserving the original natural proportions. Front or slight three-quarter view facing player. Opaque body and props, actual alpha-zero background everywhere outside the silhouette; do not add diffuse colored background haze, drop shadows, ground plane, cast shadow, colored backdrop or floor. The game adds ground shadow separately.\nSame charming Chinese underworld folklore watercolor/gouache style as the atlas, with cream paper, jade/cyan ghost-fire, faded cinnabar, dark indigo and antique-gold detail. Not 3D, not realistic, no plastic look. No frame, card, interface, labels, names, numbers, visible lettering, watermark, extra beings, detached unrelated wisps, or checkerboard drawing. Decorative seals stay abstract. Return exactly one finished production sprite, not an atlas.",
+      "reference": {
+        "role": "generated atlas character identity and style reference",
+        "atlasId": "03",
+        "cellIndex": 5,
+        "path": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-7c69580a-f261-4d63-a141-9d5da22ba81b.png"
+      },
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a170f6-1e0f-7072-b7c8-73f3f1a09ce0\\exec-1febc277-920e-4979-925c-3415136264db.png"
+    }
+  ]
+}

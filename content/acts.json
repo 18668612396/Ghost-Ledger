@@ -1,0 +1,132 @@
+[
+  {
+    "id": "act1",
+    "number": 1,
+    "difficultyModifiers": [
+      { "id": 0, "hpMultiplier": 1, "attackBonus": 0 },
+      { "id": 1, "hpMultiplier": 1.15, "attackBonus": 2 }
+    ],
+    "name": "第一幕 · 阴路初行",
+    "description": "从奈何桥出发，穿过鬼市与荒冢，迎战三位终审者之一。",
+    "starting": {
+      "maxHp": 80,
+      "gold": 99,
+      "energy": 3,
+      "deck": [
+        {
+          "cardId": "ic_strike",
+          "count": 5
+        },
+        {
+          "cardId": "ic_defend",
+          "count": 4
+        },
+        {
+          "cardId": "ic_bash",
+          "count": 1
+        }
+      ],
+      "relics": [
+        "blood_ember",
+        "lamp"
+      ]
+    },
+    "weakBattleCount": 3,
+    "encounterPools": {
+      "weak": "act1_weak",
+      "strong": "act1_strong",
+      "elite": "act1_elite",
+      "boss": "act1_boss"
+    },
+    "eventPool": [
+      "shrine",
+      "market",
+      "mushrooms",
+      "gold",
+      "debt_archive"
+    ],
+    "cardPools": [
+      "ironclad",
+      "debt"
+    ],
+    "specialCards": [
+      "debt_chain",
+      "debt_vow",
+      "debt_seal",
+      "debt_lotus",
+      "debt_blood",
+      "debt_ledger",
+      "debt_mirror",
+      "debt_ferry",
+      "debt_verdict",
+      "debt_loan",
+      "debt_delay",
+      "debt_register"
+    ],
+    "rewards": {
+      "rarityWeights": {
+        "common": 60,
+        "uncommon": 37,
+        "rare": 3
+      },
+      "debtChance": {
+        "common": 0.2,
+        "uncommon": 0.2,
+        "rare": 0.25
+      }
+    },
+    "map": {
+      "floors": 16,
+      "columns": 3,
+      "nodeCount": [
+        2,
+        3
+      ],
+      "fixedFloors": {
+        "1": {
+          "type": "battle",
+          "count": 3
+        },
+        "9": {
+          "type": "treasure",
+          "count": 1
+        },
+        "15": {
+          "type": "rest",
+          "count": 1
+        },
+        "16": {
+          "type": "boss",
+          "count": 1
+        }
+      },
+      "typeWeights": {
+        "battle": 47,
+        "event": 22,
+        "elite": 11,
+        "rest": 12,
+        "shop": 8
+      },
+      "branchChance": 0.46,
+      "maxLinks": 2,
+      "constraints": {
+        "minFloor": {
+          "elite": 6,
+          "rest": 3,
+          "shop": 2
+        },
+        "maxFloor": {
+          "elite": 13,
+          "shop": 14,
+          "event": 14,
+          "battle": 14
+        },
+        "noConsecutive": [
+          "rest",
+          "shop",
+          "elite"
+        ]
+      }
+    }
+  }
+]

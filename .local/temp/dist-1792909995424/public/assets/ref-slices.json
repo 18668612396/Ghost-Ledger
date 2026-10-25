@@ -1,0 +1,402 @@
+{
+  "version": 1,
+  "operation": "crop-only",
+  "sources": [
+    {
+      "filename": "ref-button.png",
+      "size": [
+        2172,
+        724
+      ],
+      "trim": [
+        31,
+        148,
+        2112,
+        426
+      ],
+      "alphaBounds": [
+        25,
+        55,
+        2115,
+        642
+      ],
+      "trimMethod": "explicit-rectangle"
+    },
+    {
+      "filename": "ref-scroll.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "trim": [
+        0,
+        17,
+        1009,
+        1485
+      ],
+      "alphaBounds": [
+        0,
+        17,
+        1009,
+        1485
+      ],
+      "trimMethod": "alpha-bounds"
+    },
+    {
+      "filename": "ref-brushes.png",
+      "size": [
+        2172,
+        724
+      ],
+      "trim": [
+        0,
+        0,
+        2099,
+        724
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        2099,
+        724
+      ],
+      "trimMethod": "alpha-bounds"
+    },
+    {
+      "filename": "map-path.png",
+      "size": [
+        2172,
+        724
+      ],
+      "trim": [
+        42,
+        334,
+        2091,
+        64
+      ],
+      "alphaBounds": [
+        39,
+        101,
+        2119,
+        535
+      ],
+      "trimMethod": "explicit-rectangle"
+    }
+  ],
+  "skins": {
+    "button": {
+      "source": "ref-button.png",
+      "referenceSize": [
+        2112,
+        426
+      ],
+      "insets": {
+        "left": 260,
+        "right": 260
+      },
+      "parts": {
+        "left": "ref-button-left.png",
+        "middle": "ref-button-middle.png",
+        "right": "ref-button-right.png"
+      }
+    },
+    "scroll": {
+      "source": "ref-scroll.png",
+      "referenceSize": [
+        1009,
+        1485
+      ],
+      "insets": {
+        "top": 180,
+        "right": 120,
+        "bottom": 180,
+        "left": 120
+      },
+      "parts": {
+        "tl": "ref-scroll-tl.png",
+        "t": "ref-scroll-t.png",
+        "tr": "ref-scroll-tr.png",
+        "l": "ref-scroll-l.png",
+        "c": "ref-scroll-c.png",
+        "r": "ref-scroll-r.png",
+        "bl": "ref-scroll-bl.png",
+        "b": "ref-scroll-b.png",
+        "br": "ref-scroll-br.png"
+      }
+    }
+  },
+  "assets": [
+    {
+      "filename": "ref-button-left.png",
+      "source": "ref-button.png",
+      "crop": [
+        31,
+        148,
+        260,
+        426
+      ],
+      "size": [
+        260,
+        426
+      ],
+      "ratio": 0.6103286384976526,
+      "group": "button",
+      "part": "left"
+    },
+    {
+      "filename": "ref-button-middle.png",
+      "source": "ref-button.png",
+      "crop": [
+        291,
+        148,
+        1592,
+        426
+      ],
+      "size": [
+        1592,
+        426
+      ],
+      "ratio": 3.7370892018779345,
+      "group": "button",
+      "part": "middle"
+    },
+    {
+      "filename": "ref-button-right.png",
+      "source": "ref-button.png",
+      "crop": [
+        1883,
+        148,
+        260,
+        426
+      ],
+      "size": [
+        260,
+        426
+      ],
+      "ratio": 0.6103286384976526,
+      "group": "button",
+      "part": "right"
+    },
+    {
+      "filename": "ref-scroll-tl.png",
+      "source": "ref-scroll.png",
+      "crop": [
+        0,
+        17,
+        120,
+        180
+      ],
+      "size": [
+        120,
+        180
+      ],
+      "ratio": 0.6666666666666666,
+      "group": "scroll",
+      "part": "tl"
+    },
+    {
+      "filename": "ref-scroll-t.png",
+      "source": "ref-scroll.png",
+      "crop": [
+        120,
+        17,
+        769,
+        180
+      ],
+      "size": [
+        769,
+        180
+      ],
+      "ratio": 4.272222222222222,
+      "group": "scroll",
+      "part": "t"
+    },
+    {
+      "filename": "ref-scroll-tr.png",
+      "source": "ref-scroll.png",
+      "crop": [
+        889,
+        17,
+        120,
+        180
+      ],
+      "size": [
+        120,
+        180
+      ],
+      "ratio": 0.6666666666666666,
+      "group": "scroll",
+      "part": "tr"
+    },
+    {
+      "filename": "ref-scroll-l.png",
+      "source": "ref-scroll.png",
+      "crop": [
+        0,
+        197,
+        120,
+        1125
+      ],
+      "size": [
+        120,
+        1125
+      ],
+      "ratio": 0.10666666666666667,
+      "group": "scroll",
+      "part": "l"
+    },
+    {
+      "filename": "ref-scroll-c.png",
+      "source": "ref-scroll.png",
+      "crop": [
+        120,
+        197,
+        769,
+        1125
+      ],
+      "size": [
+        769,
+        1125
+      ],
+      "ratio": 0.6835555555555556,
+      "group": "scroll",
+      "part": "c"
+    },
+    {
+      "filename": "ref-scroll-r.png",
+      "source": "ref-scroll.png",
+      "crop": [
+        889,
+        197,
+        120,
+        1125
+      ],
+      "size": [
+        120,
+        1125
+      ],
+      "ratio": 0.10666666666666667,
+      "group": "scroll",
+      "part": "r"
+    },
+    {
+      "filename": "ref-scroll-bl.png",
+      "source": "ref-scroll.png",
+      "crop": [
+        0,
+        1322,
+        120,
+        180
+      ],
+      "size": [
+        120,
+        180
+      ],
+      "ratio": 0.6666666666666666,
+      "group": "scroll",
+      "part": "bl"
+    },
+    {
+      "filename": "ref-scroll-b.png",
+      "source": "ref-scroll.png",
+      "crop": [
+        120,
+        1322,
+        769,
+        180
+      ],
+      "size": [
+        769,
+        180
+      ],
+      "ratio": 4.272222222222222,
+      "group": "scroll",
+      "part": "b"
+    },
+    {
+      "filename": "ref-scroll-br.png",
+      "source": "ref-scroll.png",
+      "crop": [
+        889,
+        1322,
+        120,
+        180
+      ],
+      "size": [
+        120,
+        180
+      ],
+      "ratio": 0.6666666666666666,
+      "group": "scroll",
+      "part": "br"
+    },
+    {
+      "filename": "ref-brush-teal.png",
+      "source": "ref-brushes.png",
+      "crop": [
+        0,
+        0,
+        2095,
+        241
+      ],
+      "size": [
+        2095,
+        241
+      ],
+      "ratio": 8.692946058091286,
+      "group": "brush",
+      "part": "teal"
+    },
+    {
+      "filename": "ref-brush-red.png",
+      "source": "ref-brushes.png",
+      "crop": [
+        81,
+        244,
+        2015,
+        237
+      ],
+      "size": [
+        2015,
+        237
+      ],
+      "ratio": 8.50210970464135,
+      "group": "brush",
+      "part": "red"
+    },
+    {
+      "filename": "ref-brush-jade.png",
+      "source": "ref-brushes.png",
+      "crop": [
+        79,
+        482,
+        2020,
+        242
+      ],
+      "size": [
+        2020,
+        242
+      ],
+      "ratio": 8.347107438016529,
+      "group": "brush",
+      "part": "jade"
+    },
+    {
+      "filename": "ref-path.png",
+      "source": "map-path.png",
+      "crop": [
+        42,
+        334,
+        2091,
+        64
+      ],
+      "size": [
+        2091,
+        64
+      ],
+      "ratio": 32.671875,
+      "group": "path",
+      "part": "path"
+    }
+  ]
+}

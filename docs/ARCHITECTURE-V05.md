@@ -1,0 +1,117 @@
+# v0.5 架构与模块边界
+
+更新：2026-10-25。当前产品版本为 v0.5，存档格式为 `version:4 / ruleset:config-v1`。全游戏只运行一套配置驱动引擎，不兼容旧存档。过时代码、测试和素材归档到游戏自己的 `.local/temp/`，不作为运行或构建依赖。
+
+本文件说明工程边界；具体字段与可复制示例见 [策划配置指南](CONTENT-AUTHORING-V05.md)，素材规则见 [美术规范](ART-STANDARDS-V05.md)，验证状态见 [开发记录](DEVELOPMENT-V05.md)。
+
+## 数据流
+
+```mermaid
+flowchart TD
+  Tables["content/*.json 策划源表"] --> Compiler["compile-content.mjs"]
+  Schema["content-schema.js 共享校验"] --> Compiler
+  Compiler --> Generated["generated/content-data.js"]
+  Generated --> API["engine.js 唯一公共接口"]
+  Input["鼠标 / 触摸 / 键盘"] --> UI["main.js 界面与输入"]
+  UI --> API
+  API --> Game["runtime/game.js 阶段与动作"]
+  Game --> World["runtime/world.js 路线 / 遭遇 / AI"]
+  Game --> Effects["runtime/effects.js 效果与触发队列"]
+  Effects --> Expressions["runtime/expressions.js 表达式与种子随机"]
+  World --> Expressions
+  Game --> Result["新状态 + 有序表现事件"]
+  Result --> Save["当前格式校验 / 浏览器保存"]
+  Result --> Views["卡面 / 战场 / 藏品视图"]
+  Result --> FX["presentation/effects.js 位图动画"]
+  Assets["public/assets/ 来源素材"] --> Views
+  Assets --> FX
+  Schema --> Save
+```
+
+## 模块职责
+
+| 模块 | 负责 | 不承担 |
+| --- | --- | --- |
+| `content/*.json` | 卡牌、能力、怪物、遭遇、幕、事件、特效参数 | 可执行函数、DOM、卡牌专用代码 |
+| `scripts/compile-content.mjs` | 校验、引用检查、PNG 检查、内容哈希、生成索引 | 修补错误配置或静默猜测字段 |
+| `src/runtime/content-schema.js` | 浏览器与 Node 共用的结构、表达式及引用校验 | 加载旧规则或旧格式 |
+| `src/runtime/expressions.js` | 安全 AST 求值、种子随机、洗牌 | `eval`、任意脚本、预览消耗随机数 |
+| `src/runtime/effects.js` | 通用效果、触发器、卡区、选择、结算帧与事件 | 按具体 cardId 编写规则分支 |
+| `src/runtime/world.js` | 路线约束、遭遇配方、怪物实例、声明式 AI 与意图 | 按具体 enemyId 编写 AI 分支 |
+| `src/runtime/game.js` | 新局、阶段、动作合法性、战斗边界、奖励与通用节点服务、存档验证 | DOM、动画计时 |
+| `src/engine.js` | 对界面暴露唯一游戏 API | 引擎分流或旧档转换 |
+| `src/runtime/items.js` | 当前法器、药物目录及相关公共定义 | 已完全表格化的道具系统 |
+| `src/modes.js`、`src/progression.js` | 模式登记、局外解锁、结算与行装 | 战斗效果解释 |
+| `src/main.js` | 页面、菜单、输入协调、保存、表现调度 | 重新计算卡牌伤害 |
+| `card-gesture.js`、`combat-targeting.js` | 区分点击与拖拽、目标区域判定 | 支付费用或修改战斗 |
+| `card-visuals.js`、`battlefield-view.js`、`collection-view.js` | 四层卡面、敌阵、简洁藏品网格 | 自行定义战斗规则 |
+| `src/presentation/*` | 消费事件、移动缩放已有位图、受击状态反馈 | 结算伤害、程序绘制美术 |
+| `skins.js`、`skin-data.js`、样式表 | 位图切片、比例、排版和响应式布局 | 用代码生成框、按钮、粒子或纹理 |
+
+现有边界是“内容与可组合战斗规则可配置”。新增模式入口、全新节点服务或法器机制仍是工程扩展，不应声称所有产品逻辑都能通过一行表格完成。
+
+## 编译与内容版本
+
+七个源表顶层均为数组，行有唯一 `id`。编译输出 `CONTENT = { cards, powers, enemies, encounters, acts, events, visuals }`，各表按 id 索引；`CONTENT_REVISION` 来源于规范化内容的哈希。
+
+校验包括字段、操作参数、表达式、卡牌与能力引用、AI 兜底、遭遇人数、事件退出路径、路线约束及本地 PNG。非法原型字段、循环对象、过深嵌套与未知操作被拒绝。生成文件不接受手改。
+
+开发启动先编译，再监听 `content/`。合法修改更新生成文件；非法修改保留上一次有效生成结果并报告错误。页面需要刷新，新配置需新开夜巡；不是自动替换进行中冒险的规则。
+
+构建在空暂存目录进行，旧 `dist` 移入 `.local/temp/` 后再替换。静态产物只包含入口、活动源码与 `public/`；开发服务拒绝点目录访问，归档不会被当作素材兜底。
+
+## 动作与结算
+
+公共入口是 `createAdventure`、`transition`、`getCardView`、`getEnemyIntent`、`getAvailableNodes`、`isValidSave` 与 `restoreRun`。它们统一指向配置运行时。
+
+1. 界面提出动作，运行时检查阶段、费用、目标和待选状态。
+2. 合法动作复制状态，将效果放入结算队列；牌先离开手牌，再按配置执行。
+3. 效果按顺序修改状态并派发触发事件。需要选牌时保存 `pendingChoice`，暂停后续队列。
+4. 选择动作恢复同一个结算帧。无效输入不重复付费，也不绕过必选步骤。
+5. 结算输出新状态和有序 `events`，界面保存并渲染，表现层播放对应事件。
+
+动画只消费结果。重复播放或中断动画均不能再次伤害怪物；等待动画时阻止冲突操作，正在播放的 DOM 副本置于独立表现层，不因主界面重绘而消失。
+
+卡牌区为 `hand / drawPile / discard / exhaust / limbo / powerZone`。持续能力牌进入 `powerZone`，不能因为离开手牌就触发消耗。永久牌副本在 `deckCards` 中保存独立 uid 与 `upgradeLevel`；战内复制、临时费用和成长字段不自动写回永久副本。
+
+## 通用表达与时序
+
+表达式只接受 JSON AST：`stat` 读取上下文，`op` 组合运算，`count` 统计卡区，`debt` 读取阴债摘要，`random` 用种子采样。动态文案由 `textValues` 求值后替换 `{damage}` 等占位符，不按牌名拼特殊文字。
+
+基础效果覆盖伤害、护甲、香火、生命、状态、能力、抽牌、生成、复制、搬牌、消耗、升级、条件、阴债与世界交互。复杂牌由这些操作组合；新机制应扩展共享操作及其校验与回归，再由配置使用。
+
+能力与卡牌触发共享事件。触发帧中的 `source` 为拥有者，`power.amount` 为能力层数，`event` 提供实际伤害、来源、卡牌类型与目标。固定护甲用 `modified:false`；固定效果伤害用 `attack:false`；真实自伤与阴债使用不同 `cause`，不能通过最终生命差猜来源。
+
+回合结束有三个期限边界：
+
+| 期限 | 清除位置 | 例子 |
+| --- | --- | --- |
+| `handEnd` | 回合末在手效果执行后、清理原手牌前 | 禁抽 |
+| `turnEnd` | 玩家结束阶段完成、敌方开始前 | 本回合攻击获得护甲等临时能力 |
+| `roundEnd` | 敌方行动完成后 | 冥火反击 |
+
+回合末仅清理结束回合时的手牌快照。虚无消耗触发幽冥相拥等抽到的新牌不会被同一批清理再次弃置。每张消耗独立触发，`exhaust.onEach` 可表达逐张收益；不可把它合并成一个总量而改变联动。
+
+## 路线、怪物与随机数
+
+幕定义起始牌组、遭遇池、奖励池、事件池、地图楼层及约束。路线按种子生成节点、类型和连接，保证节点可达并能走到首领；固定层与最早／最晚出现、相邻限制同属数据。
+
+遭遇用固定阵容、变体、槽位或抽袋组合，单场最多 5 怪。怪物定义形象、生命范围、初始状态、行动、AI 规则与事件触发；实例拥有独立 uid、生命、状态、AI 记忆和意图。
+
+AI 依次选取首条符合条件的规则，支持固定行动、循环序列和带权选择，必须存在有效兜底。意图确定时固定本次行动参数，展示与执行读取同一份行动；查看意图、打开详情和重绘不会重抽随机数。
+
+当前模式选择第一幕；新增幕表可由 `createConfiguredAdventure(seed, { actId })` 运行，开放到主页仍需登记模式或章节流程。首领胜利目前结束本次冒险，没有自动衔接第二幕。
+
+## 保存与恢复
+
+当前运行保存 `version:4`、`ruleset:'config-v1'`、`contentRevision`、`contentSnapshot`、`actId`、种子随机状态及局内状态。配置快照在新局创建时固定，只解释当前运行时支持的同一 DSL；它不用于旧存档迁移，不嵌入另一套引擎，也不保存美术文件字节。
+
+选择中的 `pendingChoice`、`effectQueue` 与 `resolutionFrames` 一同序列化。恢复时校验快照、路线、卡牌实例、怪物、结算帧和阶段；通过后才能继续，不用关闭选择窗口来跳过效果。
+
+局内键为 `ghost-ledger.run.v4`，局外键为 `ghost-ledger.profile.v2`。局外结算按 runId 防止重复领取，回府暂停不等同于冒险结算。存储限于当前浏览器来源。
+
+## 扩展验收边界
+
+新增已有操作组合的卡、怪、遭遇或事件应只改源表。新增通用规则时同时更新 schema、解释器、配置示例和独立语义场景，避免只测试实现细节。
+
+验证分四层记录：配置与资产校验；确定性规则及恢复场景；浏览器真实交互与响应式表现；真实手机及用户试玩。通过前一层不能代替后一层。最终结果统一写入 [开发记录](DEVELOPMENT-V05.md)，历史版本截图与测试数字不作为本版验收结论。

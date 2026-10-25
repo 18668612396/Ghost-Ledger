@@ -1,0 +1,124 @@
+{
+  "generator": "OpenAI built-in image_gen",
+  "created": "2026-10-25",
+  "request": "出牌燃烧、手牌化灰、按卡配置命中特效、自身目标蓝色渐变提示。所有效果使用生成透明位图。",
+  "assets": [
+    {
+      "filename": "fx-burn.png",
+      "purpose": "出牌魂火燃烧透明位图",
+      "prompt": "Use case: game-vfx sprite. Create ONE isolated transparent bitmap visual effect for a hand-painted Chinese underworld deckbuilding game. Subject: a beautiful vertical wave of turquoise-blue ghost fire engulfing the edges of a tall invisible playing card as it burns away. The implied card silhouette is tall portrait approximately 4:7, but DO NOT draw the card itself, any paper rectangle, any symbol, any text, any numbers, any character, or UI frame. Draw blue cyan flame tongues licking upwards along both sides and curling across the bottom, with a few warm gold ember flecks, dark teal ink edge accents and subtle watercolor pigment texture. Center mostly transparent so a real game card beneath remains visible. Not realistic 3D fire, not neon sci-fi, no heavy smoke. Effect occupies about 75 percent of a square canvas; all tips fully inside image with generous clear margin. No ground, no scenery, no cast shadow, no opaque square, no checkerboard. True alpha transparency outside AND through the center. Clean silhouette, bright enough to read over a pastel teal environment, painterly gouache, crisp decorative flame shapes. Output one square transparent PNG, a single usable VFX sprite, not a spritesheet.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17197-f02c-7ac1-8fa6-ea9f6c585263\\exec-a34bbc3c-4d13-4947-8237-71034383a98a.png",
+      "operation": "copy-original-bytes",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "f0543a713b74b50f715f8ef65d44cfe13f869b333b2d7256431ab82425a5f0e9"
+    },
+    {
+      "filename": "fx-ash.png",
+      "purpose": "回合末手牌灰烬透明位图",
+      "prompt": "Use case: game-vfx sprite. Create ONE isolated transparent bitmap visual effect of a discarded paper talisman becoming ash for a hand-painted Chinese underworld card game. A compact rising cloud of scattered ivory and charcoal-gray papery ash flakes with a few tiny warm amber embers, curling pale gray watercolor wisps. Fragments are irregular angular bits of burned parchment with hand ink contour detail, densely gathered at the lower center then gently dispersing upwards and outward, an elegant readable gesture. No complete card or large rectangle, no letters or numbers, no characters, no icons, no scenery or ground. 2D storybook gouache and ink, deliberately stylized, clear alpha gaps between every flake, not realistic photograph or 3D smoke. Square transparent canvas, effect fills central 75 percent with all fragments and wisps inside margin. Some midtone slate ash stays readable against pale blue ground. Real alpha transparency, no white or black background, no checkerboard, no opaque blur panel. One sprite, not a spritesheet.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17197-f02c-7ac1-8fa6-ea9f6c585263\\exec-8f1c73ba-08db-4225-9cc8-6632461ee0df.png",
+      "operation": "copy-original-bytes",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "e486f0ea6b158802653a941655bf6f5c6f3c699c3d71623073ffb84ac2a2b625"
+    },
+    {
+      "filename": "fx-slash.png",
+      "purpose": "攻伐斩击命中透明位图",
+      "prompt": "Use case: game-vfx sprite. One transparent bitmap HIT EFFECT for a hand-painted Chinese underworld card game. A single dynamic diagonal crescent slash from lower left to upper right, sharp ivory-gold core with deep cinnabar-red brush streak on one side, a few red-gold ink sparks radiating from the middle. Hand-drawn gouache watercolor pigment, purposeful dark warm ink edges, bold tapering silhouette, richly painted but compact and immediately legible. Warm antique gold and vermilion red, not neon, not 3D, not photorealistic. No sword or weapon, no blood, no victim, no character, no text, no border, no scene or ground. Square canvas, entire crescent fits inside central 75 percent with generous alpha margins. True transparent background and transparent gaps between strokes. One isolated finished visual-effect sprite, not a spritesheet.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17197-f02c-7ac1-8fa6-ea9f6c585263\\exec-fac5e1cc-2500-4eba-85a0-d1f7922f97b1.png",
+      "operation": "copy-original-bytes",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "2f7edcdf3f48bbc97fe85385f0c62c1d1d0faadee0c6105ec37f50fcc32785eb"
+    },
+    {
+      "filename": "fx-fire.png",
+      "purpose": "赤焰命中透明位图",
+      "prompt": "Use case: game-vfx sprite. Create ONE isolated transparent magic FIRE IMPACT sprite for a hand-painted Chinese underworld deckbuilding game. A compact circular burst of warm vermilion flame and golden soul fire, irregular curling flame petals spiraling outward from a brilliant cream center. Vivid warm colors with antique ochre edges, dark red ink accents and visible gouache pigment, clean illustrative silhouette. Shape is explosive but elegant, a single centered hit flash with sparse surrounding embers and generous alpha gaps. No character, no weapon, no skull, no text, no digits, no ring UI, no scenery, no card, no hard square. Not 3D or photographic, not sci-fi glow. Square composition, burst fits central 72 percent and all flying embers inside safe margin. Real transparent background and no checkerboard. One visual effect bitmap, not a spritesheet.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17197-f02c-7ac1-8fa6-ea9f6c585263\\exec-68149fb4-34a3-4f6b-bdb5-11ce497bd984.png",
+      "operation": "copy-original-bytes",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "f64feb700722f1aaf56d06f5ab840ab21607c22504b592559bc2a9ae8e2dfb7b"
+    },
+    {
+      "filename": "fx-thunder.png",
+      "purpose": "雷法命中透明位图",
+      "prompt": "Use case: game-vfx sprite. Create ONE isolated transparent LIGHTNING IMPACT visual effect for a Chinese underworld hand-painted card game. A sharp branching bolt descends diagonally into a small bursting knot of golden-white electricity at center-bottom, a few angular lightning branches flick outward. Pale antique-gold cores with vivid cobalt and teal blue brush edges, restrained dark ink line accents, watercolor gouache grain. Graphic crisp 2D illustrated lightning, expressive like Chinese brushwork, compact and legible at small scale. No clouds, no scene, no character, no weapon, no UI circle, no text or numerals, no objects, no square background. Square canvas with all branches contained inside central 78 percent, wide alpha safety margin. Real transparency between branches, no checkerboard. One single completed visual effect sprite, not a sheet or animation frames.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17197-f02c-7ac1-8fa6-ea9f6c585263\\exec-5af723d3-e650-4e77-ab7c-d7f3c5f9c3e7.png",
+      "operation": "copy-original-bytes",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "816e80d8e7d51e0719db27636ff4f88f447332de7d68082139a1e982a0238b55"
+    },
+    {
+      "filename": "fx-curse.png",
+      "purpose": "阴咒命中透明位图",
+      "prompt": "Use case: game-vfx sprite. Create ONE isolated transparent purple CURSE IMPACT visual effect for a Chinese underworld hand-painted card game. Three flowing crescent brush wisps of plum-purple spectral smoke spiral inward around an open transparent center, with a few tiny antique-gold sparks and torn blank amber talisman fragments. A dramatic crooked vortex, NOT a perfect geometric ring or mandala, lively hand-painted brush shapes and irregular tapering curled tips. Deep violet ink accents, orchid and mauve watercolor pigment, brighter pale lilac edges. No letters, no symbols, no glyphs, no face or skull, no characters, no objects other than tiny blank paper flecks, no scene, no panel. Square canvas, full effect occupies central 75 percent, generous transparent margin. True alpha background and gaps, no opaque disk, no checkerboard. Original 2D gouache game-VFX sprite, not realistic 3D, no neon. Single sprite.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17197-f02c-7ac1-8fa6-ea9f6c585263\\exec-a12e624a-0afa-4e40-a8c3-41554f775fed.png",
+      "operation": "copy-original-bytes",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "b16b1489d22814be997c511f3c260297caa38b2a380c4c0c44c108c9a0afd31f"
+    },
+    {
+      "filename": "fx-guard.png",
+      "purpose": "护身灵障透明位图",
+      "prompt": "Use case: game-vfx sprite. Create ONE transparent protective WARD effect for a hand-painted Chinese underworld deckbuilding game. A luminous jade-green crescent of protective energy curls up from below into an open circular embrace. A few elegant small antique-gold cloud strokes and green firefly sparks decorate its edge, center stays entirely alpha transparent. Dark emerald ink contour accents, saturated jade watercolor washes, ivory-gold gleams. Hand-painted 2D gouache and flowing Chinese cloud ornament, reassuring protective feeling, a visual effect rather than a solid shield object. No actual shield, no object, no emblem, no text, no glyph, no numerals, no characters, no scenery, no panel or opaque disk. Square canvas with entire effect inside central 75 percent and generous transparent margin. Crisp tapering arcs with watercolor grain, not neon sci-fi, not realistic 3D. True alpha transparency throughout gaps. One isolated usable sprite.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17197-f02c-7ac1-8fa6-ea9f6c585263\\exec-70cb14ed-77be-4763-ba27-1af0f5d27059.png",
+      "operation": "copy-original-bytes",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "2bce81fca9528b090dd1d9d3c5eae701133ef924a5d5e47850ec8f486a9a0f8e"
+    },
+    {
+      "filename": "fx-soul.png",
+      "purpose": "魂光流转透明位图",
+      "prompt": "Use case: game-vfx sprite. Create ONE isolated transparent SOUL-LIGHT visual effect for a hand-painted Chinese underworld card game. A flowing S-shaped ribbon of pale aqua turquoise light curls around a small warm ivory luminous center, with a few small ascending blue soul flames and tiny gold dust motes. Airy, graceful, restorative spiritual energy; hand-painted Chinese watercolor and gouache, blue ink edges, visible pigment texture, clean illustrated contours, saturated cyan accents. A compact asymmetrical magical flourish with many transparent gaps, different from an explosion and not a perfect ring. No face, no skull, no characters, no symbols, no words, no numbers, no object, no scene, no frame, no solid disk. Square canvas, effect centered inside 75 percent area with generous clear margin, true alpha transparency, no checkerboard or colored backdrop. Not photorealistic, not 3D, not neon sci-fi. One VFX bitmap sprite.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17197-f02c-7ac1-8fa6-ea9f6c585263\\exec-4f5b9781-6380-4ddf-8c07-5875c4926f62.png",
+      "operation": "copy-original-bytes",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "c4fd80d244a186d6dade84464ca498164f49ac7ab4e9086441f3749ed58cfd8f"
+    },
+    {
+      "filename": "fx-self-guide.png",
+      "purpose": "自身目标底部蓝色渐变引导透明位图",
+      "prompt": "Use case: game-vfx overlay sprite. Create one wide transparent BLUE SELF-TARGET GUIDANCE overlay for the bottom edge of a portrait mobile Chinese underworld card game. Composition: a shallow, graceful crescent of luminous blue-cyan mist across the lower edge, gathering at the bottom center and gradually fading upward into true transparency. Small restrained hand-painted ghost-flame curls at the two lower corners, a very subtle low arc of watercolor soul-light connecting them. The upper TWO THIRDS are almost entirely transparent; lower third contains a blue translucent atmospheric watercolor wash, brighter center close to bottom. It must feel like gentle invitation to drag a defensive card downward to the player's feet, not a UI panel. No arrow, no icons, no text, no numbers, no frame, no solid rectangle, no big flame, no character or objects. 2D Chinese storybook watercolor/gouache with softly irregular organic edges, cyan and muted royal blue color, not neon sci-fi. Wide landscape 3:1 canvas with all side curls inside 6 percent side margins. Real semitransparent alpha fading from low edge to nothing above, no checkerboard, no white/black background. A single usable overlay bitmap, not a full game screenshot.",
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a17197-f02c-7ac1-8fa6-ea9f6c585263\\exec-e79ecae0-4193-4016-8ae4-d38f677f1d52.png",
+      "operation": "copy-original-bytes",
+      "size": [
+        2172,
+        724
+      ],
+      "sha256": "d9450c90d514f39b2f6780746ad1462399f3f6ef5ba229cd941524351ad9e777"
+    }
+  ]
+}

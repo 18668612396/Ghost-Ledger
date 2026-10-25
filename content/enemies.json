@@ -1,0 +1,3425 @@
+[
+  {
+    "id": "cultist",
+    "name": "引魂祭师",
+    "reference": "Cultist",
+    "title": "引魂祭师",
+    "description": "先举行引魂仪式，随后每回合攻击；仪式使它逐轮获得力量。",
+    "archetype": "cultist",
+    "art": "enemy-cultist",
+    "kind": "normal",
+    "hpRange": [
+      48,
+      54
+    ],
+    "minHp": 48,
+    "maxHp": 54,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Cultist",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {
+      "ritual": 0
+    },
+    "moves": {
+      "ritual": {
+        "label": "招魂仪式",
+        "effects": [
+          {
+            "op": "status",
+            "key": "ritual",
+            "amount": 3,
+            "target": "source"
+          }
+        ]
+      },
+      "cultist_attack": {
+        "label": "邪祟啄击",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 6,
+            "hits": 1
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "when": {
+            "op": "eq",
+            "args": [
+              {
+                "stat": "source.turns"
+              },
+              0
+            ]
+          },
+          "move": "ritual"
+        },
+        {
+          "move": "cultist_attack"
+        }
+      ]
+    },
+    "triggers": [
+      {
+        "id": "ritual_growth",
+        "event": "enemyActionEnd",
+        "when": {
+          "op": "and",
+          "args": [
+            {
+              "op": "eq",
+              "args": [
+                {
+                  "stat": "event.actorUid"
+                },
+                {
+                  "stat": "source.uid"
+                }
+              ]
+            },
+            {
+              "op": "ne",
+              "args": [
+                {
+                  "stat": "event.move"
+                },
+                "ritual"
+              ]
+            },
+            {
+              "op": "gt",
+              "args": [
+                {
+                  "stat": "source.ritual"
+                },
+                0
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "status",
+            "key": "strength",
+            "amount": {
+              "stat": "source.ritual"
+            },
+            "target": "source"
+          }
+        ]
+      }
+    ],
+    "traits": [
+      {
+        "id": "ritual",
+        "label": "仪式",
+        "description": "首轮仪式后，每次攻击完毕增长力量。"
+      }
+    ]
+  },
+  {
+    "id": "jaw",
+    "name": "噬梦兽",
+    "reference": "Jaw Worm",
+    "title": "噬梦兽",
+    "description": "会猛咬，也会一边攻击一边防御，或咆哮蓄力。",
+    "archetype": "jaw",
+    "art": "enemy-jaw",
+    "kind": "normal",
+    "hpRange": [
+      40,
+      44
+    ],
+    "minHp": 40,
+    "maxHp": 44,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Jaw Worm",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {},
+    "moves": {
+      "chomp": {
+        "label": "大颚咬",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 11,
+            "hits": 1
+          }
+        ]
+      },
+      "thrash": {
+        "label": "冲撞护身",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 7,
+            "hits": 1
+          },
+          {
+            "op": "block",
+            "target": "source",
+            "amount": 5
+          }
+        ]
+      },
+      "bellow": {
+        "label": "鼓胀",
+        "effects": [
+          {
+            "op": "status",
+            "key": "strength",
+            "amount": 3,
+            "target": "source"
+          },
+          {
+            "op": "block",
+            "target": "source",
+            "amount": 6
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "when": {
+            "op": "eq",
+            "args": [
+              {
+                "stat": "source.turns"
+              },
+              0
+            ]
+          },
+          "move": "chomp"
+        },
+        {
+          "weighted": [
+            {
+              "move": "chomp",
+              "weight": 25,
+              "maxRepeat": 1
+            },
+            {
+              "move": "thrash",
+              "weight": 30,
+              "maxRepeat": 2
+            },
+            {
+              "move": "bellow",
+              "weight": 45,
+              "maxRepeat": 1
+            }
+          ]
+        }
+      ]
+    },
+    "triggers": [],
+    "traits": []
+  },
+  {
+    "id": "louse_red",
+    "name": "赤纸蛛",
+    "reference": "Red Louse",
+    "title": "赤纸蛛",
+    "description": "攻击或增加力量。首次被攻击伤及生命后蜷缩，获得一次格挡。",
+    "archetype": "louse_red",
+    "art": "enemy-louse_red",
+    "kind": "normal",
+    "hpRange": [
+      10,
+      15
+    ],
+    "minHp": 10,
+    "maxHp": 15,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Red Louse",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {
+      "curlUp": {
+        "random": [
+          3,
+          7
+        ]
+      },
+      "ai": {
+        "biteDamage": {
+          "random": [
+            5,
+            7
+          ]
+        }
+      }
+    },
+    "moves": {
+      "bite": {
+        "label": "叮咬",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": {
+              "stat": "source.ai.biteDamage"
+            },
+            "hits": 1
+          }
+        ]
+      },
+      "grow": {
+        "label": "膨胀",
+        "effects": [
+          {
+            "op": "status",
+            "key": "strength",
+            "amount": 3,
+            "target": "source"
+          }
+        ]
+      },
+      "louse_weak": {
+        "label": "酸液吐息",
+        "effects": [
+          {
+            "op": "status",
+            "key": "weak",
+            "amount": 2,
+            "target": "player"
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "weighted": [
+            {
+              "move": "bite",
+              "weight": 75,
+              "maxRepeat": 2
+            },
+            {
+              "move": "grow",
+              "weight": 25,
+              "maxRepeat": 1
+            }
+          ]
+        }
+      ]
+    },
+    "triggers": [
+      {
+        "id": "curl_once",
+        "event": "hpLost",
+        "when": {
+          "op": "and",
+          "args": [
+            {
+              "op": "and",
+              "args": [
+                {
+                  "op": "and",
+                  "args": [
+                    {
+                      "op": "eq",
+                      "args": [
+                        {
+                          "stat": "event.targetUid"
+                        },
+                        {
+                          "stat": "source.uid"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "gt",
+                      "args": [
+                        {
+                          "stat": "event.hpLoss"
+                        },
+                        0
+                      ]
+                    },
+                    {
+                      "op": "gt",
+                      "args": [
+                        {
+                          "stat": "source.hp"
+                        },
+                        0
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "stat": "event.attack"
+                }
+              ]
+            },
+            {
+              "op": "gt",
+              "args": [
+                {
+                  "stat": "source.curlUp"
+                },
+                0
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "block",
+            "target": "source",
+            "amount": {
+              "stat": "source.curlUp"
+            }
+          },
+          {
+            "op": "set",
+            "target": "source",
+            "path": "curlUp",
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "traits": [
+      {
+        "id": "curl_up",
+        "label": "蜷缩",
+        "description": "首次被攻击打掉生命时获得一次护甲。攻击数值在出生时固定。"
+      }
+    ]
+  },
+  {
+    "id": "louse_green",
+    "name": "青纸蛛",
+    "reference": "Green Louse",
+    "title": "青纸蛛",
+    "description": "攻击或施加虚弱。首次被攻击伤及生命后蜷缩，获得一次格挡。",
+    "archetype": "louse_green",
+    "art": "enemy-louse_green",
+    "kind": "normal",
+    "hpRange": [
+      11,
+      17
+    ],
+    "minHp": 11,
+    "maxHp": 17,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Green Louse",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {
+      "curlUp": {
+        "random": [
+          3,
+          7
+        ]
+      },
+      "ai": {
+        "biteDamage": {
+          "random": [
+            5,
+            7
+          ]
+        }
+      }
+    },
+    "moves": {
+      "bite": {
+        "label": "叮咬",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": {
+              "stat": "source.ai.biteDamage"
+            },
+            "hits": 1
+          }
+        ]
+      },
+      "grow": {
+        "label": "膨胀",
+        "effects": [
+          {
+            "op": "status",
+            "key": "strength",
+            "amount": 3,
+            "target": "source"
+          }
+        ]
+      },
+      "louse_weak": {
+        "label": "酸液吐息",
+        "effects": [
+          {
+            "op": "status",
+            "key": "weak",
+            "amount": 2,
+            "target": "player"
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "weighted": [
+            {
+              "move": "bite",
+              "weight": 75,
+              "maxRepeat": 2
+            },
+            {
+              "move": "louse_weak",
+              "weight": 25,
+              "maxRepeat": 2
+            }
+          ]
+        }
+      ]
+    },
+    "triggers": [
+      {
+        "id": "curl_once",
+        "event": "hpLost",
+        "when": {
+          "op": "and",
+          "args": [
+            {
+              "op": "and",
+              "args": [
+                {
+                  "op": "and",
+                  "args": [
+                    {
+                      "op": "eq",
+                      "args": [
+                        {
+                          "stat": "event.targetUid"
+                        },
+                        {
+                          "stat": "source.uid"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "gt",
+                      "args": [
+                        {
+                          "stat": "event.hpLoss"
+                        },
+                        0
+                      ]
+                    },
+                    {
+                      "op": "gt",
+                      "args": [
+                        {
+                          "stat": "source.hp"
+                        },
+                        0
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "stat": "event.attack"
+                }
+              ]
+            },
+            {
+              "op": "gt",
+              "args": [
+                {
+                  "stat": "source.curlUp"
+                },
+                0
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "block",
+            "target": "source",
+            "amount": {
+              "stat": "source.curlUp"
+            }
+          },
+          {
+            "op": "set",
+            "target": "source",
+            "path": "curlUp",
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "traits": [
+      {
+        "id": "curl_up",
+        "label": "蜷缩",
+        "description": "首次被攻击打掉生命时获得一次护甲。攻击数值在出生时固定。"
+      }
+    ]
+  },
+  {
+    "id": "acid_s",
+    "name": "小腐泥灵",
+    "reference": "Acid Slime S",
+    "title": "小腐泥灵",
+    "description": "用酸蚀攻击或虚弱阻碍清场；不会分裂。",
+    "archetype": "acid_s",
+    "art": "enemy-acid",
+    "kind": "normal",
+    "hpRange": [
+      8,
+      12
+    ],
+    "minHp": 8,
+    "maxHp": 12,
+    "artScale": 0.62,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Acid Slime S",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {},
+    "moves": {
+      "acid_tackle": {
+        "label": "酸躯撞击",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 3,
+            "hits": 1
+          }
+        ]
+      },
+      "acid_lick": {
+        "label": "黏舐",
+        "effects": [
+          {
+            "op": "status",
+            "key": "weak",
+            "amount": 1,
+            "target": "player"
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "weighted": [
+            {
+              "move": "acid_tackle",
+              "weight": 50,
+              "maxRepeat": 2
+            },
+            {
+              "move": "acid_lick",
+              "weight": 50,
+              "maxRepeat": 2
+            }
+          ]
+        }
+      ]
+    },
+    "triggers": [],
+    "traits": []
+  },
+  {
+    "id": "acid_m",
+    "name": "腐泥灵",
+    "reference": "Acid Slime M",
+    "title": "腐泥灵",
+    "description": "酸蚀攻击会塞入黏液，也会重击或施加虚弱；不会分裂。",
+    "archetype": "acid_m",
+    "art": "enemy-acid",
+    "kind": "normal",
+    "hpRange": [
+      28,
+      32
+    ],
+    "minHp": 28,
+    "maxHp": 32,
+    "artScale": 0.82,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Acid Slime M",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {},
+    "moves": {
+      "acid_tackle": {
+        "label": "酸躯撞击",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 10,
+            "hits": 1
+          }
+        ]
+      },
+      "acid_lick": {
+        "label": "黏舐",
+        "effects": [
+          {
+            "op": "status",
+            "key": "weak",
+            "amount": 1,
+            "target": "player"
+          }
+        ]
+      },
+      "acid_spit": {
+        "label": "腐蚀喷吐",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 7,
+            "hits": 1
+          },
+          {
+            "op": "addCard",
+            "cardId": "status_slimed",
+            "amount": 1,
+            "zone": "discard"
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "weighted": [
+            {
+              "move": "acid_spit",
+              "weight": 30,
+              "maxRepeat": 2
+            },
+            {
+              "move": "acid_tackle",
+              "weight": 40,
+              "maxRepeat": 1
+            },
+            {
+              "move": "acid_lick",
+              "weight": 30,
+              "maxRepeat": 2
+            }
+          ]
+        }
+      ]
+    },
+    "triggers": [],
+    "traits": []
+  },
+  {
+    "id": "acid_l",
+    "name": "腐泥巨灵",
+    "reference": "Acid Slime L",
+    "title": "腐泥巨灵",
+    "description": "酸蚀攻击、重击或虚弱；半血时改为分裂，子体继承执行分裂时的剩余生命。",
+    "archetype": "acid_l",
+    "art": "enemy-acid",
+    "kind": "normal",
+    "hpRange": [
+      65,
+      69
+    ],
+    "minHp": 65,
+    "maxHp": 69,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Acid Slime L",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {},
+    "moves": {
+      "acid_tackle": {
+        "label": "酸躯撞击",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 16,
+            "hits": 1
+          }
+        ]
+      },
+      "acid_lick": {
+        "label": "黏舐",
+        "effects": [
+          {
+            "op": "status",
+            "key": "weak",
+            "amount": 2,
+            "target": "player"
+          }
+        ]
+      },
+      "acid_spit": {
+        "label": "腐蚀喷吐",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 11,
+            "hits": 1
+          },
+          {
+            "op": "addCard",
+            "cardId": "status_slimed",
+            "amount": 2,
+            "zone": "discard"
+          }
+        ]
+      },
+      "split": {
+        "label": "分裂",
+        "effects": [
+          {
+            "op": "summon",
+            "ids": [
+              "acid_m",
+              "acid_m"
+            ],
+            "inheritHp": true,
+            "replaceSource": true
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "when": {
+            "op": "lte",
+            "args": [
+              {
+                "stat": "source.hp"
+              },
+              {
+                "op": "div",
+                "args": [
+                  {
+                    "stat": "source.maxHp"
+                  },
+                  2
+                ]
+              }
+            ]
+          },
+          "move": "split"
+        },
+        {
+          "weighted": [
+            {
+              "move": "acid_spit",
+              "weight": 30,
+              "maxRepeat": 2
+            },
+            {
+              "move": "acid_tackle",
+              "weight": 40,
+              "maxRepeat": 1
+            },
+            {
+              "move": "acid_lick",
+              "weight": 30,
+              "maxRepeat": 2
+            }
+          ]
+        }
+      ]
+    },
+    "triggers": [
+      {
+        "id": "split_threshold",
+        "event": "hpLost",
+        "when": {
+          "op": "and",
+          "args": [
+            {
+              "op": "and",
+              "args": [
+                {
+                  "op": "eq",
+                  "args": [
+                    {
+                      "stat": "event.targetUid"
+                    },
+                    {
+                      "stat": "source.uid"
+                    }
+                  ]
+                },
+                {
+                  "op": "gt",
+                  "args": [
+                    {
+                      "stat": "event.hpLoss"
+                    },
+                    0
+                  ]
+                },
+                {
+                  "op": "gt",
+                  "args": [
+                    {
+                      "stat": "source.hp"
+                    },
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "op": "lte",
+              "args": [
+                {
+                  "stat": "source.hp"
+                },
+                {
+                  "op": "div",
+                  "args": [
+                    {
+                      "stat": "source.maxHp"
+                    },
+                    2
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "changeIntent",
+            "move": "split"
+          }
+        ]
+      }
+    ],
+    "traits": [
+      {
+        "id": "split",
+        "label": "分裂",
+        "description": "半血替换当前意图；行动时子体继承此刻剩余生命，击杀则阻止分裂。"
+      }
+    ]
+  },
+  {
+    "id": "spike_s",
+    "name": "小刺泥灵",
+    "reference": "Spike Slime S",
+    "title": "小刺泥灵",
+    "description": "每轮进行稳定攻击；不会分裂。",
+    "archetype": "spike_s",
+    "art": "enemy-spike",
+    "kind": "normal",
+    "hpRange": [
+      10,
+      14
+    ],
+    "minHp": 10,
+    "maxHp": 14,
+    "artScale": 0.62,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Spike Slime S",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {},
+    "moves": {
+      "spike_attack": {
+        "label": "尖刺撞击",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 5,
+            "hits": 1
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "move": "spike_attack"
+        }
+      ]
+    },
+    "triggers": [],
+    "traits": []
+  },
+  {
+    "id": "spike_m",
+    "name": "刺泥灵",
+    "reference": "Spike Slime M",
+    "title": "刺泥灵",
+    "description": "攻击并塞入黏液，或使玩家脆弱；不会分裂。",
+    "archetype": "spike_m",
+    "art": "enemy-spike",
+    "kind": "normal",
+    "hpRange": [
+      28,
+      32
+    ],
+    "minHp": 28,
+    "maxHp": 32,
+    "artScale": 0.82,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Spike Slime M",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {},
+    "moves": {
+      "spike_attack": {
+        "label": "尖刺撞击",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 8,
+            "hits": 1
+          },
+          {
+            "op": "addCard",
+            "cardId": "status_slimed",
+            "amount": 1,
+            "zone": "discard"
+          }
+        ]
+      },
+      "spike_lick": {
+        "label": "黏液缠身",
+        "effects": [
+          {
+            "op": "status",
+            "key": "frail",
+            "amount": 1,
+            "target": "player"
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "weighted": [
+            {
+              "move": "spike_attack",
+              "weight": 30,
+              "maxRepeat": 2
+            },
+            {
+              "move": "spike_lick",
+              "weight": 70,
+              "maxRepeat": 2
+            }
+          ]
+        }
+      ]
+    },
+    "triggers": [],
+    "traits": []
+  },
+  {
+    "id": "spike_l",
+    "name": "刺泥巨灵",
+    "reference": "Spike Slime L",
+    "title": "刺泥巨灵",
+    "description": "重击并塞入黏液，或施加脆弱；半血时改为分裂。",
+    "archetype": "spike_l",
+    "art": "enemy-spike",
+    "kind": "normal",
+    "hpRange": [
+      64,
+      70
+    ],
+    "minHp": 64,
+    "maxHp": 70,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Spike Slime L",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {},
+    "moves": {
+      "spike_attack": {
+        "label": "尖刺撞击",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 16,
+            "hits": 1
+          },
+          {
+            "op": "addCard",
+            "cardId": "status_slimed",
+            "amount": 2,
+            "zone": "discard"
+          }
+        ]
+      },
+      "spike_lick": {
+        "label": "黏液缠身",
+        "effects": [
+          {
+            "op": "status",
+            "key": "frail",
+            "amount": 2,
+            "target": "player"
+          }
+        ]
+      },
+      "split": {
+        "label": "分裂",
+        "effects": [
+          {
+            "op": "summon",
+            "ids": [
+              "spike_m",
+              "spike_m"
+            ],
+            "inheritHp": true,
+            "replaceSource": true
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "when": {
+            "op": "lte",
+            "args": [
+              {
+                "stat": "source.hp"
+              },
+              {
+                "op": "div",
+                "args": [
+                  {
+                    "stat": "source.maxHp"
+                  },
+                  2
+                ]
+              }
+            ]
+          },
+          "move": "split"
+        },
+        {
+          "weighted": [
+            {
+              "move": "spike_attack",
+              "weight": 30,
+              "maxRepeat": 2
+            },
+            {
+              "move": "spike_lick",
+              "weight": 70,
+              "maxRepeat": 2
+            }
+          ]
+        }
+      ]
+    },
+    "triggers": [
+      {
+        "id": "split_threshold",
+        "event": "hpLost",
+        "when": {
+          "op": "and",
+          "args": [
+            {
+              "op": "and",
+              "args": [
+                {
+                  "op": "eq",
+                  "args": [
+                    {
+                      "stat": "event.targetUid"
+                    },
+                    {
+                      "stat": "source.uid"
+                    }
+                  ]
+                },
+                {
+                  "op": "gt",
+                  "args": [
+                    {
+                      "stat": "event.hpLoss"
+                    },
+                    0
+                  ]
+                },
+                {
+                  "op": "gt",
+                  "args": [
+                    {
+                      "stat": "source.hp"
+                    },
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "op": "lte",
+              "args": [
+                {
+                  "stat": "source.hp"
+                },
+                {
+                  "op": "div",
+                  "args": [
+                    {
+                      "stat": "source.maxHp"
+                    },
+                    2
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "changeIntent",
+            "move": "split"
+          }
+        ]
+      }
+    ],
+    "traits": [
+      {
+        "id": "split",
+        "label": "分裂",
+        "description": "半血替换当前意图；行动时子体继承此刻剩余生命，击杀则阻止分裂。"
+      }
+    ]
+  },
+  {
+    "id": "slaver_blue",
+    "name": "缚魂差役",
+    "reference": "Blue Slaver",
+    "title": "缚魂差役",
+    "description": "重击，或攻击并施加虚弱，削弱玩家下一轮的清怪效率。",
+    "archetype": "slaver_blue",
+    "art": "collector",
+    "kind": "normal",
+    "hpRange": [
+      46,
+      50
+    ],
+    "minHp": 46,
+    "maxHp": 50,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Blue Slaver",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {},
+    "moves": {
+      "blue_stab": {
+        "label": "刺击",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 12,
+            "hits": 1
+          }
+        ]
+      },
+      "blue_rake": {
+        "label": "钩斩",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 7,
+            "hits": 1
+          },
+          {
+            "op": "status",
+            "key": "weak",
+            "amount": 1,
+            "target": "player"
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "weighted": [
+            {
+              "move": "blue_stab",
+              "weight": 65,
+              "maxRepeat": 2
+            },
+            {
+              "move": "blue_rake",
+              "weight": 35,
+              "maxRepeat": 2
+            }
+          ]
+        }
+      ]
+    },
+    "triggers": [],
+    "traits": []
+  },
+  {
+    "id": "slaver_red",
+    "name": "赤绳狱卒",
+    "reference": "Red Slaver",
+    "title": "赤绳狱卒",
+    "description": "攻击并施加易伤；一场一次的缠绕会使玩家暂时不能使用攻击牌。",
+    "archetype": "slaver_red",
+    "art": "enemy-slaver_red",
+    "kind": "normal",
+    "hpRange": [
+      46,
+      50
+    ],
+    "minHp": 46,
+    "maxHp": 50,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Red Slaver",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {
+      "ai": {
+        "entangled": false
+      }
+    },
+    "moves": {
+      "red_stab": {
+        "label": "重刺",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 13,
+            "hits": 1
+          }
+        ]
+      },
+      "red_scrape": {
+        "label": "碎甲斩",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 8,
+            "hits": 1
+          },
+          {
+            "op": "status",
+            "key": "exposed",
+            "amount": 1,
+            "target": "player"
+          }
+        ]
+      },
+      "entangle": {
+        "label": "缠绕",
+        "effects": [
+          {
+            "op": "status",
+            "key": "entangled",
+            "amount": 1,
+            "target": "player"
+          },
+          {
+            "op": "set",
+            "target": "source",
+            "path": "ai.entangled",
+            "value": true
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "when": {
+            "op": "eq",
+            "args": [
+              {
+                "stat": "source.turns"
+              },
+              0
+            ]
+          },
+          "move": "red_stab"
+        },
+        {
+          "when": {
+            "stat": "source.ai.entangled"
+          },
+          "weighted": [
+            {
+              "move": "red_stab",
+              "weight": 65,
+              "maxRepeat": 2
+            },
+            {
+              "move": "red_scrape",
+              "weight": 35,
+              "maxRepeat": 2
+            }
+          ]
+        },
+        {
+          "weighted": [
+            {
+              "move": "red_stab",
+              "weight": 40,
+              "maxRepeat": 2
+            },
+            {
+              "move": "red_scrape",
+              "weight": 35,
+              "maxRepeat": 2
+            },
+            {
+              "move": "entangle",
+              "weight": 25,
+              "maxRepeat": 1
+            }
+          ]
+        }
+      ]
+    },
+    "triggers": [],
+    "traits": []
+  },
+  {
+    "id": "looter",
+    "name": "窃财鬼",
+    "reference": "Looter",
+    "title": "窃财鬼",
+    "description": "攻击时盗走冥钱，随后准备逃走；及时击败它可追回失物。",
+    "archetype": "looter",
+    "art": "enemy-looter",
+    "kind": "normal",
+    "hpRange": [
+      44,
+      48
+    ],
+    "minHp": 44,
+    "maxHp": 48,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Looter",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {},
+    "moves": {
+      "looter_mug": {
+        "label": "劫掠",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 10,
+            "hits": 1
+          },
+          {
+            "op": "steal",
+            "amount": 15
+          }
+        ]
+      },
+      "looter_lunge": {
+        "label": "突刺",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 12,
+            "hits": 1
+          },
+          {
+            "op": "steal",
+            "amount": 15
+          }
+        ]
+      },
+      "smoke": {
+        "label": "烟雾护身",
+        "effects": [
+          {
+            "op": "block",
+            "target": "source",
+            "amount": 6
+          }
+        ]
+      },
+      "escape": {
+        "label": "逃跑",
+        "effects": [
+          {
+            "op": "escape"
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "when": {
+            "op": "lt",
+            "args": [
+              {
+                "stat": "source.turns"
+              },
+              2
+            ]
+          },
+          "move": "looter_mug"
+        },
+        {
+          "when": {
+            "op": "eq",
+            "args": [
+              {
+                "stat": "source.ai.lastMove"
+              },
+              "smoke"
+            ]
+          },
+          "move": "escape"
+        },
+        {
+          "when": {
+            "op": "eq",
+            "args": [
+              {
+                "stat": "source.ai.lastMove"
+              },
+              "looter_lunge"
+            ]
+          },
+          "move": "smoke"
+        },
+        {
+          "weighted": [
+            {
+              "move": "looter_lunge",
+              "weight": 50
+            },
+            {
+              "move": "smoke",
+              "weight": 50
+            }
+          ]
+        }
+      ]
+    },
+    "triggers": [
+      {
+        "id": "return_stolen_gold",
+        "event": "enemyDeath",
+        "when": {
+          "op": "eq",
+          "args": [
+            {
+              "stat": "event.targetUid"
+            },
+            {
+              "stat": "source.uid"
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "gold",
+            "amount": {
+              "stat": "source.stolen"
+            },
+            "reason": "recovery"
+          },
+          {
+            "op": "set",
+            "target": "source",
+            "path": "stolen",
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "traits": [
+      {
+        "id": "thief",
+        "label": "窃财",
+        "description": "盗款不受格挡阻止。击杀可追回，逃跑则失去赃款。"
+      }
+    ]
+  },
+  {
+    "id": "fungi",
+    "name": "孽菌童",
+    "reference": "Fungi Beast",
+    "title": "孽菌童",
+    "description": "攻击或增加力量；死亡时给玩家施加易伤，使同伴的攻击更危险。",
+    "archetype": "fungi",
+    "art": "enemy-fungi",
+    "kind": "normal",
+    "hpRange": [
+      22,
+      28
+    ],
+    "minHp": 22,
+    "maxHp": 28,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Fungi Beast",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {},
+    "moves": {
+      "fungi_attack": {
+        "label": "菌兽撕咬",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 6,
+            "hits": 1
+          }
+        ]
+      },
+      "fungi_grow": {
+        "label": "菌丝膨大",
+        "effects": [
+          {
+            "op": "status",
+            "key": "strength",
+            "amount": 3,
+            "target": "source"
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "weighted": [
+            {
+              "move": "fungi_attack",
+              "weight": 60,
+              "maxRepeat": 2
+            },
+            {
+              "move": "fungi_grow",
+              "weight": 40,
+              "maxRepeat": 1
+            }
+          ]
+        }
+      ]
+    },
+    "triggers": [
+      {
+        "id": "spore_cloud",
+        "event": "enemyDeath",
+        "when": {
+          "op": "eq",
+          "args": [
+            {
+              "stat": "event.targetUid"
+            },
+            {
+              "stat": "source.uid"
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "status",
+            "key": "exposed",
+            "amount": 2,
+            "target": "player"
+          }
+        ]
+      }
+    ],
+    "traits": [
+      {
+        "id": "spores",
+        "label": "孢子",
+        "description": "死亡时使你获得2回合易伤。"
+      }
+    ]
+  },
+  {
+    "id": "gremlin_fat",
+    "name": "迟钝纸童",
+    "reference": "Fat Gremlin",
+    "title": "迟钝纸童",
+    "description": "攻击并施加虚弱，为同伴争取时间。",
+    "archetype": "gremlin_fat",
+    "art": "paper",
+    "kind": "normal",
+    "hpRange": [
+      13,
+      17
+    ],
+    "minHp": 13,
+    "maxHp": 17,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Fat Gremlin",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {},
+    "moves": {
+      "fat_attack": {
+        "label": "拖累重击",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 4,
+            "hits": 1
+          },
+          {
+            "op": "status",
+            "key": "weak",
+            "amount": 1,
+            "target": "player"
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "move": "fat_attack"
+        }
+      ]
+    },
+    "triggers": [],
+    "traits": []
+  },
+  {
+    "id": "gremlin_mad",
+    "name": "怒面小鬼",
+    "reference": "Mad Gremlin",
+    "title": "怒面小鬼",
+    "description": "每次被攻击伤及生命都会获得力量；零碎攻击可能喂大它。",
+    "archetype": "gremlin_mad",
+    "art": "enemy-gremlin_mad",
+    "kind": "normal",
+    "hpRange": [
+      20,
+      24
+    ],
+    "minHp": 20,
+    "maxHp": 24,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Mad Gremlin",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {
+      "angry": 1
+    },
+    "moves": {
+      "mad_attack": {
+        "label": "狂怒拳",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 4,
+            "hits": 1
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "move": "mad_attack"
+        }
+      ]
+    },
+    "triggers": [
+      {
+        "id": "angry",
+        "event": "hpLost",
+        "when": {
+          "op": "and",
+          "args": [
+            {
+              "op": "and",
+              "args": [
+                {
+                  "op": "eq",
+                  "args": [
+                    {
+                      "stat": "event.targetUid"
+                    },
+                    {
+                      "stat": "source.uid"
+                    }
+                  ]
+                },
+                {
+                  "op": "gt",
+                  "args": [
+                    {
+                      "stat": "event.hpLoss"
+                    },
+                    0
+                  ]
+                },
+                {
+                  "op": "gt",
+                  "args": [
+                    {
+                      "stat": "source.hp"
+                    },
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "stat": "event.attack"
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "status",
+            "key": "strength",
+            "amount": {
+              "stat": "source.angry"
+            },
+            "target": "source"
+          }
+        ]
+      }
+    ],
+    "traits": [
+      {
+        "id": "angry",
+        "label": "怒气",
+        "description": "每次被攻击打掉生命后获得1力量。"
+      }
+    ]
+  },
+  {
+    "id": "gremlin_shield",
+    "name": "护符小鬼",
+    "reference": "Shield Gremlin",
+    "title": "护符小鬼",
+    "description": "为同伴提供格挡。独自一只时改为攻击；已预告的保护行动不会临时变成攻击。",
+    "archetype": "gremlin_shield",
+    "art": "enemy-gremlin_shield",
+    "kind": "normal",
+    "hpRange": [
+      12,
+      15
+    ],
+    "minHp": 12,
+    "maxHp": 15,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Shield Gremlin",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {},
+    "moves": {
+      "shield": {
+        "label": "持盾庇护",
+        "effects": [
+          {
+            "op": "block",
+            "target": "ally",
+            "amount": 7
+          }
+        ]
+      },
+      "shield_attack": {
+        "label": "盾击",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 6,
+            "hits": 1
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "when": {
+            "op": "gt",
+            "args": [
+              {
+                "stat": "source.ai.allyCount"
+              },
+              0
+            ]
+          },
+          "move": "shield"
+        },
+        {
+          "move": "shield_attack"
+        }
+      ]
+    },
+    "triggers": [],
+    "traits": [
+      {
+        "id": "ally_guard",
+        "label": "保护",
+        "description": "预告保护后，即使队友离场，本次仍保护自己；下一轮才改为攻击。"
+      }
+    ]
+  },
+  {
+    "id": "gremlin_sneaky",
+    "name": "匿刃小鬼",
+    "reference": "Sneaky Gremlin",
+    "title": "匿刃小鬼",
+    "description": "生命不高，但每轮攻击都很危险，适合优先处理。",
+    "archetype": "gremlin_sneaky",
+    "art": "enemy-gremlin_sneaky",
+    "kind": "normal",
+    "hpRange": [
+      10,
+      14
+    ],
+    "minHp": 10,
+    "maxHp": 14,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Sneaky Gremlin",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {},
+    "moves": {
+      "sneaky_attack": {
+        "label": "背刺",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 9,
+            "hits": 1
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "move": "sneaky_attack"
+        }
+      ]
+    },
+    "triggers": [],
+    "traits": []
+  },
+  {
+    "id": "gremlin_wizard",
+    "name": "咒灯小鬼",
+    "reference": "Gremlin Wizard",
+    "title": "咒灯小鬼",
+    "description": "先蓄力两轮再爆发；之后需再蓄力三轮。",
+    "archetype": "gremlin_wizard",
+    "art": "enemy-gremlin_wizard",
+    "kind": "normal",
+    "hpRange": [
+      21,
+      25
+    ],
+    "minHp": 21,
+    "maxHp": 25,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Gremlin Wizard",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {},
+    "moves": {
+      "charge": {
+        "label": "蓄咒",
+        "effects": []
+      },
+      "wizard_attack": {
+        "label": "终末法术",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 25,
+            "hits": 1
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "when": {
+            "op": "and",
+            "args": [
+              {
+                "op": "gte",
+                "args": [
+                  {
+                    "stat": "source.turns"
+                  },
+                  2
+                ]
+              },
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "op": "mod",
+                    "args": [
+                      {
+                        "op": "sub",
+                        "args": [
+                          {
+                            "stat": "source.turns"
+                          },
+                          2
+                        ]
+                      },
+                      4
+                    ]
+                  },
+                  0
+                ]
+              }
+            ]
+          },
+          "move": "wizard_attack"
+        },
+        {
+          "move": "charge"
+        }
+      ]
+    },
+    "triggers": [],
+    "traits": []
+  },
+  {
+    "id": "nob",
+    "name": "怒魇力士",
+    "reference": "Gremlin Nob",
+    "title": "怒魇力士",
+    "description": "先咆哮激怒；激怒后玩家每使用一张术法牌，它就获得力量。",
+    "archetype": "nob",
+    "art": "enemy-nob",
+    "kind": "elite",
+    "hpRange": [
+      82,
+      86
+    ],
+    "minHp": 82,
+    "maxHp": 86,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Gremlin Nob",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {},
+    "moves": {
+      "nob_bellow": {
+        "label": "怒吼",
+        "effects": [
+          {
+            "op": "status",
+            "key": "enrage",
+            "amount": 2,
+            "target": "source"
+          }
+        ]
+      },
+      "nob_rush": {
+        "label": "冲撞",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 14,
+            "hits": 1
+          }
+        ]
+      },
+      "nob_skull": {
+        "label": "碎颅",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 6,
+            "hits": 1
+          },
+          {
+            "op": "status",
+            "key": "exposed",
+            "amount": 2,
+            "target": "player"
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "when": {
+            "op": "eq",
+            "args": [
+              {
+                "stat": "source.turns"
+              },
+              0
+            ]
+          },
+          "move": "nob_bellow"
+        },
+        {
+          "weighted": [
+            {
+              "move": "nob_skull",
+              "weight": 33
+            },
+            {
+              "move": "nob_rush",
+              "weight": 67,
+              "maxRepeat": 2
+            }
+          ]
+        }
+      ]
+    },
+    "triggers": [
+      {
+        "id": "enrage_on_skill",
+        "event": "cardPlayed",
+        "when": {
+          "op": "and",
+          "args": [
+            {
+              "op": "eq",
+              "args": [
+                {
+                  "stat": "event.cardType"
+                },
+                "skill"
+              ]
+            },
+            {
+              "op": "gt",
+              "args": [
+                {
+                  "stat": "source.enrage"
+                },
+                0
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "status",
+            "key": "strength",
+            "amount": {
+              "stat": "source.enrage"
+            },
+            "target": "source"
+          }
+        ]
+      }
+    ],
+    "traits": [
+      {
+        "id": "enrage",
+        "label": "激怒",
+        "description": "怒吼后，每张术法牌使它获得2力量。能力牌和状态牌不触发。"
+      }
+    ]
+  },
+  {
+    "id": "lagavulin",
+    "name": "沉棺守夜者",
+    "reference": "Lagavulin",
+    "title": "沉棺守夜者",
+    "description": "在格挡中沉睡，最多给三轮准备。醒后重击、重击，再削减玩家力量和敏捷。",
+    "archetype": "lagavulin",
+    "art": "enemy-lagavulin",
+    "kind": "elite",
+    "hpRange": [
+      109,
+      111
+    ],
+    "minHp": 109,
+    "maxHp": 111,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Lagavulin",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {
+      "block": 8,
+      "ai": {
+        "awake": false,
+        "stunned": false,
+        "awakeStep": 0
+      }
+    },
+    "moves": {
+      "sleep": {
+        "label": "沉睡",
+        "effects": [
+          {
+            "op": "set",
+            "target": "source",
+            "path": "block",
+            "value": 8
+          },
+          {
+            "op": "if",
+            "condition": {
+              "op": "gte",
+              "args": [
+                {
+                  "stat": "source.turns"
+                },
+                2
+              ]
+            },
+            "then": [
+              {
+                "op": "set",
+                "target": "source",
+                "path": "ai.awake",
+                "value": true
+              },
+              {
+                "op": "set",
+                "target": "source",
+                "path": "ai.awakeStep",
+                "value": 0
+              },
+              {
+                "op": "set",
+                "target": "source",
+                "path": "block",
+                "value": 0
+              }
+            ]
+          }
+        ]
+      },
+      "stunned": {
+        "label": "受惊停顿",
+        "effects": [
+          {
+            "op": "set",
+            "target": "source",
+            "path": "ai.stunned",
+            "value": false
+          }
+        ]
+      },
+      "lag_attack": {
+        "label": "沉重斩击",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 18,
+            "hits": 1
+          },
+          {
+            "op": "set",
+            "target": "source",
+            "path": "ai.awakeStep",
+            "value": {
+              "op": "add",
+              "args": [
+                {
+                  "stat": "source.ai.awakeStep"
+                },
+                1
+              ]
+            }
+          }
+        ]
+      },
+      "siphon": {
+        "label": "摄取魂力",
+        "effects": [
+          {
+            "op": "status",
+            "key": "dexterity",
+            "amount": -1,
+            "target": "player"
+          },
+          {
+            "op": "status",
+            "key": "strength",
+            "amount": -1,
+            "target": "player"
+          },
+          {
+            "op": "set",
+            "target": "source",
+            "path": "ai.awakeStep",
+            "value": {
+              "op": "add",
+              "args": [
+                {
+                  "stat": "source.ai.awakeStep"
+                },
+                1
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "when": {
+            "op": "not",
+            "args": [
+              {
+                "stat": "source.ai.awake"
+              }
+            ]
+          },
+          "move": "sleep"
+        },
+        {
+          "when": {
+            "stat": "source.ai.stunned"
+          },
+          "move": "stunned"
+        },
+        {
+          "sequence": {
+            "moves": [
+              "lag_attack",
+              "lag_attack",
+              "siphon"
+            ],
+            "index": {
+              "stat": "source.ai.awakeStep"
+            }
+          }
+        }
+      ]
+    },
+    "triggers": [
+      {
+        "id": "awaken",
+        "event": "hpLost",
+        "when": {
+          "op": "and",
+          "args": [
+            {
+              "op": "and",
+              "args": [
+                {
+                  "op": "eq",
+                  "args": [
+                    {
+                      "stat": "event.targetUid"
+                    },
+                    {
+                      "stat": "source.uid"
+                    }
+                  ]
+                },
+                {
+                  "op": "gt",
+                  "args": [
+                    {
+                      "stat": "event.hpLoss"
+                    },
+                    0
+                  ]
+                },
+                {
+                  "op": "gt",
+                  "args": [
+                    {
+                      "stat": "source.hp"
+                    },
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "op": "not",
+              "args": [
+                {
+                  "stat": "source.ai.awake"
+                }
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "set",
+            "target": "source",
+            "path": "ai.awake",
+            "value": true
+          },
+          {
+            "op": "set",
+            "target": "source",
+            "path": "ai.stunned",
+            "value": true
+          },
+          {
+            "op": "set",
+            "target": "source",
+            "path": "ai.awakeStep",
+            "value": 0
+          },
+          {
+            "op": "set",
+            "target": "source",
+            "path": "block",
+            "value": 0
+          },
+          {
+            "op": "changeIntent",
+            "move": "stunned"
+          }
+        ]
+      }
+    ],
+    "traits": [
+      {
+        "id": "sleep",
+        "label": "沉眠",
+        "description": "最多沉睡3次行动，期间维持8护甲。被打掉生命提前苏醒并停顿一次。"
+      }
+    ]
+  },
+  {
+    "id": "sentry",
+    "name": "镇魂碑",
+    "reference": "Sentry",
+    "title": "镇魂碑",
+    "description": "三碑并列，各有一次人工制品。中碑与两侧交替攻击、塞入眩晕。",
+    "archetype": "sentry",
+    "art": "enemy-sentry",
+    "kind": "elite",
+    "hpRange": [
+      38,
+      42
+    ],
+    "minHp": 38,
+    "maxHp": 42,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Sentry",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {
+      "artifact": 1
+    },
+    "moves": {
+      "sentry_beam": {
+        "label": "魂束",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 9,
+            "hits": 1
+          }
+        ]
+      },
+      "sentry_bolt": {
+        "label": "震魂",
+        "effects": [
+          {
+            "op": "addCard",
+            "cardId": "status_dazed",
+            "amount": 2,
+            "zone": "discard"
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "sequence": {
+            "moves": [
+              "sentry_bolt",
+              "sentry_beam"
+            ],
+            "index": {
+              "op": "add",
+              "args": [
+                {
+                  "stat": "source.turns"
+                },
+                {
+                  "stat": "source.ai.position"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "triggers": [],
+    "traits": [
+      {
+        "id": "artifact",
+        "label": "人工制品",
+        "description": "抵消首次减益。两侧与中间相位相反。"
+      }
+    ]
+  },
+  {
+    "id": "slime_boss",
+    "name": "腐河鬼王",
+    "reference": "Slime Boss",
+    "title": "腐河鬼王",
+    "description": "黏液、蓄势、重砸。半血后改为分裂，继续压低生命可削弱所有子体。",
+    "archetype": "slime_boss",
+    "art": "enemy-slime_boss",
+    "kind": "boss",
+    "hpRange": [
+      140,
+      140
+    ],
+    "minHp": 140,
+    "maxHp": 140,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Slime Boss",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {},
+    "moves": {
+      "goop": {
+        "label": "喷洒黏液",
+        "effects": [
+          {
+            "op": "addCard",
+            "cardId": "status_slimed",
+            "amount": 3,
+            "zone": "discard"
+          }
+        ]
+      },
+      "prepare": {
+        "label": "准备砸击",
+        "effects": []
+      },
+      "slam": {
+        "label": "重砸",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 35,
+            "hits": 1
+          }
+        ]
+      },
+      "split": {
+        "label": "分裂",
+        "effects": [
+          {
+            "op": "summon",
+            "ids": [
+              "acid_l",
+              "spike_l"
+            ],
+            "inheritHp": true,
+            "replaceSource": true
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "when": {
+            "op": "lte",
+            "args": [
+              {
+                "stat": "source.hp"
+              },
+              {
+                "op": "div",
+                "args": [
+                  {
+                    "stat": "source.maxHp"
+                  },
+                  2
+                ]
+              }
+            ]
+          },
+          "move": "split"
+        },
+        {
+          "sequence": {
+            "moves": [
+              "goop",
+              "prepare",
+              "slam"
+            ],
+            "index": {
+              "stat": "source.turns"
+            }
+          }
+        }
+      ]
+    },
+    "triggers": [
+      {
+        "id": "split_threshold",
+        "event": "hpLost",
+        "when": {
+          "op": "and",
+          "args": [
+            {
+              "op": "and",
+              "args": [
+                {
+                  "op": "eq",
+                  "args": [
+                    {
+                      "stat": "event.targetUid"
+                    },
+                    {
+                      "stat": "source.uid"
+                    }
+                  ]
+                },
+                {
+                  "op": "gt",
+                  "args": [
+                    {
+                      "stat": "event.hpLoss"
+                    },
+                    0
+                  ]
+                },
+                {
+                  "op": "gt",
+                  "args": [
+                    {
+                      "stat": "source.hp"
+                    },
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "op": "lte",
+              "args": [
+                {
+                  "stat": "source.hp"
+                },
+                {
+                  "op": "div",
+                  "args": [
+                    {
+                      "stat": "source.maxHp"
+                    },
+                    2
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "changeIntent",
+            "move": "split"
+          }
+        ]
+      }
+    ],
+    "traits": [
+      {
+        "id": "split",
+        "label": "分裂",
+        "description": "半血替换当前意图；行动时子体继承此刻剩余生命，击杀则阻止分裂。"
+      }
+    ]
+  },
+  {
+    "id": "guardian",
+    "name": "铁面判官",
+    "reference": "The Guardian",
+    "title": "铁面判官",
+    "description": "受到一定生命伤害便转换形态并获得格挡；防御形态会反击攻击牌。",
+    "archetype": "guardian",
+    "art": "judge",
+    "kind": "boss",
+    "hpRange": [
+      240,
+      240
+    ],
+    "minHp": 240,
+    "maxHp": 240,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "The Guardian",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {
+      "ai": {
+        "phase": "offense",
+        "shiftThreshold": 30,
+        "shiftRemaining": 30,
+        "offenseStep": 0,
+        "defenseStep": 0
+      }
+    },
+    "moves": {
+      "guardian_charge": {
+        "label": "积蓄护甲",
+        "effects": [
+          {
+            "op": "block",
+            "target": "source",
+            "amount": 9
+          }
+        ],
+        "after": [
+          {
+            "op": "set",
+            "target": "source",
+            "path": "ai.offenseStep",
+            "value": {
+              "op": "mod",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "stat": "source.ai.offenseStep"
+                    },
+                    1
+                  ]
+                },
+                4
+              ]
+            }
+          }
+        ]
+      },
+      "guardian_bash": {
+        "label": "猛击",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 32,
+            "hits": 1
+          }
+        ],
+        "after": [
+          {
+            "op": "set",
+            "target": "source",
+            "path": "ai.offenseStep",
+            "value": {
+              "op": "mod",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "stat": "source.ai.offenseStep"
+                    },
+                    1
+                  ]
+                },
+                4
+              ]
+            }
+          }
+        ]
+      },
+      "guardian_vent": {
+        "label": "喷出蒸汽",
+        "effects": [
+          {
+            "op": "status",
+            "key": "weak",
+            "amount": 2,
+            "target": "player"
+          },
+          {
+            "op": "status",
+            "key": "exposed",
+            "amount": 2,
+            "target": "player"
+          }
+        ],
+        "after": [
+          {
+            "op": "set",
+            "target": "source",
+            "path": "ai.offenseStep",
+            "value": {
+              "op": "mod",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "stat": "source.ai.offenseStep"
+                    },
+                    1
+                  ]
+                },
+                4
+              ]
+            }
+          }
+        ]
+      },
+      "whirlwind": {
+        "label": "旋风",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 5,
+            "hits": 4
+          }
+        ],
+        "after": [
+          {
+            "op": "set",
+            "target": "source",
+            "path": "ai.offenseStep",
+            "value": {
+              "op": "mod",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "stat": "source.ai.offenseStep"
+                    },
+                    1
+                  ]
+                },
+                4
+              ]
+            }
+          }
+        ]
+      },
+      "defensive": {
+        "label": "防御形态",
+        "effects": [
+          {
+            "op": "set",
+            "target": "source",
+            "path": "sharpHide",
+            "value": 3
+          },
+          {
+            "op": "set",
+            "target": "source",
+            "path": "ai.defenseStep",
+            "value": 1
+          }
+        ]
+      },
+      "roll": {
+        "label": "滚击",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 9,
+            "hits": 1
+          },
+          {
+            "op": "set",
+            "target": "source",
+            "path": "ai.defenseStep",
+            "value": 2
+          }
+        ]
+      },
+      "twin": {
+        "label": "双重砸击",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 8,
+            "hits": 2
+          },
+          {
+            "op": "set",
+            "target": "source",
+            "path": "sharpHide",
+            "value": 0
+          },
+          {
+            "op": "set",
+            "target": "source",
+            "path": "ai.phase",
+            "value": "offense"
+          },
+          {
+            "op": "set",
+            "target": "source",
+            "path": "ai.offenseStep",
+            "value": 3
+          },
+          {
+            "op": "set",
+            "target": "source",
+            "path": "ai.shiftThreshold",
+            "value": {
+              "op": "add",
+              "args": [
+                {
+                  "stat": "source.ai.shiftThreshold"
+                },
+                10
+              ]
+            }
+          },
+          {
+            "op": "set",
+            "target": "source",
+            "path": "ai.shiftRemaining",
+            "value": {
+              "stat": "source.ai.shiftThreshold"
+            }
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "when": {
+            "op": "eq",
+            "args": [
+              {
+                "stat": "source.ai.phase"
+              },
+              "defense"
+            ]
+          },
+          "sequence": {
+            "moves": [
+              "defensive",
+              "roll",
+              "twin"
+            ],
+            "index": {
+              "stat": "source.ai.defenseStep"
+            }
+          }
+        },
+        {
+          "sequence": {
+            "moves": [
+              "guardian_charge",
+              "guardian_bash",
+              "guardian_vent",
+              "whirlwind"
+            ],
+            "index": {
+              "stat": "source.ai.offenseStep"
+            }
+          }
+        }
+      ]
+    },
+    "triggers": [
+      {
+        "id": "mode_shift",
+        "event": "hpLost",
+        "when": {
+          "op": "and",
+          "args": [
+            {
+              "op": "and",
+              "args": [
+                {
+                  "op": "eq",
+                  "args": [
+                    {
+                      "stat": "event.targetUid"
+                    },
+                    {
+                      "stat": "source.uid"
+                    }
+                  ]
+                },
+                {
+                  "op": "gt",
+                  "args": [
+                    {
+                      "stat": "event.hpLoss"
+                    },
+                    0
+                  ]
+                },
+                {
+                  "op": "gt",
+                  "args": [
+                    {
+                      "stat": "source.hp"
+                    },
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "op": "eq",
+              "args": [
+                {
+                  "stat": "source.ai.phase"
+                },
+                "offense"
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "set",
+            "target": "source",
+            "path": "ai.shiftRemaining",
+            "value": {
+              "op": "max",
+              "args": [
+                0,
+                {
+                  "op": "sub",
+                  "args": [
+                    {
+                      "stat": "source.ai.shiftRemaining"
+                    },
+                    {
+                      "stat": "event.hpLoss"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "op": "if",
+            "condition": {
+              "op": "lte",
+              "args": [
+                {
+                  "stat": "source.ai.shiftRemaining"
+                },
+                0
+              ]
+            },
+            "then": [
+              {
+                "op": "set",
+                "target": "source",
+                "path": "ai.phase",
+                "value": "defense"
+              },
+              {
+                "op": "set",
+                "target": "source",
+                "path": "ai.defenseStep",
+                "value": 0
+              },
+              {
+                "op": "block",
+                "target": "source",
+                "amount": 20
+              },
+              {
+                "op": "changeIntent",
+                "move": "defensive"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sharp_hide",
+        "event": "cardPlayed",
+        "when": {
+          "op": "and",
+          "args": [
+            {
+              "op": "eq",
+              "args": [
+                {
+                  "stat": "event.cardType"
+                },
+                "attack"
+              ]
+            },
+            {
+              "op": "gt",
+              "args": [
+                {
+                  "stat": "source.sharpHide"
+                },
+                0
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": {
+              "stat": "source.sharpHide"
+            },
+            "attack": false
+          }
+        ]
+      }
+    ],
+    "traits": [
+      {
+        "id": "mode_shift",
+        "label": "形态转换",
+        "description": "进攻形态累计损失30生命后转守，后续阈值每次+10。防御形态按每张攻击牌反击3，可被格挡。",
+        "display": [
+          {
+            "when": { "op": "eq", "args": [{ "stat": "source.ai.phase" }, "offense"] },
+            "text": "转形还需 {remaining} 伤害",
+            "textValues": { "remaining": { "stat": "source.ai.shiftRemaining" } }
+          },
+          {
+            "when": { "op": "eq", "args": [{ "stat": "source.ai.phase" }, "defense"] },
+            "text": "防御形态 · 谨慎攻击"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hexaghost",
+    "name": "六灯冥魂",
+    "reference": "Hexaghost",
+    "title": "六灯冥魂",
+    "description": "第二轮按玩家当前生命分割六连击，之后循环攻击与灼伤，炼狱会升级灼伤。",
+    "archetype": "hexaghost",
+    "art": "enemy-hexaghost",
+    "kind": "boss",
+    "hpRange": [
+      250,
+      250
+    ],
+    "minHp": 250,
+    "maxHp": 250,
+    "artScale": 1,
+    "source": {
+      "game": "Slay the Spire",
+      "character": "Hexaghost",
+      "baseline": "A0",
+      "research": "docs/ACT1-EXPERIENCE-BASELINE.md"
+    },
+    "initial": {
+      "ai": {
+        "infernoUsed": false
+      }
+    },
+    "moves": {
+      "activate": {
+        "label": "点燃六火",
+        "effects": []
+      },
+      "divider": {
+        "label": "分割",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": {
+              "op": "add",
+              "args": [
+                {
+                  "op": "floor",
+                  "args": [
+                    {
+                      "op": "div",
+                      "args": [
+                        {
+                          "stat": "player.hp"
+                        },
+                        12
+                      ]
+                    }
+                  ]
+                },
+                1
+              ]
+            },
+            "hits": 6
+          }
+        ]
+      },
+      "sear": {
+        "label": "灼烧",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 6,
+            "hits": 1
+          },
+          {
+            "op": "if",
+            "condition": {
+              "stat": "source.ai.infernoUsed"
+            },
+            "then": [
+              {
+                "op": "addCard",
+                "cardId": "status_burn_plus",
+                "amount": 1,
+                "zone": "discard"
+              }
+            ],
+            "else": [
+              {
+                "op": "addCard",
+                "cardId": "status_burn",
+                "amount": 1,
+                "zone": "discard"
+              }
+            ]
+          }
+        ]
+      },
+      "tackle": {
+        "label": "二连击",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 5,
+            "hits": 2
+          }
+        ]
+      },
+      "inflame": {
+        "label": "火势渐盛",
+        "effects": [
+          {
+            "op": "status",
+            "key": "strength",
+            "amount": 2,
+            "target": "source"
+          },
+          {
+            "op": "block",
+            "target": "source",
+            "amount": 12
+          }
+        ]
+      },
+      "inferno": {
+        "label": "炼狱",
+        "effects": [
+          {
+            "op": "damage",
+            "target": "player",
+            "amount": 2,
+            "hits": 6
+          },
+          {
+            "op": "transformCards",
+            "from": "status_burn",
+            "to": "status_burn_plus",
+            "zones": [
+              "hand",
+              "drawPile",
+              "discard",
+              "exhaust"
+            ]
+          },
+          {
+            "op": "addCard",
+            "cardId": "status_burn_plus",
+            "amount": 3,
+            "zone": "discard"
+          },
+          {
+            "op": "set",
+            "target": "source",
+            "path": "ai.infernoUsed",
+            "value": true
+          }
+        ]
+      }
+    },
+    "ai": {
+      "rules": [
+        {
+          "when": {
+            "op": "eq",
+            "args": [
+              {
+                "stat": "source.turns"
+              },
+              0
+            ]
+          },
+          "move": "activate"
+        },
+        {
+          "when": {
+            "op": "eq",
+            "args": [
+              {
+                "stat": "source.turns"
+              },
+              1
+            ]
+          },
+          "move": "divider"
+        },
+        {
+          "sequence": {
+            "moves": [
+              "sear",
+              "tackle",
+              "sear",
+              "inflame",
+              "tackle",
+              "sear",
+              "inferno"
+            ],
+            "index": {
+              "op": "sub",
+              "args": [
+                {
+                  "stat": "source.turns"
+                },
+                2
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "triggers": [],
+    "traits": [
+      {
+        "id": "six_flames",
+        "label": "六火",
+        "description": "第二轮分割按预告时当前生命计算；炼狱升级所有已有灼伤并加入3张升级灼伤。"
+      }
+    ]
+  }
+]

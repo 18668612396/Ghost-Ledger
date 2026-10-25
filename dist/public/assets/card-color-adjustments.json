@@ -1,0 +1,510 @@
+{
+  "generator": "image_gen origin; user-authorized color adjustment only, no new generation",
+  "date": "2026-10-25",
+  "authorization": "用户明确要求四套框、提高框和背景饱和度，直接调整素材，不需要重新生成。",
+  "operation": "color-adjustment",
+  "families": {
+    "strike": {
+      "label": "攻伐",
+      "hue": 10,
+      "cards": [
+        "brush",
+        "coin",
+        "fire"
+      ],
+      "frameSource": "card-frame-muted-attack.png"
+    },
+    "ward": {
+      "label": "护身",
+      "hue": 154,
+      "cards": [
+        "talisman",
+        "step",
+        "lotus",
+        "mirror"
+      ],
+      "frameSource": "card-frame-muted-skill.png"
+    },
+    "spirit": {
+      "label": "灵术",
+      "hue": 212,
+      "cards": [
+        "bell",
+        "ledger",
+        "ferry"
+      ],
+      "frameSource": "card-frame-muted-skill.png"
+    },
+    "oath": {
+      "label": "阴契",
+      "hue": 285,
+      "cards": [
+        "chain",
+        "vow",
+        "seal",
+        "blood",
+        "verdict"
+      ],
+      "frameSource": "card-frame-muted-attack.png"
+    }
+  },
+  "assets": [
+    {
+      "filename": "card-frame-color-strike.png",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-frame-muted-attack.png",
+      "family": "strike",
+      "recipe": {
+        "kind": "frame",
+        "targetHueDegrees": 10,
+        "saturationMultiplier": 1.95,
+        "saturationCap": 0.6,
+        "version": 3,
+        "titleHeightFraction": 0.12,
+        "titleSaturationRange": [
+          0.18,
+          0.29
+        ]
+      },
+      "size": [
+        948,
+        1659
+      ],
+      "mode": "RGBA",
+      "sourceSha256": "f4390ad365ed9ee5144a22f5a5daba102764ce13a770f44f75986e7e05d0305d",
+      "sha256": "cb32a45fd0e183582d298a8ba9fdb58f8d13ab09b58c38b9a977c3b106a5753f",
+      "meanSaturationBefore": 0.10581,
+      "meanSaturationAfter": 0.15958,
+      "prompt": "No new image generation. User-authorized grading of the existing raster; preserve dimensions, alpha, ink and texture. Original image_gen prompt follows:\nUse case: stylized-concept. Asset: ONE Chinese watercolor playing-card FRAME ONLY, not a finished card. Input is STYLE REFERENCE ONLY: same thin irregular ink outlines, worn paper, restrained antique-ochre trim and softly curved title header. NEW EXACT CANVAS 1024x1792 pixels, width:height = 4:7, front view without perspective. The card MUST be visibly taller and slimmer than the reference 2:3 card; redesign its internal proportions accordingly. Header occupies top 12 percent. A tall portrait art opening occupies x10%-90% of canvas, y14%-75%, width:height approximately 3:4. This entire opening must be genuinely transparent alpha 0, with only a narrow painted inner outline, no frosting, wash, fill or matte. Lower type/rules paper occupies the bottom 25 percent and stays solid opaque; title, side borders and rules paper must be OPAQUE alpha 255. Only outside the card silhouette and the art opening are transparent. Fill canvas almost edge to edge, with a few transparent outside pixels. No text, numbers, icon, illustration, cost badge, scene, outer board, cast shadow, glow or checkerboard. Very subtle paper grain, no broad stains or elaborate filigree. Type variant: ATTACK. Use a visibly DUSTY, LOW-SATURATION grey-cinnabar / rose-brown pigment on the narrow card rim and curved title ribbon, approximately muted clay and pale dusty rose, with warm ivory lower paper. Keep the title light enough for dark ink lettering added later. Subdued grey-red edge accents must identify the attack type without vivid red, heavy scarlet blocks or bright gold. Do not use green."
+    },
+    {
+      "filename": "card-pattern-color-brush.png",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-brush.png",
+      "family": "strike",
+      "recipe": {
+        "kind": "background",
+        "targetHueDegrees": 10,
+        "saturationMultiplier": 1.65,
+        "saturationCap": 0.68,
+        "version": 3
+      },
+      "size": [
+        627,
+        836
+      ],
+      "mode": "RGB",
+      "sourceSha256": "11f8eb709bb603223b78da4a475315dd72b2c37517c68e208f6c973a66b3c2a3",
+      "sha256": "c295cbd9e57a343a3e0c6878f8d36eafa255e35cc947ff65dfcc16e5a2bdd80a",
+      "meanSaturationBefore": 0.40293,
+      "meanSaturationAfter": 0.57258,
+      "prompt": "No new image generation. User-authorized grading of the existing raster; preserve dimensions, alpha, ink and texture. Original image_gen prompt follows:\nUse case: stylized-concept. Asset: ONE production background atlas for Chinese ghost folklore watercolor playing cards. EXACT overall canvas 2304x1024 pixels, aspect 9:4, THREE equal PORTRAIT cells side by side, each 768x1024 with WIDTH:HEIGHT=3:4. Strict grid x0..767,768..1535,1536..2303, no gutters or labels. Each panel must be a complete abstract painted energy pattern, not scenes blending across cells. Soft layered gouache, fine hand-ink marks, subtle paper grain, muted mineral pigments, atmospheric and slightly mysterious, in the same restrained hand-painted Chinese game style. Backgrounds only: NO landscapes, architecture, buildings, mountains, rooms, rivers, trees, characters, creatures, recognizable objects, weapons, cards, coin pictures, books, mirrors, frame, text, legible glyphs or numerals. NOT photographic, NOT vector, NOT 3D, no neon or saturated red/green, no blinding white center. Use low-saturation dusk-toned colors and gentle contrast, with the central 45 percent of each cell relatively quiet so a separately composited object remains readable. Include visible LIGHTNING, flowing ink, energy threads, subtle geometric traces, rings, sparks or ribbons as specified, rather than a flat solid color. OPAQUE full-bleed background throughout. ATTACK panels use muted dusty cinnabar / grey russet / smoke mauve with antique-gold accents. SKILL panels use muted blue-grey / pale jade / moon-white with occasional soft lilac or warm grey accents. No actual text or foreground card objects. LEFT / brush / ATTACK: sweeping dusty-red calligraphic ink strokes and delicate ochre ink specks over warm grey, a few energetic curved lines and pale smoke. MIDDLE / talisman / SKILL: pale jade-blue protective concentric ripples and translucent overlapping arcs, faint abstract broken ward marks around edges, cool mist grey. RIGHT / chain / ATTACK: angular branching thin muted copper-red and grey-lilac lightning crossing a smoky charcoal-mauve field, narrow golden sparks near side edges, no chains."
+    },
+    {
+      "filename": "card-pattern-color-coin.png",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-coin.png",
+      "family": "strike",
+      "recipe": {
+        "kind": "background",
+        "targetHueDegrees": 10,
+        "saturationMultiplier": 1.65,
+        "saturationCap": 0.68,
+        "version": 3
+      },
+      "size": [
+        627,
+        836
+      ],
+      "mode": "RGB",
+      "sourceSha256": "1ce5fc59c32d32a604643e14d82c3bee7b2ea3c1b678eba83c6331b03d7cfef2",
+      "sha256": "3d8583d7d2f09acdbeab645640b76630a517379c0226071900cf34daf5fc676b",
+      "meanSaturationBefore": 0.48705,
+      "meanSaturationAfter": 0.66679,
+      "prompt": "No new image generation. User-authorized grading of the existing raster; preserve dimensions, alpha, ink and texture. Original image_gen prompt follows:\nUse case: stylized-concept. Asset: ONE production background atlas for Chinese ghost folklore watercolor playing cards. EXACT overall canvas 2304x1024 pixels, aspect 9:4, THREE equal PORTRAIT cells side by side, each 768x1024 with WIDTH:HEIGHT=3:4. Strict grid x0..767,768..1535,1536..2303, no gutters or labels. Each panel must be a complete abstract painted energy pattern, not scenes blending across cells. Soft layered gouache, fine hand-ink marks, subtle paper grain, muted mineral pigments, atmospheric and slightly mysterious, in the same restrained hand-painted Chinese game style. Backgrounds only: NO landscapes, architecture, buildings, mountains, rooms, rivers, trees, characters, creatures, recognizable objects, weapons, cards, coin pictures, books, mirrors, frame, text, legible glyphs or numerals. NOT photographic, NOT vector, NOT 3D, no neon or saturated red/green, no blinding white center. Use low-saturation dusk-toned colors and gentle contrast, with the central 45 percent of each cell relatively quiet so a separately composited object remains readable. Include visible LIGHTNING, flowing ink, energy threads, subtle geometric traces, rings, sparks or ribbons as specified, rather than a flat solid color. OPAQUE full-bleed background throughout. ATTACK panels use muted dusty cinnabar / grey russet / smoke mauve with antique-gold accents. SKILL panels use muted blue-grey / pale jade / moon-white with occasional soft lilac or warm grey accents. No actual text or foreground card objects. LEFT / vow / SKILL: intertwined soft blue-grey and pale sage ribbons of flowing wish light with tiny moon-white motes and faint dusty-pink highlights at edges. MIDDLE / step / SKILL: long curved indigo-grey and lilac wind trails sweeping upward, delicate silver-blue energy streaks, no landscape or leaves. RIGHT / coin / ATTACK: concentric antique-bronze and dusty cinnabar energy rings with broken square/circle abstract traces, soft ash-ochre field, no actual coins."
+    },
+    {
+      "filename": "card-pattern-color-fire.png",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-fire.png",
+      "family": "strike",
+      "recipe": {
+        "kind": "background",
+        "targetHueDegrees": 10,
+        "saturationMultiplier": 1.65,
+        "saturationCap": 0.68,
+        "version": 3
+      },
+      "size": [
+        627,
+        836
+      ],
+      "mode": "RGB",
+      "sourceSha256": "551ebc57fcb2b9314a70f9c22bbfed11554c24e5848bbd7d519e04e975157065",
+      "sha256": "7461b0612cc367138b8a1dd92988dbe79f2b48277e0b00b540d76419bd9a9a93",
+      "meanSaturationBefore": 0.46671,
+      "meanSaturationAfter": 0.64978,
+      "prompt": "No new image generation. User-authorized grading of the existing raster; preserve dimensions, alpha, ink and texture. Original image_gen prompt follows:\nUse case: stylized-concept. Asset: ONE production background atlas for Chinese ghost folklore watercolor playing cards. EXACT overall canvas 2304x1024 pixels, aspect 9:4, THREE equal PORTRAIT cells side by side, each 768x1024 with WIDTH:HEIGHT=3:4. Strict grid x0..767,768..1535,1536..2303, no gutters or labels. Each panel must be a complete abstract painted energy pattern, not scenes blending across cells. Soft layered gouache, fine hand-ink marks, subtle paper grain, muted mineral pigments, atmospheric and slightly mysterious, in the same restrained hand-painted Chinese game style. Backgrounds only: NO landscapes, architecture, buildings, mountains, rooms, rivers, trees, characters, creatures, recognizable objects, weapons, cards, coin pictures, books, mirrors, frame, text, legible glyphs or numerals. NOT photographic, NOT vector, NOT 3D, no neon or saturated red/green, no blinding white center. Use low-saturation dusk-toned colors and gentle contrast, with the central 45 percent of each cell relatively quiet so a separately composited object remains readable. Include visible LIGHTNING, flowing ink, energy threads, subtle geometric traces, rings, sparks or ribbons as specified, rather than a flat solid color. OPAQUE full-bleed background throughout. ATTACK panels use muted dusty cinnabar / grey russet / smoke mauve with antique-gold accents. SKILL panels use muted blue-grey / pale jade / moon-white with occasional soft lilac or warm grey accents. No actual text or foreground card objects. LEFT / fire / ATTACK: restrained russet and ash-mauve abstract flame ribbons spiraling upward, fine pale-ochre ember flecks, smoky grey base, no real fire pit or altar. MIDDLE / bell / SKILL: overlapping blue-grey/jade concentric SOUND WAVE rings and delicate moon-white pulses fading outward, a few subtle pale gold glints, no bell. RIGHT / seal / ATTACK: layered broken angular dusty-red ink-stamp traces and geometric ink strokes radiating diagonally, muted old-gold and warm-grey haze, no actual seal or legible writing."
+    },
+    {
+      "filename": "card-frame-color-ward.png",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-frame-muted-skill.png",
+      "family": "ward",
+      "recipe": {
+        "kind": "frame",
+        "targetHueDegrees": 154,
+        "saturationMultiplier": 1.95,
+        "saturationCap": 0.6,
+        "version": 3,
+        "titleHeightFraction": 0.12,
+        "titleSaturationRange": [
+          0.18,
+          0.29
+        ]
+      },
+      "size": [
+        948,
+        1659
+      ],
+      "mode": "RGBA",
+      "sourceSha256": "cc6238516cbf233b8d3ffab596eb3a31e1faa46d938e0f6ee2f17ca9930245ce",
+      "sha256": "3d5837b9745f284ada5153aed05c4392367d557921a9095f84e74ec11aebfed7",
+      "meanSaturationBefore": 0.0432,
+      "meanSaturationAfter": 0.09769,
+      "prompt": "No new image generation. User-authorized grading of the existing raster; preserve dimensions, alpha, ink and texture. Original image_gen prompt follows:\nUse case: stylized-concept. Asset: ONE Chinese watercolor playing-card FRAME ONLY, not a finished card. Input is STYLE REFERENCE ONLY: same thin irregular ink outlines, worn paper, restrained antique-ochre trim and softly curved title header. NEW EXACT CANVAS 1024x1792 pixels, width:height = 4:7, front view without perspective. The card MUST be visibly taller and slimmer than the reference 2:3 card; redesign its internal proportions accordingly. Header occupies top 12 percent. A tall portrait art opening occupies x10%-90% of canvas, y14%-75%, width:height approximately 3:4. This entire opening must be genuinely transparent alpha 0, with only a narrow painted inner outline, no frosting, wash, fill or matte. Lower type/rules paper occupies the bottom 25 percent and stays solid opaque; title, side borders and rules paper must be OPAQUE alpha 255. Only outside the card silhouette and the art opening are transparent. Fill canvas almost edge to edge, with a few transparent outside pixels. No text, numbers, icon, illustration, cost badge, scene, outer board, cast shadow, glow or checkerboard. Very subtle paper grain, no broad stains or elaborate filigree. Type variant: SKILL. Use a visibly DUSTY, LOW-SATURATION slate-jade / grey-blue pigment on the narrow card rim and curved title ribbon, approximately pale blue-grey stone and desaturated celadon, with cool ivory lower paper. Keep the title light enough for dark ink lettering added later. Subdued blue-jade edge accents must identify the skill type without bright emerald, saturated turquoise, vivid blue or heavy colored blocks. Do not use red."
+    },
+    {
+      "filename": "card-pattern-color-talisman.png",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-talisman.png",
+      "family": "ward",
+      "recipe": {
+        "kind": "background",
+        "targetHueDegrees": 154,
+        "saturationMultiplier": 1.65,
+        "saturationCap": 0.68,
+        "version": 3
+      },
+      "size": [
+        627,
+        836
+      ],
+      "mode": "RGB",
+      "sourceSha256": "456edb1d5d9d52bd3cac406e5d36b24a1c8cf1ad2542daf71bfc006da7bd3e8a",
+      "sha256": "0abde70f27865241a2eb86eda3b292b4517496679483d0baa897398b411103a4",
+      "meanSaturationBefore": 0.10466,
+      "meanSaturationAfter": 0.18738,
+      "prompt": "No new image generation. User-authorized grading of the existing raster; preserve dimensions, alpha, ink and texture. Original image_gen prompt follows:\nUse case: stylized-concept. Asset: ONE production background atlas for Chinese ghost folklore watercolor playing cards. EXACT overall canvas 2304x1024 pixels, aspect 9:4, THREE equal PORTRAIT cells side by side, each 768x1024 with WIDTH:HEIGHT=3:4. Strict grid x0..767,768..1535,1536..2303, no gutters or labels. Each panel must be a complete abstract painted energy pattern, not scenes blending across cells. Soft layered gouache, fine hand-ink marks, subtle paper grain, muted mineral pigments, atmospheric and slightly mysterious, in the same restrained hand-painted Chinese game style. Backgrounds only: NO landscapes, architecture, buildings, mountains, rooms, rivers, trees, characters, creatures, recognizable objects, weapons, cards, coin pictures, books, mirrors, frame, text, legible glyphs or numerals. NOT photographic, NOT vector, NOT 3D, no neon or saturated red/green, no blinding white center. Use low-saturation dusk-toned colors and gentle contrast, with the central 45 percent of each cell relatively quiet so a separately composited object remains readable. Include visible LIGHTNING, flowing ink, energy threads, subtle geometric traces, rings, sparks or ribbons as specified, rather than a flat solid color. OPAQUE full-bleed background throughout. ATTACK panels use muted dusty cinnabar / grey russet / smoke mauve with antique-gold accents. SKILL panels use muted blue-grey / pale jade / moon-white with occasional soft lilac or warm grey accents. No actual text or foreground card objects. LEFT / brush / ATTACK: sweeping dusty-red calligraphic ink strokes and delicate ochre ink specks over warm grey, a few energetic curved lines and pale smoke. MIDDLE / talisman / SKILL: pale jade-blue protective concentric ripples and translucent overlapping arcs, faint abstract broken ward marks around edges, cool mist grey. RIGHT / chain / ATTACK: angular branching thin muted copper-red and grey-lilac lightning crossing a smoky charcoal-mauve field, narrow golden sparks near side edges, no chains."
+    },
+    {
+      "filename": "card-pattern-color-step.png",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-step.png",
+      "family": "ward",
+      "recipe": {
+        "kind": "background",
+        "targetHueDegrees": 154,
+        "saturationMultiplier": 1.65,
+        "saturationCap": 0.68,
+        "version": 3
+      },
+      "size": [
+        627,
+        836
+      ],
+      "mode": "RGB",
+      "sourceSha256": "75834b11c3da815e07d273207248c7e10185858592b1ac0d7ca492a621a59892",
+      "sha256": "ef3f87f480c8026258a39604886be6e5d57b9ae79a082fd9fce63a1012810dde",
+      "meanSaturationBefore": 0.20001,
+      "meanSaturationAfter": 0.34564,
+      "prompt": "No new image generation. User-authorized grading of the existing raster; preserve dimensions, alpha, ink and texture. Original image_gen prompt follows:\nUse case: stylized-concept. Asset: ONE production background atlas for Chinese ghost folklore watercolor playing cards. EXACT overall canvas 2304x1024 pixels, aspect 9:4, THREE equal PORTRAIT cells side by side, each 768x1024 with WIDTH:HEIGHT=3:4. Strict grid x0..767,768..1535,1536..2303, no gutters or labels. Each panel must be a complete abstract painted energy pattern, not scenes blending across cells. Soft layered gouache, fine hand-ink marks, subtle paper grain, muted mineral pigments, atmospheric and slightly mysterious, in the same restrained hand-painted Chinese game style. Backgrounds only: NO landscapes, architecture, buildings, mountains, rooms, rivers, trees, characters, creatures, recognizable objects, weapons, cards, coin pictures, books, mirrors, frame, text, legible glyphs or numerals. NOT photographic, NOT vector, NOT 3D, no neon or saturated red/green, no blinding white center. Use low-saturation dusk-toned colors and gentle contrast, with the central 45 percent of each cell relatively quiet so a separately composited object remains readable. Include visible LIGHTNING, flowing ink, energy threads, subtle geometric traces, rings, sparks or ribbons as specified, rather than a flat solid color. OPAQUE full-bleed background throughout. ATTACK panels use muted dusty cinnabar / grey russet / smoke mauve with antique-gold accents. SKILL panels use muted blue-grey / pale jade / moon-white with occasional soft lilac or warm grey accents. No actual text or foreground card objects. LEFT / vow / SKILL: intertwined soft blue-grey and pale sage ribbons of flowing wish light with tiny moon-white motes and faint dusty-pink highlights at edges. MIDDLE / step / SKILL: long curved indigo-grey and lilac wind trails sweeping upward, delicate silver-blue energy streaks, no landscape or leaves. RIGHT / coin / ATTACK: concentric antique-bronze and dusty cinnabar energy rings with broken square/circle abstract traces, soft ash-ochre field, no actual coins."
+    },
+    {
+      "filename": "card-pattern-color-lotus.png",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-lotus.png",
+      "family": "ward",
+      "recipe": {
+        "kind": "background",
+        "targetHueDegrees": 154,
+        "saturationMultiplier": 1.65,
+        "saturationCap": 0.68,
+        "version": 3
+      },
+      "size": [
+        627,
+        836
+      ],
+      "mode": "RGB",
+      "sourceSha256": "fd4d313da56f0bd41868753b70c7826e87432574abcc104f6e8a6003f780f1f8",
+      "sha256": "ab03685378cbad211b861367d33aafecb6a84520dd93abf7f7aeb59e30e64ca9",
+      "meanSaturationBefore": 0.06377,
+      "meanSaturationAfter": 0.11562,
+      "prompt": "No new image generation. User-authorized grading of the existing raster; preserve dimensions, alpha, ink and texture. Original image_gen prompt follows:\nUse case: stylized-concept. Asset: ONE production background atlas for Chinese ghost folklore watercolor playing cards. EXACT overall canvas 2304x1024 pixels, aspect 9:4, THREE equal PORTRAIT cells side by side, each 768x1024 with WIDTH:HEIGHT=3:4. Strict grid x0..767,768..1535,1536..2303, no gutters or labels. Each panel must be a complete abstract painted energy pattern, not scenes blending across cells. Soft layered gouache, fine hand-ink marks, subtle paper grain, muted mineral pigments, atmospheric and slightly mysterious, in the same restrained hand-painted Chinese game style. Backgrounds only: NO landscapes, architecture, buildings, mountains, rooms, rivers, trees, characters, creatures, recognizable objects, weapons, cards, coin pictures, books, mirrors, frame, text, legible glyphs or numerals. NOT photographic, NOT vector, NOT 3D, no neon or saturated red/green, no blinding white center. Use low-saturation dusk-toned colors and gentle contrast, with the central 45 percent of each cell relatively quiet so a separately composited object remains readable. Include visible LIGHTNING, flowing ink, energy threads, subtle geometric traces, rings, sparks or ribbons as specified, rather than a flat solid color. OPAQUE full-bleed background throughout. ATTACK panels use muted dusty cinnabar / grey russet / smoke mauve with antique-gold accents. SKILL panels use muted blue-grey / pale jade / moon-white with occasional soft lilac or warm grey accents. No actual text or foreground card objects. LEFT / lotus / SKILL: pale jade and faded lilac abstract petal-like curved traces with moon-white ripples and a few grey-pink light threads, no recognizable lotus flower or pond. MIDDLE / blood / ATTACK: thin muted wine-red and smoke-purple fractured light veins with restrained warm-grey sparks, abstract flowing cracks, no blood drops, gore, weapon or scenery. RIGHT / ledger / SKILL: fine flowing blue-grey ink lines and ivory brush threads, layered fading translucent strokes with a few pale sage sparks, no paper sheets, actual book or text."
+    },
+    {
+      "filename": "card-pattern-color-mirror.png",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-mirror.png",
+      "family": "ward",
+      "recipe": {
+        "kind": "background",
+        "targetHueDegrees": 154,
+        "saturationMultiplier": 1.65,
+        "saturationCap": 0.68,
+        "version": 3
+      },
+      "size": [
+        627,
+        836
+      ],
+      "mode": "RGB",
+      "sourceSha256": "f8aa9b21087f3e7152357e7b8c58cc00c3a6b52c48d3082721ca04d524caac64",
+      "sha256": "0f4bbfa8eb736c8ae44febdc8c0b6b2e577a5f8cd3d03f6485715f6d432c6ed2",
+      "meanSaturationBefore": 0.13992,
+      "meanSaturationAfter": 0.24238,
+      "prompt": "No new image generation. User-authorized grading of the existing raster; preserve dimensions, alpha, ink and texture. Original image_gen prompt follows:\nUse case: stylized-concept. Asset: ONE production background atlas for Chinese ghost folklore watercolor playing cards. EXACT overall canvas 2304x1024 pixels, aspect 9:4, THREE equal PORTRAIT cells side by side, each 768x1024 with WIDTH:HEIGHT=3:4. Strict grid x0..767,768..1535,1536..2303, no gutters or labels. Each panel must be a complete abstract painted energy pattern, not scenes blending across cells. Soft layered gouache, fine hand-ink marks, subtle paper grain, muted mineral pigments, atmospheric and slightly mysterious, in the same restrained hand-painted Chinese game style. Backgrounds only: NO landscapes, architecture, buildings, mountains, rooms, rivers, trees, characters, creatures, recognizable objects, weapons, cards, coin pictures, books, mirrors, frame, text, legible glyphs or numerals. NOT photographic, NOT vector, NOT 3D, no neon or saturated red/green, no blinding white center. Use low-saturation dusk-toned colors and gentle contrast, with the central 45 percent of each cell relatively quiet so a separately composited object remains readable. Include visible LIGHTNING, flowing ink, energy threads, subtle geometric traces, rings, sparks or ribbons as specified, rather than a flat solid color. OPAQUE full-bleed background throughout. ATTACK panels use muted dusty cinnabar / grey russet / smoke mauve with antique-gold accents. SKILL panels use muted blue-grey / pale jade / moon-white with occasional soft lilac or warm grey accents. No actual text or foreground card objects. LEFT / mirror / SKILL: intersecting pale blue-grey and soft lilac prismatic rays with delicate silver fracture glints at edges, abstract misty energy, no mirror, skull or cave. MIDDLE / ferry / SKILL: long sinuous muted jade-blue waterlike light ribbons, layered oval ripples and sand-white glints on cool mist-grey, entirely abstract, no river, boat or dock. RIGHT / verdict / ATTACK: restrained dusty-cinnabar and antique-gold radial rays with layered broken geometric command marks on smoky grey-violet, regal but quiet abstract light, no palace, character, scroll, seal or legible text."
+    },
+    {
+      "filename": "card-frame-color-spirit.png",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-frame-muted-skill.png",
+      "family": "spirit",
+      "recipe": {
+        "kind": "frame",
+        "targetHueDegrees": 212,
+        "saturationMultiplier": 1.95,
+        "saturationCap": 0.6,
+        "version": 3,
+        "titleHeightFraction": 0.12,
+        "titleSaturationRange": [
+          0.18,
+          0.29
+        ]
+      },
+      "size": [
+        948,
+        1659
+      ],
+      "mode": "RGBA",
+      "sourceSha256": "cc6238516cbf233b8d3ffab596eb3a31e1faa46d938e0f6ee2f17ca9930245ce",
+      "sha256": "d0af6ac7eb8d24dbc4c0bfc0272499d569679ee7c3f04d7221015aca18e81b46",
+      "meanSaturationBefore": 0.0432,
+      "meanSaturationAfter": 0.09769,
+      "prompt": "No new image generation. User-authorized grading of the existing raster; preserve dimensions, alpha, ink and texture. Original image_gen prompt follows:\nUse case: stylized-concept. Asset: ONE Chinese watercolor playing-card FRAME ONLY, not a finished card. Input is STYLE REFERENCE ONLY: same thin irregular ink outlines, worn paper, restrained antique-ochre trim and softly curved title header. NEW EXACT CANVAS 1024x1792 pixels, width:height = 4:7, front view without perspective. The card MUST be visibly taller and slimmer than the reference 2:3 card; redesign its internal proportions accordingly. Header occupies top 12 percent. A tall portrait art opening occupies x10%-90% of canvas, y14%-75%, width:height approximately 3:4. This entire opening must be genuinely transparent alpha 0, with only a narrow painted inner outline, no frosting, wash, fill or matte. Lower type/rules paper occupies the bottom 25 percent and stays solid opaque; title, side borders and rules paper must be OPAQUE alpha 255. Only outside the card silhouette and the art opening are transparent. Fill canvas almost edge to edge, with a few transparent outside pixels. No text, numbers, icon, illustration, cost badge, scene, outer board, cast shadow, glow or checkerboard. Very subtle paper grain, no broad stains or elaborate filigree. Type variant: SKILL. Use a visibly DUSTY, LOW-SATURATION slate-jade / grey-blue pigment on the narrow card rim and curved title ribbon, approximately pale blue-grey stone and desaturated celadon, with cool ivory lower paper. Keep the title light enough for dark ink lettering added later. Subdued blue-jade edge accents must identify the skill type without bright emerald, saturated turquoise, vivid blue or heavy colored blocks. Do not use red."
+    },
+    {
+      "filename": "card-pattern-color-bell.png",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-bell.png",
+      "family": "spirit",
+      "recipe": {
+        "kind": "background",
+        "targetHueDegrees": 212,
+        "saturationMultiplier": 1.65,
+        "saturationCap": 0.68,
+        "version": 3
+      },
+      "size": [
+        627,
+        836
+      ],
+      "mode": "RGB",
+      "sourceSha256": "47f1ba48439355b298614f7ace9d26ec08dcec9712c19aeeca93a9e392e2a2ae",
+      "sha256": "382057e621e5f8ecca29da908d754a36cd2b1225ac8b2b1be2fca7d9bd1e3645",
+      "meanSaturationBefore": 0.12905,
+      "meanSaturationAfter": 0.22783,
+      "prompt": "No new image generation. User-authorized grading of the existing raster; preserve dimensions, alpha, ink and texture. Original image_gen prompt follows:\nUse case: stylized-concept. Asset: ONE production background atlas for Chinese ghost folklore watercolor playing cards. EXACT overall canvas 2304x1024 pixels, aspect 9:4, THREE equal PORTRAIT cells side by side, each 768x1024 with WIDTH:HEIGHT=3:4. Strict grid x0..767,768..1535,1536..2303, no gutters or labels. Each panel must be a complete abstract painted energy pattern, not scenes blending across cells. Soft layered gouache, fine hand-ink marks, subtle paper grain, muted mineral pigments, atmospheric and slightly mysterious, in the same restrained hand-painted Chinese game style. Backgrounds only: NO landscapes, architecture, buildings, mountains, rooms, rivers, trees, characters, creatures, recognizable objects, weapons, cards, coin pictures, books, mirrors, frame, text, legible glyphs or numerals. NOT photographic, NOT vector, NOT 3D, no neon or saturated red/green, no blinding white center. Use low-saturation dusk-toned colors and gentle contrast, with the central 45 percent of each cell relatively quiet so a separately composited object remains readable. Include visible LIGHTNING, flowing ink, energy threads, subtle geometric traces, rings, sparks or ribbons as specified, rather than a flat solid color. OPAQUE full-bleed background throughout. ATTACK panels use muted dusty cinnabar / grey russet / smoke mauve with antique-gold accents. SKILL panels use muted blue-grey / pale jade / moon-white with occasional soft lilac or warm grey accents. No actual text or foreground card objects. LEFT / fire / ATTACK: restrained russet and ash-mauve abstract flame ribbons spiraling upward, fine pale-ochre ember flecks, smoky grey base, no real fire pit or altar. MIDDLE / bell / SKILL: overlapping blue-grey/jade concentric SOUND WAVE rings and delicate moon-white pulses fading outward, a few subtle pale gold glints, no bell. RIGHT / seal / ATTACK: layered broken angular dusty-red ink-stamp traces and geometric ink strokes radiating diagonally, muted old-gold and warm-grey haze, no actual seal or legible writing."
+    },
+    {
+      "filename": "card-pattern-color-ledger.png",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-ledger.png",
+      "family": "spirit",
+      "recipe": {
+        "kind": "background",
+        "targetHueDegrees": 212,
+        "saturationMultiplier": 1.65,
+        "saturationCap": 0.68,
+        "version": 3
+      },
+      "size": [
+        627,
+        836
+      ],
+      "mode": "RGB",
+      "sourceSha256": "8400e10d997d8d79b0e8801f766feda84b109da511f51027c08d95a9d65c89fc",
+      "sha256": "ed3e5232107bafc9bd23c54435a5d06f32546ec3a34a59bc17310f1a670a3d1c",
+      "meanSaturationBefore": 0.13254,
+      "meanSaturationAfter": 0.23294,
+      "prompt": "No new image generation. User-authorized grading of the existing raster; preserve dimensions, alpha, ink and texture. Original image_gen prompt follows:\nUse case: stylized-concept. Asset: ONE production background atlas for Chinese ghost folklore watercolor playing cards. EXACT overall canvas 2304x1024 pixels, aspect 9:4, THREE equal PORTRAIT cells side by side, each 768x1024 with WIDTH:HEIGHT=3:4. Strict grid x0..767,768..1535,1536..2303, no gutters or labels. Each panel must be a complete abstract painted energy pattern, not scenes blending across cells. Soft layered gouache, fine hand-ink marks, subtle paper grain, muted mineral pigments, atmospheric and slightly mysterious, in the same restrained hand-painted Chinese game style. Backgrounds only: NO landscapes, architecture, buildings, mountains, rooms, rivers, trees, characters, creatures, recognizable objects, weapons, cards, coin pictures, books, mirrors, frame, text, legible glyphs or numerals. NOT photographic, NOT vector, NOT 3D, no neon or saturated red/green, no blinding white center. Use low-saturation dusk-toned colors and gentle contrast, with the central 45 percent of each cell relatively quiet so a separately composited object remains readable. Include visible LIGHTNING, flowing ink, energy threads, subtle geometric traces, rings, sparks or ribbons as specified, rather than a flat solid color. OPAQUE full-bleed background throughout. ATTACK panels use muted dusty cinnabar / grey russet / smoke mauve with antique-gold accents. SKILL panels use muted blue-grey / pale jade / moon-white with occasional soft lilac or warm grey accents. No actual text or foreground card objects. LEFT / lotus / SKILL: pale jade and faded lilac abstract petal-like curved traces with moon-white ripples and a few grey-pink light threads, no recognizable lotus flower or pond. MIDDLE / blood / ATTACK: thin muted wine-red and smoke-purple fractured light veins with restrained warm-grey sparks, abstract flowing cracks, no blood drops, gore, weapon or scenery. RIGHT / ledger / SKILL: fine flowing blue-grey ink lines and ivory brush threads, layered fading translucent strokes with a few pale sage sparks, no paper sheets, actual book or text."
+    },
+    {
+      "filename": "card-pattern-color-ferry.png",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-ferry.png",
+      "family": "spirit",
+      "recipe": {
+        "kind": "background",
+        "targetHueDegrees": 212,
+        "saturationMultiplier": 1.65,
+        "saturationCap": 0.68,
+        "version": 3
+      },
+      "size": [
+        627,
+        836
+      ],
+      "mode": "RGB",
+      "sourceSha256": "30d5949d4942434c05e170b954c2d11e60ccb2c9dbc06f605dabd2857bb9de30",
+      "sha256": "49a2103718ce0c01580793da3c2f499fe7fb88eb179aad7caa35d8ec2a5586ea",
+      "meanSaturationBefore": 0.11474,
+      "meanSaturationAfter": 0.2039,
+      "prompt": "No new image generation. User-authorized grading of the existing raster; preserve dimensions, alpha, ink and texture. Original image_gen prompt follows:\nUse case: stylized-concept. Asset: ONE production background atlas for Chinese ghost folklore watercolor playing cards. EXACT overall canvas 2304x1024 pixels, aspect 9:4, THREE equal PORTRAIT cells side by side, each 768x1024 with WIDTH:HEIGHT=3:4. Strict grid x0..767,768..1535,1536..2303, no gutters or labels. Each panel must be a complete abstract painted energy pattern, not scenes blending across cells. Soft layered gouache, fine hand-ink marks, subtle paper grain, muted mineral pigments, atmospheric and slightly mysterious, in the same restrained hand-painted Chinese game style. Backgrounds only: NO landscapes, architecture, buildings, mountains, rooms, rivers, trees, characters, creatures, recognizable objects, weapons, cards, coin pictures, books, mirrors, frame, text, legible glyphs or numerals. NOT photographic, NOT vector, NOT 3D, no neon or saturated red/green, no blinding white center. Use low-saturation dusk-toned colors and gentle contrast, with the central 45 percent of each cell relatively quiet so a separately composited object remains readable. Include visible LIGHTNING, flowing ink, energy threads, subtle geometric traces, rings, sparks or ribbons as specified, rather than a flat solid color. OPAQUE full-bleed background throughout. ATTACK panels use muted dusty cinnabar / grey russet / smoke mauve with antique-gold accents. SKILL panels use muted blue-grey / pale jade / moon-white with occasional soft lilac or warm grey accents. No actual text or foreground card objects. LEFT / mirror / SKILL: intersecting pale blue-grey and soft lilac prismatic rays with delicate silver fracture glints at edges, abstract misty energy, no mirror, skull or cave. MIDDLE / ferry / SKILL: long sinuous muted jade-blue waterlike light ribbons, layered oval ripples and sand-white glints on cool mist-grey, entirely abstract, no river, boat or dock. RIGHT / verdict / ATTACK: restrained dusty-cinnabar and antique-gold radial rays with layered broken geometric command marks on smoky grey-violet, regal but quiet abstract light, no palace, character, scroll, seal or legible text."
+    },
+    {
+      "filename": "card-frame-color-oath.png",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-frame-muted-attack.png",
+      "family": "oath",
+      "recipe": {
+        "kind": "frame",
+        "targetHueDegrees": 285,
+        "saturationMultiplier": 1.95,
+        "saturationCap": 0.6,
+        "version": 3,
+        "titleHeightFraction": 0.12,
+        "titleSaturationRange": [
+          0.18,
+          0.29
+        ]
+      },
+      "size": [
+        948,
+        1659
+      ],
+      "mode": "RGBA",
+      "sourceSha256": "f4390ad365ed9ee5144a22f5a5daba102764ce13a770f44f75986e7e05d0305d",
+      "sha256": "449a736483021a291b91bfd3eabe8ef2b7ecce56dd99f2d644b59a9c72c46e69",
+      "meanSaturationBefore": 0.10581,
+      "meanSaturationAfter": 0.15958,
+      "prompt": "No new image generation. User-authorized grading of the existing raster; preserve dimensions, alpha, ink and texture. Original image_gen prompt follows:\nUse case: stylized-concept. Asset: ONE Chinese watercolor playing-card FRAME ONLY, not a finished card. Input is STYLE REFERENCE ONLY: same thin irregular ink outlines, worn paper, restrained antique-ochre trim and softly curved title header. NEW EXACT CANVAS 1024x1792 pixels, width:height = 4:7, front view without perspective. The card MUST be visibly taller and slimmer than the reference 2:3 card; redesign its internal proportions accordingly. Header occupies top 12 percent. A tall portrait art opening occupies x10%-90% of canvas, y14%-75%, width:height approximately 3:4. This entire opening must be genuinely transparent alpha 0, with only a narrow painted inner outline, no frosting, wash, fill or matte. Lower type/rules paper occupies the bottom 25 percent and stays solid opaque; title, side borders and rules paper must be OPAQUE alpha 255. Only outside the card silhouette and the art opening are transparent. Fill canvas almost edge to edge, with a few transparent outside pixels. No text, numbers, icon, illustration, cost badge, scene, outer board, cast shadow, glow or checkerboard. Very subtle paper grain, no broad stains or elaborate filigree. Type variant: ATTACK. Use a visibly DUSTY, LOW-SATURATION grey-cinnabar / rose-brown pigment on the narrow card rim and curved title ribbon, approximately muted clay and pale dusty rose, with warm ivory lower paper. Keep the title light enough for dark ink lettering added later. Subdued grey-red edge accents must identify the attack type without vivid red, heavy scarlet blocks or bright gold. Do not use green."
+    },
+    {
+      "filename": "card-pattern-color-chain.png",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-chain.png",
+      "family": "oath",
+      "recipe": {
+        "kind": "background",
+        "targetHueDegrees": 285,
+        "saturationMultiplier": 1.65,
+        "saturationCap": 0.68,
+        "version": 3
+      },
+      "size": [
+        627,
+        836
+      ],
+      "mode": "RGB",
+      "sourceSha256": "1364a00a1074d4de010cae44a594123af4493868c8349f449c19acede871b4c4",
+      "sha256": "cfef769b66597841b3500e6227cddaa039f7966ea861ac893c96aeaa941ae68c",
+      "meanSaturationBefore": 0.22223,
+      "meanSaturationAfter": 0.37811,
+      "prompt": "No new image generation. User-authorized grading of the existing raster; preserve dimensions, alpha, ink and texture. Original image_gen prompt follows:\nUse case: stylized-concept. Asset: ONE production background atlas for Chinese ghost folklore watercolor playing cards. EXACT overall canvas 2304x1024 pixels, aspect 9:4, THREE equal PORTRAIT cells side by side, each 768x1024 with WIDTH:HEIGHT=3:4. Strict grid x0..767,768..1535,1536..2303, no gutters or labels. Each panel must be a complete abstract painted energy pattern, not scenes blending across cells. Soft layered gouache, fine hand-ink marks, subtle paper grain, muted mineral pigments, atmospheric and slightly mysterious, in the same restrained hand-painted Chinese game style. Backgrounds only: NO landscapes, architecture, buildings, mountains, rooms, rivers, trees, characters, creatures, recognizable objects, weapons, cards, coin pictures, books, mirrors, frame, text, legible glyphs or numerals. NOT photographic, NOT vector, NOT 3D, no neon or saturated red/green, no blinding white center. Use low-saturation dusk-toned colors and gentle contrast, with the central 45 percent of each cell relatively quiet so a separately composited object remains readable. Include visible LIGHTNING, flowing ink, energy threads, subtle geometric traces, rings, sparks or ribbons as specified, rather than a flat solid color. OPAQUE full-bleed background throughout. ATTACK panels use muted dusty cinnabar / grey russet / smoke mauve with antique-gold accents. SKILL panels use muted blue-grey / pale jade / moon-white with occasional soft lilac or warm grey accents. No actual text or foreground card objects. LEFT / brush / ATTACK: sweeping dusty-red calligraphic ink strokes and delicate ochre ink specks over warm grey, a few energetic curved lines and pale smoke. MIDDLE / talisman / SKILL: pale jade-blue protective concentric ripples and translucent overlapping arcs, faint abstract broken ward marks around edges, cool mist grey. RIGHT / chain / ATTACK: angular branching thin muted copper-red and grey-lilac lightning crossing a smoky charcoal-mauve field, narrow golden sparks near side edges, no chains."
+    },
+    {
+      "filename": "card-pattern-color-vow.png",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-vow.png",
+      "family": "oath",
+      "recipe": {
+        "kind": "background",
+        "targetHueDegrees": 285,
+        "saturationMultiplier": 1.65,
+        "saturationCap": 0.68,
+        "version": 3
+      },
+      "size": [
+        627,
+        836
+      ],
+      "mode": "RGB",
+      "sourceSha256": "e54bfa54a854feea716c210dac51d831c0f63d8df021b70ef3f44458944be5b7",
+      "sha256": "546b91232c8860edbf8e6a27faa7f5a48663ffc84aeea8b1a14bc11636fa2b2d",
+      "meanSaturationBefore": 0.10372,
+      "meanSaturationAfter": 0.18456,
+      "prompt": "No new image generation. User-authorized grading of the existing raster; preserve dimensions, alpha, ink and texture. Original image_gen prompt follows:\nUse case: stylized-concept. Asset: ONE production background atlas for Chinese ghost folklore watercolor playing cards. EXACT overall canvas 2304x1024 pixels, aspect 9:4, THREE equal PORTRAIT cells side by side, each 768x1024 with WIDTH:HEIGHT=3:4. Strict grid x0..767,768..1535,1536..2303, no gutters or labels. Each panel must be a complete abstract painted energy pattern, not scenes blending across cells. Soft layered gouache, fine hand-ink marks, subtle paper grain, muted mineral pigments, atmospheric and slightly mysterious, in the same restrained hand-painted Chinese game style. Backgrounds only: NO landscapes, architecture, buildings, mountains, rooms, rivers, trees, characters, creatures, recognizable objects, weapons, cards, coin pictures, books, mirrors, frame, text, legible glyphs or numerals. NOT photographic, NOT vector, NOT 3D, no neon or saturated red/green, no blinding white center. Use low-saturation dusk-toned colors and gentle contrast, with the central 45 percent of each cell relatively quiet so a separately composited object remains readable. Include visible LIGHTNING, flowing ink, energy threads, subtle geometric traces, rings, sparks or ribbons as specified, rather than a flat solid color. OPAQUE full-bleed background throughout. ATTACK panels use muted dusty cinnabar / grey russet / smoke mauve with antique-gold accents. SKILL panels use muted blue-grey / pale jade / moon-white with occasional soft lilac or warm grey accents. No actual text or foreground card objects. LEFT / vow / SKILL: intertwined soft blue-grey and pale sage ribbons of flowing wish light with tiny moon-white motes and faint dusty-pink highlights at edges. MIDDLE / step / SKILL: long curved indigo-grey and lilac wind trails sweeping upward, delicate silver-blue energy streaks, no landscape or leaves. RIGHT / coin / ATTACK: concentric antique-bronze and dusty cinnabar energy rings with broken square/circle abstract traces, soft ash-ochre field, no actual coins."
+    },
+    {
+      "filename": "card-pattern-color-seal.png",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-seal.png",
+      "family": "oath",
+      "recipe": {
+        "kind": "background",
+        "targetHueDegrees": 285,
+        "saturationMultiplier": 1.65,
+        "saturationCap": 0.68,
+        "version": 3
+      },
+      "size": [
+        627,
+        836
+      ],
+      "mode": "RGB",
+      "sourceSha256": "f696a6b38921862f1e056dc1de682984dcc655e67501cdbe13e6dbac4ed6483c",
+      "sha256": "0a071d0c1b8af38f37a1ced9e7c3a576a919f86bbbfaa7bff156400f2240f7e6",
+      "meanSaturationBefore": 0.5004,
+      "meanSaturationAfter": 0.64983,
+      "prompt": "No new image generation. User-authorized grading of the existing raster; preserve dimensions, alpha, ink and texture. Original image_gen prompt follows:\nUse case: stylized-concept. Asset: ONE production background atlas for Chinese ghost folklore watercolor playing cards. EXACT overall canvas 2304x1024 pixels, aspect 9:4, THREE equal PORTRAIT cells side by side, each 768x1024 with WIDTH:HEIGHT=3:4. Strict grid x0..767,768..1535,1536..2303, no gutters or labels. Each panel must be a complete abstract painted energy pattern, not scenes blending across cells. Soft layered gouache, fine hand-ink marks, subtle paper grain, muted mineral pigments, atmospheric and slightly mysterious, in the same restrained hand-painted Chinese game style. Backgrounds only: NO landscapes, architecture, buildings, mountains, rooms, rivers, trees, characters, creatures, recognizable objects, weapons, cards, coin pictures, books, mirrors, frame, text, legible glyphs or numerals. NOT photographic, NOT vector, NOT 3D, no neon or saturated red/green, no blinding white center. Use low-saturation dusk-toned colors and gentle contrast, with the central 45 percent of each cell relatively quiet so a separately composited object remains readable. Include visible LIGHTNING, flowing ink, energy threads, subtle geometric traces, rings, sparks or ribbons as specified, rather than a flat solid color. OPAQUE full-bleed background throughout. ATTACK panels use muted dusty cinnabar / grey russet / smoke mauve with antique-gold accents. SKILL panels use muted blue-grey / pale jade / moon-white with occasional soft lilac or warm grey accents. No actual text or foreground card objects. LEFT / fire / ATTACK: restrained russet and ash-mauve abstract flame ribbons spiraling upward, fine pale-ochre ember flecks, smoky grey base, no real fire pit or altar. MIDDLE / bell / SKILL: overlapping blue-grey/jade concentric SOUND WAVE rings and delicate moon-white pulses fading outward, a few subtle pale gold glints, no bell. RIGHT / seal / ATTACK: layered broken angular dusty-red ink-stamp traces and geometric ink strokes radiating diagonally, muted old-gold and warm-grey haze, no actual seal or legible writing."
+    },
+    {
+      "filename": "card-pattern-color-blood.png",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-blood.png",
+      "family": "oath",
+      "recipe": {
+        "kind": "background",
+        "targetHueDegrees": 285,
+        "saturationMultiplier": 1.65,
+        "saturationCap": 0.68,
+        "version": 3
+      },
+      "size": [
+        627,
+        836
+      ],
+      "mode": "RGB",
+      "sourceSha256": "8b2f4725c092cfcf6e8a6b2fbfb3c3d5fdb493dd1d721e1e89a1cb8919cce1b5",
+      "sha256": "18520847bd2a71b15c677e382956c1d1d604ef20e696ba9f4b9ecffd873a82cd",
+      "meanSaturationBefore": 0.33855,
+      "meanSaturationAfter": 0.54488,
+      "prompt": "No new image generation. User-authorized grading of the existing raster; preserve dimensions, alpha, ink and texture. Original image_gen prompt follows:\nUse case: stylized-concept. Asset: ONE production background atlas for Chinese ghost folklore watercolor playing cards. EXACT overall canvas 2304x1024 pixels, aspect 9:4, THREE equal PORTRAIT cells side by side, each 768x1024 with WIDTH:HEIGHT=3:4. Strict grid x0..767,768..1535,1536..2303, no gutters or labels. Each panel must be a complete abstract painted energy pattern, not scenes blending across cells. Soft layered gouache, fine hand-ink marks, subtle paper grain, muted mineral pigments, atmospheric and slightly mysterious, in the same restrained hand-painted Chinese game style. Backgrounds only: NO landscapes, architecture, buildings, mountains, rooms, rivers, trees, characters, creatures, recognizable objects, weapons, cards, coin pictures, books, mirrors, frame, text, legible glyphs or numerals. NOT photographic, NOT vector, NOT 3D, no neon or saturated red/green, no blinding white center. Use low-saturation dusk-toned colors and gentle contrast, with the central 45 percent of each cell relatively quiet so a separately composited object remains readable. Include visible LIGHTNING, flowing ink, energy threads, subtle geometric traces, rings, sparks or ribbons as specified, rather than a flat solid color. OPAQUE full-bleed background throughout. ATTACK panels use muted dusty cinnabar / grey russet / smoke mauve with antique-gold accents. SKILL panels use muted blue-grey / pale jade / moon-white with occasional soft lilac or warm grey accents. No actual text or foreground card objects. LEFT / lotus / SKILL: pale jade and faded lilac abstract petal-like curved traces with moon-white ripples and a few grey-pink light threads, no recognizable lotus flower or pond. MIDDLE / blood / ATTACK: thin muted wine-red and smoke-purple fractured light veins with restrained warm-grey sparks, abstract flowing cracks, no blood drops, gore, weapon or scenery. RIGHT / ledger / SKILL: fine flowing blue-grey ink lines and ivory brush threads, layered fading translucent strokes with a few pale sage sparks, no paper sheets, actual book or text."
+    },
+    {
+      "filename": "card-pattern-color-verdict.png",
+      "operation": "color-adjustment",
+      "derivedFrom": "card-pattern-verdict.png",
+      "family": "oath",
+      "recipe": {
+        "kind": "background",
+        "targetHueDegrees": 285,
+        "saturationMultiplier": 1.65,
+        "saturationCap": 0.68,
+        "version": 3
+      },
+      "size": [
+        627,
+        836
+      ],
+      "mode": "RGB",
+      "sourceSha256": "b54b6be3ab9f24bb6d85bb1897b6584dbe6695dc279bac0f1b297d01fa9ca038",
+      "sha256": "1da51c652d3e76b7a55c91e11e1626d0eb348d95827e796397492cb63f342c99",
+      "meanSaturationBefore": 0.35387,
+      "meanSaturationAfter": 0.55189,
+      "prompt": "No new image generation. User-authorized grading of the existing raster; preserve dimensions, alpha, ink and texture. Original image_gen prompt follows:\nUse case: stylized-concept. Asset: ONE production background atlas for Chinese ghost folklore watercolor playing cards. EXACT overall canvas 2304x1024 pixels, aspect 9:4, THREE equal PORTRAIT cells side by side, each 768x1024 with WIDTH:HEIGHT=3:4. Strict grid x0..767,768..1535,1536..2303, no gutters or labels. Each panel must be a complete abstract painted energy pattern, not scenes blending across cells. Soft layered gouache, fine hand-ink marks, subtle paper grain, muted mineral pigments, atmospheric and slightly mysterious, in the same restrained hand-painted Chinese game style. Backgrounds only: NO landscapes, architecture, buildings, mountains, rooms, rivers, trees, characters, creatures, recognizable objects, weapons, cards, coin pictures, books, mirrors, frame, text, legible glyphs or numerals. NOT photographic, NOT vector, NOT 3D, no neon or saturated red/green, no blinding white center. Use low-saturation dusk-toned colors and gentle contrast, with the central 45 percent of each cell relatively quiet so a separately composited object remains readable. Include visible LIGHTNING, flowing ink, energy threads, subtle geometric traces, rings, sparks or ribbons as specified, rather than a flat solid color. OPAQUE full-bleed background throughout. ATTACK panels use muted dusty cinnabar / grey russet / smoke mauve with antique-gold accents. SKILL panels use muted blue-grey / pale jade / moon-white with occasional soft lilac or warm grey accents. No actual text or foreground card objects. LEFT / mirror / SKILL: intersecting pale blue-grey and soft lilac prismatic rays with delicate silver fracture glints at edges, abstract misty energy, no mirror, skull or cave. MIDDLE / ferry / SKILL: long sinuous muted jade-blue waterlike light ribbons, layered oval ripples and sand-white glints on cool mist-grey, entirely abstract, no river, boat or dock. RIGHT / verdict / ATTACK: restrained dusty-cinnabar and antique-gold radial rays with layered broken geometric command marks on smoky grey-violet, regal but quiet abstract light, no palace, character, scroll, seal or legible text."
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "generator": "image_gen built-in",
+  "date": "2026-10-24",
+  "purpose": "卡牌类型配色与透明底插画；卡纸保持不透明。",
+  "assets": [
+    {
+      "filename": "card-art-cutouts.png",
+      "transparent_background": true,
+      "editTarget": "ref-card-art.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied square 3 by 3 card illustration atlas. Produce ONE replacement 3x3 atlas for the existing game, keeping the exact row-major object order: row 1 brush, yellow talisman, soul chain; row 2 folded paper crane, spirit-fire incense bowl, bronze bell; row 3 jade imperial seal, three bronze coins, lotus lamp. Keep the charming Chinese ghost folklore watercolor/gouache and dark ink outlines, object identities, equal square cells, and centered compositions. Primary edit: REMOVE EVERY solid teal rectangular background and ALL surrounding smoky cloud ground-plates, patterned washes, floating confetti and ambient wisps. Preserve only each actual object (the bowl's contained flame and the lotus lamp's painted light are part of those objects). Each object must be an isolated painted cutout on genuinely transparent alpha 0 canvas, including the negative spaces inside chain links and between tassels. No checkerboard pixels, no white matte, no residual blue square, no backdrop, no new card frame, no text or numbers. Leave generous transparent gutter, at least 12 percent INSIDE each of the 9 equally divided square cells, so adjacent objects never leak across cell boundaries. Equal size 3x3 grid, perfectly square overall canvas. Keep silhouettes clean and clearly readable at small card scale. Do not add drop shadows or change the object order.",
+      "retry": "First request failed with a connection error; retried the identical prompt.",
+      "operation": "edit"
+    },
+    {
+      "filename": "card-frame-attack.png",
+      "transparent_background": true,
+      "editTarget": "card-frame-opaque.png",
+      "prompt": "Use case: precise-object-edit. Edit target: supplied blank portrait Chinese watercolor paper card frame. Create the ATTACK card variant for this same game. Keep EXACT same 2:3 ratio, front view, silhouette, thin hand-ink border, curved raised top title strip, positions and relative heights of title (top 14%), art window (next 50%), rules area (bottom 36%), no layout changes. Change the type palette: muted vermilion/cinnabar red header and red lacquer edge accents, restrained aged-ochre trim, warm ivory paper for the lower rules area. The art area must be a very pale warm ivory/peach paper field that integrates with the paper card, NOT a separate dark or saturated rectangular illustration panel. Very subtle grain, no distracting watercolor blotches. The title strip has solid subdued red paint suitable for cream text that code adds later. All paper and art-window fill INSIDE the card is fully OPAQUE alpha 255: this is a physical paper card that blocks cards behind. ONLY outside the actual curved card outline must be transparent alpha 0. Remove the brown cast shadow / brown outer matte from the source. Keep the card almost edge-to-edge with a few transparent pixels around it. No cost badge, text, numbers, letters, object illustration, watermark, glow, outer board, cast shadow or separate backdrop. Calm hand-painted Chinese underworld style, no ornate metallic gold fantasy.",
+      "operation": "edit"
+    },
+    {
+      "filename": "card-frame-skill.png",
+      "transparent_background": true,
+      "editTarget": "card-frame-opaque.png",
+      "prompt": "Use case: precise-object-edit. Edit target: supplied blank portrait Chinese watercolor paper card frame. Create the SKILL / SPELL card variant for this same game. Keep EXACT same 2:3 ratio, front view, silhouette, thin hand-ink border, curved raised top title strip, positions and relative heights of title (top 14%), art window (next 50%), rules area (bottom 36%), no layout changes. Change the type palette: muted deep jade-green header and jade lacquer edge accents, restrained aged-ochre trim, warm ivory paper for the lower rules area. The art area must be a very pale mint/ivory paper field that integrates with the paper card, NOT a separate dark or saturated rectangular illustration panel. Very subtle grain, no distracting watercolor blotches. The title strip has solid subdued jade-green paint suitable for cream text that code adds later. All paper and art-window fill INSIDE the card is fully OPAQUE alpha 255: this is a physical paper card that blocks cards behind. ONLY outside the actual curved card outline must be transparent alpha 0. Remove the brown cast shadow / brown outer matte from the source. Keep the card almost edge-to-edge with a few transparent pixels around it. No cost badge, text, numbers, letters, object illustration, watermark, glow, outer board, cast shadow or separate backdrop. Calm hand-painted Chinese underworld style, no ornate metallic gold fantasy.",
+      "operation": "edit"
+    },
+    {
+      "filename": "card-art-mirror.png",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Asset: ONE isolated transparent-background inventory illustration for the card 照骨镜 (bone-revealing mirror) in a Chinese underworld watercolor deckbuilder. The reference image is STYLE ONLY: match its simple clean dark ink outlines, soft gouache shading, muted jade, aged bronze and warm parchment, charming folklore rather than realistic horror. Subject: a small round ancient Chinese bronze hand mirror angled gently toward the viewer, jade-green rim with two restrained cloud motifs, ivory reflective face showing a subtle simplified skull reflection, short dark handle with a small dusty-purple cord tassel. Make it unmistakably a MIRROR, never a bell or gong. No readable writing, no card frame or UI. Center one complete object with generous transparent margin, all visible pixels inside the object painted opaque; outside and gaps have genuine alpha 0. No square background, wash, smoke clouds, floating flames, surrounding particles, checkerboard, cast shadow or glow. Square canvas, readable compact silhouette.",
+      "styleReference": "ref-card-art.png",
+      "operation": "generate"
+    },
+    {
+      "filename": "card-art-ledger.png",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Asset: ONE isolated transparent-background inventory illustration for the card 销账书 (debt-cancellation ledger) in a Chinese underworld watercolor deckbuilder. Reference image is STYLE ONLY: match its clean dark ink outlines, simple soft gouache shading, warm parchment, muted jade and cinnabar accents, friendly Chinese ghost folklore. Subject: an open thread-bound Chinese ledger book with warm cream pages, dark jade cloth binding edge, visible stitched spine, a few abstract dark ink ledger strokes crossed out by one bold small cinnabar cancellation stroke. Include a narrow red ribbon page marker. No legible Chinese characters or numerals, no separate brush, no frame, no UI. Center one complete object with generous transparent margin, all visible pixels inside the object painted opaque; outside and gaps genuine alpha 0. No background square, smoke clouds, floating flames, surrounding particles, checkerboard, glow or cast shadow. Square canvas, readable compact silhouette.",
+      "styleReference": "ref-card-art.png",
+      "operation": "generate"
+    },
+    {
+      "filename": "card-art-brush.png",
+      "operation": "crop-only",
+      "derivedFrom": "card-art-cutouts.png",
+      "crop": [
+        0,
+        0,
+        418,
+        418
+      ],
+      "prompt": "Derived from image_gen card-art-cutouts.png by rectangular grid crop only; preserve every original RGBA pixel, no repainting, alpha editing, recoloring or resampling."
+    },
+    {
+      "filename": "card-art-talisman.png",
+      "operation": "crop-only",
+      "derivedFrom": "card-art-cutouts.png",
+      "crop": [
+        418,
+        0,
+        418,
+        418
+      ],
+      "prompt": "Derived from image_gen card-art-cutouts.png by rectangular grid crop only; preserve every original RGBA pixel, no repainting, alpha editing, recoloring or resampling."
+    },
+    {
+      "filename": "card-art-chain.png",
+      "operation": "crop-only",
+      "derivedFrom": "card-art-cutouts.png",
+      "crop": [
+        836,
+        0,
+        418,
+        418
+      ],
+      "prompt": "Derived from image_gen card-art-cutouts.png by rectangular grid crop only; preserve every original RGBA pixel, no repainting, alpha editing, recoloring or resampling."
+    },
+    {
+      "filename": "card-art-step.png",
+      "operation": "crop-only",
+      "derivedFrom": "card-art-cutouts.png",
+      "crop": [
+        0,
+        418,
+        418,
+        418
+      ],
+      "prompt": "Derived from image_gen card-art-cutouts.png by rectangular grid crop only; preserve every original RGBA pixel, no repainting, alpha editing, recoloring or resampling."
+    },
+    {
+      "filename": "card-art-fire.png",
+      "operation": "crop-only",
+      "derivedFrom": "card-art-cutouts.png",
+      "crop": [
+        418,
+        418,
+        418,
+        418
+      ],
+      "prompt": "Derived from image_gen card-art-cutouts.png by rectangular grid crop only; preserve every original RGBA pixel, no repainting, alpha editing, recoloring or resampling."
+    },
+    {
+      "filename": "card-art-bell.png",
+      "operation": "crop-only",
+      "derivedFrom": "card-art-cutouts.png",
+      "crop": [
+        836,
+        418,
+        418,
+        418
+      ],
+      "prompt": "Derived from image_gen card-art-cutouts.png by rectangular grid crop only; preserve every original RGBA pixel, no repainting, alpha editing, recoloring or resampling."
+    },
+    {
+      "filename": "card-art-seal.png",
+      "operation": "crop-only",
+      "derivedFrom": "card-art-cutouts.png",
+      "crop": [
+        0,
+        836,
+        418,
+        418
+      ],
+      "prompt": "Derived from image_gen card-art-cutouts.png by rectangular grid crop only; preserve every original RGBA pixel, no repainting, alpha editing, recoloring or resampling."
+    },
+    {
+      "filename": "card-art-coin.png",
+      "operation": "crop-only",
+      "derivedFrom": "card-art-cutouts.png",
+      "crop": [
+        418,
+        836,
+        418,
+        418
+      ],
+      "prompt": "Derived from image_gen card-art-cutouts.png by rectangular grid crop only; preserve every original RGBA pixel, no repainting, alpha editing, recoloring or resampling."
+    },
+    {
+      "filename": "card-art-lotus.png",
+      "operation": "crop-only",
+      "derivedFrom": "card-art-cutouts.png",
+      "crop": [
+        836,
+        836,
+        418,
+        418
+      ],
+      "prompt": "Derived from image_gen card-art-cutouts.png by rectangular grid crop only; preserve every original RGBA pixel, no repainting, alpha editing, recoloring or resampling."
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+[
+  {
+    "id": "weak_cultist",
+    "label": "引魂仪式",
+    "pools": [
+      "act1_weak"
+    ],
+    "weight": 1,
+    "composition": {
+      "fixed": [
+        "cultist"
+      ]
+    }
+  },
+  {
+    "id": "weak_jaw",
+    "label": "噬梦兽",
+    "pools": [
+      "act1_weak"
+    ],
+    "weight": 1,
+    "composition": {
+      "fixed": [
+        "jaw"
+      ]
+    }
+  },
+  {
+    "id": "weak_louses",
+    "label": "双蛛拦路",
+    "pools": [
+      "act1_weak"
+    ],
+    "weight": 1,
+    "composition": {
+      "slots": [
+        {
+          "options": [
+            "louse_red",
+            "louse_green"
+          ],
+          "count": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": "weak_slimes",
+    "label": "大小泥灵",
+    "pools": [
+      "act1_weak"
+    ],
+    "weight": 1,
+    "composition": {
+      "variants": [
+        [
+          "spike_m",
+          "acid_s"
+        ],
+        [
+          "acid_m",
+          "spike_s"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "strong_gremlins",
+    "label": "小鬼团伙",
+    "pools": [
+      "act1_strong"
+    ],
+    "weight": 1,
+    "composition": {
+      "bag": [
+        "gremlin_mad",
+        "gremlin_mad",
+        "gremlin_sneaky",
+        "gremlin_sneaky",
+        "gremlin_fat",
+        "gremlin_fat",
+        "gremlin_wizard",
+        "gremlin_shield"
+      ],
+      "count": 4
+    }
+  },
+  {
+    "id": "strong_large_slime",
+    "label": "泥灵巨影",
+    "pools": [
+      "act1_strong"
+    ],
+    "weight": 2,
+    "composition": {
+      "slots": [
+        {
+          "options": [
+            "acid_l",
+            "spike_l"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "strong_slime_swarm",
+    "label": "泥灵潮",
+    "pools": [
+      "act1_strong"
+    ],
+    "weight": 1,
+    "composition": {
+      "fixed": [
+        "spike_s",
+        "spike_s",
+        "spike_s",
+        "acid_s",
+        "acid_s"
+      ]
+    }
+  },
+  {
+    "id": "strong_blue_slaver",
+    "label": "缚魂差役",
+    "pools": [
+      "act1_strong"
+    ],
+    "weight": 2,
+    "composition": {
+      "fixed": [
+        "slaver_blue"
+      ]
+    }
+  },
+  {
+    "id": "strong_red_slaver",
+    "label": "赤绳狱卒",
+    "pools": [
+      "act1_strong"
+    ],
+    "weight": 1,
+    "composition": {
+      "fixed": [
+        "slaver_red"
+      ]
+    }
+  },
+  {
+    "id": "strong_louses",
+    "label": "三蛛结网",
+    "pools": [
+      "act1_strong"
+    ],
+    "weight": 2,
+    "composition": {
+      "slots": [
+        {
+          "options": [
+            "louse_red",
+            "louse_green"
+          ],
+          "count": 3
+        }
+      ]
+    }
+  },
+  {
+    "id": "strong_fungi",
+    "label": "孽菌双生",
+    "pools": [
+      "act1_strong"
+    ],
+    "weight": 2,
+    "composition": {
+      "fixed": [
+        "fungi",
+        "fungi"
+      ]
+    }
+  },
+  {
+    "id": "strong_thugs",
+    "label": "阴路恶徒",
+    "pools": [
+      "act1_strong"
+    ],
+    "weight": 1.5,
+    "composition": {
+      "slots": [
+        {
+          "options": [
+            "louse_red",
+            "louse_green",
+            "acid_m",
+            "spike_m"
+          ]
+        },
+        {
+          "options": [
+            "slaver_blue",
+            "slaver_red",
+            "cultist",
+            "looter"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "strong_beasts",
+    "label": "阴路异兽",
+    "pools": [
+      "act1_strong"
+    ],
+    "weight": 1.5,
+    "composition": {
+      "slots": [
+        {
+          "options": [
+            "fungi",
+            "jaw"
+          ]
+        },
+        {
+          "options": [
+            "louse_red",
+            "louse_green",
+            "acid_m",
+            "spike_m"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "strong_looter",
+    "label": "窃财鬼",
+    "pools": [
+      "act1_strong"
+    ],
+    "weight": 2,
+    "composition": {
+      "fixed": [
+        "looter"
+      ]
+    }
+  },
+  {
+    "id": "nob",
+    "label": "怒魇力士",
+    "pools": [
+      "act1_elite"
+    ],
+    "weight": 1,
+    "composition": {
+      "fixed": [
+        "nob"
+      ]
+    }
+  },
+  {
+    "id": "lagavulin",
+    "label": "沉棺守夜者",
+    "pools": [
+      "act1_elite"
+    ],
+    "weight": 1,
+    "composition": {
+      "fixed": [
+        "lagavulin"
+      ]
+    }
+  },
+  {
+    "id": "sentry",
+    "label": "三座镇魂碑",
+    "pools": [
+      "act1_elite"
+    ],
+    "weight": 1,
+    "composition": {
+      "fixed": [
+        "sentry",
+        "sentry",
+        "sentry"
+      ]
+    }
+  },
+  {
+    "id": "slime_boss",
+    "label": "腐河鬼王",
+    "pools": [
+      "act1_boss"
+    ],
+    "weight": 1,
+    "composition": {
+      "fixed": [
+        "slime_boss"
+      ]
+    }
+  },
+  {
+    "id": "guardian",
+    "label": "铁面判官",
+    "pools": [
+      "act1_boss"
+    ],
+    "weight": 1,
+    "composition": {
+      "fixed": [
+        "guardian"
+      ]
+    }
+  },
+  {
+    "id": "hexaghost",
+    "label": "六灯冥魂",
+    "pools": [
+      "act1_boss"
+    ],
+    "weight": 1,
+    "composition": {
+      "fixed": [
+        "hexaghost"
+      ]
+    }
+  },
+  {
+    "id": "event_mushrooms",
+    "label": "孢子鬼林",
+    "pools": [
+      "act1_event"
+    ],
+    "weight": 1,
+    "composition": {
+      "fixed": [
+        "fungi",
+        "fungi",
+        "fungi"
+      ]
+    }
+  }
+]

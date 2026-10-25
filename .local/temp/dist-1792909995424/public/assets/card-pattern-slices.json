@@ -1,0 +1,258 @@
+{
+  "version": 1,
+  "operation": "crop-only",
+  "sources": [
+    {
+      "filename": "card-patterns-01.png",
+      "size": [
+        1881,
+        836
+      ],
+      "mode": "RGB"
+    },
+    {
+      "filename": "card-patterns-02.png",
+      "size": [
+        1881,
+        836
+      ],
+      "mode": "RGB"
+    },
+    {
+      "filename": "card-patterns-03.png",
+      "size": [
+        1881,
+        836
+      ],
+      "mode": "RGB"
+    },
+    {
+      "filename": "card-patterns-04.png",
+      "size": [
+        1881,
+        836
+      ],
+      "mode": "RGB"
+    },
+    {
+      "filename": "card-patterns-05.png",
+      "size": [
+        1881,
+        836
+      ],
+      "mode": "RGB"
+    }
+  ],
+  "assets": [
+    {
+      "filename": "card-pattern-brush.png",
+      "source": "card-patterns-01.png",
+      "crop": [
+        0,
+        0,
+        627,
+        836
+      ],
+      "size": [
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-talisman.png",
+      "source": "card-patterns-01.png",
+      "crop": [
+        627,
+        0,
+        627,
+        836
+      ],
+      "size": [
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-chain.png",
+      "source": "card-patterns-01.png",
+      "crop": [
+        1254,
+        0,
+        627,
+        836
+      ],
+      "size": [
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-vow.png",
+      "source": "card-patterns-02.png",
+      "crop": [
+        0,
+        0,
+        627,
+        836
+      ],
+      "size": [
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-step.png",
+      "source": "card-patterns-02.png",
+      "crop": [
+        627,
+        0,
+        627,
+        836
+      ],
+      "size": [
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-coin.png",
+      "source": "card-patterns-02.png",
+      "crop": [
+        1254,
+        0,
+        627,
+        836
+      ],
+      "size": [
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-fire.png",
+      "source": "card-patterns-03.png",
+      "crop": [
+        0,
+        0,
+        627,
+        836
+      ],
+      "size": [
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-bell.png",
+      "source": "card-patterns-03.png",
+      "crop": [
+        627,
+        0,
+        627,
+        836
+      ],
+      "size": [
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-seal.png",
+      "source": "card-patterns-03.png",
+      "crop": [
+        1254,
+        0,
+        627,
+        836
+      ],
+      "size": [
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-lotus.png",
+      "source": "card-patterns-04.png",
+      "crop": [
+        0,
+        0,
+        627,
+        836
+      ],
+      "size": [
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-blood.png",
+      "source": "card-patterns-04.png",
+      "crop": [
+        627,
+        0,
+        627,
+        836
+      ],
+      "size": [
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-ledger.png",
+      "source": "card-patterns-04.png",
+      "crop": [
+        1254,
+        0,
+        627,
+        836
+      ],
+      "size": [
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-mirror.png",
+      "source": "card-patterns-05.png",
+      "crop": [
+        0,
+        0,
+        627,
+        836
+      ],
+      "size": [
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-ferry.png",
+      "source": "card-patterns-05.png",
+      "crop": [
+        627,
+        0,
+        627,
+        836
+      ],
+      "size": [
+        627,
+        836
+      ]
+    },
+    {
+      "filename": "card-pattern-verdict.png",
+      "source": "card-patterns-05.png",
+      "crop": [
+        1254,
+        0,
+        627,
+        836
+      ],
+      "size": [
+        627,
+        836
+      ]
+    }
+  ]
+}

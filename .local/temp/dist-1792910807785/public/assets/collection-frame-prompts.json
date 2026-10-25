@@ -1,0 +1,103 @@
+{
+  "generator": "OpenAI built-in image_gen",
+  "created": "2026-10-25",
+  "request": "小卡框按主卡牌的四个视觉分组对应颜色；保持简洁纸面和原背景图。",
+  "assets": [
+    {
+      "filename": "collection-frame-strike.png",
+      "family": "strike",
+      "name": "攻伐",
+      "prompt": "Use case: precise-object-edit. Asset type: one compact inventory-card UI bitmap for a Chinese underworld card game. IMAGE 1 is the EDIT TARGET: the simple 4:5 portrait parchment inventory card. IMAGE 2 is ONLY the exact COLOR AND PIGMENT STYLE reference: the matching full-size battle card frame for 攻伐. Edit IMAGE 1 only. Repaint its existing olive ink frame band and corner cloud flourishes using rich saturated cinnabar vermilion red with deeper crimson edge tones, faithfully matching the saturation, hue, watercolor pigment and antique gold piping in IMAGE 2. Color must be clearly recognizable on a small thumbnail. Preserve the compact inventory shape, exact 4:5 outer silhouette, frame thickness, lightly irregular corners, simple restrained ornament and original flat front view. The gold piping remains warm antique gold; the ENTIRE center remains fully opaque light warm ivory parchment with delicate paper grain, suitable for dark labels. The colored edge must not bleed across the cream center. Keep a simple colored perimeter and no title banner. Do not turn this into the tall 4:7 battle frame from image 2. Do not add an art window or transparency inside the cream card. Outside the organic card silhouette must remain real alpha transparency. No text, no numbers, no glyphs, no icon, no character, no illustration, no extra objects, no background, no shadow, no checkerboard. Return one empty 4:5 portrait inventory tile, entire card visible, matching the edit target's layout so four color variants can share exactly the same UI placements.",
+      "transparent_background": true,
+      "inputImages": [
+        {
+          "filename": "collection-slot.png",
+          "role": "edit target, compact geometry"
+        },
+        {
+          "filename": "card-frame-vivid-strike.png",
+          "role": "main card color reference"
+        }
+      ],
+      "generatedPath": "C:/Users/world/.codex/generated_images/01a16d07-7efd-7a81-83b3-7ed404ff275a/exec-2c4553b5-999b-4db6-a1e5-2ad9cd35a263.png",
+      "operation": "copy-original-bytes",
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "cd2018392637828ec7d007b2fc044c6163a5dd2357c8404059c7d528c55bdb4b"
+    },
+    {
+      "filename": "collection-frame-ward.png",
+      "family": "ward",
+      "name": "护身",
+      "prompt": "Use case: precise-object-edit. Asset type: one compact inventory-card UI bitmap for a Chinese underworld card game. IMAGE 1 is the EDIT TARGET: the simple 4:5 portrait parchment inventory card. IMAGE 2 is ONLY the exact COLOR AND PIGMENT STYLE reference: the matching full-size battle card frame for 护身. Edit IMAGE 1 only. Repaint its existing olive ink frame band and corner cloud flourishes using rich saturated emerald jade green with deeper forest teal edge tones, faithfully matching the saturation, hue, watercolor pigment and antique gold piping in IMAGE 2. Color must be clearly recognizable on a small thumbnail. Preserve the compact inventory shape, exact 4:5 outer silhouette, frame thickness, lightly irregular corners, simple restrained ornament and original flat front view. The gold piping remains warm antique gold; the ENTIRE center remains fully opaque light warm ivory parchment with delicate paper grain, suitable for dark labels. The colored edge must not bleed across the cream center. Keep a simple colored perimeter and no title banner. Do not turn this into the tall 4:7 battle frame from image 2. Do not add an art window or transparency inside the cream card. Outside the organic card silhouette must remain real alpha transparency. No text, no numbers, no glyphs, no icon, no character, no illustration, no extra objects, no background, no shadow, no checkerboard. Return one empty 4:5 portrait inventory tile, entire card visible, matching the edit target's layout so four color variants can share exactly the same UI placements.",
+      "transparent_background": true,
+      "inputImages": [
+        {
+          "filename": "collection-slot.png",
+          "role": "edit target, compact geometry"
+        },
+        {
+          "filename": "card-frame-vivid-ward.png",
+          "role": "main card color reference"
+        }
+      ],
+      "generatedPath": "C:/Users/world/.codex/generated_images/01a16d07-7efd-7a81-83b3-7ed404ff275a/exec-8cb2f579-173a-418d-826f-1ec3d7495662.png",
+      "operation": "copy-original-bytes",
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "0db9b58123cea5115728524b87cd0322774c2142b5b3543cf8c71e836a210d0e"
+    },
+    {
+      "filename": "collection-frame-spirit.png",
+      "family": "spirit",
+      "name": "灵术",
+      "prompt": "Use case: precise-object-edit. Asset type: one compact inventory-card UI bitmap for a Chinese underworld card game. IMAGE 1 is the EDIT TARGET: the simple 4:5 portrait parchment inventory card. IMAGE 2 is ONLY the exact COLOR AND PIGMENT STYLE reference: the matching full-size battle card frame for 灵术. Edit IMAGE 1 only. Repaint its existing olive ink frame band and corner cloud flourishes using rich saturated azure indigo blue with deep cobalt blue edge tones, matching the blue reference exactly, faithfully matching the saturation, hue, watercolor pigment and antique gold piping in IMAGE 2. Color must be clearly recognizable on a small thumbnail. Preserve the compact inventory shape, exact 4:5 outer silhouette, frame thickness, lightly irregular corners, simple restrained ornament and original flat front view. The gold piping remains warm antique gold; the ENTIRE center remains fully opaque light warm ivory parchment with delicate paper grain, suitable for dark labels. The colored edge must not bleed across the cream center. Keep a simple colored perimeter and no title banner. Do not turn this into the tall 4:7 battle frame from image 2. Do not add an art window or transparency inside the cream card. Outside the organic card silhouette must remain real alpha transparency. No text, no numbers, no glyphs, no icon, no character, no illustration, no extra objects, no background, no shadow, no checkerboard. Return one empty 4:5 portrait inventory tile, entire card visible, matching the edit target's layout so four color variants can share exactly the same UI placements.",
+      "transparent_background": true,
+      "inputImages": [
+        {
+          "filename": "collection-slot.png",
+          "role": "edit target, compact geometry"
+        },
+        {
+          "filename": "card-frame-vivid-spirit.png",
+          "role": "main card color reference"
+        }
+      ],
+      "generatedPath": "C:/Users/world/.codex/generated_images/01a16d07-7efd-7a81-83b3-7ed404ff275a/exec-82c70c41-20c4-4d29-87ef-ff79b1c84845.png",
+      "operation": "copy-original-bytes",
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "c634f5c20fe979c35d0985b2247587d47caa62167809356233b40aa210f38a18"
+    },
+    {
+      "filename": "collection-frame-oath.png",
+      "family": "oath",
+      "name": "阴契",
+      "prompt": "Use case: precise-object-edit. Asset type: one compact inventory-card UI bitmap for a Chinese underworld card game. IMAGE 1 is the EDIT TARGET: the simple 4:5 portrait parchment inventory card. IMAGE 2 is ONLY the exact COLOR AND PIGMENT STYLE reference: the matching full-size battle card frame for 阴契. Edit IMAGE 1 only. Repaint its existing olive ink frame band and corner cloud flourishes using rich saturated violet plum purple with deeper amethyst edge tones, faithfully matching the saturation, hue, watercolor pigment and antique gold piping in IMAGE 2. Color must be clearly recognizable on a small thumbnail. Preserve the compact inventory shape, exact 4:5 outer silhouette, frame thickness, lightly irregular corners, simple restrained ornament and original flat front view. The gold piping remains warm antique gold; the ENTIRE center remains fully opaque light warm ivory parchment with delicate paper grain, suitable for dark labels. The colored edge must not bleed across the cream center. Keep a simple colored perimeter and no title banner. Do not turn this into the tall 4:7 battle frame from image 2. Do not add an art window or transparency inside the cream card. Outside the organic card silhouette must remain real alpha transparency. No text, no numbers, no glyphs, no icon, no character, no illustration, no extra objects, no background, no shadow, no checkerboard. Return one empty 4:5 portrait inventory tile, entire card visible, matching the edit target's layout so four color variants can share exactly the same UI placements.",
+      "transparent_background": true,
+      "inputImages": [
+        {
+          "filename": "collection-slot.png",
+          "role": "edit target, compact geometry"
+        },
+        {
+          "filename": "card-frame-vivid-oath.png",
+          "role": "main card color reference"
+        }
+      ],
+      "generatedPath": "C:/Users/world/.codex/generated_images/01a16d07-7efd-7a81-83b3-7ed404ff275a/exec-76112247-a2f6-4368-8aeb-ef9083c15a46.png",
+      "operation": "copy-original-bytes",
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "f009edb45aa9e572b9ef214452bd4ae859c4a8e4660da45fac56804cdab2dbf4"
+    }
+  ]
+}

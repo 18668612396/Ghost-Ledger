@@ -1,0 +1,19 @@
+{
+  "generator": "OpenAI built-in image_gen",
+  "created": "2026-10-25",
+  "request": "用户希望费用保留火焰形态；替换此前圆章，将数字放进整团鬼火的浅青焰心。",
+  "assets": [
+    {
+      "filename": "card-cost-flame.png",
+      "prompt": "Use case: precise-object-edit.\nAsset type: compact ghost-fire energy-cost icon for the upper-left corner of a Chinese folklore paper card.\nThe input is the EDIT TARGET and exact hand-painted flame style reference.\nRedesign this energy fire into ONE very clear, compact, beautiful complete flame silhouette that stays readable at 28 to 50 pixels. Keep the soft watercolor/gouache cyan and blue-jade pigment, fine hand-ink outlines and opaque pale icy-cyan luminous core. Simplify to one gently bending main flame tip, two short side tongues merged into the flame body, and a rounded lower body. No detached flecks, floating embers, small floating flames, smoke wisps or busy internal spirals. The flame itself is the badge: do not put a medallion or ring under it.\nKeep a broad quiet nearly white cyan inner core centered at x50%, y62% for one dark Arabic cost numeral to be overlaid later. Core area should be large and clean with a few subtle watercolor edges, NO drawn circular boundary. Outside contour deep teal-blue with enough contrast against pale scenery and parchment; saturated but not neon. The inner core is fully opaque; never a hole. Give the flame a gentle asymmetry and the same friendly hand-painted Chinese underworld look as the target.\nSquare 1:1 canvas with truly transparent background, full silhouette inside the canvas with 3% padding, centered, flat frontal 2D production sprite. No numbers, letters, face, text, gold trim, jade plaque, shield, frame, circle, coin, pedestal, lens flare, cast shadow or painted backdrop. This is an actual transparent PNG, no checkerboard drawing.",
+      "inputImages": [
+        {
+          "filename": "ref-energy.png",
+          "role": "edit target and hand-painted flame style reference"
+        }
+      ],
+      "transparent_background": true,
+      "generatedPath": "C:\\Users\\world\\.codex\\generated_images\\01a16d07-7efd-7a81-83b3-7ed404ff275a\\exec-1e64187b-8353-4582-bbf4-e73747727875.png"
+    }
+  ]
+}

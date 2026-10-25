@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <title>夜渡 v0.5 · 位图效果检查</title>
+  <link rel="stylesheet" href="../src/style.css"/>
+  <link rel="stylesheet" href="../src/skins.css"/>
+  <link rel="stylesheet" href="../src/presentation/effects.css"/>
+  <style>
+    .fx-lab-controls { padding: 12px; display: flex; flex-wrap: wrap; gap: 7px; justify-content: center; position: relative; z-index: 10; }
+    .fx-lab-controls h1 { width: 100%; margin: 0; font-size: 17px; text-align: center; }
+    .fx-lab-controls button { font-size: 13px; padding: 5px; text-decoration: underline; }
+    .fx-lab-status { margin: 0; padding: 0 15px; text-align: center; font-size: 11px; min-height: 30px; }
+    .fx-lab-arena { position: relative; min-height: 0; flex: 1; display: flex; justify-content: center; padding: 6px 0; }
+    .fx-lab-arena .enemy-slot { height: 100%; width: 55%; }
+    .fx-lab-arena .enemy-target { width: 100%; height: 100%; }
+    .fx-lab-arena .enemy-art { height: 100%; width: 100%; object-fit: contain; }
+    .fx-lab-commands { min-height: 52px; display: flex; align-items: center; justify-content: center; }
+    .fx-lab-complete { display: flex; align-items: center; justify-content: center; width: 100%; font-size: 20px; }
+  </style>
+</head>
+<body>
+  <main id="app"></main>
+  <script type="module">
+    import { createEffectsPresenter } from '../src/presentation/effects.js';
+    const app = document.querySelector('#app');
+    const visuals = await fetch('../content/visual-effects.json').then(r => r.json());
+    const asset = name => new URL(`../public/assets/${name}.png`, import.meta.url).href;
+    const presenter = createEffectsPresenter({ root: app, visuals, assetUrl: asset });
+    let playing = false, guideVisible = false;
+    const card = `<button class="card attack" data-uid="lab-card" data-card-family="strike" style="--card-index:0;--card-count:1;--angle:0deg;--lift:0px"><span class="card-picture"><img class="card-background" src="${asset('card-pattern-color-brush')}" alt=""/><img class="card-art" src="${asset('card-art-brush')}" alt=""/></span><span class="card-frame">${`<img src="${asset('card-frame-vivid-strike')}" alt=""/>`.repeat(3)}</span><span class="card-cost"><img class="card-cost-art" src="${asset('card-cost-flame')}" alt=""/><span class="card-cost-number">1</span></span><strong class="card-name">斩魂</strong><small class="card-type">攻伐 · 攻击</small><span class="card-description">效果检查用卡，不会保存。</span></button>`;
+    function render({ enemy = true, hand = true } = {}) {
+      app.innerHTML = `<section class="game-shell"><div class="world-background"></div><header class="fx-lab-controls"><h1>位图效果 · 隔离检查</h1>${[['play','出牌燃烧'],['discard','回合化灰'],['slash','斩击'],['fire','火焰'],['thunder','雷击'],['curse','阴咒'],['guard','护身'],['soul','魂光'],['kill','击杀后命中'],['guide','自身蓝色引导']].map(([id,label])=>`<button data-case="${id}">${label}</button>`).join('')}</header><p class="fx-lab-status" role="status">此页不读取或保存游戏进度。</p><section class="fx-lab-arena">${enemy?`<div class="enemy-slot" data-enemy-uid="lab-enemy"><button class="enemy-target"><span class="enemy-float"><img class="enemy-art" src="${asset('enemy-cultist')}" alt="受击测试怪物"/></span></button></div>`:'<p class="fx-lab-complete">战斗结束 · 获得奖励</p>'}</section><section class="combat-bottom"><div class="hand">${hand?card:''}</div><div class="hand-hint"><span>蓝色引导位于手牌后方。</span></div><div class="command-bar fx-lab-commands">玩家自身</div></section></section>`;
+    }
+    app.addEventListener('click', async event => {
+      const id = event.target.closest('[data-case]')?.dataset.case;
+      if (!id || playing) return;
+      if (id === 'guide') { guideVisible=!guideVisible; presenter.setSelfGuide({visible:guideVisible,active:guideVisible}); app.querySelector('.fx-lab-status').textContent=guideVisible?'自身引导显示；PNG 3:1等比，手牌不被覆盖。':'自身引导已关闭。';return; }
+      presenter.clear(); render(); playing=true;
+      const snapshot=presenter.capture(), start=performance.now();
+      let events;
+      if (id==='play') { render({hand:false});events=[{type:'cardCommitted',cardUid:'lab-card'}]; }
+      else if(id==='discard') { render({hand:false});events=[{type:'cardDiscarded',cardUid:'lab-card'}]; }
+      else if(id==='kill') { render({enemy:false,hand:false});events=[{type:'cardCommitted',cardUid:'lab-card'}, {type:'attackHit',targetUid:'lab-enemy',impact:'slash',amount:10}]; }
+      else events=[{type:id==='guard'?'blockGained':'attackHit',targetUid:id==='guard'?'player':'lab-enemy',impact:id,amount:6}];
+      await presenter.play(events,snapshot);
+      const elapsed=Math.round(performance.now()-start), remaining=document.querySelectorAll('.fx-sprite,.fx-card-copy,.fx-enemy-copy').length;
+      app.querySelector('.fx-lab-status').textContent=`${id} 已完成 · ${elapsed} ms · 残留效果 ${remaining}`;
+      playing=false;
+    });
+    render();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1519 @@
+{
+  "date": "2026-10-25",
+  "source": "Existing CARD_VISUALS background assets",
+  "layouts": [
+    {
+      "missing": [],
+      "tiles": [
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "a_flame",
+          "name": "焚纸送魂",
+          "nameRect": {
+            "bottom": 361.9062604904175,
+            "height": 14.729166984558104,
+            "left": 57.29166793823242,
+            "right": 134.7083396911621,
+            "top": 347.1770935058594,
+            "width": 77.41667175292969,
+            "x": 57.29166793823242,
+            "y": 347.1770935058594
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 343.625,
+            "height": 48.375,
+            "left": 61.59375,
+            "right": 130.3854217529297,
+            "top": 295.25,
+            "width": 68.79167175292969,
+            "x": 61.59375,
+            "y": 295.25
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-brush.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "a_cleave",
+          "name": "横扫阴风",
+          "nameRect": {
+            "bottom": 361.9062604904175,
+            "height": 14.729166984558104,
+            "left": 151.2916717529297,
+            "right": 228.70834350585935,
+            "top": 347.1770935058594,
+            "width": 77.41667175292969,
+            "x": 151.2916717529297,
+            "y": 347.1770935058594
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 343.625,
+            "height": 48.375,
+            "left": 155.59375,
+            "right": 224.3854217529297,
+            "top": 295.25,
+            "width": 68.79167175292969,
+            "x": 155.59375,
+            "y": 295.25
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-fire.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "brush",
+          "name": "判官笔",
+          "nameRect": {
+            "bottom": 361.9062604904175,
+            "height": 14.729166984558104,
+            "left": 245.2916717529297,
+            "right": 322.7083435058594,
+            "top": 347.1770935058594,
+            "width": 77.41667175292969,
+            "x": 245.2916717529297,
+            "y": 347.1770935058594
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 343.625,
+            "height": 48.375,
+            "left": 249.59375,
+            "right": 318.3854217529297,
+            "top": 295.25,
+            "width": 68.79167175292969,
+            "x": 249.59375,
+            "y": 295.25
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-brush.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "a_bash",
+          "name": "破煞",
+          "nameRect": {
+            "bottom": 477.4062604904175,
+            "height": 14.729166984558104,
+            "left": 57.29166793823242,
+            "right": 134.7083396911621,
+            "top": 462.6770935058594,
+            "width": 77.41667175292969,
+            "x": 57.29166793823242,
+            "y": 462.6770935058594
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 459.125,
+            "height": 48.375,
+            "left": 61.59375,
+            "right": 130.3854217529297,
+            "top": 410.75,
+            "width": 68.79167175292969,
+            "x": 61.59375,
+            "y": 410.75
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-coin.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "coin",
+          "name": "透骨钱",
+          "nameRect": {
+            "bottom": 477.4062604904175,
+            "height": 14.729166984558104,
+            "left": 151.2916717529297,
+            "right": 228.70834350585935,
+            "top": 462.6770935058594,
+            "width": 77.41667175292969,
+            "x": 151.2916717529297,
+            "y": 462.6770935058594
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 459.125,
+            "height": 48.375,
+            "left": 155.59375,
+            "right": 224.3854217529297,
+            "top": 410.75,
+            "width": 68.79167175292969,
+            "x": 155.59375,
+            "y": 410.75
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-coin.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "fire",
+          "name": "业火符",
+          "nameRect": {
+            "bottom": 477.4062604904175,
+            "height": 14.729166984558104,
+            "left": 245.2916717529297,
+            "right": 322.7083435058594,
+            "top": 462.6770935058594,
+            "width": 77.41667175292969,
+            "x": 245.2916717529297,
+            "y": 462.6770935058594
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 459.125,
+            "height": 48.375,
+            "left": 249.59375,
+            "right": 318.3854217529297,
+            "top": 410.75,
+            "width": 68.79167175292969,
+            "x": 249.59375,
+            "y": 410.75
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-fire.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "a_strike",
+          "name": "斩魂",
+          "nameRect": {
+            "bottom": 592.9062910079956,
+            "height": 14.729166984558104,
+            "left": 57.29166793823242,
+            "right": 134.7083396911621,
+            "top": 578.1771240234375,
+            "width": 77.41667175292969,
+            "x": 57.29166793823242,
+            "y": 578.1771240234375
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 574.625,
+            "height": 48.375,
+            "left": 61.59375,
+            "right": 130.3854217529297,
+            "top": 526.25,
+            "width": 68.79167175292969,
+            "x": 61.59375,
+            "y": 526.25
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-brush.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "lotus",
+          "name": "莲灯渡",
+          "nameRect": {
+            "bottom": 592.9062910079956,
+            "height": 14.729166984558104,
+            "left": 151.2916717529297,
+            "right": 228.70834350585935,
+            "top": 578.1771240234375,
+            "width": 77.41667175292969,
+            "x": 151.2916717529297,
+            "y": 578.1771240234375
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 574.625,
+            "height": 48.375,
+            "left": 155.59375,
+            "right": 224.3854217529297,
+            "top": 526.25,
+            "width": 68.79167175292969,
+            "x": 155.59375,
+            "y": 526.25
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-lotus.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "a_defend",
+          "name": "守灯",
+          "nameRect": {
+            "bottom": 592.9062910079956,
+            "height": 14.729166984558104,
+            "left": 245.2916717529297,
+            "right": 322.7083435058594,
+            "top": 578.1771240234375,
+            "width": 77.41667175292969,
+            "x": 245.2916717529297,
+            "y": 578.1771240234375
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 574.625,
+            "height": 48.375,
+            "left": 249.59375,
+            "right": 318.3854217529297,
+            "top": 526.25,
+            "width": 68.79167175292969,
+            "x": 249.59375,
+            "y": 526.25
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-talisman.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "step",
+          "name": "幽冥步",
+          "nameRect": {
+            "bottom": 708.4062910079956,
+            "height": 14.729166984558104,
+            "left": 57.29166793823242,
+            "right": 134.7083396911621,
+            "top": 693.6771240234375,
+            "width": 77.41667175292969,
+            "x": 57.29166793823242,
+            "y": 693.6771240234375
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 690.125,
+            "height": 48.375,
+            "left": 61.59375,
+            "right": 130.3854217529297,
+            "top": 641.75,
+            "width": 68.79167175292969,
+            "x": 61.59375,
+            "y": 641.75
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-step.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "mirror",
+          "name": "照骨镜",
+          "nameRect": {
+            "bottom": 708.4062910079956,
+            "height": 14.729166984558104,
+            "left": 151.2916717529297,
+            "right": 228.70834350585935,
+            "top": 693.6771240234375,
+            "width": 77.41667175292969,
+            "x": 151.2916717529297,
+            "y": 693.6771240234375
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 690.125,
+            "height": 48.375,
+            "left": 155.59375,
+            "right": 224.3854217529297,
+            "top": 641.75,
+            "width": 68.79167175292969,
+            "x": 155.59375,
+            "y": 641.75
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-mirror.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "talisman",
+          "name": "镇魂符",
+          "nameRect": {
+            "bottom": 708.4062910079956,
+            "height": 14.729166984558104,
+            "left": 245.2916717529297,
+            "right": 322.7083435058594,
+            "top": 693.6771240234375,
+            "width": 77.41667175292969,
+            "x": 245.2916717529297,
+            "y": 693.6771240234375
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 690.125,
+            "height": 48.375,
+            "left": 249.59375,
+            "right": 318.3854217529297,
+            "top": 641.75,
+            "width": 68.79167175292969,
+            "x": 249.59375,
+            "y": 641.75
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-talisman.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "ferry",
+          "name": "摆渡钱",
+          "nameRect": {
+            "bottom": 823.9062910079956,
+            "height": 14.729166984558104,
+            "left": 57.29166793823242,
+            "right": 134.7083396911621,
+            "top": 809.1771240234375,
+            "width": 77.41667175292969,
+            "x": 57.29166793823242,
+            "y": 809.1771240234375
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 805.625,
+            "height": 48.375,
+            "left": 61.59375,
+            "right": 130.3854217529297,
+            "top": 757.25,
+            "width": 68.79167175292969,
+            "x": 61.59375,
+            "y": 757.25
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-ferry.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "bell",
+          "name": "摄魂铃",
+          "nameRect": {
+            "bottom": 823.9062910079956,
+            "height": 14.729166984558104,
+            "left": 151.2916717529297,
+            "right": 228.70834350585935,
+            "top": 809.1771240234375,
+            "width": 77.41667175292969,
+            "x": 151.2916717529297,
+            "y": 809.1771240234375
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 805.625,
+            "height": 48.375,
+            "left": 155.59375,
+            "right": 224.3854217529297,
+            "top": 757.25,
+            "width": 68.79167175292969,
+            "x": 155.59375,
+            "y": 757.25
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-bell.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "ledger",
+          "name": "销账书",
+          "nameRect": {
+            "bottom": 823.9062910079956,
+            "height": 14.729166984558104,
+            "left": 245.2916717529297,
+            "right": 322.7083435058594,
+            "top": 809.1771240234375,
+            "width": 77.41667175292969,
+            "x": 245.2916717529297,
+            "y": 809.1771240234375
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 805.625,
+            "height": 48.375,
+            "left": 249.59375,
+            "right": 318.3854217529297,
+            "top": 757.25,
+            "width": 68.79167175292969,
+            "x": 249.59375,
+            "y": 757.25
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-ledger.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "chain",
+          "name": "勾魂索",
+          "nameRect": {
+            "bottom": 939.4062910079956,
+            "height": 14.729166984558104,
+            "left": 57.29166793823242,
+            "right": 134.7083396911621,
+            "top": 924.6771240234376,
+            "width": 77.41667175292969,
+            "x": 57.29166793823242,
+            "y": 924.6771240234376
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 921.125,
+            "height": 48.375,
+            "left": 61.59375,
+            "right": 130.3854217529297,
+            "top": 872.75,
+            "width": 68.79167175292969,
+            "x": 61.59375,
+            "y": 872.75
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-chain.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "vow",
+          "name": "还愿符",
+          "nameRect": {
+            "bottom": 939.4062910079956,
+            "height": 14.729166984558104,
+            "left": 151.2916717529297,
+            "right": 228.70834350585935,
+            "top": 924.6771240234376,
+            "width": 77.41667175292969,
+            "x": 151.2916717529297,
+            "y": 924.6771240234376
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 921.125,
+            "height": 48.375,
+            "left": 155.59375,
+            "right": 224.3854217529297,
+            "top": 872.75,
+            "width": 68.79167175292969,
+            "x": 155.59375,
+            "y": 872.75
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-vow.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "blood",
+          "name": "借命斩",
+          "nameRect": {
+            "bottom": 939.4062910079956,
+            "height": 14.729166984558104,
+            "left": 245.2916717529297,
+            "right": 322.7083435058594,
+            "top": 924.6771240234376,
+            "width": 77.41667175292969,
+            "x": 245.2916717529297,
+            "y": 924.6771240234376
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 921.125,
+            "height": 48.375,
+            "left": 249.59375,
+            "right": 318.3854217529297,
+            "top": 872.75,
+            "width": 68.79167175292969,
+            "x": 249.59375,
+            "y": 872.75
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-blood.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "a_slimed",
+          "name": "黏液",
+          "nameRect": {
+            "bottom": 1054.9062910079956,
+            "height": 14.729166984558104,
+            "left": 57.29166793823242,
+            "right": 134.7083396911621,
+            "top": 1040.1771240234375,
+            "width": 77.41667175292969,
+            "x": 57.29166793823242,
+            "y": 1040.1771240234375
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 1036.625,
+            "height": 48.375,
+            "left": 61.59375,
+            "right": 130.3854217529297,
+            "top": 988.25,
+            "width": 68.79167175292969,
+            "x": 61.59375,
+            "y": 988.25
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-vow.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "seal",
+          "name": "生死签",
+          "nameRect": {
+            "bottom": 1054.9062910079956,
+            "height": 14.729166984558104,
+            "left": 151.2916717529297,
+            "right": 228.70834350585935,
+            "top": 1040.1771240234375,
+            "width": 77.41667175292969,
+            "x": 151.2916717529297,
+            "y": 1040.1771240234375
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 1036.625,
+            "height": 48.375,
+            "left": 155.59375,
+            "right": 224.3854217529297,
+            "top": 988.25,
+            "width": 68.79167175292969,
+            "x": 155.59375,
+            "y": 988.25
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-seal.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "a_dazed",
+          "name": "眩晕",
+          "nameRect": {
+            "bottom": 1054.9062910079956,
+            "height": 14.729166984558104,
+            "left": 245.2916717529297,
+            "right": 322.7083435058594,
+            "top": 1040.1771240234375,
+            "width": 77.41667175292969,
+            "x": 245.2916717529297,
+            "y": 1040.1771240234375
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 1036.625,
+            "height": 48.375,
+            "left": 249.59375,
+            "right": 318.3854217529297,
+            "top": 988.25,
+            "width": 68.79167175292969,
+            "x": 249.59375,
+            "y": 988.25
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-chain.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "verdict",
+          "name": "阎罗敕令",
+          "nameRect": {
+            "bottom": 1170.4062910079956,
+            "height": 14.729166984558104,
+            "left": 57.29166793823242,
+            "right": 134.7083396911621,
+            "top": 1155.6771240234375,
+            "width": 77.41667175292969,
+            "x": 57.29166793823242,
+            "y": 1155.6771240234375
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 1152.125,
+            "height": 48.375,
+            "left": 61.59375,
+            "right": 130.3854217529297,
+            "top": 1103.75,
+            "width": 68.79167175292969,
+            "x": 61.59375,
+            "y": 1103.75
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-verdict.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "a_burn",
+          "name": "灼伤",
+          "nameRect": {
+            "bottom": 1170.4062910079956,
+            "height": 14.729166984558104,
+            "left": 151.2916717529297,
+            "right": 228.70834350585935,
+            "top": 1155.6771240234375,
+            "width": 77.41667175292969,
+            "x": 151.2916717529297,
+            "y": 1155.6771240234375
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 1152.125,
+            "height": 48.375,
+            "left": 155.59375,
+            "right": 224.3854217529297,
+            "top": 1103.75,
+            "width": 68.79167175292969,
+            "x": 155.59375,
+            "y": 1103.75
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-blood.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "a_burn_plus",
+          "name": "灼伤+",
+          "nameRect": {
+            "bottom": 1170.4062910079956,
+            "height": 14.729166984558104,
+            "left": 245.2916717529297,
+            "right": 322.7083435058594,
+            "top": 1155.6771240234375,
+            "width": 77.41667175292969,
+            "x": 245.2916717529297,
+            "y": 1155.6771240234375
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 1152.125,
+            "height": 48.375,
+            "left": 249.59375,
+            "right": 318.3854217529297,
+            "top": 1103.75,
+            "width": 68.79167175292969,
+            "x": 249.59375,
+            "y": 1103.75
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-verdict.png"
+        }
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "width": 390
+    },
+    {
+      "missing": [],
+      "tiles": [
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "a_flame",
+          "name": "焚纸送魂",
+          "nameRect": {
+            "bottom": 304.1979169845581,
+            "height": 13.197916984558104,
+            "left": 56.19791793823242,
+            "right": 113.80208587646484,
+            "top": 291,
+            "width": 57.60416793823242,
+            "x": 56.19791793823242,
+            "y": 291
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 290.59375,
+            "height": 36,
+            "left": 59.39583587646485,
+            "right": 110.59375381469728,
+            "top": 254.59375,
+            "width": 51.19791793823242,
+            "x": 59.39583587646485,
+            "y": 254.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-brush.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "a_cleave",
+          "name": "横扫阴风",
+          "nameRect": {
+            "bottom": 304.1979169845581,
+            "height": 13.197916984558104,
+            "left": 126.19792175292967,
+            "right": 183.8020896911621,
+            "top": 291,
+            "width": 57.60416793823242,
+            "x": 126.19792175292967,
+            "y": 291
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 290.59375,
+            "height": 36,
+            "left": 129.39584350585938,
+            "right": 180.5937614440918,
+            "top": 254.59375,
+            "width": 51.19791793823242,
+            "x": 129.39584350585938,
+            "y": 254.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-fire.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "brush",
+          "name": "判官笔",
+          "nameRect": {
+            "bottom": 304.1979169845581,
+            "height": 13.197916984558104,
+            "left": 196.1979217529297,
+            "right": 253.8020896911621,
+            "top": 291,
+            "width": 57.60416793823242,
+            "x": 196.1979217529297,
+            "y": 291
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 290.59375,
+            "height": 36,
+            "left": 199.39584350585935,
+            "right": 250.5937614440918,
+            "top": 254.59375,
+            "width": 51.19791793823242,
+            "x": 199.39584350585935,
+            "y": 254.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-brush.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "a_bash",
+          "name": "破煞",
+          "nameRect": {
+            "bottom": 390.1979169845581,
+            "height": 13.197916984558104,
+            "left": 56.19791793823242,
+            "right": 113.80208587646484,
+            "top": 377,
+            "width": 57.60416793823242,
+            "x": 56.19791793823242,
+            "y": 377
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 376.59375,
+            "height": 36,
+            "left": 59.39583587646485,
+            "right": 110.59375381469728,
+            "top": 340.59375,
+            "width": 51.19791793823242,
+            "x": 59.39583587646485,
+            "y": 340.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-coin.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "coin",
+          "name": "透骨钱",
+          "nameRect": {
+            "bottom": 390.1979169845581,
+            "height": 13.197916984558104,
+            "left": 126.19792175292967,
+            "right": 183.8020896911621,
+            "top": 377,
+            "width": 57.60416793823242,
+            "x": 126.19792175292967,
+            "y": 377
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 376.59375,
+            "height": 36,
+            "left": 129.39584350585938,
+            "right": 180.5937614440918,
+            "top": 340.59375,
+            "width": 51.19791793823242,
+            "x": 129.39584350585938,
+            "y": 340.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-coin.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "fire",
+          "name": "业火符",
+          "nameRect": {
+            "bottom": 390.1979169845581,
+            "height": 13.197916984558104,
+            "left": 196.1979217529297,
+            "right": 253.8020896911621,
+            "top": 377,
+            "width": 57.60416793823242,
+            "x": 196.1979217529297,
+            "y": 377
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 376.59375,
+            "height": 36,
+            "left": 199.39584350585935,
+            "right": 250.5937614440918,
+            "top": 340.59375,
+            "width": 51.19791793823242,
+            "x": 199.39584350585935,
+            "y": 340.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-fire.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "a_strike",
+          "name": "斩魂",
+          "nameRect": {
+            "bottom": 476.1979169845581,
+            "height": 13.197916984558104,
+            "left": 56.19791793823242,
+            "right": 113.80208587646484,
+            "top": 463,
+            "width": 57.60416793823242,
+            "x": 56.19791793823242,
+            "y": 463
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 462.59375,
+            "height": 36,
+            "left": 59.39583587646485,
+            "right": 110.59375381469728,
+            "top": 426.59375,
+            "width": 51.19791793823242,
+            "x": 59.39583587646485,
+            "y": 426.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-brush.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "lotus",
+          "name": "莲灯渡",
+          "nameRect": {
+            "bottom": 476.1979169845581,
+            "height": 13.197916984558104,
+            "left": 126.19792175292967,
+            "right": 183.8020896911621,
+            "top": 463,
+            "width": 57.60416793823242,
+            "x": 126.19792175292967,
+            "y": 463
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 462.59375,
+            "height": 36,
+            "left": 129.39584350585938,
+            "right": 180.5937614440918,
+            "top": 426.59375,
+            "width": 51.19791793823242,
+            "x": 129.39584350585938,
+            "y": 426.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-lotus.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "a_defend",
+          "name": "守灯",
+          "nameRect": {
+            "bottom": 476.1979169845581,
+            "height": 13.197916984558104,
+            "left": 196.1979217529297,
+            "right": 253.8020896911621,
+            "top": 463,
+            "width": 57.60416793823242,
+            "x": 196.1979217529297,
+            "y": 463
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 462.59375,
+            "height": 36,
+            "left": 199.39584350585935,
+            "right": 250.5937614440918,
+            "top": 426.59375,
+            "width": 51.19791793823242,
+            "x": 199.39584350585935,
+            "y": 426.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-talisman.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "step",
+          "name": "幽冥步",
+          "nameRect": {
+            "bottom": 562.1979169845581,
+            "height": 13.197916984558104,
+            "left": 56.19791793823242,
+            "right": 113.80208587646484,
+            "top": 549,
+            "width": 57.60416793823242,
+            "x": 56.19791793823242,
+            "y": 549
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 548.59375,
+            "height": 36,
+            "left": 59.39583587646485,
+            "right": 110.59375381469728,
+            "top": 512.59375,
+            "width": 51.19791793823242,
+            "x": 59.39583587646485,
+            "y": 512.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-step.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "mirror",
+          "name": "照骨镜",
+          "nameRect": {
+            "bottom": 562.1979169845581,
+            "height": 13.197916984558104,
+            "left": 126.19792175292967,
+            "right": 183.8020896911621,
+            "top": 549,
+            "width": 57.60416793823242,
+            "x": 126.19792175292967,
+            "y": 549
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 548.59375,
+            "height": 36,
+            "left": 129.39584350585938,
+            "right": 180.5937614440918,
+            "top": 512.59375,
+            "width": 51.19791793823242,
+            "x": 129.39584350585938,
+            "y": 512.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-mirror.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "talisman",
+          "name": "镇魂符",
+          "nameRect": {
+            "bottom": 562.1979169845581,
+            "height": 13.197916984558104,
+            "left": 196.1979217529297,
+            "right": 253.8020896911621,
+            "top": 549,
+            "width": 57.60416793823242,
+            "x": 196.1979217529297,
+            "y": 549
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 548.59375,
+            "height": 36,
+            "left": 199.39584350585935,
+            "right": 250.5937614440918,
+            "top": 512.59375,
+            "width": 51.19791793823242,
+            "x": 199.39584350585935,
+            "y": 512.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-talisman.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "ferry",
+          "name": "摆渡钱",
+          "nameRect": {
+            "bottom": 648.1979169845581,
+            "height": 13.197916984558104,
+            "left": 56.19791793823242,
+            "right": 113.80208587646484,
+            "top": 635,
+            "width": 57.60416793823242,
+            "x": 56.19791793823242,
+            "y": 635
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 634.59375,
+            "height": 36,
+            "left": 59.39583587646485,
+            "right": 110.59375381469728,
+            "top": 598.59375,
+            "width": 51.19791793823242,
+            "x": 59.39583587646485,
+            "y": 598.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-ferry.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "bell",
+          "name": "摄魂铃",
+          "nameRect": {
+            "bottom": 648.1979169845581,
+            "height": 13.197916984558104,
+            "left": 126.19792175292967,
+            "right": 183.8020896911621,
+            "top": 635,
+            "width": 57.60416793823242,
+            "x": 126.19792175292967,
+            "y": 635
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 634.59375,
+            "height": 36,
+            "left": 129.39584350585938,
+            "right": 180.5937614440918,
+            "top": 598.59375,
+            "width": 51.19791793823242,
+            "x": 129.39584350585938,
+            "y": 598.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-bell.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "ledger",
+          "name": "销账书",
+          "nameRect": {
+            "bottom": 648.1979169845581,
+            "height": 13.197916984558104,
+            "left": 196.1979217529297,
+            "right": 253.8020896911621,
+            "top": 635,
+            "width": 57.60416793823242,
+            "x": 196.1979217529297,
+            "y": 635
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 634.59375,
+            "height": 36,
+            "left": 199.39584350585935,
+            "right": 250.5937614440918,
+            "top": 598.59375,
+            "width": 51.19791793823242,
+            "x": 199.39584350585935,
+            "y": 598.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-ledger.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "chain",
+          "name": "勾魂索",
+          "nameRect": {
+            "bottom": 734.1979169845581,
+            "height": 13.197916984558104,
+            "left": 56.19791793823242,
+            "right": 113.80208587646484,
+            "top": 721,
+            "width": 57.60416793823242,
+            "x": 56.19791793823242,
+            "y": 721
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 720.59375,
+            "height": 36,
+            "left": 59.39583587646485,
+            "right": 110.59375381469728,
+            "top": 684.59375,
+            "width": 51.19791793823242,
+            "x": 59.39583587646485,
+            "y": 684.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-chain.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "vow",
+          "name": "还愿符",
+          "nameRect": {
+            "bottom": 734.1979169845581,
+            "height": 13.197916984558104,
+            "left": 126.19792175292967,
+            "right": 183.8020896911621,
+            "top": 721,
+            "width": 57.60416793823242,
+            "x": 126.19792175292967,
+            "y": 721
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 720.59375,
+            "height": 36,
+            "left": 129.39584350585938,
+            "right": 180.5937614440918,
+            "top": 684.59375,
+            "width": 51.19791793823242,
+            "x": 129.39584350585938,
+            "y": 684.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-vow.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "blood",
+          "name": "借命斩",
+          "nameRect": {
+            "bottom": 734.1979169845581,
+            "height": 13.197916984558104,
+            "left": 196.1979217529297,
+            "right": 253.8020896911621,
+            "top": 721,
+            "width": 57.60416793823242,
+            "x": 196.1979217529297,
+            "y": 721
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 720.59375,
+            "height": 36,
+            "left": 199.39584350585935,
+            "right": 250.5937614440918,
+            "top": 684.59375,
+            "width": 51.19791793823242,
+            "x": 199.39584350585935,
+            "y": 684.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-blood.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "a_slimed",
+          "name": "黏液",
+          "nameRect": {
+            "bottom": 820.1979169845581,
+            "height": 13.197916984558104,
+            "left": 56.19791793823242,
+            "right": 113.80208587646484,
+            "top": 807,
+            "width": 57.60416793823242,
+            "x": 56.19791793823242,
+            "y": 807
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 806.59375,
+            "height": 36,
+            "left": 59.39583587646485,
+            "right": 110.59375381469728,
+            "top": 770.59375,
+            "width": 51.19791793823242,
+            "x": 59.39583587646485,
+            "y": 770.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-vow.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "seal",
+          "name": "生死签",
+          "nameRect": {
+            "bottom": 820.1979169845581,
+            "height": 13.197916984558104,
+            "left": 126.19792175292967,
+            "right": 183.8020896911621,
+            "top": 807,
+            "width": 57.60416793823242,
+            "x": 126.19792175292967,
+            "y": 807
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 806.59375,
+            "height": 36,
+            "left": 129.39584350585938,
+            "right": 180.5937614440918,
+            "top": 770.59375,
+            "width": 51.19791793823242,
+            "x": 129.39584350585938,
+            "y": 770.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-seal.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "a_dazed",
+          "name": "眩晕",
+          "nameRect": {
+            "bottom": 820.1979169845581,
+            "height": 13.197916984558104,
+            "left": 196.1979217529297,
+            "right": 253.8020896911621,
+            "top": 807,
+            "width": 57.60416793823242,
+            "x": 196.1979217529297,
+            "y": 807
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 806.59375,
+            "height": 36,
+            "left": 199.39584350585935,
+            "right": 250.5937614440918,
+            "top": 770.59375,
+            "width": 51.19791793823242,
+            "x": 199.39584350585935,
+            "y": 770.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-chain.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "verdict",
+          "name": "阎罗敕令",
+          "nameRect": {
+            "bottom": 906.197916984558,
+            "height": 13.197916984558104,
+            "left": 56.19791793823242,
+            "right": 113.80208587646484,
+            "top": 893,
+            "width": 57.60416793823242,
+            "x": 56.19791793823242,
+            "y": 893
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 892.59375,
+            "height": 36,
+            "left": 59.39583587646485,
+            "right": 110.59375381469728,
+            "top": 856.59375,
+            "width": 51.19791793823242,
+            "x": 59.39583587646485,
+            "y": 856.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-verdict.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "a_burn",
+          "name": "灼伤",
+          "nameRect": {
+            "bottom": 906.197916984558,
+            "height": 13.197916984558104,
+            "left": 126.19792175292967,
+            "right": 183.8020896911621,
+            "top": 893,
+            "width": 57.60416793823242,
+            "x": 126.19792175292967,
+            "y": 893
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 892.59375,
+            "height": 36,
+            "left": 129.39584350585938,
+            "right": 180.5937614440918,
+            "top": 856.59375,
+            "width": 51.19791793823242,
+            "x": 129.39584350585938,
+            "y": 856.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-blood.png"
+        },
+        {
+          "backgroundFit": "cover",
+          "iconFit": "contain",
+          "id": "a_burn_plus",
+          "name": "灼伤+",
+          "nameRect": {
+            "bottom": 906.197916984558,
+            "height": 13.197916984558104,
+            "left": 196.1979217529297,
+            "right": 253.8020896911621,
+            "top": 893,
+            "width": 57.60416793823242,
+            "x": 196.1979217529297,
+            "y": 893
+          },
+          "natural": [
+            627,
+            836
+          ],
+          "picture": {
+            "bottom": 892.59375,
+            "height": 36,
+            "left": 199.39584350585935,
+            "right": 250.5937614440918,
+            "top": 856.59375,
+            "width": 51.19791793823242,
+            "x": 199.39584350585935,
+            "y": 856.59375
+          },
+          "src": "http://localhost:4210/public/assets/card-pattern-color-verdict.png"
+        }
+      ],
+      "viewport": [
+        320,
+        568
+      ],
+      "width": 320
+    }
+  ],
+  "comparedDetail": {
+    "background": "http://127.0.0.1:4210/public/assets/card-pattern-color-brush.png",
+    "card": "a_flame"
+  },
+  "logs": []
+}
