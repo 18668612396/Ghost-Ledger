@@ -16,10 +16,8 @@ async function checkDirectory(path) {
   }
 }
 for (const directory of [resolve(root, 'src'), resolve(REPO_ROOT, 'tools')]) await checkDirectory(directory);
-// Local tests are intentionally ignored by Git and may be absent in a new checkout.
-let hasLocalTests = true;
-try { await access(TEST_ROOT); } catch (error) { if (error.code !== 'ENOENT') throw error; hasLocalTests = false; }
-if (hasLocalTests) await checkDirectory(TEST_ROOT);
+// Formal regressions are versioned so clean checkouts and CI share the checks.
+await checkDirectory(TEST_ROOT);
 const { checkArt } = await import('./check-art.mjs');
 await checkArt(root);
 console.log('入口、全部模块语法及游戏美术资源检查通过。');

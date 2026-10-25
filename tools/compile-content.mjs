@@ -6,7 +6,7 @@ import { validateContent } from '../game/src/runtime/content-schema.js';
 import { GAME_ROOT } from './paths.mjs';
 
 const projectRoot = GAME_ROOT;
-export const TABLE_FILES = { cards: 'cards.json', powers: 'powers.json', enemies: 'enemies.json', encounters: 'encounters.json', acts: 'acts.json', events: 'events.json', visuals: 'visual-effects.json' };
+export const TABLE_FILES = { cards: 'cards.json', powers: 'powers.json', enemies: 'enemies.json', encounters: 'encounters.json', acts: 'acts.json', events: 'events.json', visuals: 'visual-effects.json', relics: 'relics.json', potions: 'potions.json' };
 export function indexContentTables(tables) {
   const content = {};
   for (const [table, file] of Object.entries(TABLE_FILES)) {
@@ -40,6 +40,7 @@ export async function contentProblems(content, root = projectRoot, { assets = tr
     for (const card of Object.values(content.cards)) { for (const key of ['icon', 'background', 'cost']) files.add(card.visual?.[key]); files.add(`card-frame-vivid-${card.visual?.family}`); files.add(`collection-frame-${card.visual?.family}`); }
     for (const enemy of Object.values(content.enemies)) files.add(enemy.art);
     for (const visual of Object.values(content.visuals)) if (visual.asset) files.add(visual.asset);
+    for (const item of [...Object.values(content.relics), ...Object.values(content.potions)]) files.add(`card-art-${item.art}`);
     for (const file of files) {
       try { const png = await readFile(resolve(root, 'public/assets', `${file}.png`)); if (png.length < 24 || png.toString('hex', 0, 8) !== '89504e470d0a1a0a') throw new Error(); }
       catch { problems.push(`素材 ${file}.png 缺失或不是有效PNG`); }

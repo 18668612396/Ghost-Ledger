@@ -1,0 +1,56 @@
+name: 验证游戏与 Web 发布包
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Node 24 / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - name: 从锁文件干净安装开发依赖
+        run: npm ci
+      - name: 配置与规则回归
+        run: npm test
+      - name: 正常数值首幕三首领、保存与逐步回放
+        run: npm run test:playthrough
+      - name: 正常失败与失败存档恢复
+        run: npm run test:defeat
+      - name: 构建 Web 静态发布包
+        run: npm run build
+      - name: 资源、来源哈希和仓库子路径预检
+        run: npm run release:check
+      - name: 保留本轮验证证据
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: verification-${{ matrix.os }}
+          path: |
+            .local/evidence/act1-release-*.json
+            .local/dist/web/release.json
+            .local/dist/web/release-manifest.json
+            .local/dist/web/asset-report.json
+          if-no-files-found: warn
+          retention-days: 14

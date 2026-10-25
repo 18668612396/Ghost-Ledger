@@ -1,0 +1,7 @@
+{
+  "description": "Ghost Ledger Mini Game scaffold; renderer is not implemented.",
+  "compileType": "game",
+  "appid": "",
+  "projectname": "ghost-ledger-wechat-prepared",
+  "setting": { "es6": true }
+}

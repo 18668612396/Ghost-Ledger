@@ -5,6 +5,8 @@ const SCROLL_SELECTOR = '.parchment-modal.paper-panel,.scroll-surface';
 const watched = new Set();
 const assets = new Map(SKIN_DATA.assets.map(asset => [asset.filename, asset]));
 let observer = null;
+const pending = new Set();
+let pendingFrame = null;
 
 export function getSkinGeometry(kind, width, height, options = {}) {
   const skin = SKIN_DATA.skins[kind];
@@ -81,7 +83,16 @@ function matching(root, selector) {
 
 export function decorateSkins(root) {
   if (!root?.querySelectorAll) return;
-  if (!observer && typeof ResizeObserver === 'function') observer = new ResizeObserver(entries => entries.forEach(entry => updateSkin(entry.target)));
+  if (!observer && typeof ResizeObserver === 'function') observer = new ResizeObserver(entries => {
+    for (const entry of entries) pending.add(entry.target);
+    // Updating padding during observer delivery creates another resize delivery.
+    // Batch the layout writes in the next animation frame instead.
+    pendingFrame ??= requestAnimationFrame(() => {
+      pendingFrame = null;
+      const elements = [...pending]; pending.clear();
+      for (const element of elements) updateSkin(element);
+    });
+  });
   for (const element of watched) {
     if (!element.isConnected) {
       observer?.unobserve(element);

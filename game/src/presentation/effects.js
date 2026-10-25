@@ -55,10 +55,16 @@ export function createEffectsPresenter({ root, visuals = {}, assetUrl } = {}) {
   const active = new Set();
   let portal, guide, guideAnimation, destroyed = false, portalBounds;
 
-  // Preload the nine small reusable effects before the first combat interaction.
-  for (const visual of Object.values(definitions)) {
-    if (!visual.asset || typeof Image === 'undefined') continue;
-    const preload = new Image(); preload.src = resolveAsset(visual.asset);
+  let preloaded = false;
+  // Home does not download combat atlases. Warm them when entering a battle.
+  function preload() {
+    if (preloaded || destroyed || typeof Image === 'undefined') return;
+    preloaded = true;
+    for (const visual of Object.values(definitions)) {
+      if (!visual.asset) continue;
+      const image = new Image(); image.src = resolveAsset(visual.asset);
+      image.addEventListener('error', () => { preloaded = false; }, { once: true });
+    }
   }
   function ensurePortal(bounds = portalBounds || resolveScene()?.getBoundingClientRect()) {
     if (!portal?.isConnected) {
@@ -239,5 +245,5 @@ export function createEffectsPresenter({ root, visuals = {}, assetUrl } = {}) {
     portal?.remove(); portal = null; setSelfGuide({ visible: false });
   }
   function destroy() { clear(); destroyed = true; }
-  return { capture, play, setSelfGuide, clear, destroy };
+  return { capture, play, preload, setSelfGuide, clear, destroy };
 }

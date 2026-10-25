@@ -5,15 +5,20 @@ import { compileContent } from './compile-content.mjs';
 import { REPO_ROOT, TEST_ROOT } from './paths.mjs';
 
 let files = [];
+async function collect(directory) {
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const path = resolve(directory, entry.name);
+    if (entry.isDirectory()) await collect(path);
+    else if (entry.name.endsWith('.test.mjs')) files.push(path);
+  }
+}
 try {
-  files = (await readdir(TEST_ROOT, { withFileTypes: true }))
-    .filter(entry => entry.isFile() && entry.name.endsWith('.test.mjs'))
-    .map(entry => resolve(TEST_ROOT, entry.name)).sort();
+  await collect(TEST_ROOT); files.sort();
 } catch (error) {
   if (error.code !== 'ENOENT') throw error;
 }
 if (!files.length) {
-  console.error('未找到 .local/tests/*.test.mjs。测试按项目约定由 Git 忽略；请先在本机恢复或添加测试文件，不能将缺少测试视为通过。');
+  console.error('未找到 tests/**/*.test.mjs。正式回归必须随仓库分发，不能将缺少测试视为通过。');
   process.exitCode = 1;
 } else {
   await compileContent();

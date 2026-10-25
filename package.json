@@ -14,7 +14,18 @@
     "art:check": "node tools/compile-card-art-layout.mjs",
     "check:skins": "node tools/check-skins.mjs",
     "test": "node tools/test.mjs",
-    "build": "node tools/build.mjs"
+    "build": "node tools/build.mjs",
+    "package": "node tools/package-targets.mjs",
+    "test:playthrough": "node tests/scenarios/act1-release-playthrough.mjs --start 1 --count 12 --width 4 --depth 7 --cover-bosses",
+    "test:defeat": "node tests/scenarios/act1-release-playthrough.mjs --seed 1 --passive --resume-every 3",
+    "release:check": "node tools/release-preflight.mjs",
+    "release:retain": "node tools/retain-release.mjs",
+    "release:restore": "node tools/restore-release.mjs"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=24 <26"
+  },
+  "devDependencies": {
+    "sharp": "0.35.5"
+  }
 }

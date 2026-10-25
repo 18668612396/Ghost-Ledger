@@ -1,0 +1,36 @@
+[
+  {
+    "id": "blood_ember", "name": "归魂余烬", "description": "每场战斗胜利后恢复 6 点生命。", "art": "fire",
+    "triggers": [{ "event": "combatVictory", "effects": [{ "op": "heal", "amount": 6 }] }]
+  },
+  {
+    "id": "lamp", "name": "引魂灯", "description": "每回合首次实际偿还阴债，获得 3 点护甲。", "art": "lotus",
+    "starter": { "unlockId": null, "flavor": "灯芯燃着旧愿，为肯还愿的人留一线光。", "art": "lantern" },
+    "triggers": [{ "event": "debtRepaid", "when": { "op": "eq", "args": [{ "stat": "state.phase" }, "combat"] }, "limit": "oncePerTurn", "effects": [{ "op": "block", "amount": 3, "modified": false }] }]
+  },
+  {
+    "id": "bell", "name": "镇魂铃", "description": "每场战斗首回合获得 6 点护甲。", "art": "bell",
+    "starter": { "unlockId": "first-night", "flavor": "铃声定住初见的惊惧，也催你另寻还愿之法。", "art": "bell" },
+    "triggers": [{ "event": "combatStart", "effects": [{ "op": "block", "amount": 6, "modified": false }] }]
+  },
+  {
+    "id": "anchor", "name": "定魂锚", "description": "每场战斗首回合获得 10 点护甲。", "art": "chain",
+    "triggers": [{ "event": "combatStart", "effects": [{ "op": "block", "amount": 10, "modified": false }] }]
+  },
+  {
+    "id": "vajra", "name": "金刚杵", "description": "每场战斗开始时获得 1 点力量。", "art": "seal",
+    "triggers": [{ "event": "combatStart", "effects": [{ "op": "status", "key": "strength", "amount": 1 }] }]
+  },
+  {
+    "id": "smooth_stone", "name": "温润魂石", "description": "每场战斗开始时获得 1 点敏捷。", "art": "coin",
+    "triggers": [{ "event": "combatStart", "effects": [{ "op": "status", "key": "dexterity", "amount": 1 }] }]
+  },
+  {
+    "id": "bag", "name": "行脚符袋", "description": "每场战斗首回合额外抽 2 张牌。", "art": "ledger",
+    "modifiers": { "openingDraw": 2 }, "triggers": []
+  },
+  {
+    "id": "lantern", "name": "长明烛", "description": "每场战斗首回合额外获得 1 点香火。", "art": "fire",
+    "triggers": [{ "event": "combatStart", "effects": [{ "op": "energy", "amount": 1 }] }]
+  }
+]

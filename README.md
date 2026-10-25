@@ -1,6 +1,6 @@
 # 夜渡 · 阴债录
 
-手机竖屏、第一人称的中式志怪卡牌游戏原型。你扮演初任鬼差，从府邸出门，在随机阴路上选择路线，观察多只鬼怪的意图，再安排出牌、借火与还债。当前 v0.5 用一套配置驱动的运行时承载卡牌、怪物、关卡和特效。
+手机竖屏、第一人称的中式志怪卡牌游戏原型。你扮演初任鬼差，从府邸出门，在随机阴路上选择路线，观察多只鬼怪的意图，再安排出牌、借火与还债。当前 v0.5 用一套配置驱动的运行时承载卡牌、怪物、关卡、特效、法器和药物。
 
 美术沿用用户参考图的浅青水彩、旧纸、暖灯笼与墨线。战斗不显示玩家小人；竖屏游戏之外为纯深色，常驻界面不另铺大底板。
 
@@ -13,6 +13,7 @@
 | 战斗 | 1–5 怪同场，25 种敌人定义；4 个弱遭遇、10 个强遭遇、3 个精英、3 个首领，另有事件专用遭遇 |
 | 路线 | 第一幕 16 层、三列分支；节点数、节点类型、连线与遭遇按种子生成，部分楼层固定用途 |
 | 局外 | 府邸、修行、法器选择、图鉴和夜巡档案；开放「阴路夜巡」，另两个模式保留入口 |
+| 道具 | 8 件法器、4 种药物；数值、触发效果、出门行装及药物目标／场景／售价均来自配置 |
 | 节奏 | 设计预估每局 25–40 分钟，可回府暂歇；实际难度与时长等待试玩反馈 |
 
 通关条件是存活并击败第 16 层首领；生命归零则失败。结算后回府，再次出门。
@@ -26,25 +27,29 @@ Ghost-Ledger/
 ├─ game/              游戏本体：index.html、src/、content/、public/
 ├─ tools/             content-editor/ 可视化配置工具，以及开发脚本
 ├─ docs/              正式设计、架构与开发记录
+├─ tests/             随 Git 分发的正式回归与正常数值场景
 ├─ .local/            Git 忽略的本地内容
-│  ├─ tests/          测试源码
+│  ├─ tests/          临时检查脚本与保留的本地测试原件
 │  ├─ evidence/       检查记录、截图与隔离 QA 夹具
-│  ├─ dist/           静态构建产物
+│  ├─ dist/           按 web/、windows/、android/、wechat/ 分开的产物
 │  └─ temp/           临时文件、旧构建和历史归档
+├─ .github/workflows/ 正式验证与手动 Pages 发布流程
 ├─ AGENTS.md          AI 协作、同模型子智能体与 Git 约定
 ├─ ai_context.md      当前接手说明
 ├─ CREDITS.md         素材来源与署名
+├─ package-lock.json  开发依赖锁文件
 └─ package.json       统一开发命令
 ```
 
-`.local/` 不进入版本管理；新的 Git 克隆不会自带本地测试或历史证据。游戏运行与构建不依赖这些测试和证据，执行测试前需在本机恢复或添加 `.local/tests/*.test.mjs`。
+正式自动回归在 `tests/`，新克隆和 CI 使用同一套文件。`.local/` 不进入版本管理，已有本地原件继续保留；新克隆不会自带其中的临时检查或历史证据。游戏运行与发布包不依赖测试、证据或本地归档。
 
 ## 启动
 
-需要 **Node.js 20 或更新版本**及其附带的 npm。没有第三方运行依赖，无需安装依赖。
+使用 **Node.js 24 或 25** 及其附带的 npm，推荐 Node.js 24 LTS；项目支持 `>=24 <26`。首次启动先按锁文件安装开发依赖。游戏运行时没有第三方 JavaScript 包依赖，发布图片优化使用开发依赖 `sharp`。
 
 ```powershell
 cd E:\GitHub\Ghost-Ledger
+npm ci
 npm run dev
 ```
 
@@ -99,35 +104,64 @@ npm run dev
 
 修行扩展选择，不永久增加基础生命或攻击。结算时累计赢得 1 场战斗可领取镇魂铃，与引魂灯互换；累计实际偿还 6 债记录还愿修行；通关后可领取进阶一重。所有阴债牌已进入第一幕奖励池，不再受局外卡牌解锁门槛限制。
 
-当前只接受新运行格式 `version:4 / ruleset:config-v1`，**不兼容旧存档**。浏览器存储键为 `ghost-ledger.run.v4` 和 `ghost-ledger.profile.v2`。刷新或回府可继续当前格式的冒险；存档仅在同一浏览器、同一站点下有效，`localhost` 与 `127.0.0.1` 各自独立。
+当前只接受运行格式 `version:5 / ruleset:'config-v2'`，**不兼容旧夜巡存档，也不执行旧规则**。浏览器存储键为 `ghost-ledger.run.v5` 和 `ghost-ledger.profile.v2`；已有 `ghost-ledger.run.v4` 原记录保留供导出，不迁移或覆盖。刷新或回府可继续当前格式的冒险。
 
-每个新局固定一份规则配置快照。修改玩法配置后，刷新页面并新开夜巡才会使用新规则；继续未完夜巡仍使用其快照。卡牌主体图按卡牌 ID 读取当前素材引用，刷新页面后当前夜巡也会显示更新后的图片，进度与规则数值保持原样。快照只服务同一套新运行时，不包含旧规则执行器或美术文件副本。
+每个新局固定一份包含九张源表的独立规则快照，法器和药物也从本局快照读取。修改玩法配置后，刷新页面并新开夜巡才会使用新规则；继续未完夜巡仍使用其快照。卡牌主体图按卡牌 ID 读取当前素材引用，刷新页面后当前夜巡也会显示更新后的图片，进度与规则数值保持原样。快照只服务同一套新运行时，不包含旧规则执行器或美术文件副本。
+
+设置中的「备份与恢复」可导出当前进度、选择备份文件或粘贴 JSON 后检查恢复。导入只接受本版本兼容的备份，检查后还需确认替换；导入前的原始记录会保留。旧版或损坏记录可单独「导出原始记录用于恢复」，这类原始导出用于排查，不能当作可直接导入的进度。夜巡档案还可导出本次试玩记录，供反馈种子、动作和耗时。
+
+进度只保存在本机当前浏览器来源，协议、域名、端口不同就有不同存储；`localhost`、`127.0.0.1`、局域网地址、构建预览与线上地址不会自动共享。换设备、换地址或清理浏览器前先导出兼容备份；没有云存档或自动跨设备同步。
+
+同一来源的另一标签页更新进度时，本页检测到冲突会停止写入并进入只读提示，避免旧页面覆盖新进度。先导出本页进度或已保存的原始记录，再选择「重新加载最新进度」；冲突期间不继续出牌或推进冒险。
 
 ## 策划与开发
 
-只修改 `game/content/*.json` 源表，不手动修改 `game/src/generated/content-data.js`。运行 `npm run editor` 可打开独立的 [可视化配置工坊](tools/content-editor/README.md)，通过表单编辑卡牌、怪物、幕、遭遇和事件，并在校验通过后保存源表。开发服务会监听表变化并编译；错误显示在终端及 `/__content/diagnostics`。其余开发工具见 [tools/](tools/README.md)。
+只修改 `game/content/*.json` 源表，不手动修改 `game/src/generated/content-data.js`。九表包括卡牌、能力、怪物、遭遇、幕、事件、特效、法器和药物。运行 `npm run editor` 可打开独立的 [可视化配置工坊](tools/content-editor/README.md)，通过表单、通用效果列表及高级 JSON 编辑，在校验通过后备份并保存源表。法器与药物复用同一规则队列；预览不修改玩家进度。开发服务会监听表变化并编译；错误显示在终端及 `/__content/diagnostics`。其余开发工具见 [tools/](tools/README.md)。
 
-- [策划配置指南](docs/CONTENT-AUTHORING-V05.md)：新增卡牌、能力、怪物、遭遇、幕、事件和特效。
+- [策划配置指南](docs/CONTENT-AUTHORING-V05.md)：新增卡牌、能力、怪物、遭遇、幕、事件、特效及道具。
 - [架构与模块边界](docs/ARCHITECTURE-V05.md)：唯一运行时、效果队列、随机数、存档与表现层。
 - [美术规范](docs/ART-STANDARDS-V05.md)：四层卡面、四色家族、切片缩放、透明物件和位图特效。
 - [开发与验收记录](docs/DEVELOPMENT-V05.md)：本版实现范围及分层验证状态。
-- [Web 与微信小游戏发布计划](docs/RELEASE-PLAN.md)：已知缺口、双端边界、分阶段实施与发布验收。
+- [发布计划](docs/RELEASE-PLAN.md)：工程缺口、平台边界、分阶段实施与发布验收。
+- [发布与平台打包](docs/PACKAGING.md)：Web 制品、GitHub Pages、上一版保留与恢复、原生及微信准备包。
 
 ```powershell
 npm run content:check
 npm run check
 npm test
+npm run test:playthrough
+npm run test:defeat
 npm run build
+npm run release:check
 npm run preview -- --port 4211
 ```
 
-`content:check` 校验并生成配置；`check` 还检查源码语法、活动素材及来源；`test` 执行 `.local/tests/` 中的规则和场景回归，没有测试文件时明确报错。构建先使用空目录，再将旧产物归档到 `.local/temp/`，生成可独立服务的 `.local/dist/`。可选的 `npm run check:skins` 需要 Python 与 Pillow，用于像素、比例和切片检查。
+`content:check` 校验并生成配置；`check` 还检查源码语法、活动素材及来源；`test` 编译配置后执行 `tests/**/*.test.mjs`，没有正式测试时明确失败。`test:playthrough` 执行正常数值首幕策略场景与逐步回放，`test:defeat` 检查正常失败及存档恢复；这些自动场景不能代替真实玩家的体验验收。可选的 `npm run check:skins` 需要 Python 与 Pillow，用于像素、比例和切片检查。
 
-普通开发服务只提供 `game/`，构建预览只提供 `.local/dist/`，均不开放本地证据。需要使用现有 QA 夹具时运行 `npm run dev:qa`，打开 [隔离 QA 入口](http://127.0.0.2:4212/evidence/v05-scenarios.html)。该服务仅监听 `127.0.0.2`，通过 `/evidence/` 提供 `.local/evidence/`；夹具可改写该来源的测试存档，避免在正常试玩来源使用。
+普通开发服务只提供 `game/`，构建预览只提供 `.local/dist/web/`，均不开放本地证据。需要使用现有 QA 夹具时运行 `npm run dev:qa`，打开 [隔离 QA 入口](http://127.0.0.2:4212/evidence/v05-scenarios.html)。该服务仅监听 `127.0.0.2`，通过 `/evidence/` 提供 `.local/evidence/`；夹具可改写该来源的测试存档，避免在正常试玩来源使用。
+
+## Web 与其他平台
+
+`npm run build` 从空暂存目录生成可独立部署的 `.local/dist/web/`，旧产物归档到 `.local/temp/`。发布根 `index.html` 通过相对路径引用 `releases/<releaseId>/` 内的源码和优化素材，支持仓库子路径；版本与哈希写入 `release.json`、`release-manifest.json` 和 `asset-report.json`。源 PNG、提示词和来源原件仍留在仓库素材目录，发布包只包含运行所需内容。
+
+`npm run release:check` 校验实际制品的文件、版本、素材来源与输出哈希、体积预算及子路径 HTTP 引用。`npm run release:retain` 用于保留上一版完整制品的资源，`npm run release:restore` 用于从维护者指定的可信 Pages HTTPS 地址恢复旧制品；后两者须提供参数，参数、失败处理与回滚步骤见 [打包说明](docs/PACKAGING.md)。这些命令不会自动部署网站。仓库提供手动 GitHub Pages 工作流，正式发布需维护者开启 Pages 并显式运行，不能将本地构建视为已上线。
+
+四个平台共用规则核心及平台服务接口，通过独立目标目录准备：
+
+```powershell
+npm run package -- list
+npm run package -- check
+npm run package -- prepare web
+npm run package -- prepare windows
+npm run package -- prepare android
+npm run package -- prepare wechat
+```
+
+`prepare web` 生成静态 Web 制品。Windows、Android 准备包包含共用 Web 前端与 Tauri 宿主，微信准备包包含纯规则核心、平台接口和明确停止启动的入口；三者仍标记 `prepared / binaryStatus:not-built / runnable:false`。准备不安装原生 SDK、不执行原生编译或签名，也不上传平台。Windows／Android 安装包与真机验收仍需后续工作；微信实际发布暂缓，Canvas 渲染、输入、资源分包及平台能力仍待接入。详见 [平台打包边界](docs/PACKAGING.md)。
 
 ## 当前限制
 
-- 当前是浏览器原型，只有第一幕和一个已开放模式；没有 APK、第二幕连续闯关、云存档或跨设备同步。
+- 当前可玩的界面是浏览器原型，只有第一幕和一个已开放模式；原生与微信准备包不等于可分发的安装包或小游戏，没有第二幕连续闯关、云存档或自动跨设备同步。
 - 75 张牌对齐的是铁甲战士功能与升级规则，第一幕保留原型的怪物机制；地图概率、经济、法器、事件及阴债扩展不等同于原作完整平衡。
 - 全部美术有来源；101 条卡牌定义各有独立透明主体，四套卡框与抽象背景继续共用。基础版与升级版沿用同一主体；手牌、详情、图鉴及配置工具使用统一定位。
 - 自动检查、浏览器交互、真实手机触控和用户验收分开记录。最新结果以开发记录为准，时长、难度、手感与视觉效果仍需用户试玩。

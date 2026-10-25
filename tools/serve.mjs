@@ -15,7 +15,7 @@ if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('请提
 const root = built ? DIST_ROOT : GAME_ROOT;
 try { await access(resolve(root, 'index.html')); }
 catch (error) {
-  if (built && error.code === 'ENOENT') throw new Error('缺少 .local/dist/index.html，请先运行 npm run build。');
+  if (built && error.code === 'ENOENT') throw new Error('缺少 .local/dist/web/index.html，请先运行 npm run build。');
   throw error;
 }
 let contentErrors = [];

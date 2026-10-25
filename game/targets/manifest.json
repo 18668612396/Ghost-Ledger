@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "applicationId": "com.ghostledger.game",
+  "shared": {
+    "coreEntries": ["game/src/engine.js", "game/src/progression.js", "game/src/modes.js"],
+    "platformContract": "game/src/platform/contract.js"
+  },
+  "targets": {
+    "web": {
+      "name": "Web / GitHub Pages",
+      "renderer": "dom",
+      "implementation": "implemented",
+      "output": ".local/dist/web",
+      "platform": "game/src/platform/web.js"
+    },
+    "windows": {
+      "name": "Windows",
+      "renderer": "webview",
+      "implementation": "scaffold",
+      "output": ".local/dist/windows",
+      "host": "game/hosts/native-shell",
+      "platform": "game/src/platform/web.js",
+      "prerequisites": ["Rust MSVC toolchain", "Microsoft C++ Build Tools", "WebView2 Runtime", "Tauri CLI 2.12.4"],
+      "distributionRequirements": ["Application identifier review", "Windows installer build", "Windows signing certificate", "Real Windows device validation"]
+    },
+    "android": {
+      "name": "Android",
+      "renderer": "webview",
+      "implementation": "scaffold",
+      "output": ".local/dist/android",
+      "host": "game/hosts/native-shell",
+      "platform": "game/src/platform/web.js",
+      "prerequisites": ["Rust Android targets", "JDK", "Android SDK / NDK", "Tauri CLI 2.12.4"],
+      "distributionRequirements": ["Application identifier review", "Android project initialization", "APK / AAB build", "Android signing keystore", "Real Android device validation"]
+    },
+    "wechat": {
+      "name": "微信小游戏",
+      "renderer": "canvas-required",
+      "implementation": "deferred",
+      "output": ".local/dist/wechat",
+      "host": "game/hosts/wechat",
+      "platform": "game/src/platform/wechat.js",
+      "prerequisites": ["WeChat Mini Game AppID", "WeChat DevTools", "Canvas renderer implementation", "Mini Game module bundling and runtime adaptation"],
+      "distributionRequirements": ["Runtime resource subpackages / CDN", "WeChat storage, audio and file capability integration", "Real WeChat device validation", "Platform review"]
+    }
+  }
+}

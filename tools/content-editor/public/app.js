@@ -7,6 +7,8 @@ const TABLES = {
   acts: { label: '关卡', singular: '幕', eyebrow: 'WORLD', icon: '⌘', description: '冒险起点、路线与内容池', file: 'acts.json' },
   encounters: { label: '遭遇', singular: '遭遇', eyebrow: 'ENCOUNTERS', icon: '⋈', description: '怪物组合与遭遇抽选', file: 'encounters.json' },
   events: { label: '事件', singular: '事件', eyebrow: 'EVENTS', icon: '◇', description: '叙事选择与事件效果', file: 'events.json' },
+  relics: { label: '法器', singular: '法器', eyebrow: 'RELICS', icon: '◉', description: '触发效果、开场修正与出门行装', file: 'relics.json' },
+  potions: { label: '药物', singular: '药物', eyebrow: 'POTIONS', icon: '♧', description: '使用目标、场景、售价与效果', file: 'potions.json', filterKey: 'target', filterLabels: { self: '自身', enemy: '指定敌人', all: '敌方战场' } },
   powers: { label: '能力', singular: '能力', eyebrow: 'POWERS', icon: '✧', description: '卡牌与怪物共用的持续能力', file: 'powers.json' },
   visuals: { label: '特效', singular: '特效', eyebrow: 'VISUALS', icon: '↗', description: '已有位图的动画参数', file: 'visual-effects.json' },
 };
@@ -160,7 +162,7 @@ function bindShell() {
 
 function renderNavigation() {
   const nav = $('#main-nav'); nav.replaceChildren();
-  for (const table of ['cards', 'enemies', 'acts']) {
+  for (const table of ['cards', 'enemies', 'acts', 'relics', 'potions']) {
     const active = table === 'acts' ? ['acts', 'encounters', 'events'].includes(state.table) : state.table === table;
     const item = button('', `nav-item${active ? ' active' : ''}`, () => selectTable(table));
     item.append(el('span', 'nav-icon', TABLES[table].icon), el('span', '', TABLES[table].label), el('span', 'nav-count', (state.tables[table] || []).length));
@@ -292,7 +294,7 @@ function renderValidation() {
     const list = el('ul', 'validation-errors');
     for (const message of state.errors) {
       const item = el('li'), action = button(message, '', () => {
-        const match = message.match(/^(cards|enemies|acts|encounters|events|powers|visuals)\[([^\]]+)\]/);
+        const match = message.match(new RegExp(`^(${TABLE_KEYS.join('|')})\\[([^\\]]+)\\]`));
         if (match && canNavigate()) { const index = (state.tables[match[1]] || []).findIndex(row => row.id === match[2]); if (index >= 0) { state.table = match[1]; state.index = index; state.search = ''; state.filter = ''; $('#search').value = ''; renderSelection(); } }
       }); item.append(action); list.append(item);
     }
@@ -307,11 +309,13 @@ function uniqueId(table, base) {
   let id = base, number = 2; while (ids.has(id)) id = `${base}_${number++}`; return id;
 }
 function defaultRecord(table) {
-  const id = uniqueId(table, { cards: 'new_card', enemies: 'new_enemy', acts: 'new_act', encounters: 'new_encounter', events: 'new_event', powers: 'new_power', visuals: 'new_visual' }[table]);
+  const id = uniqueId(table, { cards: 'new_card', enemies: 'new_enemy', acts: 'new_act', encounters: 'new_encounter', events: 'new_event', relics: 'new_relic', potions: 'new_potion', powers: 'new_power', visuals: 'new_visual' }[table]);
   if (table === 'cards') return { id, name: '新卡牌', pool: 'debt', type: 'attack', rarity: 'common', cost: 1, target: 'enemy', text: '造成6点伤害。', effects: [{ op: 'damage', amount: 6, target: 'enemy' }], upgrade: { text: '造成9点伤害。', effects: [{ op: 'damage', amount: 9, target: 'enemy' }] }, keywords: [], tags: [], visual: { family: 'strike', icon: 'card-art-brush', background: 'card-pattern-color-brush', cost: 'card-cost-flame', impact: state.tables.visuals?.find(row => row.id === 'slash')?.id || state.tables.visuals?.[0]?.id } };
   if (table === 'enemies') return { id, name: '新怪物', description: '每回合发动一次攻击。', kind: 'normal', art: state.tables.enemies?.[0]?.art || 'enemy-cultist', artScale: 1, hpRange: [30, 30], moves: { attack: { label: '攻击', effects: [{ op: 'damage', amount: 6, target: 'player' }] } }, ai: { rules: [{ move: 'attack' }] }, initial: {}, triggers: [], traits: [] };
   if (table === 'encounters') return { id, label: '新遭遇', pools: ['custom_pool'], weight: 1, composition: { fixed: [state.tables.enemies?.[0]?.id || 'cultist'] } };
   if (table === 'events') return { id, title: '新事件', description: '阴路上出现了一处新的际遇。', choices: [{ id: 'leave', title: '继续赶路', description: '离开此处。', effects: [] }] };
+  if (table === 'relics') return { id, name: '新法器', description: '每场战斗开始获得5点护甲。', art: 'talisman', triggers: [{ event: 'combatStart', effects: [{ op: 'block', amount: 5, modified: false }] }] };
+  if (table === 'potions') return { id, name: '新药物', description: '获得12点护甲。', art: 'talisman', target: 'self', usablePhases: ['combat'], price: 30, effects: [{ op: 'block', amount: 12, modified: false }] };
   if (table === 'powers') return { id, name: '新能力', description: '回合开始时获得1点护甲。', triggers: [{ id: 'turn_block', event: 'turnStart', effects: [{ op: 'block', amount: 1 }] }] };
   const first = clone(state.tables[table]?.[0] || {});
   if (table === 'acts') return { ...first, id, name: '新的一幕', number: (state.tables.acts?.length || 1) + 1 };
@@ -411,7 +415,7 @@ function exportDialog() {
   if (hasPending()) { notify('请先应用 JSON，再导出完整草稿。', 'warning'); return; }
   const body = el('div', 'dialog-body'), field = el('label', 'field'), select = el('select', 'field-control');
   field.append(el('span', 'field-label', '导出范围'));
-  for (const [value, label] of [['table', `当前${TABLES[state.table].label}源表`], ['record', '当前记录'], ['workspace', '全部七张配置表']]) { const option = el('option', '', label); option.value = value; select.append(option); }
+  for (const [value, label] of [['table', `当前${TABLES[state.table].label}源表`], ['record', '当前记录'], ['workspace', `全部 ${TABLE_KEYS.length} 张配置表`]]) { const option = el('option', '', label); option.value = value; select.append(option); }
   field.append(select); body.append(field, el('p', 'field-help', '导出包括已应用但尚未保存的草稿，不改变磁盘文件。'));
   showDialog('导出 JSON', body, [{ label: '取消' }, { label: '下载 JSON', primary: true, run: () => {
     const range = select.value;

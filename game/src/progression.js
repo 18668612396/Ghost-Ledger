@@ -1,13 +1,8 @@
-export const RELICS = Object.freeze([
-  Object.freeze({ id: 'lamp', name: '引魂灯', description: '每回合首次实际偿还阴债时，获得 3 点护甲。', flavor: '灯芯燃着旧愿，为肯还愿的人留一线光。', art: 'lantern', unlockId: null }),
-  Object.freeze({ id: 'bell', name: '镇魂铃', description: '每场战斗首回合获得 6 点护甲；不再获得引魂灯的还债护甲。', flavor: '铃声定住初见的惊惧，也催你另寻还愿之法。', art: 'bell', unlockId: 'first-night' }),
-]);
-
-export const MILESTONES = Object.freeze([
-  Object.freeze({ id: 'first-night', title: '初巡阴路', description: '从一场交锋中带回第一份夜巡见闻。', requirement: '结算时累计赢得 1 场战斗', goal: 1, metric: 'totalBattles', rewardsDescription: '解锁法器「镇魂铃」，下次出门前可与引魂灯互换。' }),
-  Object.freeze({ id: 'paid-oaths', title: '有借有还', description: '学会借香火，更要学会偿还许下的阴债。', requirement: '结算时累计实际偿还 6 点阴债', goal: 6, metric: 'totalRepaid', rewardsDescription: '记录还愿修行。所有阴债符箓已在第一幕奖励池开放。' }),
-  Object.freeze({ id: 'first-dawn', title: '长夜将明', description: '通过一次判官终审，见到阴路尽头的曙色。', requirement: '结算时累计通关 1 次', goal: 1, metric: 'wins', rewardsDescription: '开放进阶一重：敌人生命提高 15%，攻击提高 2 点。玩家基础属性不变。' }),
-]);
+import { CONTENT } from './generated/content-data.js';
+import { DEFAULT_STARTER_RELIC_ID } from './runtime/items.js';
+import { MILESTONES } from './progression-meta.js';
+export { MILESTONES } from './progression-meta.js';
+export const RELICS = Object.freeze(Object.values(CONTENT.relics || {}).filter(relic => relic.starter).map(({ id, name, description, starter }) => Object.freeze({ id, name, description, ...starter })));
 
 const VERSION = 1;
 const HISTORY_LIMIT = 10;
@@ -45,7 +40,9 @@ function isHistoryEntry(value) {
     && !(value.won && value.abandoned)
     && ['battles', 'steps', 'repaid', 'experience', 'difficulty'].every(key => isCount(value[key]))
     && value.difficulty <= 1
-    && isIdentifier(value.modeId);
+    && isIdentifier(value.modeId)
+    && ['seed', 'activeMs', 'startedAt', 'endedAt'].every(key => value[key] === undefined || isCount(value[key]))
+    && ['contentRevision', 'cause', 'sourceUid', 'cardId'].every(key => value[key] === undefined || value[key] === null || isIdentifier(value[key]));
 }
 
 function requireProfile(profile) {
@@ -86,7 +83,7 @@ export function createProfile() {
     totalRepaid: 0,
     bestPath: 0,
     claimed: [],
-    equippedRelicId: 'lamp',
+    equippedRelicId: DEFAULT_STARTER_RELIC_ID,
     settledRunIds: [],
     history: [],
   };
@@ -156,7 +153,7 @@ export function isDifficultyUnlocked(profile, difficulty) {
   return difficulty === 0 || (difficulty === 1 && profile.claimed.includes('first-dawn'));
 }
 
-export function settleRun(profile, run, { abandoned = false } = {}) {
+export function settleRun(profile, run, { abandoned = false, session = null } = {}) {
   requireProfile(profile);
   const unchanged = { profile, earned: 0, alreadySettled: false };
   if (!isRecord(run)) return unchanged;
@@ -182,6 +179,12 @@ export function settleRun(profile, run, { abandoned = false } = {}) {
     experience: earned,
     modeId: isIdentifier(run.modeId) ? run.modeId : 'classic',
     difficulty: run.difficulty === 1 ? 1 : 0,
+    ...(isCount(run.seed) ? { seed: run.seed } : {}),
+    ...(isIdentifier(run.contentRevision) ? { contentRevision: run.contentRevision } : {}),
+    cause: won ? 'victory' : !terminal ? 'abandoned' : run.lastEvent?.cause || 'unknown',
+    ...(isIdentifier(run.lastEvent?.sourceUid) ? { sourceUid: run.lastEvent.sourceUid } : {}),
+    ...(isIdentifier(run.lastEvent?.cardId) ? { cardId: run.lastEvent.cardId } : {}),
+    ...(session?.runId === runId ? Object.fromEntries(['activeMs', 'startedAt', 'endedAt'].filter(key => isCount(session[key])).map(key => [key, session[key]])) : {}),
   };
   return {
     profile: {

@@ -1,7 +1,7 @@
 // Shared by the compiler and browser save validation. No Node dependencies.
 import { evaluate } from './expressions.js';
 import { createConfiguredRoute, isValidConfiguredRoute } from './world.js';
-import { RELIC_DEFS } from './items.js';
+import { MILESTONES } from '../progression-meta.js';
 
 const own = (object, key) => Object.hasOwn(object, key);
 const record = value => value !== null && typeof value === 'object' && !Array.isArray(value);
@@ -17,7 +17,8 @@ const statuses = ['strength', 'dexterity', 'weak', 'exposed', 'frail', 'entangle
 const zones = ['hand', 'drawPile', 'discard', 'exhaust', 'powerZone', 'limbo'];
 const nodeTypes = ['battle', 'elite', 'boss', 'event', 'rest', 'shop', 'treasure'];
 const boundaries = ['turnEnd', 'handEnd', 'roundEnd'];
-const triggerEvents = ['turnStart', 'turnEnd', 'cardPlayed', 'cardExhausted', 'cardDrawn', 'hpLost', 'attacked', 'blockGained', 'debtRepaid', 'enemyDeath', 'enemyActionStart', 'enemyActionEnd'];
+const triggerEvents = ['combatStart', 'combatVictory', 'turnStart', 'turnEnd', 'cardPlayed', 'cardExhausted', 'cardDrawn', 'hpLost', 'attacked', 'blockGained', 'debtRepaid', 'enemyDeath', 'enemyActionStart', 'enemyActionEnd'];
+const contentTables = ['cards', 'powers', 'enemies', 'encounters', 'acts', 'events', 'visuals', 'relics', 'potions'];
 const unary = ['floor', 'ceil', 'abs', 'not'];
 const binary = ['sub', 'div', 'pow', 'mod', 'eq', 'ne', 'lt', 'lte', 'gt', 'gte'];
 const variadic = ['add', 'mul', 'min', 'max', 'and', 'or'];
@@ -60,13 +61,14 @@ export function validateContent(content) {
     const prototype = Object.getPrototypeOf(value);
     if (!Array.isArray(value) && prototype !== Object.prototype && prototype !== null) { fail(path, '需要普通JSON对象'); return; }
     visiting.add(value);
-    const tables = ['cards','powers','enemies','encounters','acts','events','visuals'];
+    const tables = contentTables;
     for (const [key, item] of Object.entries(value)) { const child = Array.isArray(value) || tables.includes(path) ? `${path}[${key}]` : path === 'content' && tables.includes(key) ? key : `${path}.${key}`; if (forbidden.has(key)) fail(child, '不允许原型字段'); else scan(item, child, depth + 1); }
     visiting.delete(value);
   }
   if (!object(content, 'content')) return errors;
+  allowedKeys(content, contentTables, 'content');
   scan(content, 'content');
-  for (const table of ['cards', 'powers', 'enemies', 'encounters', 'acts', 'events', 'visuals']) if (object(content[table], table)) for (const [id, row] of Object.entries(content[table])) {
+  for (const table of contentTables) if (object(content[table], table)) for (const [id, row] of Object.entries(content[table])) {
     if (!safeId(id)) fail(`${table}[${id}].id`, '非法id');
     if (object(row, `${table}[${id}]`) && row.id !== id) fail(`${table}[${id}].id`, '记录id必须与索引一致');
   }
@@ -145,7 +147,7 @@ export function validateContent(content) {
       if (effect.op === 'summon' && list(effect.ids, `${p}.ids`, 1)) { if (effect.ids.length > 5) fail(`${p}.ids`, '同一战场最多5只怪物'); effect.ids.forEach((id, i) => exists('enemies', id, `${p}.ids[${i}]`)); }
       if (effect.op === 'changeIntent' && (!enemy || !own(enemy.moves || {}, effect.move))) fail(`${p}.move`, '只能切换当前怪物已经定义的行动');
       if (effect.op === 'transformCards') { exists('cards', effect.from, `${p}.from`); exists('cards', effect.to, `${p}.to`); if (own(effect, 'zones')) strings(effect.zones, `${p}.zones`, zones, 1); }
-      if (effect.op === 'relic' && own(effect, 'id') && !own(RELIC_DEFS, effect.id)) fail(`${p}.id`, '引用不存在的遗物');
+      if (effect.op === 'relic' && own(effect, 'id')) exists('relics', effect.id, `${p}.id`);
     });
   }
   function triggers(value, path, enemy) {
@@ -245,7 +247,7 @@ export function validateContent(content) {
   const probes = [];
   for (const [id, act] of Object.entries(content.acts)) {
     const p = `acts[${id}]`, before = errors.length; text(act.name, `${p}.name`); if (own(act, 'number')) integer(act.number, `${p}.number`, 1);
-    if (object(act.starting, `${p}.starting`)) { integer(act.starting.maxHp, `${p}.starting.maxHp`, 1); integer(act.starting.energy, `${p}.starting.energy`, 1); integer(act.starting.gold, `${p}.starting.gold`); if (list(act.starting.deck, `${p}.starting.deck`, 1)) act.starting.deck.forEach((entry, i) => { const dp = `${p}.starting.deck[${i}]`; if (object(entry, dp)) { exists('cards', entry.cardId, `${dp}.cardId`); integer(entry.count, `${dp}.count`, 1, 1000); } }); if (own(act.starting, 'relics') && list(act.starting.relics, `${p}.starting.relics`)) { unique(act.starting.relics, `${p}.starting.relics`); act.starting.relics.forEach((relicId, i) => { if (!own(RELIC_DEFS, relicId)) fail(`${p}.starting.relics[${i}]`, '引用不存在的遗物'); }); } }
+    if (object(act.starting, `${p}.starting`)) { integer(act.starting.maxHp, `${p}.starting.maxHp`, 1); integer(act.starting.energy, `${p}.starting.energy`, 1); integer(act.starting.gold, `${p}.starting.gold`); if (list(act.starting.deck, `${p}.starting.deck`, 1)) act.starting.deck.forEach((entry, i) => { const dp = `${p}.starting.deck[${i}]`; if (object(entry, dp)) { exists('cards', entry.cardId, `${dp}.cardId`); integer(entry.count, `${dp}.count`, 1, 1000); } }); if (own(act.starting, 'relics') && list(act.starting.relics, `${p}.starting.relics`)) { unique(act.starting.relics, `${p}.starting.relics`); act.starting.relics.forEach((relicId, i) => { exists('relics', relicId, `${p}.starting.relics[${i}]`); }); } }
     if (own(act, 'weakBattleCount')) integer(act.weakBattleCount, `${p}.weakBattleCount`);
     if (own(act, 'eventPool') && list(act.eventPool, `${p}.eventPool`)) { unique(act.eventPool, `${p}.eventPool`); act.eventPool.forEach((eventId, i) => exists('events', eventId, `${p}.eventPool[${i}]`)); }
     if (own(act, 'cardPools')) strings(act.cardPools, `${p}.cardPools`);
@@ -278,6 +280,35 @@ export function validateContent(content) {
     if(possibleTypes.has('event')&&!(Array.isArray(act.eventPool)&&act.eventPool.length))fail(`${p}.eventPool`,'地图含事件节点，事件池不能为空');
     if(own(act,'nodeLabels')&&object(act.nodeLabels,`${p}.nodeLabels`))for(const[type,labels]of Object.entries(act.nodeLabels)){oneOf(type,nodeTypes,`${p}.nodeLabels.${type}`);if(list(labels,`${p}.nodeLabels.${type}`,2)){if(labels.length!==2)fail(`${p}.nodeLabels.${type}`,'需要标题与描述两项');labels.forEach((label,i)=>text(label,`${p}.nodeLabels.${type}[${i}]`));}}
     if(errors.length===before)probes.push(id);
+  }
+  for (const [id, relic] of Object.entries(content.relics)) {
+    const p = `relics[${id}]`; allowedKeys(relic, ['id', 'name', 'description', 'art', 'triggers', 'modifiers', 'starter'], p);
+    text(relic.name, `${p}.name`); text(relic.description, `${p}.description`); if (!safeAsset(relic.art)) fail(`${p}.art`, '需要通用物件素材标识');
+    triggers(relic.triggers, `${p}.triggers`);
+    if (own(relic, 'modifiers') && object(relic.modifiers, `${p}.modifiers`)) {
+      allowedKeys(relic.modifiers, ['openingDraw'], `${p}.modifiers`);
+      if (own(relic.modifiers, 'openingDraw')) integer(relic.modifiers.openingDraw, `${p}.modifiers.openingDraw`, 0, 10);
+    }
+    if (own(relic, 'starter') && object(relic.starter, `${p}.starter`)) {
+      allowedKeys(relic.starter, ['unlockId', 'flavor', 'art'], `${p}.starter`);
+      if (relic.starter.unlockId !== null && !MILESTONES.some(milestone => milestone.id === relic.starter.unlockId)) fail(`${p}.starter.unlockId`, '需要已配置的修行标识或 null');
+      text(relic.starter.flavor, `${p}.starter.flavor`); if (!safeAsset(relic.starter.art)) fail(`${p}.starter.art`, '需要出门法器图标标识');
+    }
+  }
+  if (Object.values(content.relics).filter(relic => relic.starter?.unlockId === null).length !== 1) fail('relics', '必须恰好配置一个无需解锁的默认出门法器');
+  if (!Object.keys(content.potions).length) fail('potions', '至少需要一种药物供奖励与鬼市抽取');
+  for (const [id, potion] of Object.entries(content.potions)) {
+    const p = `potions[${id}]`; allowedKeys(potion, ['id', 'name', 'description', 'art', 'target', 'usablePhases', 'effects', 'price'], p);
+    text(potion.name, `${p}.name`); text(potion.description, `${p}.description`); if (!safeAsset(potion.art)) fail(`${p}.art`, '需要通用物件素材标识');
+    oneOf(potion.target, ['self', 'enemy', 'all'], `${p}.target`); strings(potion.usablePhases, `${p}.usablePhases`, ['map', 'combat', 'event', 'reward'], 1);
+    if (['enemy', 'all'].includes(potion.target) && Array.isArray(potion.usablePhases) && potion.usablePhases.some(phase => phase !== 'combat')) fail(`${p}.usablePhases`, '敌方目标药物只能在战斗中使用');
+    integer(potion.price, `${p}.price`); effects(potion.effects, `${p}.effects`);
+    const inspectTargets = (entries, path) => (Array.isArray(entries) ? entries : []).forEach((effect, index) => {
+      if (!record(effect)) return;
+      if (potion.target !== 'enemy' && ['enemy', 'target', 'ally'].includes(effect.target)) fail(`${path}[${index}].target`, '此效果需要药物配置为指定敌人');
+      if (effect.op === 'if') { inspectTargets(effect.then, `${path}[${index}].then`); inspectTargets(effect.else, `${path}[${index}].else`); }
+    });
+    if (Array.isArray(potion.effects)) inspectTargets(potion.effects, `${p}.effects`);
   }
   for(const[id,visual]of Object.entries(content.visuals)){
     const p=`visuals[${id}]`;if(!safeAsset(visual.asset))fail(`${p}.asset`,'需要本地PNG素材名');finite(visual.durationMs,`${p}.durationMs`,1,10000);finite(visual.size,`${p}.size`,Number.MIN_VALUE,10);oneOf(visual.anchor,['card','target','bottom'],`${p}.anchor`);
