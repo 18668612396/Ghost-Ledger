@@ -7,6 +7,7 @@ import { releasePreflight, safeReleasePath, safeReleaseId, RELEASE_BUDGETS } fro
 
 const METADATA_LIMITS = Object.freeze({ 'release.json': 64 * 1024, 'release-manifest.json': 2 * 1048576, 'asset-report.json': 2 * 1048576, 'retained-release.json': 2 * 1048576 });
 const ROOT_FILES = new Set(['index.html', '.nojekyll', 'release.json', 'asset-report.json']);
+const EMPTY_SHA256 = 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855';
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 const fail = message => { throw new Error(`线上制品恢复失败：${message}`); };
 const equal = (actual, expected, label) => { if (actual !== expected) fail(`${label} 不一致。`); };
@@ -77,7 +78,7 @@ async function newDestination(path) {
 export async function restorePublishedRelease(baseUrl, destination = resolve(LOCAL_ROOT, 'temp/previous-web-release'), { fetcher = globalThis.fetch, budgets = RELEASE_BUDGETS } = {}) {
   const base = trustedPagesBase(baseUrl);
   destination = await newDestination(destination);
-  const downloaded = new Map(); let requestedPath = null, receivedBytes = 0;
+  const downloaded = new Map(), reconstructedMarkers = []; let requestedPath = null, receivedBytes = 0;
   async function download(path, limit, expected = null, { optional = false } = {}) {
     requestedPath = path;
     const url = fileUrl(base, path);
@@ -85,6 +86,16 @@ export async function restorePublishedRelease(baseUrl, destination = resolve(LOC
     const cancel = () => response.body?.cancel().catch(() => {});
     if (response.url && response.url !== url || response.redirected) { await cancel(); fail(`响应离开了受信文件地址：${path}`); }
     if (optional && response.status === 404) { await cancel(); return null; }
+    // Some Pages deployments do not serve this build-only marker. Its only local
+    // reconstruction is the exact empty file already declared by the manifest.
+    if (path === '.nojekyll' && response.status === 404 && expected?.bytes === 0 && expected.sha256 === EMPTY_SHA256) {
+      await cancel();
+      const bytes = Buffer.alloc(0), record = { bytes: 0, sha256: EMPTY_SHA256 };
+      await writeFile(resolve(destination, '.nojekyll'), bytes, { flag: 'wx' });
+      downloaded.set(path, record);
+      reconstructedMarkers.push({ path, reason: 'http-404-empty-build-marker', ...record });
+      return bytes;
+    }
     if (!response.ok || response.status !== 200) { await cancel(); fail(`下载 ${path} 返回 HTTP ${response.status}。`); }
     const length = response.headers?.get('content-length');
     if (length !== null && length !== undefined && (!/^\d+$/.test(length) || Number(length) > limit)) { await cancel(); fail(`下载 ${path} 的 Content-Length 超出预算或无效。`); }
@@ -136,7 +147,7 @@ export async function restorePublishedRelease(baseUrl, destination = resolve(LOC
       await download(row.path, row.bytes, row);
     }
     const checked = await releasePreflight(destination, { verifySources: false, serve: false, budgets });
-    return { status: 'restored', destination, baseUrl: base.href, releaseId: checked.releaseId, previousReleaseId: checked.previousReleaseId, files: checked.files, totalBytes: checked.totalBytes, sourceHashesVerified: false, browserAcceptance: false };
+    return { status: 'restored', destination, baseUrl: base.href, releaseId: checked.releaseId, previousReleaseId: checked.previousReleaseId, files: checked.files, totalBytes: checked.totalBytes, reconstructedMarkers, sourceHashesVerified: false, browserAcceptance: false };
   } catch (error) {
     await writeFile(resolve(destination, 'restore-error.json'), JSON.stringify({ status: 'failed', baseUrl: base.href, requestedPath, receivedBytes, message: error.message, preserved: true }, null, 2) + '\n', { flag: 'wx' }).catch(() => {});
     throw new Error(`线上制品恢复失败，已停止发布并保留 ${destination}：${error.message}`, { cause: error });

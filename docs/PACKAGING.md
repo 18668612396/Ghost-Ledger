@@ -103,15 +103,17 @@ npm run release:check
 
 恢复工具只接受无凭据的 HTTPS 站点根地址，禁止重定向及跨源、越过站点根路径的请求，按清单逐一校验大小和 SHA256，并执行 80／160 MiB 等预算与完整制品预检。它不执行下载到的 JS，也不要求旧图与当前源码哈希相同；旧制品自身的哈希和来源记录仍须有效。恢复目录可以包含其原有前版，之后 `release:retain` 会按规则只保留新入口所需的最近一个不同版本。恢复失败会停止，不能把残缺目录当作首发来跳过保留。
 
+本项目的 Pages 实测对构建标记 `.nojekyll` 返回 404。工具仅在固定路径为 `.nojekyll`、清单大小严格为 `0`、SHA256 严格为 `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` 且 HTTP 状态恰为 404 时，取消响应正文并重建空标记；恢复结果的 `reconstructedMarkers` 会列明该例外。同源与重定向检查仍先执行。其他文件、非空标记、错误哈希或其他 HTTP 错误均继续停止恢复。
+
 ## 手动发布 GitHub Pages
 
 仓库提供 `.github/workflows/pages.yml`，仅接受 `main` 分支的手动运行，不因普通推送自动部署。先由维护者在仓库的 **Settings → Pages** 将发布来源设为 **GitHub Actions**；工作流中的 `enablement: false` 不会代为开启 Pages。仓库与账号需满足 [GitHub Pages 的资格及工作流要求](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。
 
 将审核通过的源码提交到 `main` 后，在 **Actions → 手动发布 GitHub Pages → Run workflow** 选择 `main`。工作流会安装锁文件依赖、执行回归和场景、构建、下载上一次成功发布的 `web-release` 制品、保留上一版、执行发布预检，再上传并部署完整静态制品。首次发布没有上一版；仅当后续的 `web-release` 缺失或过期时，才从 GitHub Pages API 的 `html_url` 恢复在线完整包，支持 Pages 自定义域。其他 API、权限、下载损坏或校验错误仍会停止。`web-release` 当前保留期为 90 天，应另外保存重要发布的完整制品和对应源码提交号。
 
-部署完成后，以 Actions 返回的 Pages 地址进行现场检查：首次打开、继续存档、进入战斗、拖牌、查看详情、图片重试、备份与恢复、更新检查。正式发布由维护者显式操作；本文及本地检查记录不表示工作流已在线运行或站点已经部署。
+部署完成后，以 Actions 返回的 Pages 地址进行现场检查：首次打开、继续存档、进入战斗、拖牌、查看详情、图片重试、备份与恢复、更新检查。正式发布由维护者显式操作；部署成功以对应的 Actions 运行和实际站点检查为准。
 
-首次上线后，还应从实际 HTTPS 地址执行一次 `release:restore` 到新的临时目录，核对 `.nojekyll` 等清单文件也能按原字节读取。当前恢复工具严格要求完整清单；本地夹具通过不能证明 Pages 或自定义域已经提供全部文件。
+首次上线后，还应从实际 HTTPS 地址执行一次 `release:restore` 到新的临时目录，核对完整清单和文件哈希。`.nojekyll` 仅适用上述空文件重建规则，其余文件必须正常下载并通过检查；本地夹具通过不能代替 Pages 或自定义域的真实恢复验收。
 
 ## 失败、重试与回滚
 
@@ -199,6 +201,9 @@ npm --prefix .local/dist/android/native-shell run tauri -- android build --apk
 | `.local/evidence/release-assets-integrity.json` | 原 PNG 哈希不变、发布哈希与尺寸比例一致、重复编码报告相同 |
 | `.local/evidence/release-assets-web-reproducibility.json` | 两次 Web 构建的版本 ID 及完整清单相同；制品 76,682,316 字节／238 文件 |
 | `.local/evidence/release-assets-target-preparations.json` | 三个平台准备成功；Windows／Android 的 Web 子包预检及应用图标检查、微信无 DOM 且入口停止启动 |
-| `.local/evidence/release-assets-restore-tests.log` | 在线恢复工具的 12 项本地模拟响应夹具通过，含前版、自定义 HTTPS 域、重定向、路径及损坏字节；未访问真实 Pages |
+| `.local/evidence/release-assets-nojekyll-tests.log` | 恢复工具的 17 项本地夹具通过，包含空标记 404 的取消正文和重建，以及非空／错 SHA、其他零文件、其他 HTTP、重定向及跨域反例 |
+| `.local/evidence/release-assets-pages-restore-20261025T174644Z.json` | 从真实 Pages HTTPS 地址恢复 239 个文件，清单与正式构建一致；`.nojekyll` 按限定规则重建，恢复后完整预检通过 |
 
-该次 Web `release:check` 还完成了 `/Ghost-Ledger/` 下 238 个文件的 HTTP 校验。加入 CSP 后，13 项资源与打包回归已在本机通过。这里不将本地自动检查写成远端 CI 成功、线上发布成功、手机真机或用户体验验收。
+早期 Web `release:check` 完成了 `/Ghost-Ledger/` 下 238 个文件的 HTTP 校验，加入 CSP 后的 13 项资源与打包回归也已在本机通过。
+
+2026-10-26 的真实恢复地址为 [https://18668612396.github.io/Ghost-Ledger/](https://18668612396.github.io/Ghost-Ledger/)。恢复版本 `v0.5.0-web-a680f0598d3bb15d310b` 共 239 个文件、76,691,629 字节；清单 SHA256 为 `44c19ccd517dddacd5ec95e41d74c07acc6e7d6de68712189956ed11c19e6fe7`，与正式本地构建一致。恢复后再次预检通过，包括 196 张原始图片的来源哈希对照。本次只执行 HTTP 下载和文件校验，未执行下载的 JS、未改变站点，前次 `.nojekyll` 404 失败现场仍保留于 `.local/temp/pages-restore-20261025T174229Z/`。这份记录不代替远端 CI、玩家交互、手机真机或原生安装包验收。

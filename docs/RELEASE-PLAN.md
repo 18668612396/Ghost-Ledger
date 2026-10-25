@@ -2,7 +2,7 @@
 
 更新：2026-10-26。用户目标：解决现有首幕的发布缺口，优先完成 Web 发布；微信小游戏实际发布暂缓，同时为 Windows 与 Android 预留独立打包架构。首发内容沿用第一幕「阴路夜巡」，不增加第二套规则引擎。
 
-目标仓库：[18668612396/Ghost-Ledger](https://github.com/18668612396/Ghost-Ledger)。正式回归现经用户允许纳入 `tests/`；临时测试、截图、日志、构建和历史归档继续放在被 Git 忽略的 `.local/`。
+Web 已上线：[在线试玩](https://18668612396.github.io/Ghost-Ledger/)。目标仓库：[18668612396/Ghost-Ledger](https://github.com/18668612396/Ghost-Ledger)。正式回归现经用户允许纳入 `tests/`；临时测试、截图、日志、构建和历史归档继续放在被 Git 忽略的 `.local/`。
 
 ## 原问题的处理
 
@@ -62,9 +62,11 @@ npm run package -- prepare wechat
 
 - 自动回归：当前记录 `.local/evidence/release-regression-current.txt`；构建与图片证据见 `.local/evidence/release-assets-web-reproducibility.json`、`release-assets-integrity.json`、`release-assets-target-preparations.json`。
 - 完整冒险：正式驱动 `tests/scenarios/act1-release-playthrough.mjs`，每步使用公开动作、不修改生命/香火/金钱/牌组/RNG；中途和终局保存恢复，重新独立回放并核对状态摘要。
-- 浏览器：在隔离来源的真实正式包上操作；临时 QA 页面和证据只在 `.local/evidence/`，不修改正常试玩地址中的用户记录。文件导入与复制备份可用；内置浏览器未返回 Blob 下载事件，实际文件落盘仍需目标浏览器确认。
+- 浏览器：在隔离来源的真实正式包上操作；临时 QA 页面和证据只在 `.local/evidence/`，不修改正常试玩地址中的用户记录。文件导入与复制备份可用；系统 Chrome 实际下载 329,253 字节备份并通过正式校验。内置浏览器未返回下载事件属于自动化回报限制。
 - 物理手机：本轮尚无 iOS/Android 实机结论；浏览器窄屏不能替代触摸、安全区、后台、弱网和内存测量。
 - 用户体验：实际局时、难度、手感和最终美术效果仍由用户试玩确认。自动路线不代表这些项目通过。
+
+首轮 Linux/Windows Node24 CI、main 分支验证和 Pages 部署均通过；公网新局、怪物详情、出牌、刷新续玩与文件恢复已实际操作，恢复前后完整状态哈希一致。线上239文件恢复及预检通过；Pages不提供的空.nojekyll仅在清单大小0、空SHA及HTTP404三项均满足时本地重建。
 
 最终测试数量、当前构建、浏览器场景与实际 Web 地址记录在 [开发记录](DEVELOPMENT-V05.md) 的本轮条目中；旧记录保留为历史证据。
 

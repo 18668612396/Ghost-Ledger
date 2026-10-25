@@ -62,9 +62,71 @@ test('expired-artifact recovery restores a complete validated package without ex
   const f = fixture(), destination = await target(), fetcher = remote(t, f), result = await restorePublishedRelease(BASE, destination, { fetcher });
   assert.equal(result.status, 'restored'); assert.equal(result.releaseId, f.info.releaseId); assert.equal(result.previousReleaseId, null);
   assert.equal(result.sourceHashesVerified, false); assert.equal(result.browserAcceptance, false);
+  assert.deepEqual(result.reconstructedMarkers, []);
   for (const [path, bytes] of f.entries) assert.deepEqual(await readFile(resolve(destination, path)), bytes);
   assert.equal(result.files, f.entries.size); assert.equal(fetcher.mock.calls.length, f.entries.size + 1);
   assert.equal((await readdir(destination)).includes('restore-error.json'), false);
+});
+
+test('an exact empty .nojekyll declared in the manifest is reconstructed only after its 404 body is cancelled', async t => {
+  const f = fixture(), destination = await target(), cancelled = t.mock.fn(async () => {}), read = t.mock.fn(() => { throw new Error('404 body must not be read'); });
+  const fetcher = remote(t, f, { respond: (path, url) => path === '.nojekyll' ? { status: 404, ok: false, url, headers: new Headers({ 'Content-Length': '999999999' }), body: { cancel: cancelled, [Symbol.asyncIterator]: read } } : null });
+  const result = await restorePublishedRelease(BASE, destination, { fetcher });
+  assert.equal(result.status, 'restored'); assert.equal(result.files, f.entries.size);
+  assert.deepEqual(result.reconstructedMarkers, [{ path: '.nojekyll', reason: 'http-404-empty-build-marker', bytes: 0, sha256: hash(Buffer.alloc(0)) }]);
+  assert.equal(cancelled.mock.callCount(), 1); assert.equal(read.mock.callCount(), 0);
+  for (const [path, bytes] of f.entries) assert.deepEqual(await readFile(resolve(destination, path)), bytes);
+  assert.equal((await readdir(destination)).includes('restore-error.json'), false);
+});
+
+test('.nojekyll 404 cannot reconstruct a nonempty marker or a marker with the wrong empty-file hash', async t => {
+  for (const kind of ['nonempty', 'wrong-hash']) {
+    const f = fixture(), marker = f.manifest.files.find(row => row.path === '.nojekyll');
+    if (kind === 'nonempty') { marker.bytes = 1; marker.sha256 = hash(Buffer.from('x')); }
+    else marker.sha256 = '0'.repeat(64);
+    f.refreshManifest();
+    const destination = await target(), fetcher = remote(t, f, { respond: path => path === '.nojekyll' ? new Response('hidden', { status: 404 }) : null });
+    await assert.rejects(restorePublishedRelease(BASE, destination, { fetcher }), /HTTP 404/);
+    await assert.rejects(readFile(resolve(destination, '.nojekyll')), { code: 'ENOENT' });
+    assert.equal((await failureEvidence(destination)).requestedPath, '.nojekyll');
+  }
+});
+
+test('a served nonempty .nojekyll body still fails the declared zero-byte budget', async t => {
+  const f = fixture(), destination = await target(), fetcher = remote(t, f, { respond: path => path === '.nojekyll' ? new Response('unexpected marker content') : null });
+  await assert.rejects(restorePublishedRelease(BASE, destination, { fetcher }), /超出大小预算/);
+  assert.equal((await failureEvidence(destination)).requestedPath, '.nojekyll');
+  assert.equal((await readFile(resolve(destination, '.nojekyll'))).length, 0);
+});
+
+test('zero-byte root entries and runtime modules still fail on 404 instead of being synthesized', async t => {
+  for (const rootEntry of [true, false]) {
+    const f = fixture(), path = rootEntry ? 'index.html' : `${f.prefix}/src/empty.js`, bytes = Buffer.alloc(0);
+    f.entries.set(path, bytes);
+    const existing = f.manifest.files.find(row => row.path === path);
+    if (existing) Object.assign(existing, { bytes: 0, sha256: hash(bytes) });
+    else f.manifest.files.push({ path, bytes: 0, sha256: hash(bytes) });
+    f.refreshManifest();
+    const destination = await target(), fetcher = remote(t, f, { respond: requested => requested === path ? new Response('missing', { status: 404 }) : null });
+    await assert.rejects(restorePublishedRelease(BASE, destination, { fetcher }), /HTTP 404/);
+    await assert.rejects(readFile(resolve(destination, path)), { code: 'ENOENT' });
+    assert.equal((await failureEvidence(destination)).requestedPath, path);
+  }
+});
+
+test('the empty-marker exception cannot hide other HTTP failures, redirects or foreign response addresses', async t => {
+  const cases = [
+    { status: 204 }, { status: 302 }, { status: 403 }, { status: 500 },
+    { status: 404, redirected: true }, { status: 404, url: 'https://evil.test/.nojekyll' }, { status: 404, url: 'https://18668612396.github.io/other/.nojekyll' },
+  ];
+  for (const response of cases) {
+    const f = fixture(), destination = await target(), cancelled = t.mock.fn(async () => {}), read = t.mock.fn(() => { throw new Error('error response must not be read'); });
+    const fetcher = remote(t, f, { respond: (path, url) => path === '.nojekyll' ? { ok: false, url, body: { cancel: cancelled, [Symbol.asyncIterator]: read }, ...response } : null });
+    await assert.rejects(restorePublishedRelease(BASE, destination, { fetcher }), /HTTP 204|HTTP 302|HTTP 403|HTTP 500|受信文件地址/);
+    assert.equal(cancelled.mock.callCount(), 1); assert.equal(read.mock.callCount(), 0);
+    await assert.rejects(readFile(resolve(destination, '.nojekyll')), { code: 'ENOENT' });
+    await failureEvidence(destination);
+  }
 });
 
 test('recovery includes the single retained predecessor but never asks for its root entry', async t => {

@@ -15,7 +15,7 @@
 
 ### 本轮自动验证
 
-本机 Windows / Node25.9.0，重新执行 npm ci 后，npm test 共 293 项：292 通过、1 项因 Windows 符号链接权限跳过、无失败。配置九表及 217 PNG 的来源/文件签名/提示词、113 卡图定位与源码约束检查通过。新增回归覆盖配置道具、存储三槽事务与五槽导入、两上下文冲突、异常恢复、尺寸观察器延后写布局、文本转义、资源构建、平台准备和线上制品恢复。日志：.local/evidence/release-regression-current.txt。
+本机 Windows / Node25.9.0，重新执行 npm ci 后，npm test 共 298 项：297 通过、1 项因 Windows 符号链接权限跳过、无失败。配置九表及 217 PNG 的来源/文件签名/提示词、113 卡图定位与源码约束检查通过。新增回归覆盖配置道具、存储三槽事务与五槽导入、两上下文冲突、异常恢复、尺寸观察器延后写布局、文本转义、资源构建、平台准备和线上制品恢复。日志：.local/evidence/release-regression-current.txt。
 
 npm run test:playthrough 在当前源码、正常初始数值下完成三种首领胜利；npm run test:defeat 完成正常失败和恢复。独立动作回放逐步核对摘要，含中途和终局存档恢复。日志：.local/evidence/release-playthrough-current.txt、release-defeat-current.txt。策略搜索不代表人类难度或趣味性验收。
 
@@ -32,7 +32,7 @@ Windows、Android 和微信 prepare 均实际生成，最终代码/图片哈希�
 | 完整第一幕 | 正常初始局 seed8/7/9，分别战胜腐河鬼王/沉棺守夜者/六灯判官；76/136/127 个公开 UI 动作，共 339 步，逐步状态摘要全部一致。最终生命 78/55/24。 |
 | 失败与恢复 | seed1 被动 8 步失败，中途刷新继续和终局一致，档案只结算一次；反馈记录 seed1、8 动作、有效局时、enemy 败因与具体来源。 |
 | 引导与详情 | 五步完成/重开、怪物意图详情、卡牌详情；320×568 游戏视口内详情约 238×488，操作按钮可见。 |
-| 备份 | 实际文件选择与粘贴导入、非法备份拒绝、替换确认、恢复续玩通过；完整备份可复制保存。内置浏览器未返回 Blob 下载事件，目标浏览器文件落盘仍需确认。 |
+| 备份 | 实际文件选择与粘贴导入、非法备份拒绝、替换确认、恢复续玩通过；完整备份可复制保存。内置浏览器未返回 Blob 下载事件；后续系统 Chrome 已实际下载329,253字节备份并通过正式校验（见发布记录）。 |
 | 异常保存 | 实际耗尽隔离存储时，放弃事务失败后 run/profile 原样保留；释放填充后重试成功。外页把生命改为79后，旧页保持内存80且禁止出牌/覆盖，可导出该内存并重新加载79。 |
 | 加载与错误 | 卡图请求故意失败后显示重试，恢复网络可正常加载；运行错误恢复页经焦点/快捷键不会被重绘成游戏。宝箱中尺寸观察器的 UA 通知已改为延后布局并与致命错误区分。 |
 | 文字安全 | 实际导入含 img/onerror/引号的合法名称与描述；怪物、卡牌详情、章节标题显示原文字，新增注入节点0，页面标题未改变。 |
@@ -44,7 +44,17 @@ Windows、Android 和微信 prepare 均实际生成，最终代码/图片哈希�
 
 ### 仍需单独记录的验收
 
-此条目写入时，远端 CI/Pages 尚待首次执行；后续实际结果追加在本条目中。物理 iOS/Android 的触摸、安全区、后台、音频、弱网、峰值内存，以及实际时长、难度、手感和最终美术效果仍须设备与用户试玩。窄屏浏览器和策略搜索不能替代这些结论。
+远端 CI、Pages 与公网交互结果见下方发布记录。物理 iOS/Android 的触摸、安全区、后台、音频、弱网、峰值内存，以及实际时长、难度、手感和最终美术效果仍须设备与用户试玩。窄屏浏览器和策略搜索不能替代这些结论。
+
+### 实际发布记录
+
+- 仓库：18668612396/Ghost-Ledger；[架构与发布改动 PR #1](https://github.com/18668612396/Ghost-Ledger/pull/1) 已合入。Git提交及合入说明使用中文。
+- [首轮修复后的 Linux/Windows Node24 CI](https://github.com/18668612396/Ghost-Ledger/actions/runs/40216685849) 通过；[main合入后完整验证](https://github.com/18668612396/Ghost-Ledger/actions/runs/40217139261) 通过。首次CI曾指出旧卡图测试的历史路径/临时父目录假设，已改用入库夹具并自行建目录。
+- 独立干净本地克隆（无旧.local/node_modules，自有npm缓存）依次通过npm ci、回归、构建与预检。摘要：.local/evidence/clean-release-20261025172946-summary.json。Ubuntu Node24与Windows Node25的release.json、完整manifest和asset-report逐字节一致，见release-cross-os-reproducibility.json。
+- [首次 Pages 部署](https://github.com/18668612396/Ghost-Ledger/actions/runs/40217158770) 成功，来源为main，HTTPS已强制启用。站点：[在线试玩](https://18668612396.github.io/Ghost-Ledger/)，正式ID仍为v0.5.0-web-a680f0598d3bb15d310b。
+- 公网实际新局、地图、首战引导、怪物意图、出牌和40张场景图片加载均通过，控制台无错误/警告。刷新后继续同局，再从文件导入已导出的进度，完整状态SHA256前后一致（2c02ebead202ff49732c00cd6074bed07ca21d240b2bb64289aff084060c3b07）。测试结束通过备份恢复原空白档案，未留下进行中的测试局。证据pages-ui-roundtrip.json与pages-live-home.png。
+- 系统Chrome已真实下载329,253字节备份，SHA256 d58ecd3e6e8ce4ffd6a8dc49a021d059cf522b4c90562d9c4c1c7536068ca3b2；正式inspectBackup确认格式、规则、session关联和163个所需素材。仅使用隔离来源，未触碰正常试玩记录。证据release-chrome-download-validation.json；不再把自动化未收到download事件当作实际下载失败。
+- 真实HTTPS线上制品恢复首次发现Pages不提供空.nojekyll。现只在固定标记、声明0字节、严格空SHA、响应404时重建空文件；其他路径、内容、状态或重定向仍停止。17项恢复正反测试通过。再次恢复239文件/76,691,629字节，进一步以verifySources:true核对196原始素材、配置、引用与预算均通过。清单SHA256 44c19ccd517dddacd5ec95e41d74c07acc6e7d6de68712189956ed11c19e6fe7。证据release-assets-pages-restore-20261025T174644Z.json；前次失败现场保留。
 
 ## 2026-10-25 及以前的历史记录
 
