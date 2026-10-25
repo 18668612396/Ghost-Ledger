@@ -1,0 +1,15 @@
+[package]
+name = "ghost-ledger-host"
+version = "0.5.0"
+description = "Ghost Ledger native shell scaffold"
+edition = "2021"
+
+[lib]
+name = "ghost_ledger_host"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }

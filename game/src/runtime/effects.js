@@ -86,6 +86,10 @@ function triggerList(state, content, frame, triggers, triggerOwnerKey, event, ev
 export function fireEvent(state, content, name, data = {}) {
   const event = { ...data };
   const items = [];
+  for (const id of state.relics || []) {
+    if (name !== 'enemyDeath' && ownEvents.has(name) && event.targetUid !== 'player') continue;
+    triggerList(state, content, { sourceUid: 'player', targetUid: event.sourceUid }, content.relics[id]?.triggers, `relic:${id}`, event, name, items);
+  }
   for (const owner of [state, ...(state.enemies || [])]) {
     const uid = owner === state ? 'player' : owner.uid;
     if (ownEvents.has(name) && event.targetUid !== uid) continue;
@@ -132,6 +136,9 @@ export function applyHpLoss(state, content, target, amount, { sourceUid = 'playe
   else countStat(state, 'damageDealt', damage);
   const event = { sourceUid, targetUid, amount: damage, hpLoss: damage, raw, attack, cause, cardUid, cardId, impact };
   emit(state, attack || hit ? 'attackHit' : 'hpLost', event);
+  // Player HP loss is also an audit event; the presentation consumes attackHit
+  // and ignores hpLost, so this does not duplicate animation or rule triggers.
+  if (target === state && (attack || hit) && damage > 0) emit(state, 'hpLost', event);
   if (target !== state && target.hp <= 0 && !target.dead) {
     target.dead = true; countStat(state, 'kills', 1); countStat(state, 'enemiesKilled', 1);
     if (target.stolen) { state.gold += target.stolen; countStat(state, 'goldRecovered', target.stolen); target.stolen = 0; }
@@ -154,11 +161,9 @@ export function repayDebt(state, content, amount) {
   const actual = Math.max(0, amount) - remaining;
   state.debts = state.debts.filter(debt => debt.amount > 0);
   if (actual) {
-    const first = !state.repaidThisTurn;
     state.repaidThisTurn += actual; state.combatCounters.repaid += actual; countStat(state, 'repaid', actual);
     emit(state, 'debtRepaid', { amount: actual, targetUid: 'player' });
     fireEvent(state, content, 'debtRepaid', { amount: actual, targetUid: 'player', sourceUid: 'player' });
-    if (first && state.phase === 'combat' && state.relics.includes('lamp')) queueEffects(state, [{ op: 'block', amount: 3, modified: false }], newFrame(state));
   }
   return actual;
 }

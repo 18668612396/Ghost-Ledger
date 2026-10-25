@@ -1,10 +1,13 @@
 import { cardView } from '/game/src/runtime/effects.js';
 import { getCardArtLayout, cardArtTransform } from '/game/src/card-art-layout.js';
-import { createConfiguredRoute, createConfiguredEnemy, planConfiguredIntent, getConfiguredIntentView, sampleConfiguredEncounter } from '/game/src/runtime/world.js';
+import { createConfiguredRoute, createConfiguredEnemy, planConfiguredIntent, getConfiguredIntentView, sampleConfiguredEncounter, getConfiguredAvailableNodes } from '/game/src/runtime/world.js';
+import { createConfiguredAdventure, transitionConfigured } from '/game/src/runtime/game.js';
 
 const NODE_LABELS = { battle: '交锋', elite: '精英', boss: '首领', event: '事件', rest: '歇脚', shop: '鬼市', treasure: '宝箱' };
 const TYPE_LABELS = { attack: '攻击', skill: '术法', power: '能力', status: '状态', curse: '诅咒' };
 const FAMILIES = { strike: '攻伐', ward: '护身', spirit: '灵术', oath: '阴契' };
+const PHASE_LABELS = { map: '路线地图', combat: '交锋', event: '事件', reward: '战斗奖励' };
+const EVENT_LABELS = { combatStart: '战斗开始', combatVictory: '战斗胜利', turnStart: '回合开始', turnEnd: '回合结束', cardPlayed: '打出卡牌', cardExhausted: '消耗卡牌', cardDrawn: '抽到卡牌', hpLost: '损失生命', attacked: '受到攻击', blockGained: '获得护甲', debtRepaid: '偿还阴债', enemyDeath: '敌人死亡', enemyActionStart: '敌人行动开始', enemyActionEnd: '敌人行动结束' };
 const preferences = new Map();
 const el = (tag, className = '', text) => { const node = document.createElement(tag); if (className) node.className = className; if (text !== undefined) node.textContent = String(text); return node; };
 const image = (id, className = '', alt = '') => { const node = el('img', className); node.src = '/assets/' + encodeURIComponent(id) + '.png'; node.alt = alt; node.draggable = false; return node; };
@@ -23,6 +26,18 @@ function note(text) { return el('p', 'field-help', text); }
 function error(root, problem) { const message = el('p', 'field-error', `当前草稿无法预览：${problem.message}`); message.setAttribute('role', 'status'); root.append(message, note('请修正字段或运行「检查全部」。预览失败不会修改或保存源表。')); }
 function summary(value) { return typeof value === 'number' || typeof value === 'string' ? String(value) : value === undefined ? '' : '表达式'; }
 function effectsText(effects) { return (Array.isArray(effects) ? effects : []).map(effect => `${effect.op}${effect.amount !== undefined ? ' ' + summary(effect.amount) : ''}${effect.target ? ' → ' + effect.target : ''}`).join('；') || '无直接效果'; }
+function openingSample(content, relics) {
+  let run = createConfiguredAdventure(42, { content, actId: Object.keys(content.acts)[0] });
+  if (relics) run.relics = [...relics];
+  const node = getConfiguredAvailableNodes(run).find(item => ['battle', 'elite', 'boss'].includes(item.type));
+  if (!node) throw new Error('当前幕的第一层没有可直接进入的战斗，无法计算开场样例。');
+  run = transitionConfigured(run, { type: 'selectNode', nodeId: node.id });
+  if (run.lastEvent?.kind === 'invalid') throw new Error(run.notice);
+  return run;
+}
+function stateSummary(run) {
+  return `生命 ${run.hp}/${run.maxHp} · 护甲 ${run.block} · 香火 ${run.energy} · 力量 ${run.strength} · 敏捷 ${run.dexterity} · 手牌 ${run.hand.length}`;
+}
 
 export function renderRecordPreview({ table, record, tables }) {
   const root = el('div', 'record-preview');
@@ -100,6 +115,26 @@ export function renderRecordPreview({ table, record, tables }) {
       root.append(button('重新采样阵容', () => { seed++; paint(); }), roster); paint();
     } else if (table === 'events') {
       root.append(el('h3', '', record.title), el('p', '', record.description)); for (const choice of record.choices || []) { const item = el('section', 'section'); item.append(el('strong', '', choice.title), el('p', '', choice.description), note(effectsText(choice.effects))); if (choice.when !== undefined) item.append(el('span', 'badge', '按游戏上下文判断条件')); if (choice.encounterId) item.append(note('进入遭遇：' + choice.encounterId)); root.append(item); } root.append(note('此处展示选项内容，不执行选项效果或改写存档。'));
+    } else if (table === 'relics') {
+      root.append(place(image(`card-art-${record.art}`, 'item-preview-art', record.name), { width: '100%', height: '180px', objectFit: 'contain' }), el('h3', '', record.name), el('p', '', record.description));
+      for (const trigger of record.triggers || []) { const row = el('section', 'section'); row.append(el('strong', '', EVENT_LABELS[trigger.event] || trigger.event), note(`${trigger.limit === 'oncePerTurn' ? '每回合一次' : trigger.limit === 'oncePerCombat' ? '每场战斗一次' : '每次触发'}${trigger.when !== undefined ? ' · 需满足条件' : ''}`), el('p', '', effectsText(trigger.effects))); root.append(row); }
+      if (record.modifiers?.openingDraw) root.append(note(`战斗开场额外抽 ${record.modifiers.openingDraw} 张牌。`));
+      if (record.starter) root.append(el('p', 'badge', `可作出门法器 · ${record.starter.unlockId === null ? '默认解锁' : '解锁成就 ' + record.starter.unlockId}`), note(record.starter.flavor));
+      const sample = openingSample(content, [record.id]);
+      root.append(el('h4', '', '只持有此法器 · 开场样例'), el('p', '', stateSummary(sample)), note('通过游戏的同一规则计算第一场战斗开局。其他触发时机请在实战验证；样例不写入游戏进度。'));
+    } else if (table === 'potions') {
+      root.append(place(image(`card-art-${record.art}`, 'item-preview-art', record.name), { width: '100%', height: '180px', objectFit: 'contain' }), el('h3', '', record.name), el('p', '', record.description), el('p', 'badge', `${({ self: '自身', enemy: '指定敌人', all: '敌方战场' })[record.target] || record.target} · ${record.price} 冥钱`), note(`可用场景：${(record.usablePhases || []).map(phase => PHASE_LABELS[phase] || phase).join('、')}`), el('p', '', effectsText(record.effects)));
+      const phase = record.usablePhases?.includes('combat') ? 'combat' : record.usablePhases?.[0];
+      let sample = phase === 'combat' ? openingSample(content, []) : createConfiguredAdventure(42, { content, actId: Object.keys(content.acts)[0] });
+      sample.phase = phase; sample.hp = Math.min(50, sample.maxHp); sample.potions = [{ uid: 'editor-potion-preview', id: record.id }];
+      const targetUid = record.target === 'enemy' ? sample.enemies.find(enemy => enemy.hp > 0 && !enemy.escaped)?.uid : undefined;
+      const before = stateSummary(sample), enemyBefore = sample.enemies.map(enemy => `${content.enemies[enemy.id]?.name || enemy.id} ${enemy.hp}/${enemy.maxHp}`).join('；');
+      sample = transitionConfigured(sample, { type: 'usePotion', potionId: 'editor-potion-preview', targetUid });
+      if (sample.lastEvent?.kind === 'invalid') throw new Error(sample.notice);
+      root.append(el('h4', '', `${PHASE_LABELS[phase] || phase} · 使用样例`), note('使用前：' + before), el('p', '', '使用后：' + stateSummary(sample)));
+      if (enemyBefore) root.append(note('敌人原生命：' + enemyBefore), note('敌人现生命：' + sample.enemies.map(enemy => `${content.enemies[enemy.id]?.name || enemy.id} ${enemy.hp}/${enemy.maxHp}${enemy.weak ? ' · 虚弱 ' + enemy.weak : ''}${enemy.exposed ? ' · 易伤 ' + enemy.exposed : ''}`).join('；')));
+      if (sample.pendingChoice) root.append(note('该药物还需要选牌；完整选择流程请在游戏中验证。'));
+      root.append(note('使用当前草稿与游戏的同一效果规则，在独立样例中计算；不消耗实际药物或改写游戏进度。'));
     } else if (table === 'powers') {
       root.append(el('h3', '', record.name), el('p', '', record.description), note(`${record.triggers?.length || 0} 个触发器${record.expires ? ' · 失效边界 ' + record.expires : ' · 本场持续'}`));
     } else if (table === 'visuals') {

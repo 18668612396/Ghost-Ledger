@@ -1,4 +1,4 @@
-import { CARD_DEFS, ENEMY_DEFS, CONTENT, getActivePowers, transition, getEnemyIntent, getEnemies, getCardView, isCardPlayable, getEventView, RELIC_DEFS, POTION_DEFS, debtTotal, debtSchedule, getAvailableNodes, restoreRun, contentFor, getEnemyMechanics } from './engine.js';
+import { CARD_DEFS, ENEMY_DEFS, CONTENT, getActivePowers, transition, getEnemyIntent, getEnemies, getCardView, isCardPlayable, getEventView, debtTotal, debtSchedule, getAvailableNodes, restoreRun, isValidSave, contentFor, getEnemyMechanics } from './engine.js';
 import { MODES, getMode, createModeRun } from './modes.js';
 import { decorateSkins } from './skins.js';
 import { updateCardDrag, resolveCardDrag } from './card-gesture.js';
@@ -10,9 +10,20 @@ import { renderBattlefield } from './battlefield-view.js';
 import { renderCollectionGrid, cardCollectionKey } from './collection-view.js';
 import { createEffectsPresenter } from './presentation/effects.js';
 import { RELICS, MILESTONES, createProfile, isValidProfile, getRank, getMilestoneProgress, claimMilestone, equipRelic, getAdventureOptions, isDifficultyUnlocked, settleRun } from './progression.js';
+import { resolveAssetUrl, hasBundledAsset } from './asset-url.js';
+import { BUILD_INFO } from './build-info.js';
+import { createPlatform } from './platform/index.js';
+import { SAVE_KEYS, createSaveStore } from './save-store.js';
+import { createSessionTracker, isValidSession, buildPlaytestReport, durationText } from './playtest-session.js';
+import { GUIDE_STEPS, validGuide } from './onboarding.js';
+import { checkForUpdate } from './update-client.js';
+import { showRecovery } from './recovery.js';
+import { coordinateStorage } from './storage-coordinator.js';
 
 const app = document.querySelector('#app');
-const SAVE_KEY = 'ghost-ledger.run.v4', PROFILE_KEY = 'ghost-ledger.profile.v2', SOUND_KEY = 'ghost-ledger.sound.v1';
+const platform = createPlatform();
+const storage = coordinateStorage(platform.storage, { keys: Object.values(SAVE_KEYS), onConflict: () => queueMicrotask(showStorageConflict) });
+const SAVE_KEY = SAVE_KEYS.run, PROFILE_KEY = SAVE_KEYS.profile, SOUND_KEY = SAVE_KEYS.sound;
 const cardArtIds = new Set(COMMON_CARD_ART_IDS);
 const cardTypeLabels = { attack: '攻击', skill: '术法', power: '能力', status: '状态', curse: '诅咒' };
 function cardDisplayType(card) { return `${getCardFamily(card).label} · ${cardTypeLabels[card.type]}`; }
@@ -24,52 +35,59 @@ const collectionFamilies = [['all', '全部'], ['strike', '攻伐'], ['ward', '�
 const pileLabels = { 'draw-pile': '抽牌堆', discard: '弃牌堆', exhaust: '消耗堆', deck: '牌组' };
 const enemyCategoryLabels = { normal: '普通', elite: '精英', boss: '首领',  };
 function escapeHtml(value) { return String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]); }
-function asset(name) { return new URL(`../public/assets/${name}.png`, import.meta.url).href; }
+function asset(name) { return resolveAssetUrl(name); }
 const effectsPresenter = createEffectsPresenter({ root: app, visuals: CONTENT.visuals, assetUrl: asset });
 let pendingDragSnapshot = null;
 function icon(name, extra = '') {
   const i = Math.max(0, iconNames.indexOf(name));
-  return `<span class="icon ${extra}" style="--icon-x:${i % 4 * 100 / 3}%;--icon-y:${Math.floor(i / 4) * 100 / 3}%" aria-hidden="true"></span>`;
+  return `<span class="icon ${escapeHtml(extra)}" style="--icon-x:${i % 4 * 100 / 3}%;--icon-y:${Math.floor(i / 4) * 100 / 3}%" aria-hidden="true"></span>`;
 }
 function art(artId, extra = '') {
-  const illustration = cardArtIds.has(artId) ? artId : 'talisman';
-  return `<img class="card-art ${extra}" src="${asset(`card-art-${illustration}`)}" alt="" aria-hidden="true" draggable="false"/>`;
+  return `<img class="card-art ${escapeHtml(extra)}" src="${asset(`card-art-${artId}`)}" alt="" aria-hidden="true" draggable="false"/>`;
 }
 function navObject(name, extra = '') {
   const position = { bag: [0, 0], shrine: [1, 0], records: [2, 0], brazier: [0, 1], bell: [1, 1], scroll: [2, 1] }[name] || [0, 0];
-  return `<span class="nav-art ${extra}" style="--nav-x:${position[0] * 50}%;--nav-y:${position[1] * 100}%" aria-hidden="true"></span>`;
+  return `<span class="nav-art ${escapeHtml(extra)}" style="--nav-x:${position[0] * 50}%;--nav-y:${position[1] * 100}%" aria-hidden="true"></span>`;
 }
 function avatarMarkup() { return `<img class="avatar-art" src="${asset('ref-avatar')}" alt="小鬼差" draggable="false"/>`; }
 function brushLabel(text, color = 'teal', extra = '') {
-  return `<span class="brush-label ${extra}"><img src="${asset(`ref-brush-${color}`)}" alt=""/><span>${text}</span></span>`;
+  return `<span class="brush-label ${escapeHtml(extra)}"><img src="${asset(`ref-brush-${color}`)}" alt=""/><span>${escapeHtml(text)}</span></span>`;
 }
 function healthMarkup(hp, maxHp, extra = '') {
-  return `<div class="brush-health ${extra}" aria-label="${extra ? '敌方' : '玩家'}生命 ${hp}/${maxHp}"><img class="hp-track" src="${asset('ref-brush-red')}" alt="" aria-hidden="true" draggable="false"/><span class="hp-clip" style="width:${Math.max(0, hp / maxHp * 100)}%"><img src="${asset('ref-brush-red')}" alt=""/></span><strong>${hp}<small>/${maxHp}</small></strong></div>`;
+  return `<div class="brush-health ${escapeHtml(extra)}" aria-label="${extra ? '敌方' : '玩家'}生命 ${escapeHtml(hp)}/${escapeHtml(maxHp)}"><img class="hp-track" src="${asset('ref-brush-red')}" alt="" aria-hidden="true" draggable="false"/><span class="hp-clip" style="width:${Math.max(0, hp / maxHp * 100)}%"><img src="${asset('ref-brush-red')}" alt=""/></span><strong>${escapeHtml(hp)}<small>/${escapeHtml(maxHp)}</small></strong></div>`;
 }
 function relicSymbol(relic) { return relic.id === 'bell' ? navObject('bell', 'relic-symbol') : icon('lantern', 'relic-symbol'); }
-function readStored(key) { try { return localStorage.getItem(key); } catch { return null; } }
+function readStored(key) { const result = storage.read(key); return result.ok ? result.value : null; }
 function readJson(key) { try { return JSON.parse(readStored(key)); } catch { return null; } }
-const storedProfile = readJson(PROFILE_KEY), storedRun = readJson(SAVE_KEY);
+const saves = createSaveStore(storage, { validateRun: isValidSave, validateProfile: isValidProfile, validateSession: isValidSession, hasAsset: hasBundledAsset, cardVisual: card => getCardVisual(card, { latestArtwork: true }), now: platform.clock.now });
+const loaded = saves.load(), storedProfile = loaded.profile, storedRun = loaded.run;
 let profile = isValidProfile(storedProfile) ? storedProfile : createProfile();
 let run = restoreRun(storedRun);
+const sessionTracker = createSessionTracker({ now: platform.clock.now, monotonic: platform.clock.monotonic, initial: readJson(SAVE_KEYS.session) });
+let guideRecord = readJson(SAVE_KEYS.guide), appActive = !document.hidden, filePicking = false;
 let screen = 'home', modal = null, mapPreview = false, selectedUid = null, pendingTarget = null;
 let collectionState = { tab: 'cards', filter: 'all' }, collectionRestore = null;
 let selectedModeId = MODES.find(mode => !mode.disabled).id, selectedDifficulty = 0, handPage = 0;
-let busy = false, soundEnabled = readStored(SOUND_KEY) !== 'off', audioContext = null;
+let busy = false, soundEnabled = readStored(SOUND_KEY) !== 'off' && platform.capabilities.tones;
 let toastTimer = null, dragStart = null, ignorePointerClick = false, saveWarning = false, lastEarned = 0;
-let pendingSaveNotice = storedRun && !run ? '原夜巡存档无法读取，已保留原记录；新开冒险后才会替换。' : '';
+let pendingSaveNotice = loaded.notices.join(' ');
+let updateState = null, checkingUpdate = false, recoveryMode = false;
+const failedImages = new Set();
+platform.audio.setEnabled(soundEnabled);
 function persist(key, value) {
-  try { localStorage.setItem(key, JSON.stringify(value)); return true; }
-  catch { if (!saveWarning) { saveWarning = true; pendingSaveNotice = '当前浏览器无法保存进度，请保持页面打开。'; } return false; }
+  if (recoveryMode || storage.conflicted) return false;
+  const result = saves.saveJson(key, value);
+  if (!result.ok && !saveWarning) { saveWarning = true; pendingSaveNotice = result.error.message; }
+  return result.ok;
 }
-function saveRun() { if (run) persist(SAVE_KEY, run); }
-function saveProfile() { persist(PROFILE_KEY, profile); }
+function saveRun() { if (run) { const ok = persist(SAVE_KEY, run); persist(SAVE_KEYS.session, sessionTracker.snapshot(run)); return ok; } return true; }
+function saveProfile() { return persist(PROFILE_KEY, profile); }
 function settleCurrent(abandoned = false) {
-  if (!run) return;
-  const result = settleRun(profile, run, { abandoned });
+  if (!run) return true;
+  const result = settleRun(profile, run, { abandoned, session: { ...sessionTracker.snapshot(run), endedAt: platform.clock.now() } });
   profile = result.profile;
   if (!result.alreadySettled) lastEarned = result.earned;
-  saveProfile();
+  return saveProfile();
 }
 if (run && ['victory', 'defeat'].includes(run.phase)) settleCurrent();
 function activeRun() { return run && !['victory', 'defeat'].includes(run.phase); }
@@ -77,24 +95,19 @@ function routeLength() { return run?.route?.nodes?.length ? Math.max(...run.rout
 function liveEnemies(state = run) { return state ? getEnemies(state).filter(enemy => enemy.hp > 0 && !enemy.escaped) : []; }
 function enemyKey(enemy) { return enemy.uid; }
 function viewCard(card, state = run) { return getCardView(state, card); }
+function potionDefs() { return contentFor(run).potions; }
+function relicDefs() { return contentFor(run).relics; }
 function targetingText() {
   if (!pendingTarget) return '';
   const card = run.hand.find(item => item.uid === pendingTarget.uid);
-  const name = pendingTarget.kind === 'potion' ? POTION_DEFS[pendingTarget.potionId]?.name : card ? viewCard(card).name : '符箓';
+  const name = pendingTarget.kind === 'potion' ? potionDefs()[pendingTarget.potionId]?.name : card ? viewCard(card).name : '符箓';
   return `请选择「${name || '符箓'}」的目标 · 点空白取消`;
 }
-function activeRelic() { return RELICS.find(relic => relic.id === (run?.relicId || 'lamp')); }
+function activeRelic() { return relicDefs()[run?.relicId || profile.equippedRelicId]; }
 function readyClaims() { return MILESTONES.filter(m => { const p = getMilestoneProgress(profile, m.id); return p.completed && !p.claimed; }).length; }
 function tone(frequency, duration = .18, volume = .035, delay = 0) {
   if (!soundEnabled) return;
-  try {
-    audioContext ||= new (window.AudioContext || window.webkitAudioContext)();
-    if (audioContext.state === 'suspended') audioContext.resume();
-    const oscillator = audioContext.createOscillator(), gain = audioContext.createGain(), start = audioContext.currentTime + delay;
-    oscillator.type = 'sine'; oscillator.frequency.setValueAtTime(frequency, start); oscillator.frequency.exponentialRampToValueAtTime(frequency * .7, start + duration);
-    gain.gain.setValueAtTime(0, start); gain.gain.linearRampToValueAtTime(volume, start + .01); gain.gain.exponentialRampToValueAtTime(.001, start + duration);
-    oscillator.connect(gain).connect(audioContext.destination); oscillator.start(start); oscillator.stop(start + duration + .02);
-  } catch { soundEnabled = false; }
+  if (!platform.audio.tone(frequency, duration, volume, delay).ok) soundEnabled = false;
 }
 function sound(kind) {
   if (kind === 'borrow') { tone(165, .5, .065); tone(330, .7, .03, .06); }
@@ -104,10 +117,10 @@ function sound(kind) {
   else tone(440);
 }
 function iconButton(action, name, label, extra = '') {
-  return `<button class="icon-button ${extra}" data-action="${action}" aria-label="${label}" title="${label}" ${busy ? 'disabled' : ''}>${icon(name)}</button>`;
+  return `<button class="icon-button ${escapeHtml(extra)}" data-action="${escapeHtml(action)}" aria-label="${escapeHtml(label)}" title="${escapeHtml(label)}" ${busy ? 'disabled' : ''}>${icon(name)}</button>`;
 }
 function pageHeader(title, subtitle, backAction = 'home') {
-  return `<header class="page-header">${iconButton(backAction, 'arrow', backAction === 'close-map' ? '返回当前遭遇' : '返回主页', 'back-icon')}<div><small>${subtitle}</small><h1>${title}</h1></div>${iconButton('help', 'book', '夜巡小册')}</header>`;
+  return `<header class="page-header">${iconButton(backAction, 'arrow', backAction === 'close-map' ? '返回当前遭遇' : '返回主页', 'back-icon')}<div><small>${escapeHtml(subtitle)}</small><h1>${escapeHtml(title)}</h1></div>${iconButton('help', 'book', '夜巡小册')}</header>`;
 }
 function homeMarkup() {
   const rank = getRank(profile), claims = readyClaims(), relic = RELICS.find(r => r.id === profile.equippedRelicId);
@@ -115,13 +128,13 @@ function homeMarkup() {
   return `<section class="home-screen" aria-label="鬼差府邸主页">
     <header class="home-header"><button class="profile-entry" data-action="training">${avatarMarkup()}<span>${brushLabel(rank.name)}<small>阅历 ${profile.experience} · ${rank.needed ? `距下阶 ${rank.needed - rank.current}` : '修行圆满'}</small></span></button><div class="home-tools">${iconButton('compendium', 'book', '阴司图鉴')}${iconButton('menu', 'gear', '设置')}</div></header>
     <div class="home-title"><p>阴 司 · 鬼 差 府</p><img src="${asset('ui-logo')}" alt="夜渡 · 阴债录"/><span>灯火可借，归处常在。</span></div>
-    <div class="home-bottom"><div class="home-status"><button class="home-relic" data-action="training">${relicSymbol(relic)}<span>今夜法器 · ${relic.name}</span></button><button class="home-milestone" data-action="training">${claims ? `${claims} 项修行可领取` : milestone ? `修行 · ${milestone.title}` : '修行圆满'} ${icon('arrow')}</button></div>
+    <div class="home-bottom"><div class="home-status"><button class="home-relic" data-action="training">${relicSymbol(relic)}<span>今夜法器 · ${escapeHtml(relic.name)}</span></button><button class="home-milestone" data-action="training">${claims ? `${claims} 项修行可领取` : milestone ? `修行 · ${milestone.title}` : '修行圆满'} ${icon('arrow')}</button></div>
       ${activeRun() ? `<button class="primary-button home-adventure" data-action="continue">${icon('lantern')}<span class="home-adventure-label"><span class="home-adventure-title">继续夜巡</span><small>${run.route.completedIds.length}/${routeLength()} 层 · ${run.hp} 命</small></span>${icon('arrow')}</button><button class="text-button home-new" data-action="modes">另选冒险模式</button>` : `<button class="primary-button home-adventure" data-action="modes">${icon('lantern')}<span class="home-adventure-label"><span class="home-adventure-title">出门闯塔</span></span>${icon('arrow')}</button><p class="home-caption">第一幕 · 奈何之前 / 约 25–40 分钟</p>`}
       <nav class="home-nav" aria-label="府邸功能"><button data-action="training">${navObject('shrine')}<span>修行</span><small>${claims ? '有新解锁' : '解锁 · 法器'}</small></button><button data-action="compendium">${navObject('bag')}<span>图鉴</span><small>符箓 · 百鬼</small></button><button data-action="records">${navObject('records')}<span>夜巡档案</span><small>战绩 · 行迹</small></button></nav><p class="home-footer">第 ${profile.totalRuns + 1} 夜，等你提灯。</p></div></section>`;
 }
 function modesMarkup() {
   const chosen = getMode(selectedModeId), relic = RELICS.find(r => r.id === profile.equippedRelicId);
-  return `<section class="mode-screen">${pageHeader('择一条阴路', '出 门 闯 塔')}<div class="page-scroll mode-content"><p class="page-intro">当前开放阴路夜巡，沿灯火走到判官殿。</p><div class="mode-list">${MODES.map(mode => `<button class="mode-card ${selectedModeId === mode.id ? 'chosen' : ''}" data-action="mode-select" data-mode-id="${mode.id}" aria-pressed="${selectedModeId === mode.id}" ${mode.disabled ? 'disabled' : ''}><span class="mode-emblem">${navObject(mode.id === 'classic' ? 'shrine' : mode.id === 'trial' ? 'brazier' : 'scroll')}</span><span><small>${mode.tag}</small><strong>${mode.name}</strong><p>${mode.description}</p></span><span class="mode-check">${mode.disabled ? '筹备中' : selectedModeId === mode.id ? icon('check') : icon('arrow')}</span></button>`).join('')}</div><div class="departure-options"><h2>出门行装</h2><button class="loadout-line" data-action="training">${relicSymbol(relic)}<span><strong>${relic.name}</strong><small>${relic.id === 'bell' ? '每战开场 +6 护甲' : '每回合首次还债 +3 护甲'} · 点击更换</small></span>${icon('arrow')}</button><div class="difficulty-options" role="group" aria-label="夜巡难度"><button data-action="difficulty" data-level="0" class="secondary-button ${selectedDifficulty === 0 ? 'chosen' : ''}" aria-pressed="${selectedDifficulty === 0}">初巡</button><button data-action="difficulty" data-level="1" class="secondary-button ${selectedDifficulty === 1 ? 'chosen' : ''}" aria-pressed="${selectedDifficulty === 1}" ${isDifficultyUnlocked(profile, 1) ? '' : 'disabled'}>进阶一重${isDifficultyUnlocked(profile, 1) ? '' : ' · 待解锁'}</button></div><p class="small-note">${selectedDifficulty ? '敌人生命 +15%，攻击 +2。' : isDifficultyUnlocked(profile, 1) ? '初巡 · 正常敌人强度。' : '通关后，在修行中开放进阶。'}</p></div></div><footer class="page-bottom"><span>${chosen.estimatedMinutes} 分钟 · 16 层选路 · 普通 / 精英 / 首领</span><button class="primary-button" data-action="depart">${icon('lantern')} 提灯出发 ${icon('arrow')}</button></footer></section>`;
+  return `<section class="mode-screen">${pageHeader('择一条阴路', '出 门 闯 塔')}<div class="page-scroll mode-content"><p class="page-intro">当前开放阴路夜巡，沿灯火走到判官殿。</p><div class="mode-list">${MODES.map(mode => `<button class="mode-card ${selectedModeId === mode.id ? 'chosen' : ''}" data-action="mode-select" data-mode-id="${escapeHtml(mode.id)}" aria-pressed="${selectedModeId === mode.id}" ${mode.disabled ? 'disabled' : ''}><span class="mode-emblem">${navObject(mode.id === 'classic' ? 'shrine' : mode.id === 'trial' ? 'brazier' : 'scroll')}</span><span><small>${escapeHtml(mode.tag)}</small><strong>${escapeHtml(mode.name)}</strong><p>${escapeHtml(mode.description)}</p></span><span class="mode-check">${mode.disabled ? '筹备中' : selectedModeId === mode.id ? icon('check') : icon('arrow')}</span></button>`).join('')}</div><div class="departure-options"><h2>出门行装</h2><button class="loadout-line" data-action="training">${relicSymbol(relic)}<span><strong>${escapeHtml(relic.name)}</strong><small>${escapeHtml(relic.description)} · 点击更换</small></span>${icon('arrow')}</button><div class="difficulty-options" role="group" aria-label="夜巡难度"><button data-action="difficulty" data-level="0" class="secondary-button ${selectedDifficulty === 0 ? 'chosen' : ''}" aria-pressed="${selectedDifficulty === 0}">初巡</button><button data-action="difficulty" data-level="1" class="secondary-button ${selectedDifficulty === 1 ? 'chosen' : ''}" aria-pressed="${selectedDifficulty === 1}" ${isDifficultyUnlocked(profile, 1) ? '' : 'disabled'}>进阶一重${isDifficultyUnlocked(profile, 1) ? '' : ' · 待解锁'}</button></div><p class="small-note">${selectedDifficulty ? '敌人生命 +15%，攻击 +2。' : isDifficultyUnlocked(profile, 1) ? '初巡 · 正常敌人强度。' : '通关后，在修行中开放进阶。'}</p></div></div><footer class="page-bottom"><span>${chosen.estimatedMinutes} 分钟 · 16 层选路 · 普通 / 精英 / 首领</span><button class="primary-button" data-action="depart">${icon('lantern')} 提灯出发 ${icon('arrow')}</button></footer></section>`;
 }
 function mapMarkup() {
   const available = getAvailableNodes(run).map(n => n.id), width = Math.min(window.innerWidth, 480) - 36;
@@ -134,12 +147,12 @@ function mapMarkup() {
     const walked = run.route.path.includes(node.id) && run.route.path.includes(next.id);
     return `<span class="map-path ${walked ? 'walked' : ''}" aria-hidden="true" style="left:${a.x}px;top:${a.y - 2}px;width:${Math.hypot(b.x - a.x, b.y - a.y)}px;transform:rotate(${Math.atan2(b.y - a.y, b.x - a.x)}rad)"></span>`;
   })).join('');
-  return `<section class="map-screen">${pageHeader(chapter.name || chapter.title || '阴路夜巡', mapPreview ? '夜 巡 路 线 · 预 览' : '选 择 下 一 站', mapPreview ? 'close-map' : 'home')}<div class="map-summary"><span>${icon('heart')} ${run.hp}/${run.maxHp}</span><button data-action="ledger">${icon('debt')} ${debtTotal(run)} 阴债</button><button data-action="deck">${icon('cards')} ${run.deck.length} 张</button><button data-action="inventory">${art('coin')} ${run.gold} 冥钱</button><span>${run.route.completedIds.length}/${floors} 层</span></div><p class="map-instruction">${mapPreview ? '先完成当前遭遇，再选择下一层。' : `${floors} 层 · 首领 ${boss?.label || boss?.name || '终审'}。精英有法器奖励，休息可恢复或升级。`}</p><div class="map-scroll"><div class="map-field" style="height:${height}px;width:${width}px">${links}${run.route.nodes.map(node => {
+  return `<section class="map-screen">${pageHeader(chapter.name || chapter.title || '阴路夜巡', mapPreview ? '夜 巡 路 线 · 预 览' : '选 择 下 一 站', mapPreview ? 'close-map' : 'home')}<div class="map-summary"><span>${icon('heart')} ${run.hp}/${run.maxHp}</span><button data-action="ledger">${icon('debt')} ${debtTotal(run)} 阴债</button><button data-action="deck">${icon('cards')} ${run.deck.length} 张</button><button data-action="inventory">${art('coin')} ${run.gold} 冥钱</button><span>${run.route.completedIds.length}/${floors} 层</span></div><p class="map-instruction">${mapPreview ? '先完成当前遭遇，再选择下一层。' : `${floors} 层 · 首领 ${escapeHtml(boss?.label || boss?.name || '终审')}。精英有法器奖励，休息可恢复或升级。`}</p><div class="map-scroll"><div class="map-field" style="height:${height}px;width:${width}px">${links}${run.route.nodes.map(node => {
     const p = point(node), done = run.route.completedIds.includes(node.id), current = run.route.currentId === node.id;
     const canGo = !mapPreview && available.includes(node.id);
     const passed = run.route.currentId && node.row < run.route.nodes.find(n => n.id === run.route.currentId).row && !done;
-    return `<button class="map-node ${canGo ? 'available' : ''} ${done ? 'completed' : ''} ${current ? 'current' : ''} ${passed ? 'bypassed' : ''}" data-action="node-info" data-node-id="${node.id}" style="left:${p.x}px;top:${p.y}px" aria-label="${node.row + 1}层${run.route.columnCount === 3 ? ['左路', '中路', '右路'][node.column] : `第${node.column + 1}路`}，${typeNames[node.type]}：${node.label}${done ? '，已完成' : canGo ? '，可以前往' : current ? '，当前地点' : '，未到达'}"><span class="map-medallion">${icon(done ? 'check' : typeIcons[node.type])}</span><strong>${node.label}</strong><small>${node.row + 1}层 · ${done ? '已走过' : canGo ? '可前往' : typeNames[node.type]}</small></button>`;
-  }).join('')}</div></div><footer class="map-legend">${Object.entries(typeNames).map(([type, label]) => `<span>${icon(typeIcons[type])}${label}</span>`).join('')}</footer></section>`;
+    return `<button class="map-node ${canGo ? 'available' : ''} ${done ? 'completed' : ''} ${current ? 'current' : ''} ${passed ? 'bypassed' : ''}" data-action="node-info" data-node-id="${escapeHtml(node.id)}" style="left:${p.x}px;top:${p.y}px" aria-label="${node.row + 1}层${run.route.columnCount === 3 ? ['左路', '中路', '右路'][node.column] : `第${node.column + 1}路`}，${typeNames[node.type]}：${escapeHtml(node.label)}${done ? '，已完成' : canGo ? '，可以前往' : current ? '，当前地点' : '，未到达'}"><span class="map-medallion">${icon(done ? 'check' : typeIcons[node.type])}</span><strong>${escapeHtml(node.label)}</strong><small>${node.row + 1}层 · ${done ? '已走过' : canGo ? '可前往' : typeNames[node.type]}</small></button>`;
+  }).join('')}</div></div><footer class="map-legend">${Object.entries(typeNames).map(([type, label]) => `<span>${icon(typeIcons[type])}${escapeHtml(label)}</span>`).join('')}</footer></section>`;
 }
 function combatHeader() {
   const node = run.route.nodes.find(n => n.id === run.route.currentId);
@@ -148,7 +161,7 @@ function combatHeader() {
 function playerStatusMarkup() {
   if (!run) return '';
   const states = [['strength', '力'], ['dexterity', '敏'], ['weak', '虚弱'], ['exposed', '易伤'], ['frail', '脆弱'], ['entangled', '缠绕']].filter(([key]) => run[key]);
-  return `<button class="player-status-row" data-action="inventory" aria-label="查看当前状态与行囊">${states.length ? states.map(([key, label]) => `<span>${label} ${run[key]}</span>`).join('') : `<span>冥钱 ${run.gold} · 药物 ${run.potions?.length || 0}/3</span>`}</button>`;
+  return `<button class="player-status-row" data-action="inventory" aria-label="查看当前状态与行囊">${states.length ? states.map(([key, label]) => `<span>${escapeHtml(label)} ${escapeHtml(run[key])}</span>`).join('') : `<span>冥钱 ${run.gold} · 药物 ${run.potions?.length || 0}/3</span>`}</button>`;
 }
 function arenaMarkup() {
   const enemyTargets = pendingTarget?.kind === 'card' ? getCardEnemyTargets(run, pendingTarget.uid) : null;
@@ -157,22 +170,22 @@ function arenaMarkup() {
 function cardLayersMarkup(card) {
   const visual = getCardVisual(card, { latestArtwork: true });
   const frame = `<img src="${asset(visual.frame)}" alt="" draggable="false"/>`;
-  return `<span class="card-picture" aria-hidden="true"><img class="card-background" data-card-layer="background" src="${asset(visual.background)}" alt="" draggable="false"/><img class="card-art" data-card-layer="icon" style="${cardArtStyle(visual)}" src="${asset(visual.icon)}" alt="" draggable="false"/></span><span class="card-frame" data-card-layer="frame" aria-hidden="true">${frame.repeat(3)}</span><span class="card-cost" data-card-layer="cost"><img class="card-cost-art" src="${asset(visual.cost)}" alt="" aria-hidden="true" draggable="false"/><span class="card-cost-number">${card.cost ?? '—'}</span></span>`;
+  return `<span class="card-picture" aria-hidden="true"><img class="card-background" data-card-layer="background" src="${asset(visual.background)}" alt="" draggable="false"/><img class="card-art" data-card-layer="icon" style="${escapeHtml(cardArtStyle(visual))}" src="${asset(visual.icon)}" alt="" draggable="false"/></span><span class="card-frame" data-card-layer="frame" aria-hidden="true">${frame.repeat(3)}</span><span class="card-cost" data-card-layer="cost"><img class="card-cost-art" src="${asset(visual.cost)}" alt="" aria-hidden="true" draggable="false"/><span class="card-cost-number">${escapeHtml(card.cost ?? '—')}</span></span>`;
 }
 function cardMarkup(cardId, options = {}) {
   const card = viewCard(options.uid ? { ...options, cardId } : cardId), selected = options.uid === selectedUid && Boolean(options.uid);
   const index = options.index || 0, count = options.count || 1, offset = index - (count - 1) / 2;
-  return `<button class="card ${card.type} ${card.upgraded ? 'upgraded' : ''} ${selected ? 'selected' : ''} ${!options.reward && !card.playable ? 'unaffordable' : ''} ${options.reward ? 'reward-card' : ''}" data-action="${options.reward ? 'reward-preview' : 'select'}" data-card-id="${cardId}" data-card-family="${getCardFamily(card).id}" data-uid="${options.uid || ''}" style="--card-index:${index};--card-count:${count};--angle:${offset * 3.5}deg;--lift:${Math.abs(offset) * 7}px" aria-pressed="${selected}" aria-label="${options.reward ? '查看奖励' : '选择手牌'}：${card.name}，${cardTypeLabels[card.type]}，${card.cost === null ? '不可打出' : `${card.cost}香火`}。${escapeHtml(card.description)}">${cardLayersMarkup(card)}<strong class="card-name">${card.name}</strong><small class="card-type">${cardDisplayType(card)}</small><span class="card-description">${card.description}</span></button>`;
+  return `<button class="card ${card.type} ${card.upgraded ? 'upgraded' : ''} ${selected ? 'selected' : ''} ${!options.reward && !card.playable ? 'unaffordable' : ''} ${options.reward ? 'reward-card' : ''}" data-action="${options.reward ? 'reward-preview' : 'select'}" data-card-id="${escapeHtml(cardId)}" data-card-family="${getCardFamily(card).id}" data-uid="${escapeHtml(options.uid || '')}" style="--card-index:${index};--card-count:${count};--angle:${offset * 3.5}deg;--lift:${Math.abs(offset) * 7}px" aria-pressed="${selected}" aria-label="${options.reward ? '查看奖励' : '选择手牌'}：${escapeHtml(card.name)}，${cardTypeLabels[card.type]}，${card.cost === null ? '不可打出' : `${escapeHtml(card.cost)}香火`}。${escapeHtml(card.description)}">${cardLayersMarkup(card)}<strong class="card-name">${escapeHtml(card.name)}</strong><small class="card-type">${escapeHtml(cardDisplayType(card))}</small><span class="card-description">${escapeHtml(card.description)}</span></button>`;
 }
 function fullCardMarkup(cardOrId, state = run) {
   const card = viewCard(cardOrId, state);
-  return `<article class="full-card ${card.type}" data-card-id="${card.id}" data-card-family="${getCardFamily(card).id}" aria-label="${card.name}完整卡面，${cardTypeLabels[card.type]}">${cardLayersMarkup(card)}<h3 class="card-name">${card.name}</h3><small class="card-type">${cardDisplayType(card)}</small><p class="card-description">${card.description}</p></article>`;
+  return `<article class="full-card ${card.type}" data-card-id="${escapeHtml(card.id)}" data-card-family="${getCardFamily(card).id}" aria-label="${escapeHtml(card.name)}完整卡面，${cardTypeLabels[card.type]}">${cardLayersMarkup(card)}<h3 class="card-name">${escapeHtml(card.name)}</h3><small class="card-type">${escapeHtml(cardDisplayType(card))}</small><p class="card-description">${escapeHtml(card.description)}</p></article>`;
 }
 function inspectionMarkup() {
   const selected = run.hand.find(c => c.uid === selectedUid);
   if (!selected) return '';
   const card = viewCard(selected), chooseTarget = card.target === 'enemy' && liveEnemies().length > 1;
-  return `<div class="inspection-backdrop"><aside class="card-inspection" role="dialog" aria-modal="true" aria-label="${card.name}详情" tabindex="-1">${iconButton('deselect', 'close', '取消选牌')}${fullCardMarkup(selected)}<button class="secondary-button" data-action="play" ${!card.playable || busy ? 'disabled' : ''}>${!card.playable ? card.reason || '无法打出' : chooseTarget ? '选择目标' : card.target === 'all' ? '对全体打出' : '打出此牌'} ${icon('arrow')}</button><small class="inspection-hint">${chooseTarget ? '确认后点击一个敌人 · 点空白返回' : '点击空白处返回'}</small></aside></div>`;
+  return `<div class="inspection-backdrop"><aside class="card-inspection" role="dialog" aria-modal="true" aria-label="${escapeHtml(card.name)}详情" tabindex="-1">${iconButton('deselect', 'close', '取消选牌')}${fullCardMarkup(selected)}<button class="secondary-button" data-action="play" ${!card.playable || busy ? 'disabled' : ''}>${escapeHtml(!card.playable ? card.reason || '无法打出' : chooseTarget ? '选择目标' : card.target === 'all' ? '对全体打出' : '打出此牌')} ${icon('arrow')}</button><small class="inspection-hint">${chooseTarget ? '确认后点击一个敌人 · 点空白返回' : '点击空白处返回'}</small></aside></div>`;
 }
 function choiceMarkup() {
   if (!run?.pendingChoice) return '';
@@ -183,14 +196,14 @@ function choiceMarkup() {
 }
 function combatControls() {
   const next = debtSchedule(run)[0];
-  return `<div class="combat-bottom"><div class="debt-row"><button data-action="ledger">${icon('debt')}阴债 <b>${debtTotal(run)}</b><small>${next ? `${next.turnsUntil <= 1 ? '下回合' : `${next.turnsUntil} 回合后`}索命 −${next.hpCost}` : '借火后两回合到期'}</small>${icon('arrow')}</button><button class="combat-relic" data-action="relic" aria-label="查看法器${activeRelic().name}">${relicSymbol(activeRelic())}</button>${inventoryShortcut()}</div><section class="hand" aria-label="手牌">${run.hand.slice(handPage * 5, handPage * 5 + 5).map((card, index, visible) => cardMarkup(card.cardId, { ...card, index, count: visible.length })).join('') || '<p class="empty-hand">符已尽，且待下一回合。</p>'}</section><div class="hand-hint"><span>${handInstruction()}</span>${run.hand.length > 5 ? `<span class="hand-pager"><button data-action="hand-prev" aria-label="上一页手牌" ${handPage === 0 ? 'disabled' : ''}>${icon('arrow', 'flipped')}</button>${handPage + 1}/${Math.ceil(run.hand.length / 5)}<button data-action="hand-next" aria-label="下一页手牌" ${handPage >= Math.ceil(run.hand.length / 5) - 1 ? 'disabled' : ''}>${icon('arrow')}</button></span>` : ''}</div><div class="command-bar"><div class="energy-orb" aria-label="香火 ${run.energy}/${run.maxEnergy}"><strong>${run.energy}<small>/${run.maxEnergy}</small></strong></div><button class="borrow-button" data-action="borrow" ${run.borrowedThisTurn >= 2 || busy ? 'disabled' : ''}><strong>借火 +1</strong><small>${run.borrowedThisTurn >= 2 ? '本回合已借满' : '欠 2 阴债'}</small></button><button class="repay-button" data-action="repay" ${!debtTotal(run) || run.energy < 1 || busy ? 'disabled' : ''}><strong>还愿</strong><small>1 火 · 还 2 债</small></button><button class="end-button" data-action="end-turn" ${busy ? 'disabled' : ''}>${busy ? '阴风袭来…' : '结束回合'}${icon('arrow')}</button></div><footer class="game-footer"><button data-action="draw-pile">${icon('cards')}抽牌 ${run.drawPile.length}</button><span>余火不留 · 回合末弃牌</span><button data-action="discard">${icon('cards')}弃牌 ${run.discard.length}</button></footer></div>`;
+  return `<div class="combat-bottom"><div class="debt-row"><button data-action="ledger">${icon('debt')}阴债 <b>${debtTotal(run)}</b><small>${next ? `${next.turnsUntil <= 1 ? '下回合' : `${next.turnsUntil} 回合后`}索命 −${next.hpCost}` : '借火后两回合到期'}</small>${icon('arrow')}</button><button class="combat-relic" data-action="relic" aria-label="查看法器${escapeHtml(activeRelic().name)}">${relicSymbol(activeRelic())}</button>${inventoryShortcut()}</div><section class="hand" aria-label="手牌">${run.hand.slice(handPage * 5, handPage * 5 + 5).map((card, index, visible) => cardMarkup(card.cardId, { ...card, index, count: visible.length })).join('') || '<p class="empty-hand">符已尽，且待下一回合。</p>'}</section><div class="hand-hint"><span>${escapeHtml(handInstruction())}</span>${run.hand.length > 5 ? `<span class="hand-pager"><button data-action="hand-prev" aria-label="上一页手牌" ${handPage === 0 ? 'disabled' : ''}>${icon('arrow', 'flipped')}</button>${handPage + 1}/${Math.ceil(run.hand.length / 5)}<button data-action="hand-next" aria-label="下一页手牌" ${handPage >= Math.ceil(run.hand.length / 5) - 1 ? 'disabled' : ''}>${icon('arrow')}</button></span>` : ''}</div><div class="command-bar"><div class="energy-orb" aria-label="香火 ${run.energy}/${run.maxEnergy}"><strong>${run.energy}<small>/${run.maxEnergy}</small></strong></div><button class="borrow-button" data-action="borrow" ${run.borrowedThisTurn >= 2 || busy ? 'disabled' : ''}><strong>借火 +1</strong><small>${run.borrowedThisTurn >= 2 ? '本回合已借满' : '欠 2 阴债'}</small></button><button class="repay-button" data-action="repay" ${!debtTotal(run) || run.energy < 1 || busy ? 'disabled' : ''}><strong>还愿</strong><small>1 火 · 还 2 债</small></button><button class="end-button" data-action="end-turn" ${busy ? 'disabled' : ''}>${busy ? '阴风袭来…' : '结束回合'}${icon('arrow')}</button></div><footer class="game-footer"><button data-action="draw-pile">${icon('cards')}抽牌 ${run.drawPile.length}</button><span>余火不留 · 回合末弃牌</span><button data-action="discard">${icon('cards')}弃牌 ${run.discard.length}</button></footer></div>`;
 }
 function rewardMarkup() {
   return `<section class="encounter-page">${pageHeader('收下一道新符', '交 锋 告 捷')}<div class="encounter-content"><p class="page-intro">轻点符箓查看完整卡面，确认后收入牌组。</p>${rewardInfoMarkup()}<div class="reward-options">${run.rewards.map(id => cardMarkup(id, { reward: true })).join('')}</div><p class="reward-debt">${icon('debt')}${debtTotal(run) ? `${debtTotal(run)} 点阴债仍将随你赶路。` : '账上清白，灯火未熄。'}</p></div><footer class="page-bottom"><button class="secondary-button" data-action="reward-skip">不取新符，返回路线 ${icon('arrow')}</button><p class="small-note">牌组并非越厚越好，留下能配合的符。</p></footer></section>`;
 }
 function eventMarkup() {
   const event = getEventView(run) || run.event;
-  return `<section class="encounter-page">${pageHeader(event.title, '阴 路 逢 客')}<div class="encounter-content event-content"><div class="event-vignette"><div class="event-illustration">${art(['soup', 'rest', 'upgrade'].includes(event.id) ? 'lotus' : event.id === 'shrine' ? 'bell' : 'coin')}</div><div class="event-copy scroll-surface"><p>${escapeHtml(event.description)}</p><small>生命 ${run.hp}/${run.maxHp} · 阴债 ${debtTotal(run)} · 冥钱 ${run.gold} · 歇脚不推进债期</small></div></div><div class="event-choices">${event.choices.map((choice, i) => `<button class="event-choice" data-action="event" data-choice-id="${choice.id}" ${choice.disabled ? 'disabled' : ''}><span class="choice-number">${i + 1}</span><span><strong>${escapeHtml(choice.title)}</strong><small>${escapeHtml(choice.description)}</small></span>${icon('arrow')}</button>`).join('')}</div></div></section>`;
+  return `<section class="encounter-page">${pageHeader(event.title, '阴 路 逢 客')}<div class="encounter-content event-content"><div class="event-vignette"><div class="event-illustration">${art(['soup', 'rest', 'upgrade'].includes(event.id) ? 'lotus' : event.id === 'shrine' ? 'bell' : 'coin')}</div><div class="event-copy scroll-surface"><p>${escapeHtml(event.description)}</p><small>生命 ${run.hp}/${run.maxHp} · 阴债 ${debtTotal(run)} · 冥钱 ${run.gold} · 歇脚不推进债期</small></div></div><div class="event-choices">${event.choices.map((choice, i) => `<button class="event-choice" data-action="event" data-choice-id="${escapeHtml(choice.id)}" ${choice.disabled ? 'disabled' : ''}><span class="choice-number">${i + 1}</span><span><strong>${escapeHtml(choice.title)}</strong><small>${escapeHtml(choice.description)}</small></span>${icon('arrow')}</button>`).join('')}</div></div></section>`;
 }
 function endingMarkup() {
   const won = run.phase === 'victory', record = profile.history.find(item => item.runId === run.runId), earned = record?.experience ?? lastEarned;
@@ -200,10 +213,10 @@ function trainingContent() {
   const rank = getRank(profile);
   return `<p class="panel-intro">${rank.name} · 阅历 ${profile.experience}<br><small>${rank.needed ? `${rank.current}/${rank.needed}，再得 ${rank.needed - rank.current} 阅历晋阶。` : '修行圆满。'}称号记录见闻。</small></p><h3>夜巡修行</h3><p class="small-note">夜巡结束或主动放弃时结算。解锁影响下一次出门。</p>${MILESTONES.map(m => {
     const p = getMilestoneProgress(profile, m.id);
-    return `<article class="milestone"><div><strong>${m.title}</strong><span>${Math.min(p.current, p.goal)}/${p.goal}</span></div><p>${m.requirement}</p><p>${m.rewardsDescription}</p><button class="secondary-button" data-action="claim" data-id="${m.id}" ${!p.completed || p.claimed ? 'disabled' : ''}>${p.claimed ? '已领取' : p.completed ? '领取解锁' : '尚在修行'}</button></article>`;
+    return `<article class="milestone"><div><strong>${escapeHtml(m.title)}</strong><span>${Math.min(p.current, p.goal)}/${p.goal}</span></div><p>${escapeHtml(m.requirement)}</p><p>${escapeHtml(m.rewardsDescription)}</p><button class="secondary-button" data-action="claim" data-id="${escapeHtml(m.id)}" ${!p.completed || p.claimed ? 'disabled' : ''}>${p.claimed ? '已领取' : p.completed ? '领取解锁' : '尚在修行'}</button></article>`;
   }).join('')}<h3>出门法器 · 择一携带</h3>${RELICS.map(relic => {
     const locked = relic.unlockId && !profile.claimed.includes(relic.unlockId);
-    return `<article class="relic-entry"><span class="relic-illustration">${relic.id === 'bell' ? art('bell') : icon('lantern')}</span><div><strong>${relic.name}</strong><p>${relic.description}</p><button class="secondary-button" data-action="equip" data-relic-id="${relic.id}" ${locked || profile.equippedRelicId === relic.id ? 'disabled' : ''}>${locked ? '完成初巡阴路解锁' : profile.equippedRelicId === relic.id ? '已装备' : '出门携带'}</button></div></article>`;
+    return `<article class="relic-entry"><span class="relic-illustration">${relic.id === 'bell' ? art('bell') : icon('lantern')}</span><div><strong>${escapeHtml(relic.name)}</strong><p>${escapeHtml(relic.description)}</p><button class="secondary-button" data-action="equip" data-relic-id="${escapeHtml(relic.id)}" ${locked || profile.equippedRelicId === relic.id ? 'disabled' : ''}>${locked ? '完成初巡阴路解锁' : profile.equippedRelicId === relic.id ? '已装备' : '出门携带'}</button></div></article>`;
   }).join('')}<p class="small-note">新开第一幕以 80 生命与十张基础牌出发，胜战回 6 生命。每次新开重置牌组，本局法器与升级不会永久继承。</p>`;
 }
 function currentModalKind(value = modal) { return typeof value === 'string' ? value : value?.kind; }
@@ -220,7 +233,7 @@ function cardCollectionEntry(instance, { key, count, base = false } = {}) {
 }
 function compareCollectionNames(first, second) { return first.name.localeCompare(second.name, 'zh-CN'); }
 function collectionFiltersMarkup() {
-  return `<nav class="collection-filters" aria-label="符箓分组">${collectionFamilies.map(([id, label]) => `<button data-action="collection-filter" data-filter="${id}" aria-pressed="${collectionState.filter === id}">${label}</button>`).join('')}</nav>`;
+  return `<nav class="collection-filters" aria-label="符箓分组">${collectionFamilies.map(([id, label]) => `<button data-action="collection-filter" data-filter="${id}" aria-pressed="${collectionState.filter === id}">${escapeHtml(label)}</button>`).join('')}</nav>`;
 }
 function compendiumEntries() {
   if (collectionState.tab === 'enemies') {
@@ -237,13 +250,14 @@ function compendiumEntries() {
 }
 function compendiumContent() {
   const entries = compendiumEntries(), enemies = collectionState.tab === 'enemies';
-  const tabs = `<nav class="collection-tabs" aria-label="图鉴分类">${[['cards', '符箓'], ['enemies', '百鬼']].map(([id, label]) => `<button data-action="collection-tab" data-tab="${id}" aria-pressed="${collectionState.tab === id}">${label}</button>`).join('')}</nav>`;
+  const tabs = `<nav class="collection-tabs" aria-label="图鉴分类">${[['cards', '符箓'], ['enemies', '百鬼']].map(([id, label]) => `<button data-action="collection-tab" data-tab="${id}" aria-pressed="${collectionState.tab === id}">${escapeHtml(label)}</button>`).join('')}</nav>`;
   const filters = enemies ? '' : collectionFiltersMarkup();
   return `${tabs}${filters}<p class="collection-summary">${enemies ? `共${entries.length}位 · 普通／精英／首领` : `共${entries.length}种符箓 · 点选查看基础卡面`}</p>${renderCollectionGrid(entries, { asset, emptyMessage: '这一组暂时没有条目。' })}<p class="collection-footnote">${enemies ? '这里只记录百鬼资料，点选不会进入战斗。' : '图鉴供查看全部符箓；查看不会获得或打出卡牌。'}</p>`;
 }
 function recordsContent() {
-  return `<div class="record-summary"><span><strong>${profile.totalRuns}</strong>结算夜巡</span><span><strong>${profile.wins}</strong>平安通关</span><span><strong>${profile.totalBattles}</strong>拘魂胜场</span><span><strong>${profile.totalRepaid}</strong>已还阴债</span></div><h3>最近的夜</h3>${run && ['victory', 'defeat'].includes(run.phase) ? '<button class="secondary-button" data-action="continue">回看最近一次结算</button>' : ''}${profile.history.map((item, i) => `<article class="history-entry"><strong>第 ${profile.totalRuns - i} 夜 · ${item.won ? '平安归来' : item.abandoned ? '收灯归府' : '灯火未渡'}</strong><p>${getMode(item.modeId)?.name || '阴路夜巡'} · ${item.difficulty ? '进阶一重' : '初巡'} · ${item.steps} 层</p><small>胜战 ${item.battles} · 还债 ${item.repaid} · 阅历 +${item.experience}</small></article>`).join('') || '<p>档案还是空白。出门走过一夜，带回你的故事。</p>'}<p class="small-note">最近 10 次记录保存在此浏览器。回府休息保留当前冒险，结束或主动放弃才记入档案。</p>`;
+  return `<div class="record-summary"><span><strong>${profile.totalRuns}</strong>结算夜巡</span><span><strong>${profile.wins}</strong>平安通关</span><span><strong>${profile.totalBattles}</strong>拘魂胜场</span><span><strong>${profile.totalRepaid}</strong>已还阴债</span></div><h3>最近的夜</h3>${run && ['victory', 'defeat'].includes(run.phase) ? '<button class="secondary-button" data-action="continue">回看最近一次结算</button>' : ''}${profile.history.map((item, i) => `<article class="history-entry"><strong>第 ${profile.totalRuns - i} 夜 · ${item.won ? '平安归来' : item.abandoned ? '收灯归府' : '灯火未渡'}</strong><p>${escapeHtml(getMode(item.modeId)?.name || '阴路夜巡')} · ${item.difficulty ? '进阶一重' : '初巡'} · ${item.steps} 层</p><small>胜战 ${item.battles} · 还债 ${item.repaid} · 阅历 +${item.experience}${item.activeMs === undefined ? '' : ` · ${durationText(item.activeMs)}`}</small>${item.cause ? `<p class="small-note">${escapeHtml(causeText(item.cause))}${item.seed === undefined ? '' : ` · 种子 ${item.seed}`}</p>` : ''}</article>`).join('') || '<p>档案还是空白。出门走过一夜，带回你的故事。</p>'}<button class="secondary-button" data-action="export-playtest">导出本次试玩记录</button><p class="small-note">最近 10 次记录保存在此浏览器。回府休息保留当前冒险，结束或主动放弃才记入档案。</p>`;
 }
+function causeText(cause) { return ({ victory: '通过终审', abandoned: '主动归府', enemy: '鬼怪攻击', debt: '阴债到期', card: '符箓效果', burn: '业火', unknown: '灯火耗尽' })[cause] || '规则效果'; }
 function helpContent() {
   return "<p class=\"panel-intro\">府中整装，出门择路，见鬼出牌。</p><h3>第一幕：十六层阴路</h3><p>新开夜巡以80生命、十张基础牌出发。第一层普通战，第九层宝箱，第十五层休息，第十六层是地图预告的终审首领。前三场普通交锋从弱遭遇池取怪，之后进入强遭遇池。精英更危险，也会奖励法器；鬼市可买牌、药物或删除一张牌。休息可回复30%最大生命，或升级一张具体的牌。胜战恢复6生命。</p><h3>多怪交锋与目标</h3><p>鬼怪各有自己的生命、护甲、状态和意图，按序号依次行动。单击手牌查看详情，点空白关闭。单体牌可从详情进入选择目标，再点一个鬼怪；也可以拖到具体鬼怪身上松手。单体攻击需松在怪物身上，空白处松手会取消。自身牌向下拖到蓝色引导区；群攻向上拖向战场。拖出又拖回只归位，不打开详情。</p><h3>回合与状态牌</h3><p>每回合3香火、抽5张牌。力量增加每段攻击，虚弱降低攻击25%，易伤使受到的攻击增加50%，脆弱降低卡牌格挡25%。护甲和余火通常不跨回合。黏液可花1香火消耗；眩晕不可使用，回合结束仍在手中便消耗；灼伤不可使用，留在手中会在敌人行动前造成2点伤害，升级灼伤4点，可以被护甲抵挡。战斗生成的状态牌不会永久加入牌组。</p><h3>借来的火，总要还</h3><p>借火立即+1香火并欠2阴债，每回合最多两次。第1回合借的债，在第3回合开始到期，每点扣2生命、无视护甲。还愿花1香火还最早的2债；引魂灯每回合首次实际还债额外+3护甲。多只怪物行动后只推进一次债期，事件不推进，进入下一战推进一次。通过终审才勾销余债。</p><h3>行囊与存档</h3><p>行囊列出本局法器、药物与玩家状态；药物不花香火，单体药物需要选目标。菜单可以回府暂歇并保存；继续夜巡恢复原局。本版本使用新的存档格式，请从新夜巡开始。</p><p class=\"small-note\">键盘：1–5看手牌，Enter确认；选择目标时1–5选择鬼怪；B借火，R还愿，E结束回合，Esc取消。拖牌不限制距离，手牌超过5张可翻页。真实手机触控与最终体验仍待试玩。</p>";
 }
@@ -269,21 +283,20 @@ function pileEntries(kind) {
 function deckContent(kind) {
   const entries = pileEntries(kind);
   const note = kind === 'draw-pile' ? '按种类归组展示，不代表真实抽牌顺序。' : kind === 'discard' ? '抽牌堆空时，弃牌会洗回。' : kind === 'exhaust' ? '这些牌本场不再抽取；临时状态牌不会永久加入牌组。' : '今夜的永久牌组；升级版与基础版分开归组。';
-  return `<nav class="collection-tabs" aria-label="查看牌堆">${Object.entries(pileLabels).map(([id, label]) => `<button data-action="collection-pile" data-tab="${id}" data-pile="${id}" aria-pressed="${kind === id}">${label}</button>`).join('')}</nav>${collectionFiltersMarkup()}<p class="collection-summary">共${pileInstances(kind).length}张 · 当前${entries.length}种</p>${renderCollectionGrid(entries, { asset, emptyMessage: `${pileLabels[kind]}的这一组暂时没有符牌。` })}<p class="collection-footnote">${note} 点击只看详情，不会出牌。</p>`;
+  return `<nav class="collection-tabs" aria-label="查看牌堆">${Object.entries(pileLabels).map(([id, label]) => `<button data-action="collection-pile" data-tab="${id}" data-pile="${id}" aria-pressed="${kind === id}">${escapeHtml(label)}</button>`).join('')}</nav>${collectionFiltersMarkup()}<p class="collection-summary">共${pileInstances(kind).length}张 · 当前${entries.length}种</p>${renderCollectionGrid(entries, { asset, emptyMessage: `${pileLabels[kind]}的这一组暂时没有符牌。` })}<p class="collection-footnote">${note} 点击只看详情，不会出牌。</p>`;
 }
 function itemIcon(id, definition) {
-  const artId = cardArtIds.has(definition.art) ? definition.art : id === 'lamp' ? 'lotus' : id === 'bell' ? 'bell' : 'talisman';
-  return `card-art-${artId}`;
+  return `card-art-${definition.art}`;
 }
 function inventoryEntries() {
   const potions = new Map();
   for (const potion of run.potions || []) {
-    const definition = POTION_DEFS[potion.id], key = `potion:${potion.id}`, existing = potions.get(key);
+    const definition = potionDefs()[potion.id], key = `potion:${potion.id}`, existing = potions.get(key);
     if (existing) existing.count += 1;
     else potions.set(key, { key, name: definition.name, icon: itemIcon(potion.id, definition), typeLabel: '药物', count: 1, action: 'collection-item', itemKind: 'potion', itemId: potion.id, itemUid: potion.uid });
   }
   const relics = (run.relics || [run.relicId || 'lamp']).map(id => {
-    const definition = RELIC_DEFS[id] || RELICS.find(relic => relic.id === id);
+    const definition = relicDefs()[id];
     return { key: `relic:${id}`, name: definition.name, icon: itemIcon(id, definition), typeLabel: '法器', count: 1, action: 'collection-item', itemKind: 'relic', itemId: id };
   });
   return [...potions.values()].sort(compareCollectionNames).concat(relics.sort(compareCollectionNames));
@@ -292,7 +305,7 @@ function inventoryContent() {
   const entries = inventoryEntries();
   const statuses = [['strength', '力量'], ['dexterity', '敏捷'], ['weak', '虚弱'], ['exposed', '易伤'], ['frail', '脆弱'], ['entangled', '缠绕']].filter(([key]) => run[key]);
   const powers = getActivePowers(run);
-  return `<p class="collection-summary">冥钱 ${run.gold} · 药物 ${run.potions.length}/3 · 物品共${entries.reduce((sum, entry) => sum + entry.count, 0)}件</p>${statuses.length ? `<p class="collection-footnote">当前状态：${statuses.map(([key, label]) => `${label} ${run[key]}`).join(' · ')}</p>` : ''}${powers.length ? `<div class="active-powers"><h3>已生效能力</h3>${powers.map(power => `<p><strong>${escapeHtml(power.name)} ×${power.amount}</strong><small>${escapeHtml(power.description)}</small></p>`).join('')}</div>` : ''}${renderCollectionGrid(entries, { asset, emptyMessage: '行囊还是空的。' })}<p class="collection-footnote">点击查看物品详情；药物在详情中确认使用，法器在本局持续生效。</p>`;
+  return `<p class="collection-summary">冥钱 ${run.gold} · 药物 ${run.potions.length}/3 · 物品共${entries.reduce((sum, entry) => sum + entry.count, 0)}件</p>${statuses.length ? `<p class="collection-footnote">当前状态：${statuses.map(([key, label]) => `${escapeHtml(label)} ${escapeHtml(run[key])}`).join(' · ')}</p>` : ''}${powers.length ? `<div class="active-powers"><h3>已生效能力</h3>${powers.map(power => `<p><strong>${escapeHtml(power.name)} ×${escapeHtml(power.amount)}</strong><small>${escapeHtml(power.description)}</small></p>`).join('')}</div>` : ''}${renderCollectionGrid(entries, { asset, emptyMessage: '行囊还是空的。' })}<p class="collection-footnote">点击查看物品详情；药物在详情中确认使用，法器在本局持续生效。</p>`;
 }
 function collectionEntries(kind = currentModalKind()) {
   return kind === 'compendium' ? compendiumEntries() : Object.hasOwn(pileLabels, kind) ? pileEntries(kind) : ['inventory', 'relic'].includes(kind) && run ? inventoryEntries() : [];
@@ -302,7 +315,7 @@ function handInstruction() { return pendingTarget ? targetingText() : selectedUi
 function rewardInfoMarkup() {
   if (!run?.rewardInfo) return '';
   const info = run.rewardInfo;
-  return `<p class="reward-gains">${info.gold ? `冥钱 +${info.gold}` : ''}${info.relicId ? ` · 法器：${RELIC_DEFS[info.relicId]?.name || info.relicId}` : ''}${info.potionId ? ` · 药物：${POTION_DEFS[info.potionId]?.name || info.potionId}` : ''} · 已自动收下</p>`;
+  return `<p class="reward-gains">${info.gold ? `冥钱 +${escapeHtml(info.gold)}` : ''}${info.relicId ? ` · 法器：${escapeHtml(relicDefs()[info.relicId]?.name || info.relicId)}` : ''}${info.potionId ? ` · 药物：${escapeHtml(potionDefs()[info.potionId]?.name || info.potionId)}` : ''} · 已自动收下</p>`;
 }
 function collectionTitle(value) {
   const kind = currentModalKind(value);
@@ -324,23 +337,30 @@ function collectionDetailMarkup() {
     const cardState = entry.base ? null : run, card = viewCard(entry.instance, cardState);
     const quantity = entry.count === undefined ? '图鉴基础版' : `本页共${entry.count}张${entry.upgraded ? '升级版' : '基础版'}`;
     const note = entry.locked ? '奖励池尚未解锁；完成「有借有还」后可在后续冒险中取得。' : card.type === 'status' ? '这是战斗产生的状态牌，不会永久加入冒险牌组。' : '仅查看卡面；不会打出、消耗或获得这张牌。';
-    return `<div class="modal-backdrop" data-action="backdrop"><section class="card-choice-modal collection-card-detail" role="dialog" aria-modal="true" aria-label="查看${escapeHtml(card.name)}详情" tabindex="-1">${iconButton('close', 'close', `关闭详情，${backLabel}`)}${fullCardMarkup(entry.instance, cardState)}<p class="collection-summary">${quantity}${entry.locked ? ' · 待解锁' : ''}</p><p class="collection-footnote">${note}</p><button class="secondary-button" data-action="collection-back">${backLabel} ${icon('arrow')}</button></section></div>`;
+    return `<div class="modal-backdrop" data-action="backdrop"><section class="card-choice-modal collection-card-detail" role="dialog" aria-modal="true" aria-label="查看${escapeHtml(card.name)}详情" tabindex="-1">${iconButton('close', 'close', `关闭详情，${backLabel}`)}${fullCardMarkup(entry.instance, cardState)}<p class="collection-summary">${quantity}${entry.locked ? ' · 待解锁' : ''}</p><p class="collection-footnote">${note}</p><button class="secondary-button" data-action="collection-back">${escapeHtml(backLabel)} ${icon('arrow')}</button></section></div>`;
   }
   let title, content;
   if (entry.action === 'collection-enemy') {
     const enemy = ENEMY_DEFS[entry.enemyId], range = enemy.hpRange;
     const hp = range ? range[0] === range[1] ? range[0] : `${range[0]}–${range[1]}` : enemy.maxHp;
     title = enemy.name;
-    content = `<img class="bestiary-art collection-detail-art" src="${asset(entry.icon)}" alt="${escapeHtml(enemy.name)}"/><p class="collection-summary">${entry.typeLabel} · 基础生命 ${hp}</p><p>${escapeHtml(enemy.description)}</p><p class="collection-footnote">图鉴展示基础资料，不代表当前战场中的具体实例。</p>`;
+    content = `<img class="bestiary-art collection-detail-art" src="${asset(entry.icon)}" alt="${escapeHtml(enemy.name)}"/><p class="collection-summary">${escapeHtml(entry.typeLabel)} · 基础生命 ${escapeHtml(hp)}</p><p>${escapeHtml(enemy.description)}</p><p class="collection-footnote">图鉴展示基础资料，不代表当前战场中的具体实例。</p>`;
   } else {
     const potion = entry.itemKind === 'potion';
-    const definition = potion ? POTION_DEFS[entry.itemId] : RELIC_DEFS[entry.itemId] || RELICS.find(relic => relic.id === entry.itemId);
+    const definition = potion ? potionDefs()[entry.itemId] : relicDefs()[entry.itemId];
     const owned = potion && run?.potions?.some(item => item.uid === entry.itemUid && item.id === entry.itemId);
-    const canUse = owned && !['victory', 'defeat'].includes(run.phase) && (run.phase === 'combat' || entry.itemId === 'healing');
+    const canUse = owned && definition.usablePhases.includes(run.phase) && !run.pendingChoice;
     title = definition.name;
-    content = `<img class="bestiary-art collection-detail-art" src="${asset(entry.icon)}" alt="${escapeHtml(title)}"/><p class="collection-summary">${entry.typeLabel} · 数量${entry.count}</p><p>${escapeHtml(definition.description)}</p>${definition.flavor ? `<p class="collection-footnote">${escapeHtml(definition.flavor)}</p>` : ''}${potion ? `<p class="collection-footnote">确认使用仅消耗其中一瓶；点击网格不会使用药物。</p><button class="secondary-button" data-action="use-potion" data-potion-id="${entry.itemId}" data-potion-uid="${entry.itemUid}" ${canUse ? '' : 'disabled'}>${definition.target === 'enemy' ? '选择敌人使用' : '使用'} ${escapeHtml(title)}</button>${!canUse ? '<p class="collection-footnote">当前不能使用这瓶药物。</p>' : ''}` : '<p class="collection-footnote">本局法器持续生效，无需点击使用。</p>'}`;
+    content = `<img class="bestiary-art collection-detail-art" src="${asset(entry.icon)}" alt="${escapeHtml(title)}"/><p class="collection-summary">${escapeHtml(entry.typeLabel)} · 数量${entry.count}</p><p>${escapeHtml(definition.description)}</p>${definition.flavor ? `<p class="collection-footnote">${escapeHtml(definition.flavor)}</p>` : ''}${potion ? `<p class="collection-footnote">确认使用仅消耗其中一瓶；点击网格不会使用药物。</p><button class="secondary-button" data-action="use-potion" data-potion-id="${escapeHtml(entry.itemId)}" data-potion-uid="${escapeHtml(entry.itemUid)}" ${canUse ? '' : 'disabled'}>${definition.target === 'enemy' ? '选择敌人使用' : '使用'} ${escapeHtml(title)}</button>${!canUse ? '<p class="collection-footnote">当前不能使用这瓶药物。</p>' : ''}` : '<p class="collection-footnote">本局法器持续生效，无需点击使用。</p>'}`;
   }
-  return `<div class="modal-backdrop" data-action="backdrop"><section class="parchment-modal paper-panel ${entry.action === 'collection-enemy' ? 'collection-enemy-detail' : 'collection-item-detail'}" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1"><header><h2 id="modal-title">${escapeHtml(title)}</h2>${iconButton('close', 'close', `关闭详情，${backLabel}`)}</header><div class="modal-content">${content}<button class="secondary-button" data-action="collection-back">${backLabel} ${icon('arrow')}</button></div></section></div>`;
+  return `<div class="modal-backdrop" data-action="backdrop"><section class="parchment-modal paper-panel ${entry.action === 'collection-enemy' ? 'collection-enemy-detail' : 'collection-item-detail'}" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1"><header><h2 id="modal-title">${escapeHtml(title)}</h2>${iconButton('close', 'close', `关闭详情，${backLabel}`)}</header><div class="modal-content">${content}<button class="secondary-button" data-action="collection-back">${escapeHtml(backLabel)} ${icon('arrow')}</button></div></section></div>`;
+}
+function backupContent() {
+  return `<p>夜巡与修行只保存在本机当前地址。换设备、改用线上地址或清理浏览器前，请先导出备份。</p><div class="menu-options"><button class="secondary-button" data-action="export-backup">导出当前进度</button><button class="secondary-button" data-action="import-file">选择备份文件</button></div><label class="backup-label" for="backup-import">也可以粘贴备份内容</label><textarea id="backup-import" class="backup-text" placeholder="粘贴导出的 JSON 备份" spellcheck="false"></textarea><button class="secondary-button" data-action="inspect-backup">检查并恢复</button><p class="small-note">只接受本版本备份。检查后会再显示替换确认，导入前的原始记录也会保留。</p><button class="text-button" data-action="export-raw">导出原始记录用于恢复</button><p class="small-note">原始记录包含旧版和损坏存档，供排查使用；不作为可直接导入的进度。</p>`;
+}
+function guideContent() {
+  const step = Math.max(0, Math.min(GUIDE_STEPS.length - 1, modal.step || 0)), item = GUIDE_STEPS[step];
+  return `<p class="collection-summary">${step + 1} / ${GUIDE_STEPS.length}</p><h3>${escapeHtml(item.title)}</h3><p class="guide-copy">${escapeHtml(item.text)}</p><div class="menu-options">${step > 0 ? '<button class="secondary-button" data-action="guide-back">上一步</button>' : ''}<button class="primary-button" data-action="guide-next">${step + 1 === GUIDE_STEPS.length ? '提灯出发' : '下一步'}</button><button class="text-button" data-action="guide-done">先自己试试</button></div><p class="small-note">可随时在设置里重新查看操作引导。</p>`;
 }
 function modalMarkup() {
   if (!modal) return '';
@@ -348,33 +368,42 @@ function modalMarkup() {
   if (kind === 'collection-detail') return collectionDetailMarkup();
   if (kind === 'reward-card') {
     const card = viewCard(modal.cardId);
-    return `<div class="modal-backdrop" data-action="backdrop"><section class="card-choice-modal" role="dialog" aria-modal="true" aria-label="奖励卡牌${card.name}" tabindex="-1">${iconButton('close', 'close', '返回奖励选择')}${fullCardMarkup(card.id)}<button class="primary-button" data-action="reward-select" data-card-id="${card.id}">收下${card.name} ${icon('arrow')}</button><button class="text-button" data-action="close">再看看其他符箓</button></section></div>`;
+    return `<div class="modal-backdrop" data-action="backdrop"><section class="card-choice-modal" role="dialog" aria-modal="true" aria-label="奖励卡牌${escapeHtml(card.name)}" tabindex="-1">${iconButton('close', 'close', '返回奖励选择')}${fullCardMarkup(card.id)}<button class="primary-button" data-action="reward-select" data-card-id="${escapeHtml(card.id)}">收下${escapeHtml(card.name)} ${icon('arrow')}</button><button class="text-button" data-action="close">再看看其他符箓</button></section></div>`;
   }
   let title = '', content = '';
   if (kind === 'training') { title = '灯下修行'; content = trainingContent(); }
   else if (kind === 'compendium') { title = '阴司图鉴'; content = compendiumContent(); }
   else if (kind === 'records') { title = '夜巡档案'; content = recordsContent(); }
   else if (kind === 'help') { title = '夜巡小册'; content = helpContent(); }
+  else if (kind === 'guide') { title = '初次提灯'; content = guideContent(); }
+  else if (kind === 'backup') { title = '备份与恢复'; content = backupContent(); }
+  else if (kind === 'storage-conflict') { title = '进度需要重新载入'; content = `<p>${escapeHtml(storage.reason?.message || '本页已停止写入，请先备份或重新加载。')}</p><div class="menu-options"><button class="secondary-button" data-action="export-backup">导出本页进度</button><button class="secondary-button" data-action="export-raw">导出已保存的原始记录</button><button class="primary-button" data-action="reload-saved">重新加载最新进度</button></div>`; }
+  else if (kind === 'export') { title = modal.title; content = `<p>${escapeHtml(modal.message || '已发起文件下载。也可全选下方内容，另存为 JSON 文件。')}</p><textarea class="backup-text export-text" aria-label="导出内容" readonly spellcheck="false">${escapeHtml(modal.text)}</textarea><button class="secondary-button" data-action="download-export">再次下载文件</button><p class="small-note">记录保存在本地，不会自动上传。分享前可以自行检查内容。</p>`; }
+  else if (kind === 'import-confirm') { const data = modal.backup.data; title = '恢复这份备份？'; content = `<p>将替换本机当前夜巡、修行与设置。</p><p>备份修行：${data.profile.totalRuns} 夜 · ${data.profile.wins} 次通关。<br>${data.run ? `夜巡已走 ${data.run.route.completedIds.length} 层 · 生命 ${data.run.hp}/${data.run.maxHp}` : '备份中没有进行中的夜巡。'}</p><p class="small-note">导入前的原始记录会保留，可从「备份与恢复」导出。</p><button class="primary-button" data-action="confirm-import">确认替换并恢复</button><button class="secondary-button" data-action="backup">返回备份与恢复</button>`; }
   else if (kind === 'ledger' && run) { title = '阴债簿'; content = ledgerContent(); }
   else if (Object.hasOwn(pileLabels, kind) && run) { title = collectionTitle(kind); content = deckContent(kind); }
   else if (kind === 'inventory' && run) { title = '行囊与药物'; content = inventoryContent(); }
   else if (kind === 'relic' && run) { title = '本局法器与药物'; content = inventoryContent(); }
-  else if (kind === 'enemy' && run) { const instance = liveEnemies().find(enemy => enemyKey(enemy) === modal.enemyUid) || liveEnemies()[0]; if (!instance) return ''; const enemy = contentFor(run).enemies[instance.id], intent = getEnemyIntent(run, instance.uid); title = enemy.name; content = `<img class="bestiary-art" src="${asset(enemy.art)}" alt=""/><p>${enemy.description}</p><p>生命 ${instance.hp}/${instance.maxHp}${instance.block ? ` · 护甲 ${instance.block}` : ''}</p><h3>当前意图 · ${intent.label}</h3><p>${intent.detail}</p>${getEnemyMechanics(run, instance).map(text => `<p>${escapeHtml(text)}</p>`).join('')}${Object.entries({ strength: '力量', burn: '业火', exposed: '易伤', weak: '虚弱', artifact: '御符', curlUp: '蜷缩', enrage: '激怒', ritual: '仪式', sharpHide: '荆甲' }).filter(([key]) => instance[key]).map(([key, name]) => `<p>${name} ${instance[key]}</p>`).join('')}`; }
+  else if (kind === 'enemy' && run) { const instance = liveEnemies().find(enemy => enemyKey(enemy) === modal.enemyUid) || liveEnemies()[0]; if (!instance) return ''; const enemy = contentFor(run).enemies[instance.id], intent = getEnemyIntent(run, instance.uid); title = enemy.name; content = `<img class="bestiary-art" src="${asset(enemy.art)}" alt=""/><p>${escapeHtml(enemy.description)}</p><p>生命 ${escapeHtml(instance.hp)}/${escapeHtml(instance.maxHp)}${instance.block ? ` · 护甲 ${escapeHtml(instance.block)}` : ''}</p><h3>当前意图 · ${escapeHtml(intent.label)}</h3><p>${escapeHtml(intent.detail)}</p>${getEnemyMechanics(run, instance).map(text => `<p>${escapeHtml(text)}</p>`).join('')}${Object.entries({ strength: '力量', burn: '业火', exposed: '易伤', weak: '虚弱', artifact: '御符', curlUp: '蜷缩', enrage: '激怒', ritual: '仪式', sharpHide: '荆甲' }).filter(([key]) => instance[key]).map(([key, name]) => `<p>${name} ${escapeHtml(instance[key])}</p>`).join('')}`; }
   else if (kind === 'node') {
     const node = run.route.nodes.find(n => n.id === modal.nodeId), available = !mapPreview && getAvailableNodes(run).some(n => n.id === node.id);
     title = node.label;
-    content = `<div class="node-preview-icon">${icon(typeIcons[node.type])}</div><p class="panel-intro">${typeNames[node.type]} · 第 ${node.row + 1} 段</p><p>${node.description}</p>${available ? `<button class="primary-button" data-action="node-go" data-node-id="${node.id}">前往${node.label} ${icon('arrow')}</button>` : `<p class="small-note">${run.route.completedIds.includes(node.id) ? '你已走过这里。' : run.route.currentId === node.id ? '这里是当前遭遇，完成后继续选路。' : mapPreview ? '完成当前遭遇后，再沿路线前往。' : '沿连线从下向上前行，只能选择下一站。'}</p>`}`;
+    content = `<div class="node-preview-icon">${icon(typeIcons[node.type])}</div><p class="panel-intro">${typeNames[node.type]} · 第 ${node.row + 1} 段</p><p>${escapeHtml(node.description)}</p>${available ? `<button class="primary-button" data-action="node-go" data-node-id="${escapeHtml(node.id)}">前往${escapeHtml(node.label)} ${icon('arrow')}</button>` : `<p class="small-note">${run.route.completedIds.includes(node.id) ? '你已走过这里。' : run.route.currentId === node.id ? '这里是当前遭遇，完成后继续选路。' : mapPreview ? '完成当前遭遇后，再沿路线前往。' : '沿连线从下向上前行，只能选择下一站。'}</p>`}`;
   } else if (kind === 'replace') {
     title = '放下当前这盏灯？'; content = `<p>当前夜巡将结算为主动归府。已完成的胜战、还债与阅历会保留，随后开始新的冒险。</p><p>如果只是暂歇，可继续原夜巡。</p><button class="primary-button" data-action="replace-run">结算旧夜，重新出发</button><button class="secondary-button" data-action="continue">继续原夜巡</button>`;
   } else if (kind === 'abandon') {
     title = '收灯归府'; content = `<p>主动结束当前夜巡，带回已完成的见闻。途中牌组与阴债在下一夜重置。</p><button class="primary-button" data-action="abandon-run">确认收灯并结算</button><button class="secondary-button" data-action="close">再想一想</button>`;
   } else {
     title = screen === 'home' ? '府中歇息' : '灯下歇息';
-    content = `<div class="menu-options">${screen === 'adventure' ? '<button class="secondary-button" data-action="home">回府暂歇 · 保留进度</button><button class="secondary-button" data-action="map">查看路线</button><button class="secondary-button" data-action="deck">随身符匣</button><button class="secondary-button" data-action="ledger">阴债簿</button>' : ''}<button class="secondary-button" data-action="help">夜巡小册</button><button class="secondary-button" data-action="sound">${soundEnabled ? '关闭' : '开启'}音效</button>${activeRun() ? '<button class="text-button" data-action="abandon">主动结束当前夜巡</button>' : ''}</div><p class="small-note">进度自动保存在当前浏览器。<br>第一幕 · 奈何之前 · v0.5</p>`;
+    content = `<div class="menu-options">${screen === 'adventure' ? '<button class="secondary-button" data-action="home">回府暂歇 · 保留进度</button><button class="secondary-button" data-action="map">查看路线</button><button class="secondary-button" data-action="deck">随身符匣</button><button class="secondary-button" data-action="ledger">阴债簿</button>' : ''}<button class="secondary-button" data-action="guide">操作引导</button><button class="secondary-button" data-action="help">夜巡小册</button><button class="secondary-button" data-action="sound" ${platform.capabilities.tones ? '' : 'disabled'}>${soundEnabled ? '关闭' : '开启'}音效</button><button class="secondary-button" data-action="backup">备份与恢复</button><button class="secondary-button" data-action="export-playtest">导出本次试玩记录</button>${BUILD_INFO.target === 'web' && BUILD_INFO.releaseId !== 'development' ? `<button class="secondary-button" data-action="check-update" ${checkingUpdate ? 'disabled' : ''}>${checkingUpdate ? '正在检查…' : '检查更新'}</button>` : ''}${updateState?.available ? '<button class="primary-button" data-action="apply-update">保存并刷新到新版本</button>' : ''}${activeRun() ? '<button class="text-button" data-action="abandon">主动结束当前夜巡</button>' : ''}</div><p class="small-note">进度自动保存在本机当前地址。<br>第一幕 · 奈何之前 · v${escapeHtml(BUILD_INFO.version)}${updateState?.available ? `<br>发现新版本 ${escapeHtml(updateState.release.version)}，可导出备份后更新。` : ''}</p>`;
   }
-  return `<div class="modal-backdrop" data-action="backdrop"><section class="parchment-modal paper-panel${collectionRoots.has(kind) ? ' collection-modal' : ''}" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1"><header><h2 id="modal-title">${title}</h2>${iconButton('close', 'close', '关闭窗口')}</header><div class="modal-content">${content}</div></section></div>`;
+  return `<div class="modal-backdrop" data-action="backdrop"><section class="parchment-modal paper-panel${collectionRoots.has(kind) ? ' collection-modal' : ''}" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1"><header><h2 id="modal-title">${escapeHtml(title)}</h2>${iconButton('close', 'close', '关闭窗口')}</header><div class="modal-content">${content}</div></section></div>`;
 }
 function render() {
+  if (recoveryMode) return;
+  if (storage.conflicted && !['storage-conflict', 'export'].includes(currentModalKind())) modal = 'storage-conflict';
+  sessionTracker.sync(run, screen === 'adventure' && appActive && !filePicking && !storage.conflicted);
+  if (screen === 'adventure' && run?.phase === 'combat' && !mapPreview && !modal && !busy && !run.pendingChoice && !validGuide(guideRecord)) modal = { kind: 'guide', step: 0 };
   const collectionReturn = collectionRestore; collectionRestore = null;
   handPage = Math.max(0, Math.min(handPage, Math.ceil((run?.hand.length || 1) / 5) - 1));
   const scrollTop = app.querySelector('.modal-content')?.scrollTop || 0;
@@ -393,6 +422,8 @@ function render() {
   const inspection = screen === 'adventure' && run?.phase === 'combat' && !mapVisible && !modal ? (run.pendingChoice ? choiceMarkup() : inspectionMarkup()) : '';
   app.innerHTML = `<div ${inspection ? 'inert' : ''} class="game-shell ${screen === 'home' || screen === 'modes' ? 'at-home' : ''} ${mapVisible ? 'on-map' : ''} ${run?.phase === 'combat' && screen === 'adventure' && !mapVisible ? 'in-combat' : ''}"><div class="world-background" aria-hidden="true"></div>${content}${modalMarkup()}<div class="toast" role="status" aria-live="polite"></div></div>${inspection}`;
   decorateSkins(app);
+  refreshResourceNotice();
+  if (screen === 'adventure' && run?.phase === 'combat' && !mapPreview) effectsPresenter.preload();
   if (modeScrollTop !== undefined && app.querySelector('.mode-content')) app.querySelector('.mode-content').scrollTop = modeScrollTop;
   if (mapScrollTop !== undefined && app.querySelector('.map-scroll')) app.querySelector('.map-scroll').scrollTop = mapScrollTop;
   else if (mapVisible && !modal) requestAnimationFrame(() => app.querySelector('.map-node.available, .map-node.current')?.scrollIntoView({ block: 'nearest', inline: 'nearest' }));
@@ -418,12 +449,71 @@ function toast(message) {
   clearTimeout(toastTimer); const target = app.querySelector('.toast'); if (!target) return;
   target.textContent = message; target.classList.add('visible'); toastTimer = setTimeout(() => target.classList.remove('visible'), 3400);
 }
+function exportText(title, text, prefix) {
+  const name = `${prefix}-${new Date(platform.clock.now()).toISOString().replace(/[:.]/g, '-')}.json`;
+  const result = platform.files.download(text, name);
+  modal = { kind: 'export', title, text, name, ...(result.ok ? {} : { message: result.error.message + ' 可全选下方内容手动保存。' }) }; render();
+}
+function exportBackup() {
+  const result = saves.createBackup({ run, profile, sound: soundEnabled, guide: validGuide(guideRecord) ? guideRecord : null, session: run ? sessionTracker.snapshot(run) : null });
+  if (!result.ok) { toast(result.error.message); return; }
+  exportText('当前进度备份', result.text, 'ghost-ledger-backup');
+}
+function inspectBackup(text) {
+  const checked = saves.inspectBackup(text);
+  if (!checked.ok) { toast(checked.error.message); return; }
+  modal = { kind: 'import-confirm', text, backup: checked.backup }; render();
+}
+async function importFile() {
+  if (filePicking) return;
+  filePicking = true; sessionTracker.sync(run, false);
+  try { const result = await platform.files.pickText(); if (!result.ok) toast(result.error.message); else if (!result.cancelled) inspectBackup(result.text); }
+  finally { filePicking = false; sessionTracker.sync(run, screen === 'adventure' && appActive); }
+}
+function confirmImport() {
+  if (currentModalKind() !== 'import-confirm') return;
+  if (!storage.check().ok) return;
+  const result = saves.importBackup(modal.text);
+  if (!result.ok) { toast(result.error.message); return; }
+  cancelCardDrag(); effectsPresenter.clear();
+  profile = result.data.profile; run = result.data.run ? restoreRun(result.data.run) : null;
+  guideRecord = result.data.guide; sessionTracker.replace(result.data.session);
+  soundEnabled = result.data.sound && platform.capabilities.tones; platform.audio.setEnabled(soundEnabled);
+  modal = null; selectedUid = null; pendingTarget = null; mapPreview = false; handPage = 0; lastEarned = 0; screen = 'home'; saveWarning = false;
+  if (run && ['victory', 'defeat'].includes(run.phase)) settleCurrent();
+  render(); toast('备份已恢复。导入前的原始记录已保留。');
+}
+function exportPlaytest() {
+  const report = buildPlaytestReport({ run, profile, session: run ? sessionTracker.snapshot(run) : null, build: BUILD_INFO, platform: platform.id, environment: { viewport: { width: window.innerWidth, height: window.innerHeight }, pixelRatio: window.devicePixelRatio, language: navigator.language }, now: platform.clock.now() });
+  exportText('本次试玩记录', JSON.stringify(report, null, 2), 'ghost-ledger-playtest');
+}
+async function checkUpdate(manual = false) {
+  if (checkingUpdate) return;
+  checkingUpdate = true; if (manual) render();
+  updateState = await checkForUpdate({ currentRelease: BUILD_INFO.releaseId, target: BUILD_INFO.target, entryUrl: document.baseURI });
+  checkingUpdate = false;
+  if (currentModalKind() === 'menu') render();
+  if (manual) toast(updateState.ok ? updateState.available ? '有新版本，可保存并刷新。' : updateState.skipped ? '当前为开发或独立打包版本。' : '已经是当前版本。' : updateState.error.message);
+  else if (updateState.available) toast('有新版本，打开设置可保存并更新。');
+}
+function refreshResourceNotice() {
+  app.querySelector('.resource-warning')?.remove();
+  if (!failedImages.size) return;
+  const panel = document.createElement('aside'); panel.className = 'resource-warning paper-panel'; panel.setAttribute('role', 'status');
+  panel.innerHTML = '<span>部分画面没有加载完成</span><button class="text-button" data-action="retry-images">重新加载</button>';
+  app.querySelector('.game-shell')?.append(panel); decorateSkins(panel);
+}
+app.addEventListener('error', event => {
+  if (event.target instanceof HTMLImageElement && event.target.src) { failedImages.add(event.target.src); refreshResourceNotice(); }
+}, true);
+app.addEventListener('load', event => { if (event.target instanceof HTMLImageElement && failedImages.delete(event.target.src)) refreshResourceNotice(); }, true);
 function showModal(kind) {
   if (busy) return;
   if (collectionRoots.has(currentModalKind(kind))) collectionState = { tab: 'cards', filter: 'all' };
   collectionRestore = null; modal = kind; selectedUid = null; pendingTarget = null; render(); app.querySelector('.modal-content')?.scrollTo(0, 0);
 }
 function closeModal() {
+  if (currentModalKind() === 'guide') { guideRecord = { version: 1, completed: true }; persist(SAVE_KEYS.guide, guideRecord); }
   if (currentModalKind() === 'collection-detail') {
     const parent = modal.parent;
     modal = parent.modal; collectionState = { ...parent.collectionState };
@@ -452,7 +542,7 @@ function requestPlay(uid, targetUid = null, fromDrag = false) {
   perform({ type: 'play', uid, ...(card.target === 'enemy' ? { targetUid: targetUid || enemies[0]?.uid } : {}) });
 }
 function requestPotion(uid, potionId) {
-  const potion = POTION_DEFS[potionId];
+  const potion = potionDefs()[potionId];
   if (!potion) return;
   if (potion.target === 'enemy' && liveEnemies().length > 1) {
     pendingTarget = { kind: 'potion', potionUid: uid, potionId }; modal = null; selectedUid = null; render(); toast(targetingText()); return;
@@ -522,9 +612,10 @@ function floatEffect(message, type, enemyUid) {
   container.append(element); setTimeout(() => element.remove(), 1400);
 }
 async function perform(action, computed) {
-  if (busy || screen !== 'adventure' || !run) return;
+  if (recoveryMode || !storage.check().ok || busy || screen !== 'adventure' || !run) return;
   const snapshot = pendingDragSnapshot || effectsPresenter.capture(); pendingDragSnapshot = null;
   const previous = run; run = computed || transition(run, action); selectedUid = null; pendingTarget = null; modal = null; mapPreview = false;
+  sessionTracker.record(action, previous, run);
   busy = Boolean(run.events?.length); if (action.type === 'endTurn') handPage = 0;
   saveRun(); if (['victory', 'defeat'].includes(run.phase)) settleCurrent(); render();
   if (run.notice && run.phase === 'combat') toast(run.notice);
@@ -544,10 +635,15 @@ function endTurn() {
   perform({ type: 'endTurn' });
 }
 function depart() {
-   busy = false; selectedUid = null; pendingTarget = null; handPage = 0; mapPreview = false; modal = null; lastEarned = 0;
+  if (recoveryMode || !storage.check().ok) return;
+  const settlement = run ? settleRun(profile, run, { abandoned: activeRun(), session: { ...sessionTracker.snapshot(run), endedAt: platform.clock.now() } }) : { profile };
   const options = { ...getAdventureOptions(profile), difficulty: isDifficultyUnlocked(profile, selectedDifficulty) ? selectedDifficulty : 0 };
-  run = createModeRun(selectedModeId, (Date.now() + Math.floor(Math.random() * 100000)) % 2147483647, options);
-  screen = 'adventure'; saveRun(); render(); tone(440, .7);
+  const next = createModeRun(selectedModeId, (Date.now() + Math.floor(Math.random() * 100000)) % 2147483647, options);
+  const tracker = createSessionTracker({ now: platform.clock.now, monotonic: platform.clock.monotonic }), session = tracker.snapshot(next);
+  const committed = saves.replaceProgress({ run: next, profile: settlement.profile, session });
+  if (!committed.ok) { toast(committed.error.message); return; }
+  busy = false; selectedUid = null; pendingTarget = null; handPage = 0; mapPreview = false; modal = null; lastEarned = 0;
+  profile = settlement.profile; run = next; sessionTracker.replace(session); screen = 'adventure'; render(); tone(440, .7);
 }
 function returnHome() {
   if (busy) return;
@@ -562,8 +658,10 @@ app.addEventListener('click', event => {
   const slot = event.target.closest('.enemy-slot');
   if (pendingTarget && slot && !button && !busy) { chooseEnemy(slot.dataset.enemyUid); return; }
   if (pendingTarget && !button && !busy) { pendingTarget = null; render(); return; }
-  if (!button || button.disabled || busy) return;
+  if (!button || button.disabled || busy || recoveryMode) return;
   const action = button.dataset.action;
+  if (action === 'reload-saved') { window.location.reload(); return; }
+  if (storage.conflicted && !['export-backup', 'export-raw', 'download-export', 'close', 'backdrop'].includes(action)) { showStorageConflict(); return; }
   if (action === 'resolve-choice') { perform({ type: 'chooseCard', uid: button.dataset.collectionKey }); return; }
   if (action === 'backdrop') { if (event.target === button) closeModal(); return; }
   if (action === 'close' || action === 'collection-back') { closeModal(); return; }
@@ -589,8 +687,21 @@ app.addEventListener('click', event => {
     }
     return;
   }
-  if (action === 'sound') { soundEnabled = !soundEnabled; try { localStorage.setItem(SOUND_KEY, soundEnabled ? 'on' : 'off'); } catch {} render(); if (soundEnabled) tone(660); return; }
-  if (['training', 'compendium', 'records', 'help', 'ledger', 'deck', 'draw-pile', 'discard', 'exhaust', 'relic', 'inventory', 'menu', 'abandon'].includes(action)) { showModal(action); return; }
+  if (action === 'sound') { soundEnabled = !soundEnabled && platform.capabilities.tones; platform.audio.setEnabled(soundEnabled); const saved = storage.write(SOUND_KEY, soundEnabled ? 'on' : 'off'); render(); if (!saved.ok) toast(saved.error.message); if (soundEnabled) tone(660); return; }
+  if (action === 'guide') { showModal({ kind: 'guide', step: 0 }); return; }
+  if (action === 'guide-back' || action === 'guide-next') { if (currentModalKind() === 'guide') { modal.step += action === 'guide-back' ? -1 : 1; if (modal.step >= GUIDE_STEPS.length) closeModal(); else render(); } return; }
+  if (action === 'guide-done') { closeModal(); return; }
+  if (action === 'export-backup') { exportBackup(); return; }
+  if (action === 'export-raw') { exportText('原始记录', JSON.stringify({ format: 'ghost-ledger.raw-records', version: 1, records: saves.rawRecords() }, null, 2), 'ghost-ledger-raw'); return; }
+  if (action === 'export-playtest') { exportPlaytest(); return; }
+  if (action === 'download-export') { if (currentModalKind() === 'export') { const result = platform.files.download(modal.text, modal.name); toast(result.ok ? '已发起文件下载。' : result.error.message); } return; }
+  if (action === 'import-file') { importFile(); return; }
+  if (action === 'inspect-backup') { inspectBackup(app.querySelector('#backup-import')?.value || ''); return; }
+  if (action === 'confirm-import') { confirmImport(); return; }
+  if (action === 'check-update') { checkUpdate(true); return; }
+  if (action === 'apply-update') { if (!updateState?.available) return; const saved = saveRun() && saveProfile(); if (!saved) { toast('当前进度未能保存，请先导出备份。'); return; } window.location.reload(); return; }
+  if (action === 'retry-images') { for (const image of app.querySelectorAll('img')) if (failedImages.has(image.src)) { const url = image.src; image.removeAttribute('src'); image.src = url; } effectsPresenter.preload(); return; }
+  if (['training', 'compendium', 'records', 'help', 'ledger', 'deck', 'draw-pile', 'discard', 'exhaust', 'relic', 'inventory', 'menu', 'abandon', 'backup'].includes(action)) { showModal(action); return; }
   if (action === 'use-potion') { requestPotion(button.dataset.potionUid, button.dataset.potionId); return; }
   if (action === 'home') { returnHome(); return; }
   if (action === 'modes') { screen = 'modes'; modal = null; render(); return; }
@@ -598,8 +709,8 @@ app.addEventListener('click', event => {
   if (action === 'mode-select') { if (!getMode(button.dataset.modeId)?.disabled) { selectedModeId = button.dataset.modeId; render(); } return; }
   if (action === 'difficulty') { const level = Number(button.dataset.level); if (isDifficultyUnlocked(profile, level)) { selectedDifficulty = level; render(); } return; }
   if (action === 'depart') { if (activeRun()) showModal('replace'); else depart(); return; }
-  if (action === 'replace-run') { settleCurrent(true); depart(); return; }
-  if (action === 'abandon-run') { settleCurrent(true); run = null; try { localStorage.removeItem(SAVE_KEY); } catch { pendingSaveNotice = '无法清除旧记录，请保持页面打开。'; } returnHome(); toast(`夜巡已归档，带回 ${lastEarned} 阅历。`); return; }
+  if (action === 'replace-run') { depart(); return; }
+  if (action === 'abandon-run') { const settlement = settleRun(profile, run, { abandoned: true, session: { ...sessionTracker.snapshot(run), endedAt: platform.clock.now() } }); const committed = saves.replaceProgress({ run: null, profile: settlement.profile, session: null }); if (!committed.ok) { toast(committed.error.message); return; } profile = settlement.profile; lastEarned = settlement.earned; run = null; sessionTracker.replace(null); returnHome(); toast(`夜巡已归档，带回 ${lastEarned} 阅历。`); return; }
   if (action === 'claim') { const updated = claimMilestone(profile, button.dataset.id); if (updated !== profile) { profile = updated; saveProfile(); render(); sound('claim'); toast('修行已领取，下次出门时生效。'); } return; }
   if (action === 'equip') { profile = equipRelic(profile, button.dataset.relicId); saveProfile(); render(); toast('行装已备好，下次出门携带。'); return; }
   if (action === 'map') { pendingTarget = null; modal = null; mapPreview = run.phase !== 'map'; render(); return; }
@@ -661,9 +772,22 @@ app.addEventListener('pointerup', event => {
 });
 app.addEventListener('pointercancel', event => { if (dragStart?.pointerId === event.pointerId) cancelCardDrag(); });
 app.addEventListener('lostpointercapture', event => { if (dragStart?.pointerId === event.pointerId) cancelCardDrag(); });
-window.addEventListener('blur', cancelCardDrag);
+platform.lifecycle.subscribe(event => {
+  if (recoveryMode || !storage.check().ok) return;
+  appActive = event.type === 'resume';
+  sessionTracker.sync(run, appActive && screen === 'adventure' && !filePicking);
+  if (!appActive) { const transient = Boolean(dragStart || pendingTarget || selectedUid); cancelCardDrag(); pendingTarget = null; selectedUid = null; pendingDragSnapshot = null; effectsPresenter.clear(); saveRun(); saveProfile(); if (transient && !filePicking) render(); }
+  else checkUpdate();
+});
+function showStorageConflict() { if (recoveryMode) return; cancelCardDrag(); effectsPresenter.clear(); selectedUid = null; pendingTarget = null; sessionTracker.sync(run, false); busy = false; if (currentModalKind() !== 'export') modal = 'storage-conflict'; render(); }
+window.addEventListener('storage', event => { if (Object.values(SAVE_KEYS).includes(event.key) || event.key === null) storage.check(); });
+const fatalError = () => { if (recoveryMode) return; cancelCardDrag(); effectsPresenter.clear(); sessionTracker.sync(run, false); saveRun(); saveProfile(); recoveryMode = true; showRecovery({ root: app, download: platform.files.download, records: saves.rawRecords() }); };
+window.addEventListener('error', event => { if (event.target === window && !/^ResizeObserver loop (?:completed with undelivered notifications\.|limit exceeded)$/.test(event.message || '')) fatalError(); });
+window.addEventListener('unhandledrejection', fatalError);
 document.addEventListener('keydown', event => {
+  if (recoveryMode || storage.conflicted) return;
   if (event.altKey || event.ctrlKey || event.metaKey || event.repeat) return;
+  if (event.target.matches('textarea, input, select')) return;
   if (run?.pendingChoice && screen === 'adventure' && !modal) {
     const index = Number(event.key) - 1;
     if (!busy && index >= 0 && index < run.pendingChoice.cardUids.length) { event.preventDefault(); perform({ type: 'chooseCard', uid: run.pendingChoice.cardUids[index] }); }
@@ -705,3 +829,4 @@ document.addEventListener('keydown', event => {
 let resizeTimer;
 window.addEventListener('resize', () => { if (dragStart) cancelCardDrag(); clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { if (!dragStart) render(); }, 120); });
 render();
+checkUpdate();

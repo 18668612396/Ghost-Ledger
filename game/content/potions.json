@@ -1,0 +1,78 @@
+[
+  {
+    "id": "healing",
+    "name": "回魂露",
+    "target": "self",
+    "description": "恢复 20 点生命。",
+    "art": "lotus",
+    "usablePhases": [
+      "map",
+      "combat",
+      "event",
+      "reward"
+    ],
+    "effects": [
+      {
+        "op": "heal",
+        "amount": 20
+      }
+    ],
+    "price": 30
+  },
+  {
+    "id": "fire",
+    "name": "离火瓶",
+    "target": "enemy",
+    "description": "对一名敌人造成 20 点伤害。",
+    "art": "fire",
+    "usablePhases": [
+      "combat"
+    ],
+    "effects": [
+      {
+        "op": "damage",
+        "amount": 20,
+        "target": "enemy",
+        "attack": false
+      }
+    ],
+    "price": 30
+  },
+  {
+    "id": "block",
+    "name": "护身散",
+    "target": "self",
+    "description": "获得 12 点护甲。",
+    "art": "talisman",
+    "usablePhases": [
+      "combat"
+    ],
+    "effects": [
+      {
+        "op": "block",
+        "amount": 12,
+        "modified": false
+      }
+    ],
+    "price": 30
+  },
+  {
+    "id": "weak",
+    "name": "散魂香",
+    "target": "enemy",
+    "description": "使一名敌人虚弱 3 回合。",
+    "art": "bell",
+    "usablePhases": [
+      "combat"
+    ],
+    "effects": [
+      {
+        "op": "status",
+        "key": "weak",
+        "amount": 3,
+        "target": "enemy"
+      }
+    ],
+    "price": 30
+  }
+]

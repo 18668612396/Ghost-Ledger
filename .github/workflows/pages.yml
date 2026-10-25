@@ -1,0 +1,116 @@
+name: 手动发布 GitHub Pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions:
+      contents: read
+      actions: read
+      pages: read
+    steps:
+      - name: 仅允许从 main 手动发布
+        shell: bash
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::error::Pages 只能从 main 分支手动发布。"
+            exit 1
+          fi
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - name: 从锁文件安装并验证
+        run: npm ci
+      - run: npm test
+      - run: npm run test:playthrough
+      - name: 验证正常失败与存档恢复
+        run: npm run test:defeat
+      - run: npm run build
+      - name: 查找同分支上一次成功发布的静态制品
+        id: previous
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          run_id=$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/pages.yml/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id // empty')
+          if [ -z "$run_id" ]; then
+            echo "首次成功发布：尚无上一版静态制品。"
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          artifact=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}/artifacts?name=web-release&per_page=100")
+          usable=$(ARTIFACT_JSON="$artifact" node --input-type=module -e 'const data=JSON.parse(process.env.ARTIFACT_JSON); const files=data.artifacts.filter(row=>row.name==="web-release"); if(files.length>1) throw Error("上一版发布制品不唯一，停止发布。"); console.log(files.length===1 && !files[0].expired ? "true" : "false");')
+          echo "exists=true" >> "$GITHUB_OUTPUT"
+          if [ "$usable" = "true" ]; then
+            echo "source=artifact" >> "$GITHUB_OUTPUT"
+            echo "run-id=$run_id" >> "$GITHUB_OUTPUT"
+          else
+            echo "Actions 制品缺失或已过期，将从已配置的公开 Pages 站点校验恢复。"
+            pages_url=$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq '.html_url')
+            echo "source=pages" >> "$GITHUB_OUTPUT"
+            echo "pages-url=$pages_url" >> "$GITHUB_OUTPUT"
+          fi
+      - name: 下载上一次成功发布的制品
+        if: steps.previous.outputs.source == 'artifact'
+        uses: actions/download-artifact@v7
+        with:
+          name: web-release
+          path: .local/temp/previous-web-release
+          github-token: ${{ github.token }}
+          run-id: ${{ steps.previous.outputs.run-id }}
+      - name: 制品过期时从受信 Pages 站点恢复完整静态包
+        if: steps.previous.outputs.source == 'pages'
+        env:
+          PAGES_BASE_URL: ${{ steps.previous.outputs.pages-url }}
+        run: npm run release:restore -- "$PAGES_BASE_URL" .local/temp/previous-web-release
+      - name: 校验并只保留上一版资源目录
+        if: steps.previous.outputs.exists == 'true'
+        run: npm run release:retain -- .local/temp/previous-web-release
+      - name: 发布前资源与子路径预检
+        run: npm run release:check
+      - name: 保存供下一次发布保留的完整静态制品
+        uses: actions/upload-artifact@v6
+        with:
+          name: web-release
+          path: .local/dist/web/
+          include-hidden-files: true
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 90
+      - name: 上传 Pages 静态制品
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .local/dist/web
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 检查已启用的 Pages 配置
+        uses: actions/configure-pages@v5
+        with:
+          enablement: false
+      - name: 部署已验证制品
+        id: deployment
+        uses: actions/deploy-pages@v4

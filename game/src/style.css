@@ -466,6 +466,13 @@ p, h1, h2, h3 { overflow-wrap: anywhere; }
 .relic-large .nav-art { --object-size: 80px; }
 .menu-options { display: flex; flex-direction: column; gap: 9px; }
 .menu-options .secondary-button { min-height: 37px; margin: 0; }
+.backup-label { display: block; margin-top: 18px; }
+.backup-text { display: block; width: 100%; min-height: 110px; max-height: 240px; margin: 9px 0; padding: 10px; border: 0; color: inherit; background: transparent; font: 13px/1.5 monospace; resize: vertical; box-sizing: border-box; }
+.export-text { height: 220px; }
+.guide-copy { min-height: 90px; font-size: 17px; line-height: 1.9; }
+.resource-warning { position: absolute; z-index: 50; left: 14px; right: 14px; top: max(130px, env(safe-area-inset-top)); display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 8px; color: #fff5d0; pointer-events: auto; }
+.recovery-screen { width: min(100% - 36px, 440px); margin: auto; padding: 32px 0; color: #fff5d0; text-align: center; }
+.recovery-screen button { display: block; width: 100%; margin: 14px 0; }
 .toast { position: absolute; z-index: 120; bottom: max(12px, env(safe-area-inset-bottom)); left: 23px; right: 23px; padding: 4px 0; color: #254c43; font-size: 12px; line-height: 1.6; text-align: center; pointer-events: none; opacity: 0; transform: translateY(5px); transition: opacity .18s, transform .18s; }
 .toast.visible { opacity: 1; transform: translateY(0); }
 .in-combat .toast { bottom: calc(var(--command-height) + var(--footer-height) + max(5px, env(safe-area-inset-bottom))); padding: 2px 0; color: #f0e4c7; font-size: 10px; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

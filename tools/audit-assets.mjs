@@ -33,6 +33,7 @@ export async function auditAssets(projectRoot = root) {
     required.add(`card-frame-vivid-${card.visual.family}.png`); required.add(`collection-frame-${card.visual.family}.png`);
   }
   for (const enemy of Object.values(content.enemies)) required.add(`${enemy.art}.png`);
+  for (const item of [...Object.values(content.relics || {}), ...Object.values(content.potions || {})]) if (item.art) required.add(`card-art-${item.art}.png`);
   for (const visual of Object.values(content.visuals)) required.add(`${visual.asset}.png`);
   const rendering = new Set(required);
   // Original generated sheets remain provenance dependencies of active crops/grades.

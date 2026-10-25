@@ -28,7 +28,7 @@ function attribute(name, value) {
 }
 
 function renderTile(entry, asset) {
-  const purpose = PURPOSES[entry.action];
+  const purpose = Object.hasOwn(PURPOSES, entry.action) ? PURPOSES[entry.action] : null;
   if (!purpose) throw new RangeError(`未知的藏品操作：${String(entry.action)}`);
 
   const hasCost = entry.cost !== undefined;

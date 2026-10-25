@@ -1,6 +1,6 @@
 # v0.5 策划配置指南
 
-文中路径以仓库根目录为基准。游戏源表位于 `game/content/`，开发工具位于 `tools/`；测试与本地证据位于 Git 忽略的 `.local/`，新克隆不包含这些本地资料。
+文中路径以仓库根目录为基准。游戏源表位于 `game/content/`，开发工具位于 `tools/`；正式自动回归位于随 Git 分发的 `tests/`，临时检查、证据、隔离副本与构建产物位于 Git 忽略的 `.local/`。
 
 已有机制可以通过 JSON 组合增加内容。下文示例是教学记录，未加入正式牌池；使用时将整条记录追加到对应数组，保持 id 唯一。JSON 不能写注释、函数或尾随逗号。
 
@@ -17,6 +17,8 @@
 | `game/content/acts.json` | 起始资源、地图、遭遇／事件／奖励池 | 创建冒险时的 `actId` |
 | `game/content/events.json` | 事件文案、条件、选项与效果 | 幕的 `eventPool` |
 | `game/content/visual-effects.json` | 位图特效与动画参数 | `visual.impact`、效果 `impact`、标准表现事件 |
+| `game/content/relics.json` | 法器说明、素材、通用触发、开场修正及可选出门行装 | 起始法器、事件奖励、精英／宝箱、局外行装 |
+| `game/content/potions.json` | 药物说明、素材、目标、可用场景、效果与售价 | 战斗奖励、鬼市、背包使用 |
 
 1. 从相近记录复制，换一个稳定 id，修改文字、数值、组合或素材引用。
 2. 检查引用链：卡牌是否进入本幕池；怪物是否进入遭遇；遭遇是否在本幕池；事件是否加入 `eventPool`。
@@ -25,6 +27,8 @@
 5. 在游戏中验证获得、使用、升级、结算与显示，不只看 JSON 能否解析。
 
 编译输出在 `game/src/generated/content-data.js`，不要编辑它。编译失败时上一次有效结果仍保留；以终端错误或 `/__content/diagnostics` 为准，不能因为浏览器还能运行就认为新表生效了。
+
+九表均为顶层数组，编译后按 id 索引到 `CONTENT`。当前唯一运行格式为 `version:5 / ruleset:'config-v2'`，新局独立复制全部规则表到 `contentSnapshot`。继续已有 v5 夜巡仍读取其卡牌、怪物、法器和药物快照；源表调整不会重写正在进行的规则。旧格式不迁移、不执行，原浏览器记录保留供导出。卡图按当前 ID 更新主体的显示规则不改变快照中的玩法数值。
 
 ## 新增卡牌
 
@@ -314,6 +318,51 @@ AI 从上向下取首条满足 `when` 的规则。每条只选 `move`、`sequenc
 
 每个事件至少有一个无条件出口，不能让资源不足的玩家卡死。选项可加 `encounterId` 进入指定遭遇。rest、shop、treasure、upgrade、remove 是通用节点服务保留 id，不要覆盖；自定义事件可以组合相同通用资源效果。
 
+## 新增法器与药物
+
+`relics.json` 中的法器与卡牌、能力、怪物使用相同的 `effects` 和 `triggers`。例如新增一件“开场多抽一张、每回合首次实际偿债获得护甲”的法器：
+
+```json
+{
+  "id": "oath_pouch_example",
+  "name": "还愿符袋",
+  "description": "每场战斗首回合额外抽1张牌；每回合首次实际偿还阴债，获得4点护甲。",
+  "art": "ledger",
+  "modifiers": { "openingDraw": 1 },
+  "triggers": [
+    {
+      "event": "debtRepaid",
+      "when": { "op": "eq", "args": [{ "stat": "state.phase" }, "combat"] },
+      "limit": "oncePerTurn",
+      "effects": [{ "op": "block", "amount": 4, "modified": false }]
+    }
+  ]
+}
+```
+
+`combatStart` 表示战斗开场，`combatVictory` 表示敌人全部退场后的胜利结算。`debtRepaid` 只在实际偿还时触发；勾销借据不算偿还。法器的损血、受攻击和获得护甲事件只监听玩家，`enemyDeath` 可监听敌人死亡；可用 `when` 限定来源或其他状态。次数限制使用共用 `oncePerTurn / oncePerCombat`，不要依赖某个法器 id 的代码分支。开场抽牌修正只能为 0–10 的整数；额外固有牌沿用正式抽牌规则与手牌上限。
+
+法器可选的 `starter` 为 `{ "unlockId": "first-night", "flavor": "行装说明", "art": "bell" }`。设置后会加入局外出门目录；`unlockId` 必须引用 `game/src/progression-meta.js` 中的真实修行成就，`null` 表示默认解锁。全表必须恰有一件默认行装，复制默认法器后要删除副本的 `starter` 或改为有效解锁成就。`art` 是 `card-art-<art>.png` 的短标识；`starter.art` 使用既有行装图标标识，例如 `lantern` 或 `bell`。
+
+`potions.json` 可组合相同通用效果。例如面向敌方战场的药物：
+
+```json
+{
+  "id": "mist_bottle_example",
+  "name": "驱雾香",
+  "description": "对所有敌人造成7点伤害。",
+  "art": "fire",
+  "target": "all",
+  "usablePhases": ["combat"],
+  "price": 35,
+  "effects": [{ "op": "damage", "amount": 7, "target": "allEnemies", "attack": false }]
+}
+```
+
+药物外层目标为 `self / enemy / all`，实际效果仍需配置对应的 `target`；`enemy` 可选择具体活着的敌人，`all` 应用 `allEnemies` 等不依赖单体选择的效果。使用场景只接受 `map / combat / event / reward`，敌方目标只允许 `combat`。售价为非负整数。运行时先验证场景和目标，再消费药物、执行效果；丢弃不会执行效果。检查会拒绝失效引用、未知操作、非法修正或单体目标与药物外层目标冲突。
+
+法器与药物会加入对应运行目录，精英／宝箱与药物奖励按当前局目录抽取，鬼市药物售价读取配置。新增既有规则组合不需修改 `runtime/items.js`；该模块只导出目录视图。新增效果操作或平台能力仍需工程实现。
+
 ## 配置特效
 
 新增行到 `visual-effects.json` 后，可被卡牌的 `visual.impact` 或某条效果的 `impact` 引用。示例复用已有斩击素材：
@@ -347,3 +396,5 @@ AI 从上向下取首条满足 `when` 的规则。每条只选 `move`、`sequenc
 - 最终运行 `npm run check`、相关测试与构建，并执行实际浏览器操作。真机与用户验收另行记录。
 
 需要的新机制若无法用这些操作表达，先提出可复用操作或事件，再同步修改 schema、解释器与回归；不要把一段卡牌专用代码藏进配置字符串。
+
+正式语义回归提交到 `tests/`，由根命令 `npm test` 运行，干净克隆与 CI 使用同一套测试；临时脚本与历史本地原件继续留在 `.local/tests/`。验收副本、日志、截图和构建产物仍留在 `.local/`，不进入游戏运行依赖。自动检查、浏览器交互、真机和用户试玩须分别记录。
